@@ -152,31 +152,39 @@ a comparison to if no new reactors are built.
     \label{tab:scenarios_once-through}
     \begin{tabular}{l l l}
             \hline
-            Scenario Number & Reactors Present & Energy growth model\\\hline
+            Scenario number & Reactors present & Energy growth model\\\hline
             1 & \glspl{LWR} & N/A \\
-            2 & \glspl{LWR} and \gls{USNC} \gls{MMR} & No growth \\
-            3 & \glspl{LWR} and X-energy Xe-100& No growth \\
-            4 & \glspl{LWR}, X-energy Xe-100, \gls{USNC} \gls{MMR}& No growth\\
-            5 & \glspl{LWR}, \gls{USNC} \gls{MMR}, NuScale VOYGR & No growth\\
-            6 & \glspl{LWR}, X-energy Xe-100, NuScale VOYGR & No growth\\
-            7 & \glspl{LWR}, X-energy Xe-100, \gls{USNC} \gls{MMR}, NuScale VOYGR & No growth\\
-            8 & \glspl{LWR} and \gls{USNC} \gls{MMR}& 1\% growth \\
-            9 & \glspl{LWR} and X-energy Xe-100& 1\% growth\\
-            10 & \glspl{LWR}, X-energy Xe-100, \gls{USNC} \gls{MMR}& 1\% growth\\
-            11 & \glspl{LWR}, \gls{USNC} \gls{MMR}, NuScale VOYGR & 1\% growth\\
-            12 & \glspl{LWR}, X-energy Xe-100, NuScale VOYGR & 1\% growth\\
-            13 & \glspl{LWR}, X-energy Xe-100, \gls{USNC} \gls{MMR}, NuScale VOYGR & 1\% growth\\
+            2 & \glspl{LWR} and \gls{MMR} & No growth \\
+            3 & \glspl{LWR} and Xe-100 & No growth \\
+            4 & \glspl{LWR}, Xe-100, and \gls{MMR}& No growth\\
+            5 & \glspl{LWR}, \gls{MMR}, and VOYGR & No growth\\
+            6 & \glspl{LWR}, Xe-100, and VOYGR & No growth\\
+            7 & \glspl{LWR}, Xe-100, \gls{MMR}, and VOYGR & No growth\\
+            8 & \glspl{LWR} and \gls{MMR}& 1\% growth \\
+            9 & \glspl{LWR} and Xe-100 & 1\% growth\\
+            10 & \glspl{LWR}, Xe-100, and \gls{MMR}& 1\% growth\\
+            11 & \glspl{LWR}, \gls{MMR}, and VOYGR & 1\% growth\\
+            12 & \glspl{LWR}, Xe-100, and VOYGR & 1\% growth\\
+            13 & \glspl{LWR}, Xe-100, \gls{MMR}, and VOYGR & 1\% growth\\
             \hline
     \end{tabular}
 \end{table}
 
 \section{Recycle fuel cycle}
 The flow of material through the fuel cycle scenarios with recycling is shown in 
-Figure \ref{fig:recycle_fuel_cycle}. Only spent fuel from the advanced reactors 
-is reprocessed and reused in a reactor. \hl{Do I want fuel to be disposed of 
-after one additional pass? Probably need to read literature}
+Figure \ref{fig:recycle_fuel_cycle}. 
 
 \input{recycling-flow}
+
+The scenarios investigated for this section of analysis vary by the 
+energy demand of the scenario and the recycling scheme. Energy demands vary 
+between a no growth and a 1\% growth model, the same as how this parameter 
+is varied in the once-through fuel cycle models. The reycling scheme is varied 
+to be either a limited or a continuous recycle, similar to how this parameter 
+was varied in the \gls{ES} \cite{wigeland_nuclear_2014}. All of the scenarios 
+with recycling will model the transition from the current fleet of \glspl{LWR} 
+to the X-energy Xe-100, \gls{USNC} \gls{MMR}, and the NuScale VOYGR, the same 
+as in scenarios 7 and 13. 
 
 \begin{table}[ht]
     \centering
@@ -184,8 +192,11 @@ after one additional pass? Probably need to read literature}
     \label{tab:scenarios_recycle}
     \begin{tabular}{l l l}
             \hline
-            Scenario Number & Reactors Present & Energy growth model\\\hline
-
+            Scenario number & Energy growth model & Recycle scheme\\\hline
+            14 & No growth & Limited \\
+            15 & No growth & Continuous \\
+            16 & 1\% growth & Limited \\
+            17 & 1\% growth & Continuous \\
             \hline
     \end{tabular}
 \end{table}
