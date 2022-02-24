@@ -3,7 +3,7 @@
 
 
 \usepackage[acronym,toc]{glossaries}
-\include{acros}
+\input{../acros}
 
 \usepackage{xspace}
 \usepackage{graphics}
@@ -28,6 +28,7 @@
     group-separator={,}, group-four-digits = true
 }
 \usepackage{fourier}
+\usepackage{soul}
 \usepackage{booktabs}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
 
@@ -62,7 +63,7 @@
 
 
 \usepackage{tikz}
-\usetikzlibrary{positioning, arrows, decorations, shapes}
+\usetikzlibrary{positioning, arrows, decorations, shapes, calc}
 
 \usetikzlibrary{shapes.geometric,arrows}
 \tikzstyle{process} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
@@ -72,16 +73,24 @@
 
 \tikzstyle{empty} =  [rectangle, rounded corners, minimum width=2.5cm, minimum height=0.7cm,text centered, draw=black, fill=white!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{facility} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{transition} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=red!30]
 
+\graphicspath{{../images/}}
 
-\title{Example Template}
-\author{Charles Bae}
+\title{Investigation of the impacts of deploying reactors fueled by high-assay low enriched uranium}
+\author{Amanda M. Bachmann}
 \department{Nuclear, Plasma, Radiological Engineering}
-\schools{B.S., University of Illinois - Urbana Champaign, 2017}
-\msthesis
-\advisor{Kathryn D. Huff}
-\degreeyear{2018}
-\committee{Assistant Professor Kathryn D. Huff, Adviser \\ Professor Segundo Lector }
+\schools{B.S., University of Tennessee, Knoxville, 2019 \\ M.S., University of Tennessee, Knoxville, 2020}
+\phdthesis
+\advisor{Madicken Munk}
+\degreeyear{2023}
+\committee{Research Scientist Dr. Madicken Munk, Advisor \\
+           Associate Professor Tomasz Kozlowski \\
+           Professor James F. Stubbins \\
+           Professor John R. Abelson \\
+           Dr. Bo Feng, Argonne National Lab\\
+           }
 
 
 \begin{document}
@@ -98,7 +107,11 @@ Abstract.
 
 \chapter*{Acknowledgments}
 
-Acks.
+This material is based upon work supported under an Integrated University 
+Program Graduate Fellowship. Any opinions, findings, conclusions or 
+recommendations expressed in this publication are those of the author(s) 
+and do not necessarily reflect the views of the Department of Energy Office 
+of Nuclear Energy.
 
 %% The thesis format requires the Table of Contents to come
 %% before any other major sections, all of these sections after
@@ -128,13 +141,34 @@ Acks.
 \chapter{Introduction}
 \input{introduction}
 
-\chapter*{Appendix}
-\input{appendix}
+\chapter{Background}
+\input{background}
+
+\chapter{Fuel cycle modeling methodology}
+\input{methodology.tex}
+
+\chapter{Once-through fuel cycle results}
+\input{once-through-results.tex}
+
+\chapter{Recycling fuel cycle results}
+\input{recycling-results.tex}
+
+\chapter{Sensitivity Analysis}
+\input{sensitivity.tex}
+
+\chapter{Neutronics effects}
+\input{neutronics.tex}
+
+\chapter{Conclusions}
+\input{conclusions.tex}
+
+%\chapter*{Appendix}
+%\input{appendix}
 
 \backmatter
 
-\bibliographystyle{apalike}
-\bibliography{bibliography}
+\bibliographystyle{ieeetr}
+\bibliography{../bibliography}
 
 \end{document}
 \endinput

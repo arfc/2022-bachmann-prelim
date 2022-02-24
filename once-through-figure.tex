@@ -1,0 +1,23 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm]
+        \node (ore) [facility] {Uranium ore};
+        \node (enrichment) [facility, right of=ore, xshift=1cm]{Enrich};
+        \node (llwsink) [facility, below of=enrichment]{Depleted uranium};
+        \node (fabrication) [facility, right of=enrichment, xshift=1cm]{Fuel};
+        \node (reactor) [facility, above of=fabrication, xshift=2cm]{Power Plant};
+        \node (spentfuel) [facility, below of=reactor, xshift=2cm]{Interim Storage};
+        \node (sinkhlw) [facility, below of=spentfuel, xshift=2cm]{Geologic Repository};
+
+        \draw [arrow] (ore) --  (enrichment); 
+        \draw [arrow] (enrichment) -- (fabrication);
+        \draw [arrow] (enrichment) -- (llwsink);
+        \draw [arrow] (fabrication) |- (reactor);
+        \draw [arrow] (reactor) -| (spentfuel);
+        \draw [arrow] (spentfuel) -| (sinkhlw);
+
+        \end{tikzpicture}
+    \caption{Material flow for a once-through nuclear fuel cycle. All material is 
+    disposed of after use in a reactor. Adapted from \protect\cite{wigeland_identification_2011}.}
+    \label{fig:once_through_background}
+\end{figure}
