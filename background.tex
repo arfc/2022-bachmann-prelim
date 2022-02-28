@@ -138,35 +138,6 @@ ORIGEN \cite{wieselquist_scale_2020}.
 
 ORION 
 
-\subsection{Uses of fuel cycle simulators}
-One key piece of work using fuel cycle simulators was a multi-lab effort 
-to verify their results \cite{feng_standardized_2016}.
-
-Fuel cycle simulators have been used for many years, but their use over the 
-last decade has been guided by the Nuclear Fuel Cycle \gls{ES} from the \gls{DOE-NE} 
-\cite{wigeland_nuclear_2014}. This project categorized 
-multiple fuel cycle options into 40 different \glspl{EG} based on characteristics 
-such as the number of times spent fuel is recycled, the type of fuel burned, 
-and the type of reactor (e.g. thermal critical reactor, fast critical reactor). 
-The \gls{EG} were compared on their performance at equilibrium on nine evaluation 
-criterion, including nuclear waste management and resource utilization. The 
-results of this project showed that the most benefit comes from fuel cycles 
-that use continuous recycle of U/Pu with new or natural uranium in fast critical 
-reactors (\gls{EG} 23), continuous recycle of U/TRU with new or natural 
-uranium in fast critical reactors (\gls{EG} 24), continuous recycle of U/Pu 
-with new or natural uranium in both fast and thermal critical reactors 
-(\gls{EG} 29) or contiuous recycle of U/TRU with new or natural uranium in 
-both fast and critical reactors \cite{wigeland_nuclear_2014}. 
-
-Based on the results of the \gls{ES}, many efforts have been made to model 
-the transition to these promising fuel cycle options using fuel cycle 
-simulators. ORION was used to model the transition from a once-through 
-fuel cycle option using enriched uranium in thermal critical reactors (\gls{EG}
-01) to \gls{EG} 29 \cite{sunny_transition_2015}. This work in ORION 
-deomonstrated the importance of new \glspl{LWR} built or license extensions of 
-exisiting reactors for this transition. 
-
-
 \subsection{\Cyclus}
 \Cyclus is a dynamic, open source agent-based fuel cycle simulator. Built 
 in C++, \Cyclus uses only open source and freely available libraries to 
@@ -227,7 +198,37 @@ defined using recipes, however a module has been developed to allow for
 depletion calculations of a single enrichment reactor core using ORIGEN 
 \cite{skutnik_cyborg:_2016}.
 
-\subsection{Verification and Use}
+\subsection{Verification and use of fuel cycle simulators}
+\subsection{Uses of fuel cycle simulators}
+One key piece of work using fuel cycle simulators was a multi-lab effort 
+to verify their results \cite{feng_standardized_2016}.
+
+Fuel cycle simulators have been used for many years, but their use over the 
+last decade has been guided by the Nuclear Fuel Cycle \gls{ES} from the \gls{DOE-NE} 
+\cite{wigeland_nuclear_2014}. This project categorized 
+multiple fuel cycle options into 40 different \glspl{EG} based on characteristics 
+such as the number of times spent fuel is recycled, the type of fuel burned, 
+and the type of reactor (e.g. thermal critical reactor, fast critical reactor). 
+The \gls{EG} were compared on their performance at equilibrium on nine evaluation 
+criterion, including nuclear waste management and resource utilization. The 
+results of this project showed that the most benefit comes from fuel cycles 
+that use continuous recycle of U/Pu with new or natural uranium in fast critical 
+reactors (\gls{EG} 23), continuous recycle of U/TRU with new or natural 
+uranium in fast critical reactors (\gls{EG} 24), continuous recycle of U/Pu 
+with new or natural uranium in both fast and thermal critical reactors 
+(\gls{EG} 29) or contiuous recycle of U/TRU with new or natural uranium in 
+both fast and critical reactors \cite{wigeland_nuclear_2014}. 
+
+Based on the results of the \gls{ES}, many efforts have been made to model 
+the transition to these promising fuel cycle options using fuel cycle 
+simulators. ORION was used to model the transition from a once-through 
+fuel cycle option using enriched uranium in thermal critical reactors (\gls{EG}
+01) to \gls{EG} 29 \cite{sunny_transition_2015}. This work in ORION 
+deomonstrated the importance of new \glspl{LWR} built or license extensions of 
+exisiting reactors for this transition. 
+
+
+
 Verification of \Cyclus has been performed \cite{bae_standardized_2019}, 
 based on a transition scenario from an open fuel cycle to an advanced
 fuel cycle with reprocessing \cite{feng_standardized_2016}. Due to 
