@@ -191,15 +191,33 @@ demand that is not met by facilities deployed by the cycamore::DeployInst.
 
 In \Cyclus, agents trade materials through the \gls{DRE} 
 \cite{gidden_agent-based_2015,huff_fundamental_2016}. The \gls{DRE} defines the 
-supply-demand communication framework and treats facilities as black boxes. 
+supply-demand communication framework and treats facilities as black boxes
+so the solution strategy is agnostic to the resource types being exchanged. 
 There are three steps to the \gls{DRE}: information gathering, resource 
-exchanges, and trade execution. Material compositions in \Cyclus are 
-defined using recipes, however a module has been developed to allow for 
+exchanges, and trade execution. During the information gathering 
+phase an exchange graph is created based on information from suppliers 
+and consumers with any constraints. The requested demand from an agent 
+can be more than what is actually consumed, granted capacity constraints 
+accompany the request. An agent can request multiple commodities, but 
+a preference of each commodity must be provided. A solution is then found to the 
+exchange graph, then final trades are constructed and executed 
+\cite{gidden_methodology_2016}. A feasible solution is found to the 
+exchange graph using an optimization-based 
+approach with econimics-based proxies \cite{gidden_methodology_2016}. 
+The \gls{DRE} can be used to apply physical, economic, and social 
+contraints to a fuel cycle model. 
+
+
+SImialr to many of the other fuel cycle simulators developed, material 
+compositions in \Cyclus are 
+defined using recipes. However a module has been developed to allow for 
 depletion calculations of a single enrichment reactor core using ORIGEN 
-\cite{skutnik_cyborg:_2016}.
+\cite{skutnik_cyborg:_2016}. This module increases \Cyclus's ability 
+to use realistic material definitions for spent fuel. This is very 
+important for an accurate understanding of reprocessing and repository 
+needs. 
 
 \subsection{Verification and use of fuel cycle simulators}
-\subsection{Uses of fuel cycle simulators}
 One key piece of work using fuel cycle simulators was a multi-lab effort 
 to verify their results \cite{feng_standardized_2016}.
 
@@ -299,10 +317,18 @@ considered with optimization of a nuclear fuel cycle are natural
 resource utilization, economics, environmental impacts, and proliferation 
 concerns \cite{passerini_systematic_2014,wigeland_nuclear_2014}. Optimizing 
 a fuel cycle can be solved as a sinlge-objective or multi-objective 
-problem. A variety of algorithms can be used to optimize a given 
+problem. 
+
+A variety of algorithms can be used to optimize a given 
 fuel cycle. Linear programming optimization tools have been used for 
 optimization, but have intrinsic issues for solving non-linear 
-problems, such as fuel cycles, 
+problems, such as fuel cycles, as demonstrated by \cite{passerini_systematic_2014}.
+Linear programming optimization tools will often find a local minimum, 
+but not the global minimum. 
+Another method explored to optimize fuel cycle options is genetic 
+algorithms \cite{passerini_systematic_2014}. Genetic algorithms 
+have been shown to find a global minimum when multiple objectives 
+are applied \cite{passerini_systematic_2014}. 
 
 
 \section{HALEU}
