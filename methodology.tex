@@ -21,22 +21,26 @@ Section \ref{sec:reactor_methods}. The tails assay from enrichment is defined as
 0.2\% assay. 
 
 Fuel cycle scenarios are grouped into once-through fuel cycles and recycle fuel 
-cycles. Within each group, fuel cycle models are defined based on the energy demand 
+cycles. Ocnce-through fuel cycle models are defined based on the energy demand 
 of the scenario (either no growth or 1\% annual growth in demand) and by the 
-advanced reactors deployed in the scenario. The transition from \glspl{LWR} to 
-advanced reactors is modeled as beginning in 2025, so the energy demand is based on the 
-energy supplied by \glspl{LWR} in 2025. Many of the current planned \gls{HALEU}-fueled 
-reactors are not scheduled to be deployed until \hl{???}, but 2025 was selected as 
-the transition start time for this work because it will provide an upper 
-bounding case for if these reactors were to be deployed in mass on 
-an aggressive timeline. 
+advanced reactors deployed in the scenario. Recycle fuel cycles are defined 
+based on the energy demand (either no growth or 1\% growth) and the 
+recycling scheme (limited or continuous). The transition from \glspl{LWR} to 
+advanced reactors is modeled as beginning in January 2025, so the energy 
+demand is based on the energy supplied by \glspl{LWR} in 2024. Many of the 
+current planned \gls{HALEU}-fueled reactors are not scheduled to be deployed 
+until \hl{???}, but 2025 was selected as the transition start time for this 
+work because it will provide an upper bounding case for if these reactors 
+were to be deployed in mass on an aggressive timeline. 
 
 Each of the fuel cycle scenarios 
 defined in this work are compared on the number of reactors deployed, the 
-uranium usage (both uranium ore and what is sent to the reactors), the enrichment 
+uranium usage (both uranium ore and what is sent to the reactors), 
+how well the energy demand is met, the enrichment 
 \gls{SWU} capacity required, and the amount of waste produced. The natural 
 uranium usage and waste production are two of the metrics used in the \gls{ES} 
-\cite{wigeland_nuclear_2014} and provide a way to compare this work to that study.
+\cite{wigeland_nuclear_2014} and provide a way to compare the results of 
+this work to those of the \gls{ES}.
 
 \section{Reactors} \label{sec:reactor_methods}
 This work considers three advanced reactors: the \gls{USNC} \gls{MMR}, 
@@ -76,11 +80,18 @@ not considered in this work.
 Defining a reactor with the ``cycamore:Reactor'' archetype \cite{scopatz_cyclus_2015}, 
 requires the refueling scheme and the fuel recipes. The refueling scheme includes 
 the cycle length, the refuling length, and the amount of fuel put into the reactor 
-at each refueling. 
+at each refueling. The parameters for the reactors (Table \ref{tab:reactor_summary})
+are meant to closely match the design information about each reactor that 
+is available through open-source information. However, when exact 
+information was not available, information on similar reactor designs in 
+open-source inforamation supplemented the missing pieces. '
+
+
 The \gls{MMR} is not meant to undergo refueling, the initial core is designed 
 to operate for the entire lifetime of the reactor \cite{mitchell_usnc_2020}. 
 Therefore, this reactor 
-is modeled to not include any refueling. The mass of urnaium in the core was
+is modeled to not include any refueling and have a cycle length that 
+matches the reactor lifetime. The mass of uranium in the core was
 calculate based on the power level, fuel burnup, and lifetime of the 
 fuel in the core using values reported in \cite{hawari_development_2018}. 
 The total fuel mass was then calculated based on the composition of the fuel. 
@@ -98,8 +109,9 @@ Every six months about 1/7th
 of the pebbles in the core are expected to be discharged. Online refueling 
 cannot be explicitly modeled in \Cyclus, so the Xe-100 refueling is modeled 
 as a replacement of 1/7th of the enrtire core every 6 months. The mass of 
-each \gls{TRISO} was calculated by calculating the volume of a single 
-uranium carbide \cite{harlan_x-energy_2018} and multiplying by the density of the 
+each \gls{TRISO} particle was calculated by calculating the volume of a single 
+uranium carbide particle \cite{harlan_x-energy_2018} and multiplying by the 
+density of the 
 particle. This mass was then multiplied by the number of particles in each 
 pebble, and by the number of pebbles in the core \cite{harlan_x-energy_2018}.
 This calculation provided the total mass of uranium carbide in the core. The 
@@ -108,9 +120,9 @@ each modeled refueling.
 
 The VOYGR reactor contains 37 fuel assemblies, with three different enrichment 
 levels \cite{nuscale_chapter_2020}. Each refueling replaces 13 fuel assemblies, 
-because the middle assembly is replaced at every outage. The mass of fuel in 
+because the middle assembly is replaced at every refueling. The mass of fuel in 
 each assembly is reported in \cite{nuscale_chapter_2020}. The reported enrichment 
-for the VOYGR reactor in Table \ref{tab:reactor_summary}is the average for 
+for the VOYGR reactor in Table \ref{tab:reactor_summary} is the average for 
 each refueling. The VOYGR reactor is 
 modeled as a replacement of 13 fuel assemblies every refueling outage. Each refueling 
 outage is modeled as taking one month, because that is the refueling outage time 
@@ -129,13 +141,17 @@ The model created for the \gls{MMR} is based on the work reported in
 \section{Once-through fuel cycle}
 The flow of material through the modeled once-through fuel cycles is shown 
 in Figure \ref{fig:once-through_fuel_cycle}. The once-through fuel cycles model 
-material from the mine through final disposal in a final respository (the 
-``HLW Sink'' in FIgure \ref{fig:once-through_fuel_cycle}. The ``advanced reactor'' node in Figure 
+material from the mine to final disposal in a final respository (the 
+``HLW Sink'' in Figure \ref{fig:once-through_fuel_cycle}. The ``advanced reactor'' 
+node in Figure 
 \ref{fig:once-through_fuel_cycle} represents any subset of the advanced reactors included 
 in the scenario. The \glspl{LWR} are deployed at their specific start and end dates 
 using the ``cycamore::DeployInst'', the advanced reactors are deployed as needed by 
 the ``cycamore::ManagerInst'', and the energy demand of the scenario is defined using 
-the ``cycamore::GrowthRegion'' \cite{scopatz_cyclus_2015}.
+the ``cycamore::GrowthRegion'' \cite{scopatz_cyclus_2015}. All of the agents
+in the simulation are in the same region, modeling that all facilities are
+in the same country. No potential tariffs are modeled on the commodity 
+transactions of the \gls{DRE}. 
 
 \input{once-through-flow}
 

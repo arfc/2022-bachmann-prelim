@@ -106,9 +106,9 @@ expectation to the change in feed material of \gls{SWU} capacity. The effect
 on these variables will depend on the magnitude of the two changes.
 
 \section{Fuel cycle simulators}
-Fuel cycle simulators are computational tools to model the flow of materials
+\glspl{NFCS} are computational tools to model the flow of materials
 and the commissioning and decommissioning of facilities for a given fuel 
-cycle. Simulators can be used to evaluate the transition between fuel cycle 
+cycle. \glspl{NFCS} can be used to evaluate the transition between fuel cycle 
 options (e.g. from a once-through fuel cycle to one with recycling), the 
 performance of one fuel cycle with a growth in the demand of nuclear power, 
 and the effect of perturbations on a given fuel cycle \cite{piet_dynamic_2011}. 
@@ -191,20 +191,61 @@ demand that is not met by facilities deployed by the cycamore::DeployInst.
 
 In \Cyclus, agents trade materials through the \gls{DRE} 
 \cite{gidden_agent-based_2015,huff_fundamental_2016}. The \gls{DRE} defines the 
-supply-demand communication framework and treats facilities as black boxes. 
+supply-demand communication framework and treats facilities as black boxes
+so the solution strategy is agnostic to the resource types being exchanged. 
 There are three steps to the \gls{DRE}: information gathering, resource 
-exchanges, and trade execution. Material compositions in \Cyclus are 
-defined using recipes, however a module has been developed to allow for 
+exchanges, and trade execution. During the information gathering 
+phase an exchange graph is created based on information from suppliers 
+and consumers with any constraints. The requested demand from an agent 
+can be more than what is actually consumed, granted capacity constraints 
+accompany the request. An agent can request multiple commodities, but 
+a preference of each commodity must be provided. A solution is then found to the 
+exchange graph, then final trades are constructed and executed 
+\cite{gidden_methodology_2016}. A feasible solution is found to the 
+exchange graph using an optimization-based 
+approach with econimics-based proxies \cite{gidden_methodology_2016}. 
+The \gls{DRE} can be used to apply physical, economic, and social 
+contraints to a fuel cycle model. 
+
+
+SImialr to many of the other fuel cycle simulators developed, material 
+compositions in \Cyclus are 
+defined using recipes. However a module has been developed to allow for 
 depletion calculations of a single enrichment reactor core using ORIGEN 
-\cite{skutnik_cyborg:_2016}.
+\cite{skutnik_cyborg:_2016}. This module increases \Cyclus's ability 
+to use realistic material definitions for spent fuel. This is very 
+important for an accurate understanding of reprocessing and repository 
+needs. 
 
 \subsection{Verification and use of fuel cycle simulators}
-\subsection{Uses of fuel cycle simulators}
 One key piece of work using fuel cycle simulators was a multi-lab effort 
 to verify their results \cite{feng_standardized_2016}.
 
-Fuel cycle simulators have been used for many years, but their use over the 
-last decade has been guided by the Nuclear Fuel Cycle \gls{ES} from the \gls{DOE-NE} 
+Verification of \Cyclus has been performed \cite{bae_standardized_2019}, 
+based on a transition scenario from an open fuel cycle to an advanced
+fuel cycle with reprocessing \cite{feng_standardized_2016}. Due to 
+some inherent differences in \Cyclus and the other fuel cycle simulators 
+used by \cite{feng_standardized_2016} there were some differences in 
+the scenario parameters, such as \gls{LWR} batch size or 
+cycle length. These differences are implemented to conserve the reactor 
+core size, with a negligible difference in the \gls{SFR} core size. \Cyclus 
+was shown to have strong agreement with the verification of other 
+fuel cycle simulators \cite{bae_standardized_2019} with respect to 
+multiple metrics such as reactor startup and decommission schedule, fresh 
+fuel loading, and annual reprocessing throughputs. One major difference
+between \Cyclus and other fuel cycle simulators identified by this work 
+is that \Cyclus fully resolves discrete batches for fuel discharge. This 
+implementation allows \Cyclus to better match realistic fuel handeling, but 
+does not prevent \Cyclus from producing comparable results to other 
+fuel cycle simulators. 
+
+The use of \glspl{NFCS} has often been to evaluate how fuel cycle options 
+can meet specific goals. For example, \gls{DYMOND}, \gls{DANESS}, and 
+\hl{NFCSIM} were used to evaluate how different fuel cycle options 
+could reduce \gls{SNF} volume in a repository \cite{yacout_dynamic_2000}. 
+
+Use of \glspl{NFCS} over the 
+last decade has primarily been guided by the Nuclear Fuel Cycle \gls{ES} from the \gls{DOE-NE} 
 \cite{wigeland_nuclear_2014}. This project categorized 
 multiple fuel cycle options into 40 different \glspl{EG} based on characteristics 
 such as the number of times spent fuel is recycled, the type of fuel burned, 
@@ -227,28 +268,8 @@ fuel cycle option using enriched uranium in thermal critical reactors (\gls{EG}
 deomonstrated the importance of new \glspl{LWR} built or license extensions of 
 exisiting reactors for this transition. 
 
-
-
-Verification of \Cyclus has been performed \cite{bae_standardized_2019}, 
-based on a transition scenario from an open fuel cycle to an advanced
-fuel cycle with reprocessing \cite{feng_standardized_2016}. Due to 
-some inherent differences in \Cyclus and the other fuel cycle simulators 
-used by \cite{feng_standardized_2016} there were some differences in 
-the scenario parameters, such as \gls{LWR} batch size or 
-cycle length. These differences are implemented to conserve the reactor 
-core size, with a negligible difference in the \gls{SFR} core size. \Cyclus 
-was shown to have strong agreement with the verification of other 
-fuel cycle simulators \cite{bae_standardized_2019} with respect to 
-multiple metrics such as reactor startup and decommission schedule, fresh 
-fuel loading, and annual reprocessing throughputs. One major difference
-between \Cyclus and other fuel cycle simulators identified by this work 
-is that \Cyclus fully resolves discrete batches for fuel discharge. This 
-implementation allows \Cyclus to better match realistic fuel handeling, but 
-does not prevent \Cyclus from producing comparable results to other 
-fuel cycle simulators. 
-
-\Cyclus has been used to model the EG 23 transition scenario 
-\cite{wigeland_nuclear_2014}, assuming a 1\% growth in power demand 
+\Cyclus has been used to model the \gls{EG} 23 transition scenario assuming 
+a 1\% growth in power demand 
 \cite{djokic_application_2015}. The results from \Cyclus were compared 
 to the results from modeling the same transition scenario with \gls{DYMOND}, 
 a fuel cycle simulator from \gls{ANL}. The power generated, reactor entry 
@@ -289,6 +310,28 @@ combination of these tools can ``identify important design and policy parameters
 for transition scenarios and how those parameters interact not only with a single 
 response, but also synergistically between all parameters and metrics of 
 interest'' \cite{richards_application_2021}. 
+
+\subsection{Optimization}
+Optimization refers to the search for a solution of a given problem to 
+meet specific objectives. When applied to fuel cycles, optimization 
+is the determination of which fuel cycle option or facility 
+deployment schedule will meet the desired goals. Common factors 
+considered with optimization of a nuclear fuel cycle are natural 
+resource utilization, economics, environmental impacts, and proliferation 
+concerns \cite{passerini_systematic_2014,wigeland_nuclear_2014}. Optimizing 
+a fuel cycle can be solved as a sinlge-objective or multi-objective 
+problem. 
+
+A variety of algorithms can be used to optimize a given 
+fuel cycle. Linear programming optimization tools have been used for 
+optimization, but have intrinsic issues for solving non-linear 
+problems, such as fuel cycles, as demonstrated by \cite{passerini_systematic_2014}.
+Linear programming optimization tools will often find a local minimum, 
+but not the global minimum. 
+Another method explored to optimize fuel cycle options is genetic 
+algorithms \cite{passerini_systematic_2014}. Genetic algorithms 
+have been shown to find a global minimum when multiple objectives 
+are applied \cite{passerini_systematic_2014}. 
 
 
 \section{HALEU}
