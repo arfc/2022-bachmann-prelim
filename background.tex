@@ -106,9 +106,9 @@ expectation to the change in feed material of \gls{SWU} capacity. The effect
 on these variables will depend on the magnitude of the two changes.
 
 \section{Fuel cycle simulators}
-Fuel cycle simulators are computational tools to model the flow of materials
+\glspl{NFCS} are computational tools to model the flow of materials
 and the commissioning and decommissioning of facilities for a given fuel 
-cycle. Simulators can be used to evaluate the transition between fuel cycle 
+cycle. \glspl{NFCS} can be used to evaluate the transition between fuel cycle 
 options (e.g. from a once-through fuel cycle to one with recycling), the 
 performance of one fuel cycle with a growth in the demand of nuclear power, 
 and the effect of perturbations on a given fuel cycle \cite{piet_dynamic_2011}. 
@@ -221,8 +221,31 @@ needs.
 One key piece of work using fuel cycle simulators was a multi-lab effort 
 to verify their results \cite{feng_standardized_2016}.
 
-Fuel cycle simulators have been used for many years, but their use over the 
-last decade has been guided by the Nuclear Fuel Cycle \gls{ES} from the \gls{DOE-NE} 
+Verification of \Cyclus has been performed \cite{bae_standardized_2019}, 
+based on a transition scenario from an open fuel cycle to an advanced
+fuel cycle with reprocessing \cite{feng_standardized_2016}. Due to 
+some inherent differences in \Cyclus and the other fuel cycle simulators 
+used by \cite{feng_standardized_2016} there were some differences in 
+the scenario parameters, such as \gls{LWR} batch size or 
+cycle length. These differences are implemented to conserve the reactor 
+core size, with a negligible difference in the \gls{SFR} core size. \Cyclus 
+was shown to have strong agreement with the verification of other 
+fuel cycle simulators \cite{bae_standardized_2019} with respect to 
+multiple metrics such as reactor startup and decommission schedule, fresh 
+fuel loading, and annual reprocessing throughputs. One major difference
+between \Cyclus and other fuel cycle simulators identified by this work 
+is that \Cyclus fully resolves discrete batches for fuel discharge. This 
+implementation allows \Cyclus to better match realistic fuel handeling, but 
+does not prevent \Cyclus from producing comparable results to other 
+fuel cycle simulators. 
+
+The use of \glspl{NFCS} has often been to evaluate how fuel cycle options 
+can meet specific goals. For example, \gls{DYMOND}, \gls{DANESS}, and 
+\hl{NFCSIM} were used to evaluate how different fuel cycle options 
+could reduce \gls{SNF} volume in a repository \cite{yacout_dynamic_2000}. 
+
+Use of \glspl{NFCS} over the 
+last decade has primarily been guided by the Nuclear Fuel Cycle \gls{ES} from the \gls{DOE-NE} 
 \cite{wigeland_nuclear_2014}. This project categorized 
 multiple fuel cycle options into 40 different \glspl{EG} based on characteristics 
 such as the number of times spent fuel is recycled, the type of fuel burned, 
@@ -245,28 +268,8 @@ fuel cycle option using enriched uranium in thermal critical reactors (\gls{EG}
 deomonstrated the importance of new \glspl{LWR} built or license extensions of 
 exisiting reactors for this transition. 
 
-
-
-Verification of \Cyclus has been performed \cite{bae_standardized_2019}, 
-based on a transition scenario from an open fuel cycle to an advanced
-fuel cycle with reprocessing \cite{feng_standardized_2016}. Due to 
-some inherent differences in \Cyclus and the other fuel cycle simulators 
-used by \cite{feng_standardized_2016} there were some differences in 
-the scenario parameters, such as \gls{LWR} batch size or 
-cycle length. These differences are implemented to conserve the reactor 
-core size, with a negligible difference in the \gls{SFR} core size. \Cyclus 
-was shown to have strong agreement with the verification of other 
-fuel cycle simulators \cite{bae_standardized_2019} with respect to 
-multiple metrics such as reactor startup and decommission schedule, fresh 
-fuel loading, and annual reprocessing throughputs. One major difference
-between \Cyclus and other fuel cycle simulators identified by this work 
-is that \Cyclus fully resolves discrete batches for fuel discharge. This 
-implementation allows \Cyclus to better match realistic fuel handeling, but 
-does not prevent \Cyclus from producing comparable results to other 
-fuel cycle simulators. 
-
-\Cyclus has been used to model the EG 23 transition scenario 
-\cite{wigeland_nuclear_2014}, assuming a 1\% growth in power demand 
+\Cyclus has been used to model the \gls{EG} 23 transition scenario assuming 
+a 1\% growth in power demand 
 \cite{djokic_application_2015}. The results from \Cyclus were compared 
 to the results from modeling the same transition scenario with \gls{DYMOND}, 
 a fuel cycle simulator from \gls{ANL}. The power generated, reactor entry 
