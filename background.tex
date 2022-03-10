@@ -106,9 +106,9 @@ expectation to the change in feed material of \gls{SWU} capacity. The effect
 on these variables will depend on the magnitude of the two changes.
 
 \section{Fuel cycle simulators}
-\glspl{NFCS} are computational tools to model the flow of materials
+\gls{NFC} simulators are computational tools to model the flow of materials
 and the commissioning and decommissioning of facilities for a given fuel 
-cycle. \glspl{NFCS} can be used to evaluate the transition between fuel cycle 
+cycle. \gls{NFC} simulators can be used to evaluate the transition between fuel cycle 
 options (e.g. from a once-through fuel cycle to one with recycling), the 
 performance of one fuel cycle with a growth in the demand of nuclear power, 
 and the effect of perturbations on a given fuel cycle \cite{piet_dynamic_2011}. 
@@ -239,12 +239,12 @@ implementation allows \Cyclus to better match realistic fuel handeling, but
 does not prevent \Cyclus from producing comparable results to other 
 fuel cycle simulators. 
 
-The use of \glspl{NFCS} has often been to evaluate how fuel cycle options 
+The use of \gls{NFC} simulators has often been to evaluate how fuel cycle options 
 can meet specific goals. For example, \gls{DYMOND}, \gls{DANESS}, and 
-\hl{NFCSIM} were used to evaluate how different fuel cycle options 
+\hl{NFCSim} were used to evaluate how different fuel cycle options 
 could reduce \gls{SNF} volume in a repository \cite{yacout_dynamic_2000}. 
 
-Use of \glspl{NFCS} over the 
+Use of \gls{NFC} simulators over the 
 last decade has primarily been guided by the Nuclear Fuel Cycle \gls{ES} from the \gls{DOE-NE} 
 \cite{wigeland_nuclear_2014}. This project categorized 
 multiple fuel cycle options into 40 different \glspl{EG} based on characteristics 
@@ -391,29 +391,39 @@ for long-term support of \gls{HALEU} reactors.
 \subsection{Fuel forms}
 \gls{HALEU} can be used in a variety of fuel forms. One of the possible 
 forms is as \gls{TRISO} fuel particles. \gls{TRISO} fuel particles contain 
-a small fuel kernel surrounded by four layers of material: a porous caron 
-buffer layer, an inner pyrolytic carbon layer, a silicon carbide layer, and 
-an outer pyrolytic carbide layer \cite{powers_fully_2014}. The carbon buffer
-layer helps to accomodate swelling or shrinking of the fuel kernel and 
-accumulate internal gases released from the kernel. The inner and outer 
-pyrolytic carbon layers protect the silicon carbide layer from chemical 
-reactions and help prevent the diffusion of any fission products out of the 
-particle. The silicon carbide layer helps prevent the diffusion of fission 
-products out of the particle. The total diameter for one \gls{TRISO} 
-particle is on the order of 800-900 $\mu$m \hl{citation}. \gls{TRISO} fuel 
-particles are often used in 
-larger spherical pebbles or hexagonal graphite prismatic blocks 
-\cite{powers_fully_2014}.
+a small fuel kernel surrounded by four layers of material: a porous carbon 
+buffer layer, and inner pyrolytic carbon layer, a silicon carbide layer, 
+and an outer pyrolytic carbon layer \cite{demkowicz_coated_2019}. The fuel 
+kernel in the center contains the uranium fuel, typically in an oxide 
+or oycarbide form. The porous carbon buffer acts an attenuator for any 
+recoil fission products and accomodate pressure changes for gas accumulation.
+The pyrolytic carbon layers protect the silicon carbide layer from 
+any chemical degredation, while the silicon carbide layer maintains the 
+structure integrity of the particle from any stresses and is the primary 
+barrier against fission product gas release. The actual dimensions 
+of each layer depends on the exact manufacturing and design purpose, but 
+the \gls{TRISO} kernels are typically between 350-600 $\mu$m in diameter 
+\cite{demkowicz_coated_2019}. 
 
-\gls{TRISO} particles with \gls{HALEU} are used in a variety of reactor designs 
-\cite{harlan_x-energy_2018,mitchell_usnc_2020,hussain_advances_2018}.
+\hl{performance of TRISO particles}
+
+Multiple \gls{TRISO} kernels are combined together into a a pebble or 
+a cyclindrical compact for placement in a graphite block, based on the 
+design of the reactor \cite{demkowicz_coated_2019}. Each form of 
+\gls{TRISO} particles has been used previously; the \gls{HTTR} uses 
+\gls{TRISO} particles in cylindrical compacts in a graphite block 
+\cite{shiozawa_overview_2004} and the \hl{find pebble example}.
+Many advanced reactor designs will use \gls{TRISO} particles as their 
+fuel form \cite{harlan_x-energy_2018,hussain_advances_2018}. 
+
+\hl{fcm fuel, how is it different from triso?}
 
 \subsection{Expected Demand}
 A survey of select advanced reactor companies by \gls{NEI} reports an 
 expected cumulative demand of \gls{HALEU} of almost 600 MT by 2030 
 \cite{korsnick_need_2018}.
 
-Demand for ARDP reactors will begin in 2024, so that fuel is 
+Demand for \gls{ARDP} reactors will begin in 2024, so that fuel is 
 properly fabricated in time for reactors to come on-line \cite{noauthor_establishing_2022}.
 Other companies are expecting to deploy working \gls{HALEU}-fueled reactors 
 by the mid-2020's \cite{noauthor_establishing_2022}.
