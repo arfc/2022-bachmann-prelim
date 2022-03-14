@@ -145,7 +145,10 @@ material from the mine to final disposal in a final respository (the
 ``HLW Sink'' in Figure \ref{fig:once-through_fuel_cycle}. The ``advanced reactor'' 
 node in Figure 
 \ref{fig:once-through_fuel_cycle} represents any subset of the advanced reactors included 
-in the scenario. The \glspl{LWR} are deployed at their specific start and end dates 
+in the scenario. This is a simplified version of what was modeled in 
+\cite{bachmann_enrichment_2021} that removes steps in the fuel cycle that 
+do not affect the reported results. The \glspl{LWR} are deployed at their 
+specific start and end dates 
 using the ``cycamore::DeployInst'', the advanced reactors are deployed as needed by 
 the ``cycamore::ManagerInst'', and the energy demand of the scenario is defined using 
 the ``cycamore::GrowthRegion'' \cite{scopatz_cyclus_2015}. All of the agents
@@ -160,7 +163,8 @@ US and the transition to multiple
 combinations of these reactors and different energy demand scenarios, 
 summarized in Table \ref{tab:scenarios_once-through}. Scenario 1 models
 the \gls{LWR} fleet without the transition to any advanced reactor to provide 
-a comparison to if no new reactors are built.  
+a comparison to what has historically been needed to for a fuel cycle 
+based on enrichments to less than 5\% U-235.  
 
 \begin{table}[ht]
     \centering
