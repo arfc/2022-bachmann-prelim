@@ -389,8 +389,35 @@ for long-term support of \gls{HALEU} reactors.
 
 
 \subsection{Fuel forms}
-\gls{HALEU} can be used in a variety of fuel forms. One of the possible 
-forms is as \gls{TRISO} fuel particles. \gls{TRISO} fuel particles contain 
+Advanced reactor designs that require \gls{HALEU} in a variety of fuel 
+forms (Table \ref{tab:fuel_forms}). Each of the fuel forms required has 
+distinct advantages and disadvantages. 
+
+\begin{table}
+    \centering
+    \caption{Fuel form required by select advanced reactors that will 
+    require \gls{HALEU}. Reactor designs listed here are all of US origin, 
+    and information was obtained from \cite{hussain_advances_2018} unless 
+    otherwise specified.}
+    \label{tab:fuel_forms}
+    \begin{tabular}{c c c}
+        \hline
+        Reactor Name & Company & Fuel form \\\hline 
+        EM$^2$ & General Atomics & UC pellet \\
+        eVinci & Westinghouse & UO$_2$ or UN \\
+        Mk 1 PB-FHR & UC Berkeley & \gls{TRISO} pebbles\\
+        \gls{MMR} \cite{mitchell_usnc_2020} & \gls{USNC} & UCO \gls{FCM} compact\\
+        Natrium & Terrapower & Metallic \\
+        SC-HTGR & Framatome & UCO \gls{TRISO} compacts \\
+        Superstar  & \gls{ANL} & U/Pu metallic fuel \\
+        Westinghouse Lead Fast Reactor  & Westinghouse & Oxide \\
+        Xe-100 \cite{harlan_x-energy_2018} & X-energy & \gls{TRISO} pebbles \\
+        \hline        
+        
+    \end{tabular}
+\end{table}
+
+\gls{TRISO} fuel particles contain 
 a small fuel kernel surrounded by four layers of material: a porous carbon 
 buffer layer, and inner pyrolytic carbon layer, a silicon carbide layer, 
 and an outer pyrolytic carbon layer \cite{demkowicz_coated_2019}. The fuel 
@@ -403,9 +430,9 @@ structure integrity of the particle from any stresses and is the primary
 barrier against fission product gas release. The actual dimensions 
 of each layer depends on the exact manufacturing and design purpose, but 
 the \gls{TRISO} kernels are typically between 350-600 $\mu$m in diameter 
+\cite{demkowicz_coated_2019}. \gls{TRISO} particles are known to have 
+favorable performance at high temperatures 
 \cite{demkowicz_coated_2019}. 
-
-\hl{performance of TRISO particles}
 
 Multiple \gls{TRISO} kernels are combined together into a a pebble or 
 a cyclindrical compact for placement in a graphite block, based on the 
@@ -413,10 +440,12 @@ design of the reactor \cite{demkowicz_coated_2019}. Each form of
 \gls{TRISO} particles has been used previously; the \gls{HTTR} uses 
 \gls{TRISO} particles in cylindrical compacts in a graphite block 
 \cite{shiozawa_overview_2004} and the \hl{find pebble example}.
-Many advanced reactor designs will use \gls{TRISO} particles as their 
-fuel form \cite{harlan_x-energy_2018,hussain_advances_2018}. 
-
-\hl{fcm fuel, how is it different from triso?}
+\gls{TRISO} particles can also be placed in a silicon-carbide matrix 
+to form \gls{FCM} fuel. This fuel form performs better in high-burnup 
+applications because of improved stability under neutron irradtion and 
+larger thermal conductivity \cite{snead_fully_2011}. The use of 
+\gls{FCM} fuel in \glspl{LWR} to burn transuranic material from waste 
+has been investigated \cite{snead_fully_2011,venneri_fully_2011}. 
 
 \subsection{Expected Demand}
 A survey of select advanced reactor companies by \gls{NEI} reports an 
