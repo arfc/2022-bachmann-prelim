@@ -113,10 +113,21 @@ options (e.g. from a once-through fuel cycle to one with recycling), the
 performance of one fuel cycle with a growth in the demand of nuclear power, 
 and the effect of perturbations on a given fuel cycle \cite{piet_dynamic_2011}. 
 
-Stuff about ideal simulators \cite{huff_next_2010,brown_identification_2016}.
+Multiple functionalities can be included in a \gls{NFC} simulator,
+such as material flow tracking and facility deployment \cite{brown_identification_2016}.
+Foundational capabilities of an \gls{NFC} simulator include modeling 
+facility deployment and retirment, fuel materials, timing and capacity of 
+facilities, and external sources of fissile material (such as a mine) 
+\cite{brown_identification_2016}. Each of these features can then be 
+expanded upon through `integral' or `exemplary' features to expand the 
+capabilities of the foundational capabilities. Examples of `integral' 
+features include strategic deployment of fecilities to meet a specified 
+material demand or material prioritization. Examples of `exemplary' 
+features include modeling radioactive decay of materials or calculations 
+of fuel depletion in a reactor \cite{brown_identification_2016}. 
 
 A variety of fuel cycle simulators have been developed with different modeling 
-capabilities. Some of the fuel cycle simulators developed including VISION 
+capabilities. Some of the fuel cycle simulators developed include VISION 
 \cite{yacout_visionverifiable_2006}, 
 \gls{DYMOND} \hl{better citation}, and ORION \cite{gregg_analysis_2012}. 
 VISION was developed primarily to meet the program objectives of the 
@@ -131,12 +142,15 @@ which provides a modular structure for mass flow to occur between modules.
 
 \gls{DYMOND} is a fuel cycle simulator developed by \gls{ANL} that combines 
 multiple modeling paradigms, including system dynamics, discrete events, and
-agent-based modeling \cite{feng_sensitivity_2020}.
-
-performs depletion of meterial inputs to a rector facility using 
-ORIGEN \cite{wieselquist_scale_2020}.
+agent-based modeling \cite{feng_sensitivity_2020}. One distinguishing 
+feature of \gls{DYMOND} is that it performs depletion of material inputs 
+to a reactor facility using ORIGEN \cite{wieselquist_scale_2020}, enabling 
+an `exemplary' functionality.
 
 ORION 
+
+Another \gls{NFC} simulator is \Cyclus. \Cyclus is described in more 
+depth here because it is used to perform the analysis in this work. 
 
 \subsection{\Cyclus}
 \Cyclus is a dynamic, open source agent-based fuel cycle simulator. Built 
@@ -219,29 +233,36 @@ needs.
 
 \subsection{Verification and use of fuel cycle simulators}
 One key piece of work using fuel cycle simulators was a multi-lab effort 
-to verify their results \cite{feng_standardized_2016}.
+to verify the results from \gls{DYMOND}, VISION, ORION, and 
+MARKAL \cite{feng_standardized_2016}. Each \gls{NFC} simulator modeled 
+the same fuel cycle scenario: a no growth transition from \glspl{LWR} 
+to \glspl{SFR}. Each \gls{LWR} in the scenario provides 1000 MWe of 
+electricity and each \gls{SFR} provides 333.3 MWe of electricity. The 
+scenario was designed to be simple enough that the results could be 
+calculated by a spreadsheet, which served as an analytical solution. The 
+results from each \gls{NFC} simulator were comapred to each other and 
+to the spreadsheet solution. Any observed differences were either explained 
+based on modeling implmentation or the resolved through changes to the 
+necessary code. After this inital validation effort was made, it was 
+expanded to include \Cyclus \cite{bae_standardized_2019}. 
 
-Verification of \Cyclus has been performed \cite{bae_standardized_2019}, 
-based on a transition scenario from an open fuel cycle to an advanced
-fuel cycle with reprocessing \cite{feng_standardized_2016}. Due to 
-some inherent differences in \Cyclus and the other fuel cycle simulators 
-used by \cite{feng_standardized_2016} there were some differences in 
-the scenario parameters, such as \gls{LWR} batch size or 
-cycle length. These differences are implemented to conserve the reactor 
-core size, with a negligible difference in the \gls{SFR} core size. \Cyclus 
-was shown to have strong agreement with the verification of other 
-fuel cycle simulators \cite{bae_standardized_2019} with respect to 
-multiple metrics such as reactor startup and decommission schedule, fresh 
-fuel loading, and annual reprocessing throughputs. One major difference
-between \Cyclus and other fuel cycle simulators identified by this work 
-is that \Cyclus fully resolves discrete batches for fuel discharge. This 
-implementation allows \Cyclus to better match realistic fuel handeling, but 
-does not prevent \Cyclus from producing comparable results to other 
-fuel cycle simulators. 
+The results of the verification efforts showed agreement between each 
+of the codes and the spreadsheet results, and some modeling differences 
+were identified. For example, VISION and \gls{DYMOND} model continuous 
+reprocessing at each time step, as opposed to the instantaneous 
+reprocessing modeled by the spreadsheet \cite{feng_standardized_2016}. 
+Another difference identified is that ORION and \Cyclus fully resolve 
+discrete batches for fuel discharge \cite{bae_standardized_2019}. 
+Additionally, the \Cycamore reactor archetype depletes half of the 
+core of fuel upon decommissioning, while the other \gls{NFC} simulators 
+deplete the entire core of fuel upon decommissioning. This modeling 
+difference affects the \gls{TRU} material inventory, and was removed by 
+modifiing the \Cycamore source code to demonstrate that this difference was 
+because of the depletion methodology \cite{bae_standardized_2019}.
 
-The use of \gls{NFC} simulators has often been to evaluate how fuel cycle options 
-can meet specific goals. For example, \gls{DYMOND}, \gls{DANESS}, and 
-\hl{NFCSim} were used to evaluate how different fuel cycle options 
+The use of \gls{NFC} simulators has often been to evaluate how fuel cycle 
+options can meet specific goals. For example, \gls{DYMOND}, \gls{DANESS}, 
+and \hl{NFCSim} were used to evaluate how different fuel cycle options 
 could reduce \gls{SNF} volume in a repository \cite{yacout_dynamic_2000}. 
 
 Use of \gls{NFC} simulators over the 
