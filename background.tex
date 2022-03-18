@@ -175,30 +175,41 @@ features include modeling radioactive decay of materials or calculations
 of fuel depletion in a reactor \cite{brown_identification_2016}. 
 
 A variety of fuel cycle simulators have been developed with different modeling 
-capabilities. Some of the fuel cycle simulators developed include VISION 
-\cite{yacout_visionverifiable_2006}, 
-\gls{DYMOND} \hl{better citation}, and ORION \cite{gregg_analysis_2012}. 
-VISION was developed primarily to meet the program objectives of the 
-\gls{AFCI} based on the functionalities of \gls{DYMOND}-US \cite{yacout_visionverifiable_2006}.
-VISION dynamically models the mass flow of material through the 
-entire fuel cycle and calculates metrics based on the \gls{AFCI} program 
-objectives. New functionalities added to VISION, compared with \gls{DYMOND}-US, 
-include economic costing and isotope decay. VISION is divided into multiple 
-modules to model the mass flow, calculate metrics, perform control, or 
-integration. The software was developed using Powersim software \cite{powersim_powersim_nodate},
-which provides a modular structure for mass flow to occur between modules. 
-
+capabilities. Some of the fuel cycle simulators developed include
+\gls{DYMOND} \hl{better citation}, VISION 
+\cite{yacout_visionverifiable_2006}, \gls{MARKAL} 
+\cite{seebregts_energy/environmental_2002} and ORION 
+\cite{gregg_analysis_2012}.
 \gls{DYMOND} is a fuel cycle simulator developed by \gls{ANL} that combines 
 multiple modeling paradigms, including system dynamics, discrete events, and
 agent-based modeling \cite{feng_sensitivity_2020}. One distinguishing 
 feature of \gls{DYMOND} is that it performs depletion of material inputs 
 to a reactor facility using ORIGEN \cite{wieselquist_scale_2020}, enabling 
-an `exemplary' functionality.
+an `exemplary' functionality. 
+VISION was developed primarily to meet the program objectives of the 
+\gls{AFCI} based on the functionalities of \gls{DYMOND} \cite{yacout_visionverifiable_2006}.
+VISION dynamically models the mass flow of material through the 
+entire fuel cycle and calculates metrics based on the \gls{AFCI} program 
+objectives. New functionalities added to VISION, compared with \gls{DYMOND}, 
+include economic costing and isotope decay. VISION is divided into multiple 
+modules to model the mass flow, calculate metrics, perform control, or 
+integration. The software was developed using Powersim software \cite{powersim_powersim_nodate},
+which provides a modular structure for mass flow to occur between modules. 
+\gls{MARKAL} is a linear programming model that depicts the supply and 
+demand side of an energy system \cite{seebregts_energy/environmental_2002}.
+\gls{MARKAL} models suppliers (e.g. mining), conversion and processing 
+(e.g. power plants), and energy demanders (e.g. automobiles), and 
+solves for the lowest-cost solution to the market modeled with 
+provided constraints. Because \gls{MARKAL} can modela variety of energy
+sources and uses, it hase been used to understand methods to meet carbon 
+emission goals and other energy planning needs 
+\cite{seebregts_energy/environmental_2002}.
 
 ORION 
 
-Another \gls{NFC} simulator is \Cyclus. \Cyclus is described in more 
-depth here because it is used to perform the analysis in this work. 
+Another \gls{NFC} simulator is \Cyclus, an open-source, agent-based 
+\gls{NFC} simulator \cite{huff_fundamental_2016}. \Cyclus is described in 
+more depth here because it is used to perform the analysis in this work. 
 
 \subsection{\Cyclus}
 \Cyclus is a dynamic, open source agent-based fuel cycle simulator. Built 
@@ -270,7 +281,7 @@ The \gls{DRE} can be used to apply physical, economic, and social
 contraints to a fuel cycle model. 
 
 
-SImialr to many of the other fuel cycle simulators developed, material 
+Simialr to many of the other fuel cycle simulators developed, material 
 compositions in \Cyclus are 
 defined using recipes. However a module has been developed to allow for 
 depletion calculations of a single enrichment reactor core using ORIGEN 
@@ -332,10 +343,10 @@ both fast and critical reactors \cite{wigeland_nuclear_2014}.
 Based on the results of the \gls{ES}, many efforts have been made to model 
 the transition to these promising fuel cycle options using fuel cycle 
 simulators. ORION was used to model the transition from a once-through 
-fuel cycle option using enriched uranium in thermal critical reactors (\gls{EG}
-01) to \gls{EG} 29 \cite{sunny_transition_2015}. This work in ORION 
-deomonstrated the importance of new \glspl{LWR} built or license extensions of 
-exisiting reactors for this transition. 
+fuel cycle option using enriched uranium in thermal critical reactors 
+(\gls{EG} 01) to \gls{EG} 29 \cite{sunny_transition_2015}. This work in 
+ORION deomonstrated the importance of new \glspl{LWR} built or license 
+extensions of exisiting reactors for this transition. 
 
 \Cyclus has been used to model the \gls{EG} 23 transition scenario assuming 
 a 1\% growth in power demand 
@@ -346,6 +357,13 @@ time, and reactor exit time for the \Cyclus simulation qualitatively
 matches well with the results of the \gls{DYMOND} simulation, but the power 
 demand growth could match better to the target 1\% by slightly modifying 
 the \gls{SFR} deployment. 
+
+The \gls{EG} 01 to \gls{EG} 23 transition was comapred via simulations 
+on \Cyclus and ORION \cite{littell_development_2016}. These simulations
+contained constraints such as restricting the mass of separated 
+plutonium to less than 100 MT, not allowing reprocessing to begin until 
+at least 2050, and a 5\% surplus of deficit in the energy from the 
+demand was allowed. \hl{finish going through this paper.}
 
 \section{Sensitivity analysis and optimization}
 Sensitivity analysis is a broad termed used to encompass sensitivity analysis, 
