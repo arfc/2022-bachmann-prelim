@@ -1,31 +1,32 @@
 \section{The nuclear fuel cycle}
-The nuclear fuel cyclye encompasses the activities and processes 
+The nuclear fuel cycle encompasses the activities and processes 
 for the use of fissile materials in fission nuclear reactors \cite{tsoulfanidis_nuclear_2013}. 
-This can include the use of uranuim, thorium, or even plutonium as the 
+Uranuim, thorium, or even plutonium can be used as the 
 fuel for the reactor, with uranium being the most widely used fuel for 
-power reactors \hl{FIND CITATION}. This work focuses on a uranium based 
+power reactors \hl{FIND CITATION}. This work focuses on a uranium-based 
 fuel cycle. The nuclear fuel cycle begins with the mining of uranium ores from the earth 
 and ends with either the final disposal of the radioactive waste produced 
-\cite{tsoulfanidis_nuclear_2013}. There are mutliple variations of 
-the uranium-based fuel cycle that differ based on the type and design of 
-the reactors deployed. Two primary variations on the nuclear fuel cycle 
-include the once-through and uranium and plutonium recycling fuel cycles 
+\cite{tsoulfanidis_nuclear_2013}. A fuel cycle can vary based on the
+design of the reactor(s) deployed, such as if enrichment is required.  
+Two possible variations on the nuclear fuel cycle 
+include the once-through and recycling fuel cycles 
 \cite{tsoulfanidis_nuclear_2013}. Figure \ref{fig:fuel_cycle} shows 
 an example of all possible steps in a nuclear fuel cycle. 
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.8]{nuclear_fuel_cycle.jpg}
-    \caption{A complete view of all options available for the nuclear 
+    \caption{A complete view of options available for a once-through and 
+    a recycling nuclear 
     fuel cycle. Graphic from \protect\cite{noauthor_stages_2020}.}
     \label{fig:fuel_cycle}
 \end{figure}
 
 \subsection{Once-through fuel cycle}
-A once-through fuel cycle is characterized by fuel only going through one 
+A once-through fuel cycle is characterized by fuel going through one 
 pass through a reactor before being disposed of. In Figure \ref{fig:fuel_cycle},
 this fuel cycle option is shown through the gray line from the storage 
-step to the disposal step. None of thematerial flows from the Reprocessing 
+step to the disposal step. None of the material flows from the Reprocessing 
 Facility in Figure \ref{fig:fuel_cycle} are included in a once-through 
 fuel cycle. This is the fuel cycle option currently employed in the 
 United States. 
@@ -33,7 +34,7 @@ United States.
 
 \subsection{Recycling fuel cycle}
 A recycling fuel cycle is characterized by fuel going through additional 
-passes through a reactor after a separtations step to remove fission 
+passes through a reactor after a separtation step to remove fission 
 products. There are a variety of methods to employ recycling in a 
 fuel cycle. One distinction between recycling options is the number of 
 times fuel is reprocessed. If fuel is reprocessed and burned in a reactor
@@ -91,9 +92,11 @@ cycle with reprocessing, with an average of about \$52/MWh
 \cite{widder_benefits_2010}. The ranges in the \gls{LCOE} comes from 
 differences in assumptions in determining the costs. 
 
-\subsection{Enrichment}
+\subsection{Uranium enrichment}
 In the nuclear fuel cycle, enrichment increases the relative abundance of 
-uranium-235 compared to uranium-238 in the fuel. The capacity of an 
+uranium-235 compared to uranium-238 in the fuel. This step is needed if the 
+reactors deployed require a larger concentration of fissile material in 
+the fuel that what is naturally ocurring. The capacity of an 
 enrichment facility is based on a number of quantities \cite{tsoulfanidis_nuclear_2013}:
 \begin{subequations}
     \begin{equation}
@@ -366,11 +369,11 @@ at least 2050, and a 5\% surplus of deficit in the energy from the
 demand was allowed. \hl{finish going through this paper.}
 
 \section{Sensitivity analysis and optimization}
-Sensitivity analysis is a broad termed used to encompass sensitivity analysis, 
+Sensitivity analysis is a broad term used to encompass sensitivity analysis, 
 uncertainty propagation, and parametric studies. 
 
 Sensitivity analysis for fuel cycle simulations has been done using a variety of 
-tools. Coupeling of \Cyclus with the Metaheuristic Opimization Tool (MOT) from 
+tools. Coupling of \Cyclus with the Metaheuristic Opimization Tool (MOT) from 
 \gls{ORNL} demonstrated \cite{feng_sensitivity_2020}. 
 
 One tool for performing sensitivity analysis and optimization is 
@@ -384,7 +387,7 @@ Dakota can easily be coupled to a variety of codes in a ``black-box'' manner
 to remove supplying Dakota with any of the other program's source code. 
 
 Dakota has been coupled to fuel cycle simulators such as \gls{DYMOND} and \Cyclus 
-\cite{chee_sensitivity_2019}. This coupeling was used to perform one-at-a-time, 
+\cite{chee_sensitivity_2019}. This coupling was used to perform one-at-a-time, 
 synergistic, and global sensitivity analysis on the transition from \gls{EG} 01
 to \gls{EG} 30. 
 
@@ -406,7 +409,7 @@ deployment schedule will meet the desired goals. Common factors
 considered with optimization of a nuclear fuel cycle are natural 
 resource utilization, economics, environmental impacts, and proliferation 
 concerns \cite{passerini_systematic_2014,wigeland_nuclear_2014}. Optimizing 
-a fuel cycle can be solved as a sinlge-objective or multi-objective 
+a fuel cycle can be solved as a single-objective or multi-objective 
 problem. 
 
 A variety of algorithms can be used to optimize a given 
@@ -430,7 +433,7 @@ main classifications of uranium enrichemnt.
 
 \begin{table}
     \centering
-    \caption{Categories of uranium enrichment by weghit fraction of 
+    \caption{Categories of uranium enrichment by weight fraction of 
     uranium-235.}
     \label{tab:enrichemnt}
     \begin{tabular}{l c c}
@@ -587,7 +590,7 @@ waste radioacitivity waste.
 Increasing the fuel enrichment of the NuScale \gls{SMR} has also been investigated 
 \cite{carlson_implications_2022}. Increasing the fuel enricment to 8.34\% doubled the 
 fuel discharge burnup and the cycle time. Fission product poisons, specifically 
-sumarium-149 and xenon-135, increased on concentration when \gls{HALEU} fuel was used. 
+sumarium-149 and xenon-135, increased in concentration when \gls{HALEU} fuel was used. 
 This increase impacts the neutrons poisons that are needed during operation and the 
 radioactivity of the fuel after discharge. Using \gls{HALEU} in the core also led 
 to a reduction in the \gls{LCOE} for the reactor for certain combinations of 
