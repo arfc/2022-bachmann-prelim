@@ -195,42 +195,6 @@ energy demand.
     \end{tabular}
 \end{table}
 
-\section{Recycle fuel cycle}
-The flow of material through the fuel cycle scenarios with recycling is shown in 
-Figure \ref{fig:recycle_fuel_cycle}. 
-
-\input{recycling-flow}
-
-The scenarios investigated for this section of analysis vary by the 
-energy demand of the scenario and the recycling scheme. Energy demands vary 
-between a no growth and a 1\% growth model, the same as how this parameter 
-is varied in the once-through fuel cycle models. The reycling scheme is varied 
-to be either a limited or a continuous recycle, similar to how this parameter 
-was varied in the \gls{ES} \cite{wigeland_nuclear_2014}. All of the scenarios 
-with recycling will model the transition from the current fleet of \glspl{LWR} 
-to the X-energy Xe-100, \gls{USNC} \gls{MMR}, and the NuScale VOYGR, the same 
-as in scenarios 7 and 13. 
-
-\begin{table}[ht]
-    \centering
-    \caption{Summary of the recycle fuel cycle transition scenarios.}
-    \label{tab:scenarios_recycle}
-    \begin{tabular}{l l l}
-            \hline
-            Scenario number & Energy growth model & Recycle scheme\\\hline
-            14 & No growth & Limited \\
-            15 & No growth & Continuous \\
-            16 & 1\% growth & Limited \\
-            17 & 1\% growth & Continuous \\
-            \hline
-    \end{tabular}
-\end{table}
-
-A separations facility is defined to be deployed 5 years before the transition 
-begins (i.e. in 2020), as this strategy is commonly used for modeling 
-transitions with reyccling to ensure that enough fuel can be spearated and 
-processed in time for use in advanced reactors \cite{passerini_systematic_2014,richards_application_2021}.
-
 \section{Calculation of results}
 The results presented for the transition scenarios are from the SQLite database 
 that is output by each \Cyclus simulation. Because the non-reactor facilities 
