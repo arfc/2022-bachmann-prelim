@@ -2,10 +2,10 @@
 The nuclear fuel cycle encompasses the activities and processes 
 for the use of fissile materials in fission nuclear reactors \cite{tsoulfanidis_nuclear_2013}. 
 Uranuim, thorium, or even plutonium can be used as the 
-fuel for the reactor, with uranium being the most widely used fuel for 
-power reactors \hl{FIND CITATION}. This work focuses on a uranium-based 
-fuel cycle. The nuclear fuel cycle begins with the mining of uranium ores from the earth 
-and ends with either the final disposal of the radioactive waste produced 
+fuel for the reactor, with  this work focusing on a uranium-based 
+fuel cycle. The nuclear fuel cycle begins with the mining of uranium ores 
+from the earth and ends with either the final disposal of the radioactive 
+waste produced 
 \cite{tsoulfanidis_nuclear_2013}. A fuel cycle can vary based on the
 design of the reactor(s) deployed, such as if enrichment is required.  
 Two possible variations on the nuclear fuel cycle 
@@ -49,10 +49,17 @@ select actinides (typically uranium and plutonium) to remove the
 actinides from an aqueous phase to an organic phase, while the non-desired 
 materials in the \gls{SNF} remain in the aqueous phase \hl{citation}. There 
 are a variety of methods to perform aqueous reprocessing, but the primary 
-method is the PUREX process. Pyroprocessing uses electric potentials to 
+method is the PUREX process. The separated uranium and plutonium from 
+aqueous reprocessing is then fabricated into \gls{MOX} fuel for use in 
+a thermal-specturm reactor. \gls{MOX} fuel will go through one 
+pass in a reactor, before disposal. Pyroprocessing uses electric potentials to 
 pull actinides (uranium and 
 \glspl{TRU}) onto a cathode from a molten salt bath, while undesired materials
-either stay in the molten salt bath or on an anode \hl{Citation}
+either stay in the molten salt bath or on an anode \hl{Citation}. The 
+separated U/\gls{TRU} material from pyroprocessing can then be fabricated 
+into metallic fuel for use in a fast-spectrum reactor. The \gls{SNF} from 
+the fast reactor can be reprocessed multiple times and continuously put back 
+into a reactor. 
 
 Reprocessing \gls{SNF} is known to improve reosurce utilization, compared 
 with a once-through fuel cycle. Ine estimate reports that uranium ore
@@ -71,7 +78,7 @@ The reduction of the radioacitivity of waste in a repository occurrs because
 of the removal of actinides, which are the long-lived nuclides that 
 dominate radioactivity after the first 50 years of decay. 
 
-Despite these benefits of reprocessing, it is not without its disdavantages.
+Despite these benefits of reprocessing, it has its disdavantages.
 The amount of \gls{LLW} generated greatly increases by using 
 reprocessing \cite{widder_benefits_2010}. The \gls{LLW} generated 
 from reprocessing includes any solvents or materials used for the process.
@@ -91,6 +98,21 @@ average of about \$47/MWh, and \$35-81/MWh for a fuel
 cycle with reprocessing, with an average of about \$52/MWh 
 \cite{widder_benefits_2010}. The ranges in the \gls{LCOE} comes from 
 differences in assumptions in determining the costs. 
+
+There are also advantages and disadvantages of using each reprocessing 
+method. A comparison of fuel cycle options for the Republic of Korea 
+showed that using pyroporcessing with \glspl{SFR} required less natural 
+uranium than both a once-through fuel cycle and using aqueous reprocessing 
+and \glspl{PWR} to produce the same amount of energy 
+\cite{park_comparative_2011}. Both methods of reprocessing were shown 
+to substantially reduce the amount of \gls{SNF} that must be disposed of,
+but using pyroprocesisng with a fast reactor produced no \gls{SNF} to 
+be disposed of. This occured because the separated material from 
+pyroprocessing that can't be recycled in a reactor is assumed to be disposed 
+of as \gls{LLW} in the analysis. However, the aqueous reprocessing with 
+thermal reactors fuel cycle had an increase in the amount of \gls{LLW} 
+produced compared to the once-through fuel cycle. 
+
 
 \section{Fuel cycle simulators}
 \gls{NFC} simulators are computational tools to model the flow of materials
@@ -370,6 +392,11 @@ Another method explored to optimize fuel cycle options is genetic
 algorithms \cite{passerini_systematic_2014}. Genetic algorithms 
 have been shown to find a global minimum when multiple objectives 
 are applied \cite{passerini_systematic_2014}. 
+
+Examples of optimized fuel cycles with \glspl{LWR} show that using a
+once-through fuel cycle minimizes cost, but reprocessing and recycling as 
+much material as possible minimizes the amount of natural uranium 
+required \cite{kunsch_nuclear_1987}.
 
 
 \section{HALEU}
