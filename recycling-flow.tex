@@ -7,7 +7,7 @@
         \node (adv_reactor) [transition, right of=reactor, xshift=3cm]{Advanced Reactor};
         \node (wetstorage) [facility, below of=reactor]{Wet Storage};
         \node (drystorage) [facility, below of=wetstorage]{Dry Storage};
-        \node (cooling) [transition, below of=adv_reactor]{Cooling Pool};
+        \node (cooling) [transition, below of=adv_reactor]{West Storage};
         \node (sinkhlw) [facility, below of=drystorage, xshift=2.5cm]{HLW Sink};
         \node (sinkllw) [facility, left of=enrichment, xshift=-3cm]{LLW Sink};
         \node (separation) [transition, below of=cooling]{Separations};
@@ -20,14 +20,19 @@
         \draw [arrow] (reactor) -- node[anchor=east]{Spent UOX}(wetstorage);
         \draw [arrow] (wetstorage) -- node[anchor=east]{Cool Spent UOX}(drystorage);
         \draw [arrow] (drystorage) |- node[anchor=east]{Casked Spent UOX}(sinkhlw);
-        \draw [arrow] (adv_reactor) -- node[anchor=east]{Spent Fuel}(cooling);
-        \draw [arrow] (cooling) -- node[anchor=east]{Cooled Spent Fuel}(separation);
+        \draw [arrow] (adv_reactor) -- node[anchor=west]{Spent Fuel}(cooling);
+        \draw [arrow] (cooling) -- node[anchor=west]{Cooled Spent Fuel}(separation);
         \draw [arrow] (separation) -| node[anchor=west]{Separated fissile material}(fuelfab);
         \draw [arrow] (fuelfab) |- node[anchor=south]{Reprocessed fuel}(adv_reactor);
         \draw [arrow] (separation) |- node[anchor=west]{Fission Products}(sinkhlw);
+        \draw [arrow] (wetstorage) -- (separation);
 
         \end{tikzpicture}
-    \caption{Fuel cycle facilities and material flow between facilities. Facilities in 
-    red are added in for the transition scenarios.}
+    \caption{Fuel cycle facilities and material flow between facilities for modeling the transition 
+    to advanced reactors with a recycle fuel cycle. Facilities in 
+    red are added in for all of the transition scenarios. Facilities in green 
+    are included in the transitions to continuous recycling. The separations facility
+    is deployed in 2020, five years before the transition, and before 2020 a once-through 
+    fuel cycle is used.}
     \label{fig:recycle_fuel_cycle}
 \end{figure}
