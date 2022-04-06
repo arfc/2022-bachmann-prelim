@@ -395,6 +395,8 @@ perform sensitivity analysis, defining the specific input parameters to
 perturb and the range of values those parameters can take \cite{thiolliere_methodology_2018}.
 They defined the range of values based on known technical capabilities, then 
 sampled uniformly across the range of values to build the simulations. 
+Feng et al. perfomed a similar methdology, but used random sampling 
+in the identified range of input variable values \cite{feng_sensitivity_2020}.
 
 There 
 are multiple types of sensitivity analysis, such as \hl{types of SA}, and 
@@ -402,14 +404,30 @@ global sensitivity analysis. Global sensitivity analysis is a flexible
 technique that can perform many functions such as identifying the input 
 variables that have the most impact on an output variable and identifying 
 input variables that have the least or negligible impact on output 
-variables \cite{thiolliere_methodology_2018}. One metric often used 
+variables \cite{thiolliere_methodology_2018}. One metric used 
 in global sensitivity analysis is the Sobol' indices, which represent the 
 contribution of each input parameter on the variance of the output parameter
 \hl{add more and a citation}. The Sobol' indices are always less than 1, based
 on variance decomposition theory, and the higher the value the more impact 
 the input variable has on the output variable \cite{thiolliere_methodology_2018}.
+Solbol' indices can have different orders, based on the number of input variable 
+interactions being considered. A total indices defines the contribution of a
+sinlge input variable on the output, with all interactions with other inputs 
+considered. 
 
-Sensitivity an
+Applying sensitivity analysis to nuclear fuel cycles has provided insight
+into how material inventories are affected by model parameters. 
+Thielloere et al. identified the fraction of \gls{MOX} fuel in a reactor 
+and the burnup for \gls{UOX} fuel as the most impactful model parameters on 
+the plutonium production and inventory
+for the simplified scenario they created \cite{thiolliere_methodology_2018}. 
+Additionally, they identified cooling time of the \gls{UOX} as contributing 
+to the invetory of \glspl{MA}, with the largest contribution from the 
+americium production. Other work performing sensitivity analysis 
+showed that reactor deployment in a simple fuel cycle affects the amount 
+of waste produced, because of the different amounts of material required 
+for an inital core loading from a \gls{LWR} compared with a refueling 
+of the reactor \cite{feng_sensitivity_2020}. 
 
 Sensitivity analysis for fuel cycle simulations has been done using a variety of 
 tools. Coupling of \Cyclus with the Metaheuristic Opimization Tool (MOT) from 
@@ -556,13 +574,13 @@ on the reactor design (Table \ref{tab:fuel_forms}).
         Reactor Name & Company & Fuel form \\\hline 
         EM$^2$ & General Atomics & UC pellet \\
         eVinci & Westinghouse & UO$_2$ or UN \\
-        Mk 1 PB-FHR & UC Berkeley & \gls{TRISO} pebbles\\
-        \gls{MMR} \cite{mitchell_usnc_2020} & \gls{USNC} & UCO \gls{FCM} compact\\
+        Mk 1 PB-FHR & UC Berkeley & TRISO pebbles\\
+        \gls{MMR} \cite{mitchell_usnc_2020} & \gls{USNC} & UCO FCM compact\\
         Natrium & Terrapower & Metallic \\
-        SC-HTGR & Framatome & UCO \gls{TRISO} compacts \\
+        SC-HTGR & Framatome & UCO TRISO compacts \\
         Superstar  & \gls{ANL} & U/Pu metallic fuel \\
         Westinghouse Lead Fast Reactor  & Westinghouse & Oxide \\
-        Xe-100 \cite{harlan_x-energy_2018} & X-energy & \gls{TRISO} pebbles \\
+        Xe-100 \cite{harlan_x-energy_2018} & X-energy & TRISO pebbles \\
         \hline        
         
     \end{tabular}
