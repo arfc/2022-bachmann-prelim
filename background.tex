@@ -386,13 +386,30 @@ uncertainty propagation, and parametric studies. Performing sensitivity
 analysis is of importance for modeling the nuclear fuel cycle and fuel 
 cycle transitions because of the many free parameters within each model.
 Performing this analysis identifies and quantifies the effect of input 
-parameters on model outputs \cite{thiolliere_methodology_2018}. There 
+parameters on model outputs \cite{thiolliere_methodology_2018}. Sensitivity 
+analysis is performed by running a fuel cycle simulation multiple times 
+with small perturbations in model inputs between each simulation. Then 
+the output parameters are observed for how they are affected by the 
+perturbations. Thielloere et al. demonstrated a methodology to 
+perform sensitivity analysis, defining the specific input parameters to 
+perturb and the range of values those parameters can take \cite{thiolliere_methodology_2018}.
+They defined the range of values based on known technical capabilities, then 
+sampled uniformly across the range of values to build the simulations. 
+
+There 
 are multiple types of sensitivity analysis, such as \hl{types of SA}, and 
 global sensitivity analysis. Global sensitivity analysis is a flexible 
 technique that can perform many functions such as identifying the input 
 variables that have the most impact on an output variable and identifying 
 input variables that have the least or negligible impact on output 
-variables \cite{thiolliere_methodology_2018}. 
+variables \cite{thiolliere_methodology_2018}. One metric often used 
+in global sensitivity analysis is the Sobol' indices, which represent the 
+contribution of each input parameter on the variance of the output parameter
+\hl{add more and a citation}. The Sobol' indices are always less than 1, based
+on variance decomposition theory, and the higher the value the more impact 
+the input variable has on the output variable \cite{thiolliere_methodology_2018}.
+
+Sensitivity an
 
 Sensitivity analysis for fuel cycle simulations has been done using a variety of 
 tools. Coupling of \Cyclus with the Metaheuristic Opimization Tool (MOT) from 
@@ -417,7 +434,7 @@ Dakota has been used with \gls{DYMOND} to perform sensitivity analysis on a tran
 scenario of "the US nuclear fleet to a closed fuel cycle with small modular 
 \glspl{LWR} and fast reactors fueled by reprocessed used nuclear fuel" 
 \cite{richards_application_2021}. This analysis focused on failure determination
-and global analysis through the Sobol' indicies, and deomnstrated how the 
+and global analysis through the Sobol' indices, and deomnstrated how the 
 combination of these tools can ``identify important design and policy parameters
 for transition scenarios and how those parameters interact not only with a single 
 response, but also synergistically between all parameters and metrics of 
