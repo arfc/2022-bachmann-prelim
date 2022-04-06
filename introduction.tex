@@ -96,35 +96,21 @@ Finally, the investigation concludes by modeling the neutonics of select
 
 \section{Uranium enrichment}
 In the nuclear fuel cycle, enrichment increases the relative abundance of 
-uranium-235 compared to uranium-238 in the fuel. This step is needed if the 
-reactors deployed require a larger concentration of fissile material in 
-the fuel that what is naturally ocurring. The capacity of an 
-enrichment facility is based on a number of quantities \cite{tsoulfanidis_nuclear_2013}:
-\begin{subequations}
-    \begin{equation}
-        F = \text{mass (kg) of feed material per unit time}
-    \end{equation}
-    \begin{equation}
-        P = \text{mass (kg) of product material per unit time}
-    \end{equation}
-    \begin{equation}
-        T = \text{mass (kg) of tails produced per unit time}
-    \end{equation}
-    \begin{equation}
-        x_f = \text{weight fraction of $^{235}$U in the feed stream}
-    \end{equation}
-    \begin{equation}
-        x_p = \text{weight fraction of $^{235}$U in the product stream}
-    \end{equation}
-    \begin{equation}
-        x_t = \text{weight fraction of $^{235}$U in the tails stream}
-    \end{equation}
-    \begin{equation}
-        SWU = \text{separtive work units (SWU); the physical work required to separate the isotopes}
-    \end{equation}
-\end{subequations}
+uranium-235 compared to uranium-238 in the fuel. This process increases
+the relative abunance of fissle material in nuclear fuel, which is needed 
+for most reactor designs. There are a few different technologies that
+can be used to enrich urnaium, with the US currently employing 
+gaseous centrifuges. Gaseous centrifuges are currently used at the Urenco site in New Mexico 
+\cite{us_nrc_louisiana_2022} and planned for use at the Centrus site in Piketon, Ohio 
+\cite{us_nrc_centrus_2021}. Gaseous centrifuges rely on centrifical forces 
+to separate the different uranium isotopes as the gas is placed in a 
+spinning cannister. Each centrifuge takes in a feed stream (e.g. natural uranium)
+an produces a product and a tails stream (i.e. depleted uranium).
 
-Each of these quantites can be related using the following equations:
+The capacity of an 
+enrichment facility is based on a number of quantities \cite{tsoulfanidis_nuclear_2013}, 
+which are defined in Table \ref{tab:enrichment_variables}. Each of these 
+quantites can be related using the following equations:
 \begin{subequations}
     \begin{equation}
         F = P + T
@@ -134,19 +120,41 @@ Each of these quantites can be related using the following equations:
         \label{eq:enrichment_2}
     \end{equation}
     \begin{equation}
-        SWU = [P*V(x_p) +T*V(x_t) - F*V(x_f)]*t
+        SWU = \left[P*V(x_p) +T*V(x_t) - F*V(x_f)\right]*t
     \end{equation}
     \text{in which:}
     \begin{equation}
         V(x_i) = (2x_i - 1)*\ln\left(\frac{x_i}{1-x_i}\right)
     \end{equation}
-    \begin{equation}
-        t = \text{a given time period}
-    \end{equation}
     \label{eq:enrichment}
 \end{subequations}
 
-The equations in Eq. \ref{eq:enrichment} show that as the desired enrichment level 
+\begin{table}
+    \centering
+    \caption{Definitions for variables used to describe throughput and 
+    capacity for an enrichment facility.}
+    \label{tab:enrichment_variables}
+    \begin{tabular}{c c}
+        \hline
+        Variable & Description \\\hline
+        F & Mass (kg) of feed material per unit time \\
+        P & Mass (kg) of product material per unit time \\
+        T & Mass (kg) of tails material per unit time \\
+        x$_f$ & weight fraction of $^{235}$U in the feed stream\\
+        x$_p$ & weight fraction of $^{235}$U in the product stream\\
+        x$_t$ & weight fraction of $^{235}$U in the tails stream\\
+        \gls{SWU} & the physical work required to separate the isotopes\\
+        t & time step\\
+        \hline
+    \end{tabular}
+\end{table}
+
+The \gls{SWU} capacity required to produce the required product stream 
+is the physical work required to put into the system to provide the 
+separation needed. It is also related to the amount of energy the facility 
+requires \cite{tsoulfanidis_nuclear_2013}. 
+
+The subequations in Eq. \ref{eq:enrichment} show that as the desired enrichment level 
 of the product feed increases, the feed mass must also increase, assuming everything 
 else is held constant. The equations also show that as the desired product 
 enrichemnt level increases, the amount of \gls{SWU} capacity needed also increases. 
@@ -157,6 +165,24 @@ throughput have opposite effects on the amount of feed material and required
 (i.e. an increase in one and a decrease in the other) will not lead to a clear 
 expectation to the change in feed material of \gls{SWU} capacity. The effect 
 on these variables will depend on the magnitude of the two changes.
+
+The separation needed to enrich uranium cannot be performed in a single 
+separation step. Therefore, centrifuges at a facility are designed in 
+cascades, as shown in Figure \ref{fig:cascade}. Each cascade is designed with 
+multiple separation stages in series, with multiple centrifuge units in parallel 
+comprising each stage \cite{villani_uranium_1979}. Each stage is designed to 
+produce a product enriched to a certain 
+amount (less than the final product of the cascade) then the product from one 
+stage becomes the feed material for the next stage in the cascade to produce 
+uranium enriched to a greater level. The tails material from each 
+stage is combined with feed material for the previous stage, to help strip 
+out any uranium-235 that is left in the tails. Using the tails in the 
+previous stage developos the cascasde into a counter-current cascade 
+\cite{villani_uranium_1979}, and helps to improve the efficiency of the entire cascade. 
+\hl{find citations, how does this relate to faciity design and fuel cycle 
+needs?}
+
+\input{cascade-figure.tex}
 
 \section{Research Goals}
 The goal of this work is to investigate the impacts of deploying reactors fueled by 
