@@ -19,11 +19,11 @@ reactors must be deployed.
 New \glspl{LWR} are being deployed around the world \hl{Citation}, but 
 new reactor designs, often called advanced reactors, are being developed 
 \cite{hussain_advances_2018} to 
-replace or expand the current fleet or reactors. These advanced reactors 
+replace or expand the current fleet of reactors. These advanced reactors 
 cover a large swath of the design space, from their energy output, to their 
 fuel form, to their cycle length. The deployment of some advanced reactors
-is being investigated, with much of the investigation through the \gls{DOE} 
-\gls{ARDP}
+is being investigated for the US, with much of the investigation through the 
+\gls{DOE} \gls{ARDP}
 \hl{citation}, which aims to support research and the building of 
 demostrations for a select set of the new designs. Some of the goals 
 of the program are to \hl{find more}. 
@@ -38,7 +38,7 @@ uranium enriched to less than 5\% uranium-235. There is currently no
 commercial supply of 
 uranium enriched to this level in the US. Therefore the \gls{DOE} 
 is investigating how to develop a nuclear fuel cycle for uranium enriched to this 
-higher level. 
+increased level. 
 
 Two methods can be used to produce \gls{HALEU}: enrich natural uranium to the 
 required level or downblend \gls{HEU} to the required level. The current US
@@ -56,14 +56,15 @@ could be downblended \cite{patterson_haleu_2019}. Other potential stockpiles
 of \gls{HEU} to downblend include material from \gls{SRS} \cite{regalbuto_addressing_2020} 
 or Y-12 National Security Complex. 
 
-Each of the two methods to produce \gls{HALEU} has their advantages and 
+Each method to produce \gls{HALEU} has its advantages and 
 disadvantages. Enriching uranium to \gls{HALEU} levels is limited by the 
 amount of natural uranium 
-that can be mined and the \gls{SWU} capacity of the available facilities.
+that can be mined and the capacity of the available facilities.
 Downblending \gls{HEU} is limited by the amount of \gls{HEU} avaialable and 
 the downblending capacity of the available facilities. Additionally, 
 potential stockpiles of \gls{HEU} to downblend are known to contain 
-impurities that would affect reactor performance \cite{vaden_isotopic_2018,nelson_foreign_2010}.
+impurities that would affect reactor performance 
+\cite{vaden_isotopic_2018,nelson_foreign_2010}.
 These impurities may limit the amount of downblended \gls{HEU} that can be 
 used in a reactor at once. 
 
@@ -72,6 +73,10 @@ each of these \gls{HALEU} production methods can be used to support
 deploying advanced reactors, the nuclear fuel cycle is modeled. The 
 nuclear fuel cycle describes how fuel for fission energy systems is 
 prepared, processed, and disposed of \cite{tsoulfanidis_nuclear_2013}. 
+The nuclear fuel cycle is often based on the technology 
+deployed, and a transition in the nuclear fuel cycle occurs when new 
+reactor or other fuel cycle technologies are introduced into the 
+nuclear fuel cycle.  
 Modeling the nuclear fuel cycle, typically aided by a \gls{NFC} simulator, 
 models the facilities in the \gls{NFC}, such as mines or reactors, facility
 deployment and decommissioning, and the materials traded between facilities. 
@@ -80,9 +85,9 @@ deployment and decommissioning, and the materials traded between facilities.
 \hl{find good articles here too}. To expand on the information gleaned from 
 modeling \gls{NFC} transitions, sensitivity analysis can be performed on 
 the modeled transition. Sensitivity analysis provides insight into how 
-parameters of the transition, such as the type of advanced reactor, 
-affect metrics of interest, such as the amount of \gls{HALEU} required.
-Sensitivity anlysis ahs been used to show \hl{find something}. The 
+parameters of the simulation (e.g.the start time of the transition)
+affect metrics of interest (e.g. the amount of \gls{HALEU} required).
+Sensitivity anlysis has been used to show \hl{find something}. The 
 results of sensitivity analysis can then be used to optimize a transition 
 based on specified objectives. An example of this is \hl{find something}.
 
@@ -126,6 +131,13 @@ stage is combined with feed material for the previous stage, to help strip
 out any uranium-235 that is left in the tails. Using the tails in the 
 previous stage developos the cascasde into a counter-current cascade 
 \cite{villani_uranium_1979}, and helps to improve the efficiency of the entire cascade. 
+A change in the weight fraction of uranium-235 in the product stream (often 
+referred to as assay) requires a change in the cascade configuration of 
+a facility, even if the required \gls{SWU} capacity is the same. Therefore, 
+understanding the product stream assay, \gls{SWU} capacity needed, and the 
+amount of product needed aids in designing facilities to meet potential 
+demand of \gls{HALEU}.
+
 \hl{find citations, how does this relate to faciity design and fuel cycle 
 needs?}
 
@@ -193,9 +205,12 @@ on these variables will depend on the magnitude of the two changes.
 \input{cascade-figure.tex}
 
 \section{Research Goals}
-The goal of this work is to investigate the impacts of deploying reactors fueled by 
-\gls{HALEU} in the United States, including the impacts on the nuclear fuel cycle and 
-on the reactors deployed. This goal is accomplished 
+The goal of this work is to investigate the impacts of deploying reactors fueled 
+by \gls{HALEU} in the United States, including the impacts on the nuclear fuel 
+cycle and on the reactors deployed. The results of this work are designed to
+aid and guide policy and decision makers on how to establish a fuel cycle and 
+supply chains to support the deployment of \gls{HALEU}-fueled reactors. 
+This goal is accomplished 
 through multiple steps. The first step is modeling of multiple transition scenarios
 to select advanced reactors requiring \gls{HALEU} fuel. The next is performing 
 sensitivity analysis on the modeled transition scenarios and optimize the scenarios
