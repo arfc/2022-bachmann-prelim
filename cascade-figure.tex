@@ -16,6 +16,8 @@
         \node (C13) [centrifuge, below of=C12] {};
         \node (C14) [centrifuge, below of=C13] {};
         \node (C15) [centrifuge, below of=C14] {};
+        \node (label1) [draw=none, fill=none, above of=C7, yshift=2cm] {Cascade};
+        \node (label2) [draw=none, fill=none, below of=label1] {Stage};
 
         
         \draw [arrow] (-3,-3.75)--(-2,-3.75);
@@ -49,12 +51,31 @@
         \draw [arrow] (5.75,-3.75)--(6.25,-3.75);
         \draw (6.25,-1.5) -- (6.25,-6);
         \draw [arrow] (6.25,-1.5) -- (7,-1.5);
-        \draw [arrow] (10,-3.75)--(11,-3.75);
+        \draw [arrow] (6.25,-3) -- (7,-3);
+        \draw [arrow] (6.25,-4.5) -- (7,-4.5);
+        \draw [arrow] (6.25,-6) -- (7,-6);
+        \draw [arrow] (6.25,-1.5) -- (7,-1.5);
+        \draw [arrow] (6.25,-3) -- (7,-3);
+        \draw [arrow] (6.25,-4.5) -- (7,-4.5);
+        \draw [arrow] (6.25,-6) -- (7,-6);
+        \draw (9.75,-1.5) -- (9.75,-6);
+        \draw [arrow] (9, -1.5) -- (9.75,-1.5);
+        \draw [arrow] (9, -3) -- (9.75,-3);
+        \draw [arrow] (9, -4.5) -- (9.75,-4.5);
+        \draw [arrow] (9, -6) -- (9.75,-6);
+        \draw [arrow] (9.75,-3.75)--(10.5,-3.75);
+
+        \draw [dashed] (-2,0) -- (-2,3);
+        \draw [arrow] (label1) -- (-2,3);
+        \draw [dashed] (9.75,-3) -- (9.75,3);
+        \draw [arrow] (label1) -- (9.75,3);
+        \draw [dashed] (2.25,-1.5) -- (2.25,1.5);
+        \draw [dashed] (5.75,-1.5) -- (5.75,1.5);
         \end{tikzpicture}
     \caption{Diagram of material flow through an enrichment facility 
-    cascade. The lines shown are the product stream from each unit, and the 
+    cascade. The lines and arrrows shown are the product stream from each unit, and the 
     tails stream is not shown. Each box represents a single centrifuge, or 
-    unit.
+    unit. How the units comprise a stage and the cascade are identified. 
     Figure recreated from \protect\cite{villani_uranium_1979}.}
     \label{fig:cascade}
 \end{figure}
