@@ -100,12 +100,34 @@ uranium-235 compared to uranium-238 in the fuel. This process increases
 the relative abunance of fissle material in nuclear fuel, which is needed 
 for most reactor designs. There are a few different technologies that
 can be used to enrich urnaium, with the US currently employing 
-gaseous centrifuges. Gaseous centrifuges are currently used at the Urenco site in New Mexico 
-\cite{us_nrc_louisiana_2022} and planned for use at the Centrus site in Piketon, Ohio 
-\cite{us_nrc_centrus_2021}. Gaseous centrifuges rely on centrifical forces 
-to separate the different uranium isotopes as the gas is placed in a 
-spinning cannister. Each centrifuge takes in a feed stream (e.g. natural uranium)
-an produces a product and a tails stream (i.e. depleted uranium).
+gaseous centrifuges. Gaseous centrifuges are currently used at the Urenco site 
+in New Mexico \cite{us_nrc_louisiana_2022} and planned for use at the Centrus 
+site in Piketon, Ohio 
+\cite{us_nrc_centrus_2021}. Gaseous centrifuges are rotating cannisters, 
+and rely on the speed of the rotation to preferentially move heavier 
+materials to the outside of the cannister, so that a larger concentration 
+of the lighter material accumulates near the middle of the cannister \cite{villani_uranium_1979}. 
+To ensure that only the mass difference in the uranium isotopes causes 
+this preferential separation, the uranium is in a UF$_6$ gas, because 
+fluorine only has one naturally occuring isotope. Therefore, the 
+fluorine present does not contribute to any mass differences between 
+different molecules. 
+
+The separation needed to enrich uranium cannot be performed in a single 
+separation step. Therefore, centrifuges at a facility are designed in 
+cascades, as shown in Figure \ref{fig:cascade}. Each cascade is designed with 
+multiple separation stages in series, with multiple centrifuge units in parallel 
+comprising each stage \cite{villani_uranium_1979}. Each stage is designed to 
+produce a product enriched to a certain 
+amount (less than the final product of the cascade) then the product from one 
+stage becomes the feed material for the next stage in the cascade to produce 
+uranium enriched to a greater level. The tails material from each 
+stage is combined with feed material for the previous stage, to help strip 
+out any uranium-235 that is left in the tails. Using the tails in the 
+previous stage developos the cascasde into a counter-current cascade 
+\cite{villani_uranium_1979}, and helps to improve the efficiency of the entire cascade. 
+\hl{find citations, how does this relate to faciity design and fuel cycle 
+needs?}
 
 The capacity of an 
 enrichment facility is based on a number of quantities \cite{tsoulfanidis_nuclear_2013}, 
@@ -166,21 +188,7 @@ throughput have opposite effects on the amount of feed material and required
 expectation to the change in feed material of \gls{SWU} capacity. The effect 
 on these variables will depend on the magnitude of the two changes.
 
-The separation needed to enrich uranium cannot be performed in a single 
-separation step. Therefore, centrifuges at a facility are designed in 
-cascades, as shown in Figure \ref{fig:cascade}. Each cascade is designed with 
-multiple separation stages in series, with multiple centrifuge units in parallel 
-comprising each stage \cite{villani_uranium_1979}. Each stage is designed to 
-produce a product enriched to a certain 
-amount (less than the final product of the cascade) then the product from one 
-stage becomes the feed material for the next stage in the cascade to produce 
-uranium enriched to a greater level. The tails material from each 
-stage is combined with feed material for the previous stage, to help strip 
-out any uranium-235 that is left in the tails. Using the tails in the 
-previous stage developos the cascasde into a counter-current cascade 
-\cite{villani_uranium_1979}, and helps to improve the efficiency of the entire cascade. 
-\hl{find citations, how does this relate to faciity design and fuel cycle 
-needs?}
+
 
 \input{cascade-figure.tex}
 
