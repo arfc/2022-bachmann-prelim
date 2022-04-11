@@ -50,8 +50,10 @@ this work to those of the \gls{ES}.
 \section{Reactors} \label{sec:reactor_methods}
 This work considers three advanced reactors: the \gls{USNC} \gls{MMR}, 
 \cite{mitchell_usnc_2020}, the X-energy Xe-100 
-\cite{hussain_advances_2018,harlan_x-energy_2018}, and the NuScale VOYGR reactor
-\cite{nuscale_chapter_2020,nuscale_chapter_2020-1}. The \gls{USNC} \gls{MMR}
+\cite{hussain_advances_2018,harlan_x-energy_2018,noauthor_x-energy_2021}, and 
+the NuScale VOYGR reactor
+\cite{nuscale_chapter_2020,nuscale_chapter_2020-1,noauthor_spent_nodate}. The 
+\gls{USNC} \gls{MMR}
 and X-energy Xe-100 reactors require \gls{HALEU}, but the NuScale VOYGR requires
 a similar enrichment level to current \gls{LWR} fuel (Table \ref{tab:reactor_summary}). 
 The NuScale VOGYR is included in this work, despite not requiring \gls{HALEU} fuel, 
@@ -79,7 +81,7 @@ not considered in this work.
         Fuel form & UO$_2$ + UCO pebbles & UCO pebbles & UO$_2$ pellets\\
         Discharge fuel burnup (GWd/MTU) & 42.7& 160 & 12 (cycle) \\
         Reactor Lifetime (yrs)& 20 & 60 & 60 \\
-        Cooling Time & & & \\
+        Cooling Time (yrs) & & 0 & 5\\
         \hline
     \end{tabular}
 \end{table}
@@ -179,15 +181,15 @@ how much of the \gls{SNF} is uranium or plutonium that can be reprocessed.
 
 \section{Once-through fuel cycle}
 The flow of material through the modeled once-through fuel cycles is shown 
-in Figure \ref{fig:once-through_fuel_cycle}. The once-through fuel cycles model 
+in Figure \ref{fig:once-through_fuel_cycle}. The once-through fuel cycle model 
 material from the mine to final disposal in a final respository (the 
-``HLW Sink'' in Figure \ref{fig:once-through_fuel_cycle}. The ``advanced reactor'' 
+``HLW Sink'' in Figure \ref{fig:once-through_fuel_cycle}). The ``advanced reactor'' 
 node in Figure 
 \ref{fig:once-through_fuel_cycle} represents any subset of the advanced reactors included 
 in the scenario. This is a simplified version of what was modeled in 
-\cite{bachmann_enrichment_2021} that removes steps in the fuel cycle that 
-do not affect the reported results. The \glspl{LWR} are deployed at their 
-specific start and end dates 
+\cite{bachmann_enrichment_2021}, removing steps in the fuel cycle that 
+do not affect the reported results. The \glspl{LWR} are deployed and 
+decommissioned at their specific start and end dates 
 using the ``cycamore::DeployInst'', the advanced reactors are deployed as needed by 
 the ``cycamore::ManagerInst'', and the energy demand of the scenario is defined using 
 the ``cycamore::GrowthRegion'' \cite{scopatz_cyclus_2015}. All of the agents
@@ -203,7 +205,7 @@ combinations of these reactors and different energy demand scenarios,
 summarized in Table \ref{tab:scenarios_once-through}. Scenario 1 models
 the \gls{LWR} fleet without the transition to any advanced reactor to provide 
 a comparison to what has historically been needed to for a fuel cycle 
-based on enrichments to less than 5\% U-235. A 1\% annual growth in 
+based on enrichments to less than 5\% uranium-235. A 1\% annual growth in 
 demand (Scenarios 8-13) is less than what was modeled by \cite{dixon_estimated_2022}
 (1.2\%-2\%) but more than the \hl{EIA AEO 2021 Reference} (0.9\%), and 
 provides middle-ground esitmate on material requirements for a growing 
@@ -243,8 +245,9 @@ the material requirements and waste of each scenario are calculated based on
 the material sent to and discharged from the reactors in each scenario. 
 
 The mass of enriched uranium reported is the mass that is sent to the reactors 
-at each time step. The \gls{SWU} required is also calculated based on the 
+at each time step. The \gls{SWU} required in each scenario is calculated based on the 
 mass sent to the reactors, and does not reflect the capacity of an actual 
 facility. The mass of natural uranium required to produce the enriched uranium 
-is calculated based on the mass of product sent to the reactors, Eq. \ref{eq:enrichment},
-and 
+is calculated based on the mass of product sent to the reactors, Eq. \ref{eq:enrichment}.
+This calculations accounts for a 0.2\% product loss in fuel fabrication, 
+mirroring assumed product losses in the \gls{ES} \cite{wigeland_nuclear_2014}.
