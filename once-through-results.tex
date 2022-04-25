@@ -12,20 +12,24 @@ for each metric.
 
 \section{Scenario 1}
 Scenario 1 models only the \glspl{LWR} deploying the United States with no 
-perscribed energy demand. This scenario provides insight on historical 
+prescribed energy demand. This scenario provides insight on historical 
 requirements of the nuclear indsutry as well as future demands if no 
-new reactors are deployed. \hl{Energy} Figure \ref{fig:reactor1} shows the number of 
-reactors deployed in Scenario 1 as a function of time. A maximum of 109 
-\glspl{LWR} are deployed at one time in this scenario, and 92 \glspl{LWR}
+new reactors are deployed. Figure \ref{fig:energy_reactor1} shows the number of 
+reactors deployed in Scenario 1 as a function of time comapred to the 
+energy produced by the \glspl{LWR} each year. The engery produced by the 
+\glspl{LWR} follows with the number of reactors that are deployed. A maximum of 109 
+\glspl{LWR} are deployed at one time in this scenario, producing  and 92 \glspl{LWR}
 are deployed when the transition begins in 2025. All of the \glspl{LWR} are
 decommissioned by October of 2055. 
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.8]{s1_reactors.pdf}
-    \caption{Number of LWRs deployed at each time step in Scenario 1.}
-    \label{fig:reactor1}
+    \includegraphics[scale=0.8]{s1_energy_reactors.pdf}
+    \caption{Energy supplied by \glspl{LWR} in Scenario 1 each year of
+    the simulation compared to the number of reactors deployed.}
+    \label{fig:energy_reactor1}
 \end{figure}
+
 
 The mass of enriched uranium sent to the \glspl{LWR} in this scenario (Figure 
 \ref{fig:fuel1}) follows the general pattern of the reactor deployment, but with 
@@ -88,6 +92,7 @@ discharged from the reactors across the entire simulation, and an average of
 \end{figure}
 
 \section{Energy Supplied}
+
 \subsection{No growth scenarios}
 \begin{figure}
     \centering
@@ -96,8 +101,8 @@ discharged from the reactors across the entire simulation, and an average of
     the energy demand (the black line)}
     \label{fig:energy_nogrowth}
 \end{figure}
-\subsection{1\% growth scenarios}
 
+\subsection{1\% growth scenarios}
 \begin{figure}
     \centering
     \includegraphics{1percent_energy.pdf}
@@ -165,7 +170,12 @@ be the fewest reactors required for that scenario.
 \end{table}
 
 \subsection{1\% growth scenarios}
-
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.8]{1percent_reactors.pdf}
+    \caption{Total number of advanced reactors as a function of time in Scenarios 8-13.}
+    \label{fig:1percent_reactors}
+\end{figure}
 \begin{table}
     \centering 
     \caption{Maximum number of each type of advanced reactor and maximum total 
@@ -251,7 +261,67 @@ be the fewest reactors required for that scenario.
 \end{figure}
 
 \subsection{1\% growth scenarios}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_fuel.pdf}
+        \caption{Mass of fuel sent to reactors at each time step.}
+        \label{fig:1percent_all_fuel}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_AR_fuel.pdf}
+        \caption{Mass of fuel sent to advanced reactors at each time step.}
+        \label{fig:1percent_AR_fuel}
+    \end{subfigure}
+       \caption{Total mass of fuel required by reactors 
+       at each time step.}
+       \label{fig:1percent_fuel}
+\end{figure}
 
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_uranium.pdf}
+        \caption{Mass of uranium sent to all reactors at each time step.}
+        \label{fig:1percent_all_urnaium}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_AR_uranium.pdf}
+        \caption{Mass of enriched uranium sent to advanced reactors at each time step.}
+        \label{fig:1percent_AR_uranium}
+    \end{subfigure}
+       \caption{Total mass enriched uranium required by reactors
+       at each time step.}
+       \label{fig:1percent_urnaium}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_feed.pdf}
+        \caption{Mass of feed uranium to produce enriched uranium sent to 
+        all reactors at each time step.}
+        \label{fig:1percent_all_feed}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_AR_feed.pdf}
+        \caption{Mass of feed uranium to produce enriched uranium sent to 
+        advanced reactors at each time step.}
+        \label{fig:1percent_AR_feed}
+    \end{subfigure}
+       \caption{Total mass of feed uranium required to produce enriched uranium
+       at each time step.}
+       \label{fig:1percent_feed}
+\end{figure}
 \section{SWU capacity}
 \subsection{No growth scenarios}
 
@@ -278,6 +348,27 @@ be the fewest reactors required for that scenario.
 \end{figure}
 
 \subsection{1\% growth scenarios}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_SWU.pdf}
+        \caption{\gls{SWU} capacity required to enrich the mass of 
+        uranium sent to reactors at each time step.}
+        \label{fig:1percent_all_SWU}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_AR_SWU.pdf}
+        \caption{\gls{SWU} capacity required to enrich the mass of 
+        uranium sent to advanced reactors at each time step.}
+        \label{fig:1percent_AR_SWU}
+    \end{subfigure}
+       \caption{Total mass of fuel and enriched uranium required by all reactors 
+       at each time step.}
+       \label{fig:1percent_swu}
+\end{figure}
 
 \section{Waste}
 \subsection{No growth scenarios}
@@ -305,3 +396,24 @@ be the fewest reactors required for that scenario.
 \end{figure}
 
 \subsection{1\% growth scenarios}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_waste.pdf}
+        \caption{Mass of fuel discharged from all reactors as 
+        a function of time.}
+        \label{fig:1percent_all_waste}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_AR_waste.pdf}
+        \caption{\gls{SWU} capacity required to enrich the mass of 
+        uranium sent to advanced reactors at each time step.}
+        \label{fig:1percent_AR_waste}
+    \end{subfigure}
+       \caption{Mass of fuel discharged from advanced reactors 
+       as a function of time. }
+       \label{fig:1percent_waste}
+\end{figure}
