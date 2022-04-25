@@ -94,6 +94,16 @@ discharged from the reactors across the entire simulation, and an average of
 \section{Reactor deployment}
 Each of the scenarios are compared on the number of advanced reactors that must 
 be built to meet the prescribed energy demand. 
+
+The \Cycamore `ManagerInst' has preferential deployment of prototypes based on 
+the order in which they are listed in the input file. The first prototype 
+is deployed until deploying more would create a surplus of the required 
+commodity (in this case power), then the next prototype is deployed until 
+its deployment would create a surplus of the requried commodity, and so forth. 
+Based on this, the prototypes were listed in decreasing order of power 
+output (i.e. Xe-100, VOYGR, then \gls{MMR}, for the necessary prototypes 
+in that scenario) so that the number of reactors deployed is optimized to 
+be the fewest reactors required for that scenario. 
 \subsection{No growth scenarios}
 
 \begin{figure}
@@ -169,18 +179,18 @@ be built to meet the prescribed energy demand.
         \centering
         \includegraphics[width=\textwidth]{nogrowth_fuel.pdf}
         \caption{Mass of fuel sent to reactors at each time step.}
-        \label{fig:nogrowth_fuel}
+        \label{fig:nogrowth_all_fuel}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{nogrowth_AR_fuel.pdf}
         \caption{Mass of fuel sent to advanced reactors at each time step.}
-        \label{fig:nogrowth_uranium}
+        \label{fig:nogrowth_AR_fuel}
     \end{subfigure}
-       \caption{Total mass of fuel and enriched uranium required by all reactors 
+       \caption{Total mass of fuel required by reactors 
        at each time step.}
-       \label{fig:nogrowth_resources}
+       \label{fig:nogrowth_fuel}
 \end{figure}
 
 \begin{figure}
@@ -189,7 +199,7 @@ be built to meet the prescribed energy demand.
         \centering
         \includegraphics[width=\textwidth]{nogrowth_uranium.pdf}
         \caption{Mass of uranium sent to all reactors at each time step.}
-        \label{fig:nogrowth_AR_fuel}
+        \label{fig:nogrowth_all_urnaium}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
@@ -198,9 +208,31 @@ be built to meet the prescribed energy demand.
         \caption{Mass of enriched uranium sent to advanced reactors at each time step.}
         \label{fig:nogrowth_AR_uranium}
     \end{subfigure}
-       \caption{Total mass of fuel and enriched uranium required by advanced reactors 
+       \caption{Total mass enriched uranium required by reactors
        at each time step.}
-       \label{fig:nogrowth_AR_resources}
+       \label{fig:nogrowth_urnaium}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_feed.pdf}
+        \caption{Mass of feed uranium to produce enriched uranium sent to 
+        all reactors at each time step.}
+        \label{fig:nogrowth_all_feed}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_AR_feed.pdf}
+        \caption{Mass of feed uranium to produce enriched uranium sent to 
+        advanced reactors at each time step.}
+        \label{fig:nogrowth_AR_feed}
+    \end{subfigure}
+       \caption{Total mass of feed uranium required to produce enriched uranium
+       at each time step.}
+       \label{fig:nogrowth_feed}
 \end{figure}
 
 \subsection{1\% growth scenarios}
