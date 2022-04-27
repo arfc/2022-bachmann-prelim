@@ -19,8 +19,11 @@ reactors deployed in Scenario 1 as a function of time comapred to the
 energy produced by the \glspl{LWR} each year. The engery produced by the 
 \glspl{LWR} follows with the number of reactors that are deployed. A maximum of 109 
 \glspl{LWR} are deployed at one time in this scenario, producing  and 92 \glspl{LWR}
-are deployed when the transition begins in 2025. All of the \glspl{LWR} are
-decommissioned by October of 2055. 
+are deployed when the transition begins in 2025. The first \gls{LWR} is 
+commissioned in August 1967All of the \glspl{LWR} are
+decommissioned by October of 2055. In 2025, the \glspl{LWR} produce 
+89.45 GWe-y of energy, which is used to define the energy demand for 
+the other scenarios. 
 
 \begin{figure}
     \centering
@@ -36,15 +39,26 @@ The mass of enriched uranium sent to the \glspl{LWR} in this scenario (Figure
 more variation between individual time steps. The increased variation between 
 time steps is becuase of the staggering of outages for the reactors, or when 
 they receive fuel. There are also times with large increases in the mass of fuel 
-sent to the reactore, such as in 2016, because these times include the deployment 
+sent to the reactors, such as in 2016, because these times include the deployment 
 of a new reactor with a full core of fuel instead of the amount that is 
 sent for refueling. 
 
 The maximum amount of enriched uranium sent to the \glspl{LWR} at any one 
 time in this scenario is 513.72 MTU. The average mass of enriched uranium sent to 
-the reactors for the entire scenario is 95.65 MTU/month. The average mass of 
+the reactors for the entire scenario is 135.74 MTU/month. The average mass of 
+enriched uranium sent to the \glspl{LWR} between when they are first deployed 
+and 2025 is 164.92 MTU/month. This average is larger than what is reported in 
+\cite{bachmann_enrichment_2021}, and is because the average reported by 
+Bachmann et. al accounts for the time before the \glspl{LWR} are actually 
+deployed while the average reported here does not. The average mass of 
 uranium sent to \glspl{LWR} between 2025-2055, from the start of the transition 
-to when they are all decommissioned is 81.11 MTU/month. 
+to when they are all decommissioned is 81.11 MTU/month. Comparing the averages 
+shows that the vast majority of enriched uranium is sent to the \glspl{LWR} 
+before 2025, which matches with the decline in the number of \glspl{LWR} 
+deployed after 2020. After 2025, a total of 29,848.6 MTU is sent to the \glspl{LWR},
+which is less than the cumulative mass reported in \cite{bachmann_enrichment_2021}
+because of the different assumption of when the \glspl{LWR} will 
+be decommissioned. 
 
 \begin{figure}
     \centering
@@ -53,22 +67,42 @@ to when they are all decommissioned is 81.11 MTU/month.
     \label{fig:fuel1}
 \end{figure}
 
-The mass of natural uranium required to produce the fuel sent to the reactors at 
+The next metric of interest for this work is the mass of natural uranium 
+required as feed material to produce the enriched uranium for the 
+reactors. The mass of natural uranium required to produce the fuel sent to the 
+reactors at 
 is about an order of magnitude larger than the mass of the enriched uranium 
-(Figure \ref{fig:feed1}). 
+(Figure \ref{fig:feed1}). A maximum of 4,121.8 MTU of natural uranium is needed 
+at one time in Scenario 1. While the \glspl{LWR} are deployed, an average of 
+1,089.1 MTU/month of natural uranium is needed. Before 2025, an average of 
+1,323.2 MTU/month of natural uranium is needed and after 2025 the average is 
+650.8 MTU/month. 
 
 \begin{figure}
     \centering
     \includegraphics[scale=0.8]{s1_feed.pdf}
-    \caption{Mass of natural uranium required to supply the fuel sent to LWRs at each time step in Scenario 1.}
+    \caption{Mass of natural uranium required to supply the fuel sent to LWRs at each 
+    time step in Scenario 1.}
     \label{fig:feed1}
 \end{figure}
 
-A maximum of 3.7$\times 10^6$ kg-SWU is required to 
+The next metric of interest for this work is the \gls{SWU} capacity required 
+to produce the enriched uranium for the \glspl{LWR}. This result is 
+shown in Figure \ref{fig:swu1}. A maximum of 3.71$\times 10^6$ kg-SWU is required to 
 enrich the uranium sent to the reactors at one time step. An averge of 
-0.69$\times 10^6$ kg-SWU/month is needed to enrich all of the uranium sent to 
-the \glspl{LWR}, and an averge of 0.59$\times 10^6$ kg-SWU/month is needed to 
-enriched the uranium sent to \glspl{LWR} between 2025 and 2055.
+0.981$\times 10^6$ kg-SWU/month is needed to enrich all of the uranium sent to 
+the \glspl{LWR} during the time the \glspl{LWR} are deployed. An averge of 
+1.19$\times10^6$ kg-SWU/month is required to produce the enriched uranium 
+for \glspl{LWR} between their initial deployment and 2025, and 
+0.586$\times 10^6$ kg-SWU/month is needed to produce the 
+enriched uranium sent to \glspl{LWR} between 2025 and 2055. The values 
+reported here are each different that what is reported in \cite{bachmann_enrichment_2021}
+for a few different reasons. The first is that these calculations only include
+the time steps in which the \glspl{LWR} are deployed while Bachmann et. al 
+does not, similar to what leads to the differences in the reported mass of 
+enriched uranium. The other factor contributing to the different values 
+is the use of different enrichment levels for the \gls{LWR} fuel. 
+Bachmann et. al uses an enrichment of 4.5\% while this work uses 4.3\%. 
 
 
 \begin{figure}
@@ -79,10 +113,12 @@ enriched the uranium sent to \glspl{LWR} between 2025 and 2055.
 \end{figure}
 
 Finally, the waste discharged from the reactors as a function of time is shown 
-in Figure \ref{fig:waste1}. An maximum of 410.29 MT of spent fuel is discharged 
-from the \glspl{LWR} at one time step. An average of 95.65 MT/month of spent fuel is 
-discharged from the reactors across the entire simulation, and an average of 
-106.63 MT/month of spent fuel is discharged from reactors between 2025-2055. 
+in Figure \ref{fig:waste1}. An maximum of 393.6 MT of spent fuel is discharged 
+from the \glspl{LWR} at one time step. An average of 130.1 MT/month of spent fuel is 
+discharged from the reactors during the time steps with \glspl{LWR} deployed.
+An average of 149.5 MTU/month is discharged between the first \gls{LWR} deployment 
+and 2025, an average of 93.9 MT/month of spent fuel is discharged from reactors 
+between 2025-2055. 
 
 \begin{figure}
     \centering
@@ -92,7 +128,6 @@ discharged from the reactors across the entire simulation, and an average of
 \end{figure}
 
 \section{Energy Supplied}
-
 \subsection{No growth scenarios}
 \begin{figure}
     \centering
