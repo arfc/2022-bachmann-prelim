@@ -155,36 +155,93 @@ the order in which they are listed in the input file. The first prototype
 is deployed until deploying more would create a surplus of the required 
 commodity (in this case power), then the next prototype is deployed until 
 its deployment would create a surplus of the requried commodity, and so forth. 
-Based on this, the prototypes were listed in decreasing order of power 
+Because of this scheme, the prototypes were listed in decreasing order of power 
 output (i.e. Xe-100, VOYGR, then \gls{MMR}, for the necessary prototypes 
 in that scenario) so that the number of reactors deployed is optimized to 
-be the fewest reactors required for that scenario. 
+be the fewest reactors required for that scenario while also minimizing the 
+oversupply of power. This ordering was used because it would most closely 
+match a decision making process that would be implemented. 
+
 \subsection{No growth scenarios}
+The number of reactors that are deployed varies based on 
+the type of reactor used in the scenario and scales with the power output of 
+each type of reactor, as shown in Figure \ref{fig:nogrowth_reactors}. Scenario
+2 requires the most reactors, because the \gls{MMR} has the smallest power 
+output of the reactors considered. Additionally, 8,946 \gls{MMR} are deployed 
+at one time in Scenario 2 (Table \ref{tab:reactors_nogrowth}) to meet the 
+power demand. Scenario 3 requires the lowest number of advanced reactors 
+because only the Xe-100 is deployed, and this reactor design has the 
+largest power output. 
+
+More reactors are initially deployed in 
+Scenario 7 than in Scenario 4, but in March 2064 the number of advanced 
+reactors in Scenario 7 decreases to less than what is deployed in 
+Scenario 4. 
+
+Advanced reactors are first deployed in February 2030 for all scenarios, about 
+5 years after transition start time. This initial deployment time  is 
+19 months earlier than the initial deployment time reported in 
+\cite{bachmann_enrichment_2021}. The inital deployment time for advanced 
+reactors for no growth transitions is only one month later than the 
+initial deployment time reported in \cite{bachmann_enrichment_2021}
+for 1\% growth transitions. 
+
+Something about reactor lifetime. 
 
 \begin{figure}
     \centering
-    \includegraphics[scale=0.8]{nogrowth_reactors.pdf}
-    \caption{Total number of advanced reactors as a function of time in Scenarios 2-7.}
-    \label{fig:nogrowth_reactors}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_reactors.pdf}
+        \caption{Total number of advanced reactors deployed at 
+        each time step in Scenarios 2-7.}
+        \label{fig:nogrowth_reactors_all}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_reactors_3-7.pdf}
+        \caption{Total number of advanced reactors deployed at 
+        each time step in Scenario 3-7.}
+        \label{fig:nogrowth_reactors_3-7}
+    \end{subfigure}
+       \caption{Number of advanced reactors deployed at each time step 
+       for Scenarios 2-7. The figures begin at 2025, because no advanced 
+       reactors are deployed before then. In the right figure Scenario 
+       2 is removed to help highlight the trends in the other scenarios.}
+       \label{fig:nogrowth_reactors}
 \end{figure}
 
 \begin{table}
     \centering 
     \caption{Maximum number of each type of advanced reactor and maximum total 
-    number of reactors deployed in Scenarios 2-7}
+    number of reactors deployed at one time in Scenarios 2-7.}
     \label{tab:reactors_nogrowth}
     \begin{tabular}{c c c c c}
         \hline
         Scenario & \glspl{MMR} & Xe-100s & VOYGRs & Total\\\hline
-        2 & 9182 & - & - & 9182\\
-        3 & - & 1225 & - & 1225\\
-        4 & 752 & 1124 & - & 1876\\
-        5 & 127 & - & 1811 & 1938\\
-        6 & - & 1099 & 191 & 1288\\
-        7 & 782 & 1122 & 0 & 1902\\
+        2 & 8946 & - & - & 8946\\
+        3 & - & 1193 & - & 1193\\
+        4 & 623 & 1128 & - & 1692\\
+        5 & 136 & - & 1762 & 1898\\
+        6 & - & 1061 & 198 & 1259\\
+        7 & 616 & 924 & 350 & 1768\\
         \hline
     \end{tabular}
 \end{table}
+
+In addition to the total number of each type of advanced reactor deployed 
+at each time, the maximum number of each advanced reactor that 
+must by deployed in a single time step is reported (Table 
+\ref{tab:reactors_added_nogrowth}). This information provides some insight 
+into the speed at which new reactors must be built. For scenarios with 
+multiple advanced reactors, the numbers reported do not necessarily occur 
+at the same time. 
+
+Scenario 2 requires 
+the largest number of reactors to be deployed at a single time, which 
+is not surprising based on the larger total number of reactors required in 
+this scenario. 
 
 \begin{table}
     \centering 
@@ -196,35 +253,82 @@ be the fewest reactors required for that scenario.
         Scenario & \glspl{MMR} & Xe-100s & VOYGRs & Total\\\hline
         2 & 378 & - & - & 378\\
         3 & - & 50 & - & 50\\
-        4 & 31 & 50 & - & 56\\
+        4 & 26 & 50 & - & 58\\
         5 & 4 & - & 75 & 78\\
-        6 & - & 49 & 8 & 51\\
-        7 & 30 & 50 & 0 & 56\\
+        6 & - & 47 & 8 & 52\\
+        7 & 26 & 50 & 50 & 58\\
         \hline
     \end{tabular}
 \end{table}
 
 \subsection{1\% growth scenarios}
+
+Similar to the no growth scenarios, the transition to only the \gls{MMR} 
+requires the most reactors and the transition to only the Xe-100 
+requires the fewest reactors. 
+
+Advanced reactors are deployed starting in September 2026, which is more 
+than three years before their initial deployment for a 1\% growth 
+transition as reported in \cite{bachmann_enrichment_2021}. Advanced reactors
+are deployed 38 months earlier than for the no growth scenarios.
+
+
 \begin{figure}
     \centering
-    \includegraphics[scale=0.8]{1percent_reactors.pdf}
-    \caption{Total number of advanced reactors as a function of time in Scenarios 8-13.}
-    \label{fig:1percent_reactors}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_reactors.pdf}
+        \caption{Total number of advanced reactors deployed at 
+        each time step in Scenarios 8-13.}
+        \label{fig:1percent_reactors_all}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_reactors_9-13.pdf}
+        \caption{Total number of advanced reactors deployed at 
+        each time step in Scenario 9-13.}
+        \label{fig:1percent_reactors_9-13}
+    \end{subfigure}
+       \caption{Number of advanced reactors deployed at each time step 
+       for Scenarios 8-13. The figures begin at 2025, because no advanced 
+       reactors are deployed before then. In the right figure Scenario 
+       8 is removed to help highlight the trends in the other scenarios.}
+       \label{fig:1percent_reactors}
 \end{figure}
+
 \begin{table}
     \centering 
     \caption{Maximum number of each type of advanced reactor and maximum total 
     number of reactors deployed in Scenarios 8-13}
-    \label{tab:reactors_1growth}
+    \label{tab:reactors_1percent}
     \begin{tabular}{c c c c c}
         \hline
         Scenario & \glspl{MMR} & Xe-100s & VOYGRs & Total\\\hline
-        8 & \\
-        9 & \\
-        10 & \\
-        11 & \\
-        12 & \\
-        13 & \\
+        8 & 17467 & - & - & 17467\\
+        9 & - & 2335 & - & 2335 \\
+        10 & 1671 & 2119 & - & 3743\\
+        11 & 699 & - & 3408 & 3869\\
+        12 & - & 1678 & 1736 & 2663\\
+        13 & 1432 & 1737 & 622 & 3746\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}
+    \centering 
+    \caption{Maximum number of each type of advanced reactor and maximum total 
+    number of reactors deployed in a single time step for Scenarios 8-13}
+    \label{tab:reactors_added_1percent}
+    \begin{tabular}{c c c c c}
+        \hline
+        Scenario & \glspl{MMR} & Xe-100s & VOYGRs & Total\\\hline
+        8 & 412 & - & - & 412\\
+        9 & - & 52 & - & 52\\
+        10 & 49 & 50 & - & 62\\
+        11 & 4 & - & 77 & 79\\
+        12 & - & 51 & 4 & 52\\
+        13 & 49 & 50 & 28 & 62\\
         \hline
     \end{tabular}
 \end{table}
