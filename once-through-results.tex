@@ -131,19 +131,45 @@ between 2025-2055.
 \subsection{No growth scenarios}
 \begin{figure}
     \centering
-    \includegraphics{nogrowth_energy.pdf}
-    \caption{Energy supplied by reactors in each scenario, compared to 
-    the energy demand (the black line)}
-    \label{fig:energy_nogrowth}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_energy.pdf}
+        \caption{Annual energy produced compared to demand for Scenarios 2-7
+        for the entire simulation.}
+        \label{fig:nogrowth_energy_all}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_energy_after_2025.pdf}
+        \caption{Annual energy produced comapred to demand for Scenarios 2-7
+        starting in 2025.}
+        \label{fig:nogrowth_energy_after_2025}
+    \end{subfigure}
+       \caption{Annual energy produced in Scenarios 2-7.}
+       \label{fig:nogrowth_energy}
 \end{figure}
 
 \subsection{1\% growth scenarios}
 \begin{figure}
     \centering
-    \includegraphics{1percent_energy.pdf}
-    \caption{Energy supplied by reactors in each scenario, compared to 
-    the energy demand (the black line)}
-    \label{fig:energy_1percent}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_energy.pdf}
+        \caption{Annual energy produced compared to demand for Scenarios 8-13
+        for the entire simulation.}
+        \label{fig:1percent_energy_all}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_energy_after_2025.pdf}
+        \caption{Annual energy produced compared to demand for Scenarios 8-13
+        starting in 2025.}
+        \label{fig:1percent_energy_after_2025}
+    \end{subfigure}
+       \caption{Annual energy produced in Scenarios 8-13.}
+       \label{fig:1percent_energy}
 \end{figure}
 
 \section{Reactor deployment}
