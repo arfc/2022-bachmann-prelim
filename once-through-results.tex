@@ -129,6 +129,15 @@ between 2025-2055.
 
 \section{Energy Supplied}
 \subsection{No growth scenarios}
+The energy demand in the no growth scenarios (Scenarios 2-7) is a constant
+89.456 GWe-yr, based on the energy supplied by the reactors in Scenario 1
+in 2025. The energy supplied in Scenarios 2-7 does not fully meet the demand
+throughout the simulations (Figure \ref{fig:nogrowth_energy}). All of the 
+transition scenarios experience the same energy production until \hl{figure out
+date}. At this time, Scenario 5 begins to deviate from the other scenarios, 
+and experiences the least energy production throughout the rest of 
+the simulation. 
+
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -205,7 +214,10 @@ reactors in Scenario 7 decreases to less than what is deployed in
 Scenario 4. 
 
 Advanced reactors are first deployed in February 2030 for all scenarios, about 
-5 years after transition start time. This initial deployment time  is 
+5 years after transition start time. The delay between the start of the 
+transition and the deployment of advanced reactors causes the deficit between 
+energy demand and the energy produced in the transition scenarios. 
+This initial deployment time is 
 19 months earlier than the initial deployment time reported in 
 \cite{bachmann_enrichment_2021}. The inital deployment time for advanced 
 reactors for no growth transitions is only one month later than the 
@@ -360,8 +372,15 @@ are deployed 38 months earlier than for the no growth scenarios.
 \end{table}
 
 \section{Uranium resources}
+For the purposes of the transition scenarios, uranium resources refers to 
+both the mass of enriched uranium and the mass of natural urnaium feed 
+required at each time step in the simulation. 
 
 \subsection{No growth scenarios}
+The mass of enriched uranium sent to reactors (Fig. \ref{fig:nogrowth_uranium})
+varies greatly based on the advanced reactors deployed in the scenario. 
+Scenarios 2 and 5 have the largest average mass of enriched uranium sent to 
+reactors (Table \ref{tab:nogrowth_uranium}).
 
 \begin{figure}
     \centering
@@ -380,8 +399,30 @@ are deployed 38 months earlier than for the no growth scenarios.
     \end{subfigure}
        \caption{Total mass enriched uranium required by reactors
        at each time step in Scenarios 2-7.}
-       \label{fig:nogrowth_urnaium}
+       \label{fig:nogrowth_uranium}
 \end{figure}
+
+\begin{table}
+    \centering 
+    \caption{Average and maximum mass of enriched uranium supplied to 
+    advanced reactors in Scenarios 2-7. The average mass is reported starting 
+    in 2025. The average mass of \gls{HALEU} is also reported for each scenario.}
+    \label{tab:nogrowth_uranium}
+    \begin{tabular}{c c c c}
+        \hline
+        Scenario & Average mass (t) & Average mass of \gls{HALEU} (t) & Maximum (t)\\\hline
+        2 & 101.9 & 63.57 & 757.3 \\
+        3 & 73.45 & 35.13 & 341.9\\
+        4 & 75.13 & 36.81 & 341.9\\
+        5 & 196.1 & 0.974 & 962.3 \\
+        6 & 87.26 & 31.21 & 341.9\\
+        7 & 98.00 & 29.79 & 465.0\\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
 
 \begin{figure}
     \centering
