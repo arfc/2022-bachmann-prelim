@@ -202,10 +202,11 @@ The number of reactors that are deployed varies based on
 the type of reactor used in the scenario and scales with the power output of 
 each type of reactor, as shown in Figure \ref{fig:nogrowth_reactors}. Scenario
 2 requires the most reactors, because the \gls{MMR} has the smallest power 
-output of the reactors considered. Additionally, 8,946 \gls{MMR} are deployed 
+output of the reactors considered in this work. Additionally, 8,946 
+\gls{MMR} are deployed 
 at one time in Scenario 2 (Table \ref{tab:reactors_nogrowth}) to meet the 
 power demand. Scenario 3 requires the lowest number of advanced reactors 
-because only the Xe-100 is deployed, and this reactor design has the 
+because only the Xe-100 is deployed and this reactor design has the 
 largest power output. 
 
 More reactors are initially deployed in 
@@ -422,7 +423,10 @@ reactors (Table \ref{tab:nogrowth_uranium}).
 \end{table}
 
 
-
+For the mass of natural uranium required as feed material to produce the 
+enriched uranium, Scenario 2 requires the largest average mass to 
+supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table 
+\ref{tab:nogrwoth_feed}). 
 
 \begin{figure}
     \centering
@@ -445,6 +449,26 @@ reactors (Table \ref{tab:nogrowth_uranium}).
        at each time step in Scenarios 2-7.}
        \label{fig:nogrowth_feed}
 \end{figure}
+
+\begin{table}
+    \centering 
+    \caption{Average and maximum mass of feed uranium required to
+    produce enriched uranium for  
+    advanced reactors in Scenarios 2-7. The average feed is reported starting 
+    in 2025. The average feed to produce \gls{HALEU} is also reported for each scenario.}
+    \label{tab:nogrowth_feed}
+    \begin{tabular}{c c c c}
+        \hline
+        Scenario & Average mass (t) & Average mass of \gls{HALEU} (t) & Maximum (t)\\\hline
+        2 & 1,592 & 1,592 & 18,112 \\
+        3 & 1,052 & 1,052 & 2,910\\
+        4 & 1,083 & 1,083 & 3,487\\
+        5 & 1,218 & 24.42 & 7,392 \\
+        6 & 1,070 & 934.8 & 3,190\\
+        7 & 1,105 & 877.5 & 3,869\\
+        \hline
+    \end{tabular}
+\end{table}
 
 \subsection{1\% growth scenarios}
 
