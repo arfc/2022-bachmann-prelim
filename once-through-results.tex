@@ -3,9 +3,16 @@ Each of the once-through transition scenarios are compared on multiple
 criteria: the energy supplied, the number of advanced reactors deployed, 
 the mass of enriched 
 uranium required, the amount of \gls{SWU} capacity required to enrich uranium,
-and the mass of waste produced. A subset of these results are presented
+and the mass of waste produced. Each of these metrics can be used to inform 
+policies and decisions of potential deployment schedules and the 
+fuel cycle infrastructure required to support the deployment schedule. 
+
+A subset of these results for similar scenario definitions is presented
 in \cite{bachmann_enrichment_2021}, except the \glspl{LWR} were assumed to 
-operate for 60 years if not closed before December 2020. The results of Scenario 
+operate for 60 years if not closed before December 2020. This difference in 
+the assumed lifetime of the \glspl{LWR} impacts the energy demand, 
+the deployment schedule of advanced reactors, and the material 
+requirements of the advanced reactors. The results of Scenario 
 1 are presented first, followed by the results of the no growth scenarios 
 (Scenarios 2-7), then the results of the 1\% growth scenarios (Scenarios 8-13)
 for each metric. 
@@ -14,13 +21,24 @@ for each metric.
 Scenario 1 models only the \glspl{LWR} deploying the United States with no 
 prescribed energy demand. This scenario provides insight on historical 
 requirements of the nuclear indsutry as well as future demands if no 
-new reactors are deployed. Figure \ref{fig:energy_reactor1} shows the number of 
-reactors deployed in Scenario 1 as a function of time comapred to the 
+new reactors are deployed and current reactors are decomissioned on 
+this schedule. Because this scenario only includes the \glspl{LWR} and the 
+deployment and material requirements of these reactors will be the same 
+for each of the other scenarios (Scenarios 2-13), analysis 
+of the other scenarios will focus on only the requirements of 
+the advanced reactors deployed. Therefore, the results of Scenario 2-13 can 
+be compared to the results of Scenario 1 to provide a comparison 
+of material requirements between new and current reactors. 
+
+Figure \ref{fig:energy_reactor1} shows the number of 
+reactors deployed in Scenario 1 as a function of time compared to the 
 energy produced by the \glspl{LWR} each year. The engery produced by the 
-\glspl{LWR} follows with the number of reactors that are deployed. A maximum of 109 
-\glspl{LWR} are deployed at one time in this scenario, producing  and 92 \glspl{LWR}
+\glspl{LWR} follows with the number of reactors that are deployed, as 
+one would expect. A maximum of 109 
+\glspl{LWR} are deployed at one time in this scenario, producing 
+between 101.24-102.46 GWe-yr, and 92 \glspl{LWR}
 are deployed when the transition begins in 2025. The first \gls{LWR} is 
-commissioned in August 1967All of the \glspl{LWR} are
+commissioned in August 1967, and all of the \glspl{LWR} are
 decommissioned by October of 2055. In 2025, the \glspl{LWR} produce 
 89.45 GWe-y of energy, which is used to define the energy demand for 
 the other scenarios. 
@@ -48,7 +66,7 @@ time in this scenario is 513.72 MTU. The average mass of enriched uranium sent t
 the reactors for the entire scenario is 135.74 MTU/month. The average mass of 
 enriched uranium sent to the \glspl{LWR} between when they are first deployed 
 and 2025 is 164.92 MTU/month. This average is larger than what is reported in 
-\cite{bachmann_enrichment_2021}, and is because the average reported by 
+\cite{bachmann_enrichment_2021} because the average reported by 
 Bachmann et. al accounts for the time before the \glspl{LWR} are actually 
 deployed while the average reported here does not. The average mass of 
 uranium sent to \glspl{LWR} between 2025-2055, from the start of the transition 
@@ -69,10 +87,9 @@ be decommissioned.
 
 The next metric of interest for this work is the mass of natural uranium 
 required as feed material to produce the enriched uranium for the 
-reactors. The mass of natural uranium required to produce the fuel sent to the 
-reactors at 
+reactors. The mass of feed uranium 
 is about an order of magnitude larger than the mass of the enriched uranium 
-(Figure \ref{fig:feed1}). A maximum of 4,121.8 MTU of natural uranium is needed 
+(Figure \ref{fig:feed1}). A maximum of 4,121.8 MTU of feed uranium is needed 
 at one time in Scenario 1. While the \glspl{LWR} are deployed, an average of 
 1,089.1 MTU/month of natural uranium is needed. Before 2025, an average of 
 1,323.2 MTU/month of natural uranium is needed and after 2025 the average is 
@@ -87,7 +104,7 @@ at one time in Scenario 1. While the \glspl{LWR} are deployed, an average of
 \end{figure}
 
 The next metric of interest for this work is the \gls{SWU} capacity required 
-to produce the enriched uranium for the \glspl{LWR}. This result is 
+to produce the enriched uranium for the \glspl{LWR}, 
 shown in Figure \ref{fig:swu1}. A maximum of 3.71$\times 10^6$ kg-SWU is required to 
 enrich the uranium sent to the reactors at one time step. An averge of 
 0.981$\times 10^6$ kg-SWU/month is needed to enrich all of the uranium sent to 
@@ -102,7 +119,7 @@ the time steps in which the \glspl{LWR} are deployed while Bachmann et. al
 does not, similar to what leads to the differences in the reported mass of 
 enriched uranium. The other factor contributing to the different values 
 is the use of different enrichment levels for the \gls{LWR} fuel. 
-Bachmann et. al uses an enrichment of 4.5\% while this work uses 4.3\%. 
+Bachmann et. al assumes an enrichment of 4.5\% while this work assumes 4.3\%. 
 
 
 \begin{figure}
@@ -133,10 +150,20 @@ The energy demand in the no growth scenarios (Scenarios 2-7) is a constant
 89.456 GWe-yr, based on the energy supplied by the reactors in Scenario 1
 in 2025. The energy supplied in Scenarios 2-7 does not fully meet the demand
 throughout the simulations (Figure \ref{fig:nogrowth_energy}). All of the 
-transition scenarios experience the same energy production until \hl{figure out
-date}. At this time, Scenario 5 begins to deviate from the other scenarios, 
-and experiences the least energy production throughout the rest of 
-the simulation. 
+transition scenarios experience the same energy production until 2030,
+reaching a low point of 83.94 GWe-yr. Each of the scenrios exhibit oscillation 
+in the annual energy production. This oscilaltion is a result of refueling 
+time for the \glspl{LWR} and VOYGRs as well as the step between reactors 
+being decommissioned and new ones being deployed. 
+
+Throughout 
+most of the time with advanced reactors, Scenario 5 has the lowest energy 
+production, producing between 83.94-86.88 GWe-yr. Scenario 4 is able 
+to best meet the demand, producing at least 89.35 GWe-yr starting in 2056.
+Because each scenario experiences times of not fully meeting the energy 
+demand, one can assume that the material requirements reported for each 
+scenario are an underestimate and that additional reactors and materials
+would be needed to fully meet the energy demand of the scenario. 
 
 \begin{figure}
     \centering
@@ -374,31 +401,45 @@ are deployed 38 months earlier than for the no growth scenarios.
 
 \section{Uranium resources}
 For the purposes of the transition scenarios, uranium resources refers to 
-both the mass of enriched uranium and the mass of natural urnaium feed 
+both the mass of enriched uranium and the mass of natural uranium feed 
 required at each time step in the simulation. 
 
 \subsection{No growth scenarios}
 The mass of enriched uranium sent to reactors (Fig. \ref{fig:nogrowth_uranium})
 varies greatly based on the advanced reactors deployed in the scenario. 
-Scenarios 2 and 5 have the largest average mass of enriched uranium sent to 
-reactors (Table \ref{tab:nogrowth_uranium}).
+Scenario 5 has the largest average mass of enriched uranium sent to 
+reactors each month, followed by Scenario 2 (Table 
+\ref{tab:nogrowth_uranium}). The larger averages for these scenarios is 
+because of the large number of reactors deployed in Scenario 2 and 
+because the VOYGR (deployed in Scenario 5) has the largest core mass.
+Scenarios 2 and 5 also require the largest mass of enriched uranium sent 
+to advanced reactors at one time. 
+
+The largest average mass of \gls{HALEU} is required in Scenario 2, because 
+of the large number of \glspl{MMR} deployed in this scenario. Scenario 
+5 requires the least average mass of \gls{HALEU}, because most of the 
+reactors deployed in this scenario are VOYGRs, which do not require 
+\gls{HALEU}. The other scenarios require a similar monthly average of 
+\gls{HALEU} of 29-36 MT. 
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{nogrowth_uranium.pdf}
-        \caption{Mass of uranium sent to all reactors at each time step.}
-        \label{fig:nogrowth_all_urnaium}
+        \caption{Mass of enriched uranium sent to all reactors at 
+        each time step.}
+        \label{fig:nogrowth_all_uranium}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{nogrowth_AR_uranium.pdf}
-        \caption{Mass of enriched uranium sent to advanced reactors at each time step.}
+        \caption{Mass of enriched uranium sent to advanced reactors 
+        at each time step starting in 2025.}
         \label{fig:nogrowth_AR_uranium}
     \end{subfigure}
-       \caption{Total mass enriched uranium required by reactors
+       \caption{Total mass of enriched uranium required by reactors
        at each time step in Scenarios 2-7.}
        \label{fig:nogrowth_uranium}
 \end{figure}
