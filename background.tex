@@ -398,10 +398,11 @@ at least 2050, and a 5\% surplus of deficit in the energy from the
 demand was allowed. \hl{finish going through this paper.}
 
 \section{Sensitivity analysis and optimization}
-Sensitivity analysis is a broad term used to encompass sensitivity analysis, 
-uncertainty propagation, and parametric studies. Performing sensitivity 
-analysis is of importance for modeling the nuclear fuel cycle and fuel 
-cycle transitions because of the many free parameters within each model.
+Sensitivity analysis provides information on how each input parameter 
+of a fuel cycle model affects output parameters of interest. 
+This analysis is of importance for modeling the nuclear fuel cycle and fuel 
+cycle transitions because of the many free parameters within each model 
+and inherent assumptions in each input parameter.
 Performing this analysis identifies and quantifies the effect of input 
 parameters on model outputs \cite{thiolliere_methodology_2018}. Sensitivity 
 analysis is performed by running a fuel cycle simulation multiple times 
@@ -416,8 +417,12 @@ Feng et al. perfomed a similar methdology, but used random sampling
 in the identified range of input variable values \cite{feng_sensitivity_2020}.
 
 There 
-are multiple types of sensitivity analysis, such as \hl{types of SA}, and 
-global sensitivity analysis. Global sensitivity analysis is a flexible 
+are multiple types of sensitivity analysis, such as one-at-a-time, 
+synergistic, and global sensitivity analysis. One-at-a-time analysis 
+investigates the effects of varying a single input parameter and the effects
+on a single output. Synergistic analysis varies two different model inputs 
+to investigate the combined impact of the parameters on mdoel outputs. 
+Global sensitivity analysis is a flexible 
 technique that can perform many functions such as identifying the input 
 variables that have the most impact on an output variable and identifying 
 input variables that have the least or negligible impact on output 
