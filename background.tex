@@ -437,7 +437,13 @@ There
 are multiple types of sensitivity analysis, such as one-at-a-time, 
 synergistic, and global sensitivity analysis. One-at-a-time analysis 
 investigates the effects of varying a single input parameter and the effects
-on a single output. Synergistic analysis varies two different model inputs 
+on a single output, providing a relative impact of the input on the output. 
+The results are often reported as a percent change in the 
+output or as a sensitivity value such as the one used in 
+\cite{noauthor_effects_2017}. The sensitivity value used by 
+\cite{noauthor_effects_2017} quantifies the percent change in the output 
+per percent change in the input value. Synergistic analysis varies two different 
+model inputs 
 to investigate the combined impact of the parameters on mdoel outputs. 
 Global sensitivity analysis is a flexible 
 technique that can perform many functions such as identifying the input 
@@ -454,8 +460,17 @@ interactions being considered. A total indices defines the contribution of a
 sinlge input variable on the output, with all interactions with other inputs 
 considered. 
 
-Applying sensitivity analysis to nuclear fuel cycles has provided insight
-into how material inventories are affected by model parameters. 
+Applying sensitivity analysis to nuclear fuel cycles provides insight
+into how material requirements and inventories (model outputs) are affected 
+by model parameters. Some common
+parameters varied during sensitivity analysis include the fuel burnup 
+\cite{thiolliere_methodology_2018,noauthor_effects_2017}, the 
+Common model outputs used in sensitivity analysis include 
+natural uranium requirements \cite{noauthor_effects_2017,richards_application_2021},
+plutonium inventory \cite{noauthor_effects_2017,chee_sensitivity_2019}, \gls{SWU} 
+capacity required \cite{noauthor_effects_2017}
+
+
 Thielloere et al. identified the fraction of \gls{MOX} fuel in a reactor 
 and the burnup for \gls{UOX} fuel as the most impactful model parameters on 
 the plutonium production and inventory
