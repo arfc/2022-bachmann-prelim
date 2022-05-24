@@ -53,21 +53,31 @@ Assume processing losses of 1\% \cite{wigeland_nuclear_2014}.
 
 \subsection{Sensitivity Analysis and Optimization}
 The sensitivity analysis is designed to identify how 
-the variation of select hyperparameters affect select performance 
-metrics of the fuel cycle and how the hyperparameters synergistically 
+the variation of select parameters affect select performance 
+metrics of the fuel cycle and how the parameters synergistically 
 affect the performance metrics. This information is then used to design 
 a transition scenario that is optimized for each of the performance metrics. 
 
-To perform the sensitivity analysis, uncertainty quantification, and 
-transition optimization \Cyclus was coupled to Dakota \cite{adams_dakota_2019},
-and Dakota was used as the driver for the analysis. The metrics of 
+To perform the sensitivity analysis and 
+transition optimization \Cyclus will be coupled to Dakota \cite{adams_dakota_2019},
+and Dakota will be the driver for the analysis. Three different types 
+of sensitivity analysis will be performed: one-at-a-time, synergystic, 
+and global. The input parameters to be varied include the transition 
+start time, the market share of each type of advanced reactor, and 
+the \gls{LWR} lifetime. The output metrics of 
 interest for this analysis include the amount of waste generated that 
 must be sent to a repository, the mass of natural uranium required, and 
-the amount of \gls{SWU} required. The first two performance 
-metrics used in this work match metrics considered in the \gls{ES} 
+the amount of \gls{SWU} required. The first two output 
+metrics are metrics considered in the \gls{ES} 
 \cite{wigeland_nuclear_2014}, and all three of these metrics were considered 
 in previous sensitivity analysis when Dakota was coupled to \gls{DYMOND}
 \cite{feng_sensitivity_2020,richards_application_2021}. 
+
+The results of the one-at-a-time analysis will be reported using the 
+sensitivity value defined in \cite{noauthor_effects_2017}. The results 
+of the synergystic analysis will be reported using \hl{find something}.
+The results of the global analysis will be reported using Sobol' 
+indices. 
 
 \subsection{Neutronics Analysis}
 Recovery and downblending of \gls{HALEU} to produce \gls{HALEU} means that 
