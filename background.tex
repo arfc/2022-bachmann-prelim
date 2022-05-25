@@ -440,9 +440,12 @@ synergistic, and global sensitivity analysis.
 \subsection{One-at-a-time Analysis}
 \gls{OAT} analysis 
 investigates the effects of varying a single input parameter and the effects
-on a single output, providing a relative impact of the input on the output. 
+on a single output metric, providing a relative impact of the input on the 
+metric. An output metric can be presented through three different indicators:
+the final value, the maximum value, or the cumulative sum 
+\cite{noauthor_effects_2017}. 
 There are multiple ways to report the results of \gls{OAT}, such as a 
-percent change in the output, as a sensitivity value, or a sensitivity indicator. 
+sensitivity value or a sensitivity indicator. 
 The sensitvity value is defined as 
 \begin{equation}
     q = \frac{p_{ref}(R_{ref}-R_s)}{R_{ref}(p_{ref}-p_s)}
@@ -474,12 +477,49 @@ from \glspl{PWR} and the enrichment tails assays, on 22 different output metrics
 such as the cumulative mass of natural uranium required, the \gls{SWU} capacity 
 required, and the plutonium inventory at various fuel cycle facilities. 
 Their analysis showed that the energy demand and the introduction date of 
-\glspl{SFR} had the largest effect on many of the output metrics. 
+\glspl{SFR} had the largest effect on many of the output metrics based on the 
+sensitivity indicator. When the sensitivity value was used, their analysis 
+showed the \gls{SFR} introduction date, the energy demand, and the enrichment 
+tails assay had the largest impacts on the natural uranium consumption and 
+the \gls{SWU} requirements. 
+
+\gls{OAT} analysis was also performed on the \gls{EG} 01-30 transition 
+(\gls{PWR} fleet transitioning to \gls{MOX} fueled \glspl{PWR} and \glspl{SFR}) 
+by Chee \cite{chee_sensitivity_2019}. Chee considered the cooling time length 
+for \gls{SNF}, the fleet share of \gls{MOX} \glspl{PWR} to \glspl{SFR}, and 
+the transition start year as the model input parameters to vary and metrics 
+related to the environmental impact, resource utilization, and goodness of 
+transition from the \gls{ES} \cite{wigeland_nuclear_2014}. The analysis showed 
+that each of the input parameters primarily impact the proliferation risk 
+output metrics, with some impact on the final mass of \gls{HLW}. 
 
 \subsection{Synergistic Analysis}
-Synergistic analysis varies two different 
-model inputs 
-to investigate the combined impact of the parameters on mdoel outputs. 
+Synergistic analysis is a multi-parameter approach that varies two different 
+model inputs to investigate their combined impact on output metrics. Synergistic 
+analysis provides a more comprehensive view of the impact of the input 
+parameters by evaluating the compunding and coupled effects of the parameters.
+This analysis is performed by sweeping over a range of values for each input 
+parameter, then observing the response in each output metric for each 
+combination. Through this process the input parameters resulting in the 
+maximum or minimum value of the output metric can be found. 
+
+Chee also performed synergistic analysis for the \gls{EG} 01-30 transition. 
+Their analysis showed how the reactor fleet share and the transition start 
+year affect the maximum plutonium inventory at different facilities, such as 
+how the plutonium inventory in the cooling pools is minimized when the 
+\gls{MOX} \gls{PWR} fleet share is minimized. 
+Other work on synergistic sensitivity analysis for \glspl{NFC} examined the 
+effects of the introduction of both thermal reprocessing and fast reactor 
+technology for a given \gls{NFC} on the number of reacotrs constructed, 
+the \gls{LCOE}, the mass of enrichment tails, and the \gls{SWU} 
+capacity \cite{passerini_systematic_2014}. By combining all four output 
+metrics into a single output metric, this analysis showed how the combined 
+metric could be minimized by later introduction dates for both thermal reporcessing 
+and fast reactor technology. The work by Passerini 
+et al. \cite{passerini_systematic_2014} and Chee \cite{chee_sensitivity_2019}
+not only describe the combined effect of two different model parameters on 
+output metrics, but they also demonstrate how this analysis can be used for 
+optimization of a \gls{NFC}. 
 
 \subsection{Global Sensitivity Analysis}
 Global sensitivity analysis is a flexible 
