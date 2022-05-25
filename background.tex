@@ -434,17 +434,54 @@ Feng et al. perfomed a similar methdology, but used random sampling
 in the identified range of input variable values \cite{feng_sensitivity_2020}.
 
 There 
-are multiple types of sensitivity analysis, such as one-at-a-time, 
-synergistic, and global sensitivity analysis. One-at-a-time analysis 
+are multiple types of sensitivity analysis with this work including \gls{OAT}, 
+synergistic, and global sensitivity analysis. 
+
+\subsection{One-at-a-time Analysis}
+\gls{OAT} analysis 
 investigates the effects of varying a single input parameter and the effects
 on a single output, providing a relative impact of the input on the output. 
-The results are often reported as a percent change in the 
-output or as a sensitivity value such as the one used in 
-\cite{noauthor_effects_2017}. The sensitivity value used by 
-\cite{noauthor_effects_2017} quantifies the percent change in the output 
-per percent change in the input value. Synergistic analysis varies two different 
+There are multiple ways to report the results of \gls{OAT}, such as a 
+percent change in the output, as a sensitivity value, or a sensitivity indicator. 
+The sensitvity value is defined as 
+\begin{equation}
+    q = \frac{p_{ref}(R_{ref}-R_s)}{R_{ref}(p_{ref}-p_s)}
+    \label{eq:sensitivity_metric}
+\end{equation}
+in which 
+\begin{itemize}
+    \item $p_{ref}$ = reference value for the input parameter
+    \item $p_s$ = value for the input parameter
+    \item $R_{ref}$ = value for the output metric when the input parameter is $p_{ref}$
+    \item $R_s$ = value of the output metric when the input parameter is $p_s$
+\end{itemize}
+
+\noindent and quantifies the percent change in the output 
+per percent change in the input value \cite{noauthor_effects_2017}
+The sensitivity indicator  
+quantifies the percent variation of an output metric based on a 1\% change in 
+the input parameter \cite{noauthor_effects_2017}. The sensitivity indicator 
+assumes a linear relationship between the input parameter and the output metric 
+\cite{noauthor_effects_2017}, so it is not applicable to all \gls{OAT} 
+analysis. 
+
+\gls{OAT} analysis has been applied to multiple fuel cycle scenarios and 
+transitions. \gls{OECD} conducted \gls{OAT} analysis for a transition scenario 
+from \glspl{PWR} to \glspl{SFR} \cite{noauthor_effects_2017}. They examined 
+the effects of 15 different 
+input parameters, such as the energy demand, first year of reprocessing fuel 
+from \glspl{PWR} and the enrichment tails assays, on 22 different output metrics, 
+such as the cumulative mass of natural uranium required, the \gls{SWU} capacity 
+required, and the plutonium inventory at various fuel cycle facilities. 
+Their analysis showed that the energy demand and the introduction date of 
+\glspl{SFR} had the largest effect on many of the output metrics. 
+
+\subsection{Synergistic Analysis}
+Synergistic analysis varies two different 
 model inputs 
 to investigate the combined impact of the parameters on mdoel outputs. 
+
+\subsection{Global Sensitivity Analysis}
 Global sensitivity analysis is a flexible 
 technique that can perform many functions such as identifying the input 
 variables that have the most impact on an output variable and identifying 
@@ -468,7 +505,7 @@ parameters varied during sensitivity analysis include the fuel burnup
 Common model outputs used in sensitivity analysis include 
 natural uranium requirements \cite{noauthor_effects_2017,richards_application_2021},
 plutonium inventory \cite{noauthor_effects_2017,chee_sensitivity_2019}, \gls{SWU} 
-capacity required \cite{noauthor_effects_2017}
+capacity required \cite{noauthor_effects_2017,richards_application_2021}.
 
 
 Thielloere et al. identified the fraction of \gls{MOX} fuel in a reactor 
@@ -482,6 +519,8 @@ showed that reactor deployment in a simple fuel cycle affects the amount
 of waste produced, because of the different amounts of material required 
 for an inital core loading from a \gls{LWR} compared with a refueling 
 of the reactor \cite{feng_sensitivity_2020}. 
+
+
 
 \subsection{Dakota}
 One tool for performing sensitivity analysis and optimization is 
