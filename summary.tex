@@ -52,32 +52,58 @@ processed in time for use in advanced reactors
 Assume processing losses of 1\% \cite{wigeland_nuclear_2014}.
 
 \subsection{Sensitivity Analysis and Optimization}
-The sensitivity analysis is designed to identify how 
-the variation of select parameters affect select performance 
-metrics of the fuel cycle and how the parameters synergistically 
-affect the performance metrics. This information is then used to design 
-a transition scenario that is optimized for each of the performance metrics. 
+The sensitivity analysis is designed to identify how the variation of select
+parameters affect select performance 
+metrics of the fuel cycle and the combined effect of multiple parameters on 
+an output metric. This information is then used to design 
+a transition scenario that is optimized for specific criteria. 
 
 To perform the sensitivity analysis and 
 transition optimization \Cyclus will be coupled to Dakota \cite{adams_dakota_2019},
-and Dakota will be the driver for the analysis. Three different types 
-of sensitivity analysis will be performed: one-at-a-time, synergystic, 
-and global. The input parameters to be varied include the transition 
+and Dakota will be the driver for the analysis. This coupling will be based on 
+the scripts in the \texttt{dcwrapper} GitHub repository \cite{chee_arfc/dcwrapper_2019}.
+Three different types 
+of sensitivity analysis will be performed: \gls{OAT}, synergystic, 
+and global. The analysis will be performed on Scenario 7 and Scenario 
+\hl{find a recycle to include}. 
+The input parameters to be varied include the transition 
 start time, the market share of each type of advanced reactor, and 
-the \gls{LWR} lifetime. The output metrics of 
+the \gls{LWR} lifetime. The transition start time will range from January 
+2025 to January 2040 in three month intervals, but the same energy demand 
+will be specified for all perturbations (89.45 GWe-yr). The market share 
+variable will be repeated three times, for varying the market share of each 
+type of advanced reactor) with market share percentages ranging from 10-30\% 
+in increments of 5\%. Finally, the \gls{LWR} lifetimes will be varied based 
+on the percent of the fleet that operate for 60 and 80 years. Bachmann et al.
+presents work assuming that all remaining \glspl{LWR} operate for 60 years, 
+so this work will vary between 5-50\% of the \gls{LWR} fleet operating for 80 
+years. The \glspl{LWR} do not all start operation at the same time, so the 
+selection of the \glspl{LWR} that operate for 80 years will impact the results, 
+even if the number is the same. Therefore, \hl{a scheme will be developed}. 
+
+The output metrics of 
 interest for this analysis include the amount of waste generated that 
 must be sent to a repository, the mass of natural uranium required, and 
-the amount of \gls{SWU} required. The first two output 
-metrics are metrics considered in the \gls{ES} 
+the amount of \gls{SWU} required. Each metric will be evaluated based on the 
+cumulative sum required for \gls{HALEU}-fueled reactors (i.e. the \gls{MMR} 
+and Xe-100) starting at the transition start time. Only these metrics as they 
+apply to the \gls{HALEU}-fueled reactors will be considered because it is
+asusmed that the current fuel cycle infrastructure would be able to 
+supply any \gls{LEU} less than 5\% enriched and the focus of this work is the 
+requirements to support \gls{HALEU}-fueled advanced reactors. 
+The first two output [ppremetrics are metrics considered in the \gls{ES} 
 \cite{wigeland_nuclear_2014}, and all three of these metrics were considered 
 in previous sensitivity analysis when Dakota was coupled to \gls{DYMOND}
 \cite{feng_sensitivity_2020,richards_application_2021}. 
 
 The results of the one-at-a-time analysis will be reported using the 
 sensitivity value defined in \cite{noauthor_effects_2017}. The results 
-of the synergystic analysis will be reported using \hl{find something}.
+of the synergystic analysis will be reported using surface plots show 
+the relationship 
+between the inputs and the output metric, simialar to the plots shown in 
+\cite{chee_sensitivity_2019} and \cite{passerini_systematic_2014}.
 The results of the global analysis will be reported using Sobol' 
-indices. 
+indices, which have been used in \cite{richards_application_2021}. 
 
 \subsection{Neutronics Analysis}
 Recovery and downblending of \gls{HALEU} to produce \gls{HALEU} means that 
