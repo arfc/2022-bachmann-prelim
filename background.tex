@@ -452,12 +452,12 @@ The sensitvity value is defined as
     \label{eq:sensitivity_metric}
 \end{equation}
 in which 
-\begin{itemize}
-    \item $p_{ref}$ = reference value for the input parameter
-    \item $p_s$ = value for the input parameter
-    \item $R_{ref}$ = value for the output metric when the input parameter is $p_{ref}$
-    \item $R_s$ = value of the output metric when the input parameter is $p_s$
-\end{itemize}
+\begin{align*}
+    &p_{ref} = \text{ reference value for the input parameter}\\
+    &p_s = \text{ value for the input parameter}\\
+    &R_{ref} = \text{ value for the output metric when the input parameter is }p_{ref}\\
+    &R_s = \text{value of the output metric when the input parameter is }p_s
+\end{align*}
 
 \noindent and quantifies the percent change in the output 
 per percent change in the input value \cite{noauthor_effects_2017}
@@ -522,14 +522,26 @@ output metrics, but they also demonstrate how this analysis can be used for
 optimization of a \gls{NFC}. 
 
 \subsection{Global Sensitivity Analysis}
-Global sensitivity analysis is a flexible 
-technique that can perform many functions such as identifying the input 
-variables that have the most impact on an output variable and identifying 
-input variables that have the least or negligible impact on output 
-variables \cite{thiolliere_methodology_2018}. One metric used 
-in global sensitivity analysis is the Sobol' indices, which represent the 
+Global sensitivity analysis can perform many functions such as identifying 
+the input 
+parameter(s) that have the most impact on an output metric and identifying 
+input parameter(s) that have the least or negligible impact on output 
+metrics \cite{thiolliere_methodology_2018}. One metric used 
+in global sensitivity analysis is the Sobol' indices ($S_{i_s}$), which 
+represent the 
 contribution of each input parameter on the variance of the output parameter
-\hl{add more and a citation}. The Sobol' indices are always less than 1, based
+The indices are defined as \cite{sobol_global_2001} 
+\begin{equation}
+    S_{i_1...i_s} = \frac{D_{i_1...i_s}}{D}
+\end{equation}
+in which 
+\begin{align*}
+    &D_{i_1...i_s} \text{is the variance of \hl{???}} \\
+    &D = \sum_{s=1}^n \sum_{i_1<...<i_s}^n D_{i_1...i_s} \\
+    &s \text{ is the order of the dimension of the index}
+\end{align*}
+
+The Sobol' indices are always less than 1, based
 on variance decomposition theory, and the higher the value the more impact 
 the input variable has on the output variable \cite{thiolliere_methodology_2018}.
 Solbol' indices can have different orders, based on the number of input variable 
@@ -537,6 +549,8 @@ interactions being considered. A total indices defines the contribution of a
 sinlge input variable on the output, with all interactions with other inputs 
 considered. 
 
+
+%move the rest of this section to a better place based on the type of analysis
 Applying sensitivity analysis to nuclear fuel cycles provides insight
 into how material requirements and inventories (model outputs) are affected 
 by model parameters. Some common
