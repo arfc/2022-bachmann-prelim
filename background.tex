@@ -668,7 +668,7 @@ Sampling method in Dakota to select input parameter values.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{HALEU}
-\gls{HALEU} is defined as uranium that is enriched between 5-20\% by mass in 
+\gls{HALEU} is uranium that is enriched between 5-20\% by mass in 
 uranium-235, and is considered a subset of \gls{LEU}. Fuel for \glspl{LWR} 
 is enriched to no more than 5\% uranium-235, per \gls{NRC} regulations 
 \hl{citation}. Table \ref{tab:enrichemnt} provides definitions of some of the 
@@ -730,11 +730,28 @@ already in a metallic form, and is expected to produce about 5 MTU of
 19.75\% \gls{HALEU} by 2023 \cite{herczeg_high-assay_2019}.
 
 The \gls{HALEU} produced, using eitehr method, would then need to be 
-fabricated into the appropriate fuel form the reactor.
+fabricated into the appropriate fuel form for the reactor.
 
 \subsection{Fuel forms}
 \gls{HALEU} will be required in a variety of fuel forms depending 
 on the reactor design (Table \ref{tab:fuel_forms}).  
+
+\gls{TRISO} fuel particles contain 
+a small fuel kernel surrounded by four layers of material: a porous carbon 
+buffer layer, and inner pyrolytic carbon layer, a silicon carbide layer, 
+and an outer pyrolytic carbon layer \cite{demkowicz_coated_2019}. The fuel 
+kernel in the center contains the uranium fuel, typically in an oxide 
+or oycarbide form. The porous carbon buffer acts an attenuator for any 
+recoil fission products and accomodate pressure changes for gas accumulation.
+The pyrolytic carbon layers protect the silicon carbide layer from 
+any chemical degredation, while the silicon carbide layer maintains the 
+structure integrity of the particle from any stresses and is the primary 
+barrier against fission product gas release. The actual dimensions 
+of each layer depends on the exact manufacturing and design purpose, but 
+the \gls{TRISO} kernels are typically between 350-600 $\mu$m in diameter 
+\cite{demkowicz_coated_2019}. \gls{TRISO} particles are known to have 
+favorable performance at high temperatures 
+\cite{demkowicz_coated_2019}. 
 
 \begin{table}
     \centering
@@ -760,29 +777,13 @@ on the reactor design (Table \ref{tab:fuel_forms}).
     \end{tabular}
 \end{table}
 
-\gls{TRISO} fuel particles contain 
-a small fuel kernel surrounded by four layers of material: a porous carbon 
-buffer layer, and inner pyrolytic carbon layer, a silicon carbide layer, 
-and an outer pyrolytic carbon layer \cite{demkowicz_coated_2019}. The fuel 
-kernel in the center contains the uranium fuel, typically in an oxide 
-or oycarbide form. The porous carbon buffer acts an attenuator for any 
-recoil fission products and accomodate pressure changes for gas accumulation.
-The pyrolytic carbon layers protect the silicon carbide layer from 
-any chemical degredation, while the silicon carbide layer maintains the 
-structure integrity of the particle from any stresses and is the primary 
-barrier against fission product gas release. The actual dimensions 
-of each layer depends on the exact manufacturing and design purpose, but 
-the \gls{TRISO} kernels are typically between 350-600 $\mu$m in diameter 
-\cite{demkowicz_coated_2019}. \gls{TRISO} particles are known to have 
-favorable performance at high temperatures 
-\cite{demkowicz_coated_2019}. 
-
 Multiple \gls{TRISO} kernels are combined together into a a pebble or 
 a cyclindrical compact for placement in a graphite block, based on the 
 design of the reactor \cite{demkowicz_coated_2019}. Each form of 
-\gls{TRISO} particles has been used previously; the \gls{HTTR} uses 
+\gls{TRISO} particles has been used previously in reactors; the \gls{HTTR} uses 
 \gls{TRISO} particles in cylindrical compacts in a graphite block 
-\cite{shiozawa_overview_2004} and the \hl{find pebble example}.
+\cite{shiozawa_overview_2004} and the AVR Reactor in Germany used 
+\gls{TRISO} pebbles as fuel \cite{gottaut_results_1990}.
 \gls{TRISO} particles can also be placed in a silicon-carbide matrix 
 to form \gls{FCM} fuel. This fuel form performs better in high-burnup 
 applications because of improved stability under neutron irradtion and 
@@ -809,32 +810,35 @@ by 2035. This expected demand is only for uranium enriched between 10-20\%
 U-235, so the full demand for \gls{HALEU} may be larger. 
 An estimated 20 MTU of \gls{HALEU} will be needed between 2024-2027 to 
 meet the needs of already announced projects in the US with a site 
-selected \cite{noauthor_establishing_2022}. An estimated 6 MTU/year of 
+selected \cite{noauthor_establishing_2022}, with a potential cumulative 
+need for 78.7 MTU of \gls{HALEU} by 2027 \cite{korsnick_updated_2021}. 
+An estimated 6 MTU/year of 
 \gls{HALEU} will be needed in 2028 to support refueling of these projects 
-\cite{noauthor_establishing_2022}. 
+\cite{noauthor_establishing_2022}. Based 
+on the estimates of how much \gls{HALEU} can be produced from available 
+\gls{HEU} stockpiles, the stockpiles would be spent by 2024. Therefore, 
+an enrichment facility will need to be built or additional \gls{HEU} stockpiles
+will need to be used to produce \gls{HALEU}.
 
 A model of reactor deployment estimates 520 MTU/year of \gls{HALEU} 
 are needed by 2050 in order to meet 2050 net-zero emissions goals 
 \cite{dixon_estimated_2022}. The cumulative need for \gls{HALEU} by 2050 
 is about 5350 MTU according to this model, but this varies between 
-3450-7175 MTU based on the type of advanced reactor deployed. N important 
+3450-7175 MTU based on the type of advanced reactor deployed. An important 
 consideration in this work is that all \gls{HALEU} is assumed to be 
 at 19.75\% enrichemnt, which is higher than what many advanced reactor 
 designs are reported to need. This work also assumed that reactors 
 requiring \gls{HALEU} would be deployed alongside reactors that don't 
-require \gls{HALEU}, which impacts the amount of \gls{HALEU} that needs 
-to be produced. This is 
+require \gls{HALEU}. This assumption  This is 
 much less than the cumulative needs for \glspl{LWR} between 2021-2050, which 
 is about 78,000 MTU \cite{dixon_estimated_2022}. 
 
 Demand for \gls{HALEU} for the \gls{ARDP} projects is expected to begin in 
 2024 and other reactor projects anticipate coming online in the 
-mid-2020's \cite{noauthor_establishing_2022}. Natural uranium will need to be 
-enriched to \gls{HALEU} levels before then to provide enough time for the 
+mid-2020's \cite{noauthor_establishing_2022}. \gls{HALEU} creation will 
+need to begin before then to provide enough time for the 
 fuel fabrication process. First core loadings of \gls{HALEU} are needed by 
-2027 for the demonstration reactors \cite{dixon_estimated_2022} 
-
-
+2027 for the \gls{ARDP} demonstration reactors \cite{dixon_estimated_2022} 
 
 \subsection{HALEU in reactors}
 A lot of work has been done to evaluate the performance of reactors 
@@ -846,32 +850,32 @@ but it does decrease the soluble boron coefficient and increase the maximum
 burnup ar the edges of the fuel pellets. The impacts on the fuel cycle include 
 an increase in the amount of natural uranium required, a decrease in the 
 amount of high-level waste disposed of per unit energy, and changes in the 
-waste radioacitivity waste. 
+\hl{waste radioacitivity waste}. 
 
-Increasing the fuel enrichment of the NuScale \gls{SMR} has also been investigated 
-\cite{carlson_implications_2022}. Increasing the fuel enricment to 8.34\% doubled the 
-fuel discharge burnup and the cycle time. Fission product poisons, specifically 
-sumarium-149 and xenon-135, increased in concentration when \gls{HALEU} fuel was used. 
-This increase impacts the neutrons poisons that are needed during operation and the 
-radioactivity of the fuel after discharge. Using \gls{HALEU} in the core also led 
-to a reduction in the \gls{LCOE} for the reactor for certain combinations of 
+Increasing the fuel enrichment of the NuScale \gls{SMR} has also been 
+investigated \cite{carlson_implications_2022}. Increasing the fuel 
+enricment to 8.34\% doubled the fuel discharge burnup and the cycle time. 
+Fission product poisons, specifically sumarium-149 and xenon-135, increased 
+in concentration when \gls{HALEU} fuel was used. This increase impacts the 
+neutrons poisons that are needed during operation and the radioactivity of 
+the fuel after discharge. Using \gls{HALEU} in the core also led to a 
+reduction in the \gls{LCOE} for the reactor for certain combinations of 
 enrichment and cycle length \cite{carlson_economic_2020,carlson_implications_2022}.
 
-If \gls{HALEU} fuel is produced by downblending \gls{HEU}, is it very possible that 
-the \gls{HALEU} will contain impurities that would not be present if natural uranium 
-were enriched to produce the \gls{HALEU} \cite{noauthor_establishing_2022}. Bounding 
-studies on the uranium isotopic 
-composition of \gls{HALEU} produced from spent fuel from \gls{EBR} shows the presence 
-of uranium-232, 233, 234, and 236 \cite{vaden_isotopic_2018}. \gls{HALEU} created from 
-downblened \gls{HEU} at the Y-12 Nuclear Security Complex also has uranium-232, 234, and 
-236 impurities \cite{nelson_foreign_2010}. Uranium-233 is a fissile 
-isotope and is expected to affect the neutron population inside a reactor. Uranium-232, 
-234, and 236 are parasitic neutron absorbers, so their presence is also expected to affect 
-the neutron population. The neutronics performance of using \gls{HALEU} containing
-uranium-235 and 238 was compared with the performance using \gls{HALEU} from Y-12 with the 
-known impurities \cite{celikten_effects_2021}. Using 
-the \gls{HALEU} with the \gls{HEU} impurities showed a 0.43\% reactivity drop, leading to 
-an 8\% reduction in the cycle length. 
-
-Add to lit review about fuel forms in reactor performance, keep it 
-pretty short. 
+If \gls{HALEU} fuel is produced by downblending \gls{HEU}, is it possible 
+the \gls{HALEU} will contain impurities that would not be present if 
+natural uranium were enriched to produce the \gls{HALEU} 
+\cite{noauthor_establishing_2022}. Bounding studies on the uranium 
+isotopic composition of \gls{HALEU} produced from spent fuel from \gls{EBR} 
+shows the presence of uranium-232, 233, 234, and 236 \cite{vaden_isotopic_2018}. 
+\gls{HALEU} created from downblened \gls{HEU} at the Y-12 Nuclear Security 
+Complex also has uranium-232, 234, and 236 impurities as well 
+\cite{nelson_foreign_2010}. Uranium-233 is a fissile 
+isotope and is expected to affect the neutron population inside a reactor.
+Uranium-232, 234, and 236 are parasitic neutron absorbers, so their 
+presence is also expected to affect the neutron population. The neutronics 
+performance of using \gls{HALEU} containing uranium-235 and 238 was compared 
+with the performance using \gls{HALEU} from Y-12 with the known impurities 
+\cite{celikten_effects_2021}. Using the \gls{HALEU} with the \gls{HEU} 
+impurities showed a 0.43\% reactivity drop, leading to an 8\% reduction 
+in the cycle length. 
