@@ -413,7 +413,7 @@ demand was allowed. \hl{finish going through this paper.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sensitivity analysis and optimization}
 Sensitivity analysis provides information on how each input parameter 
-of a fuel cycle model affects output parameters of interest. 
+of a fuel cycle model affects output metrics of interest. 
 This analysis is of importance for modeling the nuclear fuel cycle and fuel 
 cycle transitions because of the many free parameters within each model 
 and inherent assumptions in each input parameter.
@@ -424,14 +424,26 @@ modeling the nuclear fuel cycle \cite{noauthor_effects_2017}.
 Sensitivity 
 analysis is performed by running a fuel cycle simulation multiple times 
 with small perturbations in model inputs between each simulation. Then 
-the output parameters are observed for how they are affected by the 
-perturbations. Thielloere et al. demonstrated a methodology to 
+the output metrics are observed for how they are affected by the 
+perturbations. An output metric can be presented through three different 
+indicators: the final value, the maximum value, or the cumulative sum 
+\cite{noauthor_effects_2017}. Thielloere et al. demonstrated a methodology to 
 perform sensitivity analysis, defining the specific input parameters to 
 perturb and the range of values those parameters can take \cite{thiolliere_methodology_2018}.
 They defined the range of values based on known technical capabilities, then 
 sampled uniformly across the range of values to build the simulations. 
 Feng et al. perfomed a similar methdology, but used random sampling 
 in the identified range of input variable values \cite{feng_sensitivity_2020}.
+Some common
+parameters varied during sensitivity analysis include the fuel burnup 
+\cite{thiolliere_methodology_2018,noauthor_effects_2017}, the \gls{LWR}
+lifetime \cite{noauthor_effects_2017,feng_sensitivity_2020}, 
+and the transition start time or introduction date of new reactor technology
+\cite{passerini_systematic_2014,noauthor_effects_2017}. 
+Common model outputs used in sensitivity analysis include 
+natural uranium requirements \cite{noauthor_effects_2017,richards_application_2021},
+plutonium inventory \cite{noauthor_effects_2017,chee_sensitivity_2019}, \gls{SWU} 
+capacity required \cite{noauthor_effects_2017,richards_application_2021}.
 
 There 
 are multiple types of sensitivity analysis with this work including \gls{OAT}, 
@@ -441,11 +453,8 @@ synergistic, and global sensitivity analysis.
 \gls{OAT} analysis 
 investigates the effects of varying a single input parameter and the effects
 on a single output metric, providing a relative impact of the input on the 
-metric. An output metric can be presented through three different indicators:
-the final value, the maximum value, or the cumulative sum 
-\cite{noauthor_effects_2017}. 
-There are multiple ways to report the results of \gls{OAT}, such as a 
-sensitivity value or a sensitivity indicator. 
+metric. There are multiple ways to report the results of \gls{OAT}, such as a 
+correlation coefficients, sensitivity value, or sensitivity indicator. 
 The sensitvity value is defined as 
 \begin{equation}
     q = \frac{p_{ref}(R_{ref}-R_s)}{R_{ref}(p_{ref}-p_s)}
@@ -527,78 +536,60 @@ the input
 parameter(s) that have the most impact on an output metric and identifying 
 input parameter(s) that have the least or negligible impact on output 
 metrics \cite{thiolliere_methodology_2018}. One metric used 
-in global sensitivity analysis is the Sobol' indices ($S_{i_s}$), which 
+in global sensitivity analysis is the Sobol' indices ($S_{i}$), which 
 represent the 
-contribution of each input parameter on the variance of the output parameter
-The indices are defined as \cite{sobol_global_2001} 
+contribution of each input parameter on the variance of the output metric
+The indices are broken down into multiple orders based on how many 
+input parameter interactions are considered. For example, a first order 
+index (referred to as a main effect sensitivity index in 
+\cite{adams_dakota_2019} describes the 
+portion of the variance in the output metric the input parameter is soley 
+responsible for. Mathematically the first order index is defined as  
+\cite{adams_dakota_2019}
 \begin{equation}
-    S_{i_1...i_s} = \frac{D_{i_1...i_s}}{D}
+    S_i = \frac{Var_{x_i}[E(Y|x_i)]}{Var(Y)}
 \end{equation}
 in which 
 \begin{align*}
-    &D_{i_1...i_s} \text{is the variance of \hl{???}} \\
-    &D = \sum_{s=1}^n \sum_{i_1<...<i_s}^n D_{i_1...i_s} \\
-    &s \text{ is the order of the dimension of the index}
+    &Y \text{ is the output metric} \\
+    &x_i \text {is the input parameter}\\
+    &Var_{x_i}[E(Y|x_i)] \text{ is the variance of the conditional expectation}\\
+    &Var(Y) \text{ is the total variance of } Y
 \end{align*}
 
-The Sobol' indices are always less than 1, based
+A total index defines the contribution of a
+sinlge input parmeter on the output metric, with all interactions with other 
+inputs considered \cite{adams_dakota_2019}. It is defined as 
+\cite{adams_dakota_2019}
+\begin{equation}
+    S_{TOT} = \frac{E(Var(Y|x_{-i}))}{Var(Y)} = \frac{Var(Y) - Var[E(Y|x_{-i})]}{Var(Y)}
+\end{equation}
+in which 
+\begin{align*}
+    &x_{-i} = (x_i,...,x_{i-1}, x_{i+1},...,x_m)
+\end{align*}
+
+The Sobol' indices are always less than 1 and will all sum to 1, based
 on variance decomposition theory, and the higher the value the more impact 
-the input variable has on the output variable \cite{thiolliere_methodology_2018}.
-Solbol' indices can have different orders, based on the number of input variable 
-interactions being considered. A total indices defines the contribution of a
-sinlge input variable on the output, with all interactions with other inputs 
-considered. 
+the input variable has on the output metric \cite{thiolliere_methodology_2018}.
 
-
-%move the rest of this section to a better place based on the type of analysis
-Applying sensitivity analysis to nuclear fuel cycles provides insight
-into how material requirements and inventories (model outputs) are affected 
-by model parameters. Some common
-parameters varied during sensitivity analysis include the fuel burnup 
-\cite{thiolliere_methodology_2018,noauthor_effects_2017}, the 
-Common model outputs used in sensitivity analysis include 
-natural uranium requirements \cite{noauthor_effects_2017,richards_application_2021},
-plutonium inventory \cite{noauthor_effects_2017,chee_sensitivity_2019}, \gls{SWU} 
-capacity required \cite{noauthor_effects_2017,richards_application_2021}.
-
-
-Thielloere et al. identified the fraction of \gls{MOX} fuel in a reactor 
+Using first order and total Sobol' indices Thielloere et al. identified 
+the fraction of \gls{MOX} fuel in a reactor 
 and the burnup for \gls{UOX} fuel as the most impactful model parameters on 
 the plutonium production and inventory
 for the simplified scenario they created \cite{thiolliere_methodology_2018}. 
 Additionally, they identified cooling time of the \gls{UOX} as contributing 
 to the invetory of \glspl{MA}, with the largest contribution from the 
-americium production. Other work performing sensitivity analysis 
-showed that reactor deployment in a simple fuel cycle affects the amount 
-of waste produced, because of the different amounts of material required 
-for an inital core loading from a \gls{LWR} compared with a refueling 
-of the reactor \cite{feng_sensitivity_2020}. 
-
-
-
-\subsection{Dakota}
-One tool for performing sensitivity analysis and optimization is 
-Dakota \cite{adams_dakota_2019}.
-Dakota was developed by \gls{SNL} as a systematic way for scientists and 
-engineers to "obtain improved or optimal designs or understand sensitivity
-or uncertainty using simulation-based models" \cite{adams_dakota_2019}.
-Dakota can easily be coupled to a variety of codes in a ``black-box'' manner
-to remove supplying Dakota with any of the other program's source code. 
-
-Dakota has been coupled to fuel cycle simulators such as \gls{DYMOND} and \Cyclus 
-\cite{chee_sensitivity_2019}. This coupling was used to perform one-at-a-time, 
-synergistic, and global sensitivity analysis on the transition from \gls{EG} 01
-to \gls{EG} 30. 
-
-Dakota has been used with \gls{DYMOND} to perform sensitivity analysis on a transition
-scenario of "the US nuclear fleet to a closed fuel cycle with small modular 
-\glspl{LWR} and fast reactors fueled by reprocessed used nuclear fuel" 
-\cite{richards_application_2021}. This analysis focused on failure determination
-and global analysis through the Sobol' indices, and deomnstrated how the 
-combination of these tools can ``identify important design and policy parameters
-for transition scenarios and how those parameters interact not only with a single 
-response, but also synergistically between all parameters and metrics of 
-interest'' \cite{richards_application_2021}. 
+americium production. The analysis performed by Richards and Feng
+\cite{richards_application_2021}
+showed that the advanced reactor build share had the largest first 
+order and total Sobol' index (the 
+largest impact on the variance) for the natural uranium consumption, normalized 
+maximum reprocessing capacity required, and the mass of waste produced. The 
+advanced reactor build share and the energy demand growth had similar first 
+order Sobol' indices for the levelized cost of the transition, but the 
+energy demand growth had the largest total Sobol' index for the levelized cost 
+of the transition. 
 
 \subsection{Optimization}
 Optimization refers to the search for a solution of a given problem to 
@@ -633,6 +624,43 @@ deployed and optimizing around that or prioritizing the waste disposal
 aspect of the \gls{NFC} and optimizing aound that. An example of the latter 
 evaluated fuel cycle options based on radiotoxicity of the \gls{SNF} and 
 \gls{HLW} in a repository \cite{del_cul_advanced_2010}. 
+
+
+\subsection{Dakota}
+One tool for performing sensitivity analysis and optimization is 
+Dakota \cite{adams_dakota_2019}.
+Dakota was developed by \gls{SNL} as a systematic way for scientists and 
+engineers to "obtain improved or optimal designs or understand sensitivity
+or uncertainty using simulation-based models" \cite{adams_dakota_2019}.
+Dakota can easily be coupled to a variety of codes in a ``black-box'' manner
+to remove supplying Dakota with any of the other program's source code.
+Dakota performs sensitivity analysis by sampling from a given range of 
+values for an input parameter, feeding this value to the code it is 
+coupled to, then reading the output of the code to determine the output 
+metric (the response function) for that input value. Through this method, 
+Dakota does not need any information about the code to which it is coupled. 
+The sampling of the input parameter values can be performed in a variety of 
+methods, including even grid spacing across multiple dimensions, specific 
+intervals along a specific vector, or Latin Hypercube Sampling \cite{adams_dakota_2019}.
+
+Dakota performs optimization through a variety of methods, including
+gradient-based, multi-objective optimization, and surrogate-based 
+minimization \cite{adams_dakota_2019}. The optimization problem can be 
+solved by minimizing an objective function based on given constraints. The 
+constraints can be upper and lower bounds for a value or nonlinear 
+equality constraints with a given target value. 
+
+Dakota has been coupled to fuel cycle simulators such as \gls{DYMOND} and \Cyclus 
+\cite{chee_sensitivity_2019,richards_application_2021} to perform sensitivity 
+analysis. Chee \cite{chee_sensitivity_2019} used Dakota to perform 
+\gls{OAT}, synergistic, and global sensitivity analysis on the transition 
+from \gls{EG} 01-30 with both \Cyclus and \gls{DYMOND}. Chee used even 
+multidimensional grid search sampling in Dakota to perform the analysis. 
+Richards and Feng \cite{richards_application_2021} coupled Dakota with 
+\gls{DYMOND} to perform global sensitivity analysis for a sample \gls{NFC} 
+to demonstrate the capability. This work utilized the Latin Hypercube 
+Sampling method in Dakota to select input parameter values. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
