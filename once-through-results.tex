@@ -153,8 +153,8 @@ throughout the simulations (Figure \ref{fig:nogrowth_energy}). All of the
 transition scenarios experience the same energy production until 2030,
 reaching a low point of 83.94 GWe-yr. Each of the scenrios exhibit oscillation 
 in the annual energy production. This oscilaltion is a result of refueling 
-time for the \glspl{LWR} and VOYGRs as well as the step between reactors 
-being decommissioned and new ones being deployed. 
+time for the \glspl{LWR} and any VOYGRs present as well as the step 
+between reactors being decommissioned and new ones being deployed. 
 
 Throughout 
 most of the time with advanced reactors, Scenario 5 has the lowest energy 
@@ -171,7 +171,7 @@ would be needed to fully meet the energy demand of the scenario.
         \centering
         \includegraphics[width=\textwidth]{nogrowth_energy.pdf}
         \caption{Annual energy produced compared to demand for Scenarios 2-7
-        for the entire simulation.}
+        between 1965-2090.}
         \label{fig:nogrowth_energy_all}
     \end{subfigure}
     \hfill
@@ -179,21 +179,40 @@ would be needed to fully meet the energy demand of the scenario.
         \centering
         \includegraphics[width=\textwidth]{nogrowth_energy_after_2025.pdf}
         \caption{Annual energy produced comapred to demand for Scenarios 2-7
-        starting in 2025.}
+        between 2025-209.}
         \label{fig:nogrowth_energy_after_2025}
     \end{subfigure}
-       \caption{Annual energy produced in Scenarios 2-7.}
+       \caption{Annual energy produced comapred to demand in Scenarios 2-7.}
        \label{fig:nogrowth_energy}
 \end{figure}
 
 \subsection{1\% growth scenarios}
+For the 1\% growth scenarios, a similar gap between energy production and 
+demand is observed immediately after the transition start time. All of the 
+scenarios have an energy deficit between 2025 and 2039. After 2039, Scenarios
+8-10 provide an oversupply of energy. Scenario 12 begins to experience 
+and oversupply of energy 2046, and Scenario 13 experiences an oversupply 
+of energy beginning in 2042. Scenario 11 does not ever fully meet the 
+energy demand of the scenario. The maximum gap between the energy demand 
+and the energy supplied for any of the scenarios is 3.03 GWe-yr, experienced 
+by Scenario 11 in 2033 (see Table \ref{tab:1percent_energy}). The 
+inital gap in energy demand for each of these scenarios indicates that 
+the initial material requirements will be underestimated. However, the 
+oversupply of energy for the later time steps for most of the scenarios 
+indicates that the material requirements for these time steps will be 
+accurate for the needs of the scenario. Scenarios 5 and 11 experience the 
+largest gap between energy supply and demand, and both of these scenarios 
+deploy the VOYGER and \gls{MMR}, indicating that this combinations of 
+reactors may not be ideal for using advanced reactors to meet energy 
+demands. 
+
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{1percent_energy.pdf}
         \caption{Annual energy produced compared to demand for Scenarios 8-13
-        for the entire simulation.}
+        between 1965-2090.}
         \label{fig:1percent_energy_all}
     \end{subfigure}
     \hfill
@@ -201,18 +220,37 @@ would be needed to fully meet the energy demand of the scenario.
         \centering
         \includegraphics[width=\textwidth]{1percent_energy_after_2025.pdf}
         \caption{Annual energy produced compared to demand for Scenarios 8-13
-        starting in 2025.}
+        between 2025-2090.}
         \label{fig:1percent_energy_after_2025}
     \end{subfigure}
-       \caption{Annual energy produced in Scenarios 8-13.}
+       \caption{Annual energy produced compared to demand in Scenarios 8-13.}
        \label{fig:1percent_energy}
 \end{figure}
+
+\begin{table}
+    \centering
+    \caption{Maximum undersupply and oversupply of energy in Scenarios 8-13.}
+    \label{tab:1percent_energy}
+    \begin{tabular}{c c c}
+        \hline 
+        Scenario & Max Oversupply (GWe-yr) & Max Undersupply (GWe-yr) \\
+        \hline 
+        8 & 3.94 & 2.90 \\
+        9 & 4.79 & 2.87 \\
+        10 & 4.74 & 2.90 \\
+        11 & 0 & 3.02 \\
+        12 & 2.96 & 2.89 \\
+        13 & 3.66 & 2.90\\
+        \hline
+        
+    \end{tabular}
+\end{table}
 
 \section{Reactor deployment}
 Each of the scenarios are compared on the number of advanced reactors that must 
 be built to meet the prescribed energy demand. 
-
-The \Cycamore `ManagerInst' has preferential deployment of prototypes based on 
+The \Cycamore \texttt{ManagerInst} institution archetype preferentially
+deploys prototypes based on 
 the order in which they are listed in the input file. The first prototype 
 is deployed until deploying more would create a surplus of the required 
 commodity (in this case power), then the next prototype is deployed until 
