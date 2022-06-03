@@ -247,8 +247,13 @@ demands.
 \end{table}
 
 \section{Reactor deployment}
-Each of the scenarios are compared on the number of advanced reactors that must 
-be built to meet the prescribed energy demand. 
+The scenarios are compared on the number of advanced reactors that must 
+be built to meet the prescribed energy demand. This metric takes two 
+different forms: the number of reactors that are in the simulation at 
+one time, and the number of reactors that are built (enter the simulation)
+in a single time step. These metrics combined provide insight into the 
+number of reactors that are needed and the rate at which they are needed. 
+
 The \Cycamore \texttt{ManagerInst} institution archetype preferentially
 deploys prototypes based on 
 the order in which they are listed in the input file. The first prototype 
@@ -263,22 +268,6 @@ oversupply of power. This ordering was used because it would most closely
 match a decision making process that would be implemented. 
 
 \subsection{No growth scenarios}
-The number of reactors that are deployed varies based on 
-the type of reactor used in the scenario and scales with the power output of 
-each type of reactor, as shown in Figure \ref{fig:nogrowth_reactors}. Scenario
-2 requires the most reactors, because the \gls{MMR} has the smallest power 
-output of the reactors considered in this work. Additionally, 8,946 
-\gls{MMR} are deployed 
-at one time in Scenario 2 (Table \ref{tab:reactors_nogrowth}) to meet the 
-power demand. Scenario 3 requires the lowest number of advanced reactors 
-because only the Xe-100 is deployed and this reactor design has the 
-largest power output. 
-
-More reactors are initially deployed in 
-Scenario 7 than in Scenario 4, but in March 2064 the number of advanced 
-reactors in Scenario 7 decreases to less than what is deployed in 
-Scenario 4. 
-
 Advanced reactors are first deployed in February 2030 for all scenarios, about 
 5 years after transition start time. The delay between the start of the 
 transition and the deployment of advanced reactors causes the deficit between 
@@ -290,7 +279,34 @@ reactors for no growth transitions is only one month later than the
 initial deployment time reported in \cite{bachmann_enrichment_2021}
 for 1\% growth transitions. 
 
-Something about reactor lifetime. 
+The number of reactors that are deployed varies based on 
+the type of reactor used in the scenario and scales with the power output of 
+each type of reactor, as shown in Figure \ref{fig:nogrowth_reactors}. Scenario
+2 requires the most reactors, because the \gls{MMR} has the smallest power 
+output of the reactors considered in this work. Additionally, 8,946 
+\gls{MMR} are deployed 
+at one time in Scenario 2 (Table \ref{tab:reactors_nogrowth}) to meet the 
+power demand. Scenario 3 requires the smallest number of advanced reactors 
+because only the Xe-100 is deployed and this reactor design has the 
+largest power output. 
+
+Scenario 2 shows variation in the number of reactors that deployed 
+after 2050. The variation is a result of the shorter lifetime of the 
+\gls{MMR} compared with the Xe-100 and VOYGR. The shorter lifetime 
+means that the \glspl{MMR} must be decomissioned and comissioned more 
+frequently than the other reactors. The variation observed in Scenario 2 
+occurs on 20 year cycles. Similar variations are observed in 
+Scenarios 4 and 7, which also deploy the \gls{MMR}, although the variation 
+in these scenarios is less pronounced than in Scenario 2 because other 
+reactors are deployed as well. 
+
+More reactors are initially deployed in Scenario 7 than in Scenario 4, 
+but in March 2064 the number of advanced reactors in Scenario 7 decreases 
+to less than what is deployed in Scenario 4. This occurs because the 
+number of VOYGRs deployed in Scenario 7 increases and the number of 
+\glspl{MMR} deployed decreases. The VOYGR has a larger ower output than 
+the \gls{MMR} so fewer VOYGRs are required than \glspl{MMR} to meet the 
+same power demand. 
 
 \begin{figure}
     \centering
@@ -318,8 +334,8 @@ Something about reactor lifetime.
 
 \begin{table}
     \centering 
-    \caption{Maximum number of each type of advanced reactor and maximum total 
-    number of reactors deployed at one time in Scenarios 2-7.}
+    \caption{Maximum number of reactors deployed at one time in 
+    Scenarios 2-7.}
     \label{tab:reactors_nogrowth}
     \begin{tabular}{c c c c c}
         \hline
@@ -340,17 +356,15 @@ must by deployed in a single time step is reported (Table
 \ref{tab:reactors_added_nogrowth}). This information provides some insight 
 into the speed at which new reactors must be built. For scenarios with 
 multiple advanced reactors, the numbers reported do not necessarily occur 
-at the same time. 
-
-Scenario 2 requires 
+at the same time. Scenario 2 requires 
 the largest number of reactors to be deployed at a single time, which 
 is not surprising based on the larger total number of reactors required in 
 this scenario. 
 
 \begin{table}
     \centering 
-    \caption{Maximum number of each type of advanced reactor and maximum total 
-    number of reactors added to the simulation at a single time step in Scenarios 2-7.}
+    \caption{Maximum number of reactors added to the simulation at a 
+    single time step in Scenarios 2-7.}
     \label{tab:reactors_added_nogrowth}
     \begin{tabular}{c c c c c}
         \hline
@@ -366,15 +380,22 @@ this scenario.
 \end{table}
 
 \subsection{1\% growth scenarios}
-
-Similar to the no growth scenarios, the transition to only the \gls{MMR} 
-requires the most reactors and the transition to only the Xe-100 
-requires the fewest reactors. 
-
 Advanced reactors are deployed starting in September 2026, which is more 
 than three years before their initial deployment for a 1\% growth 
-transition as reported in \cite{bachmann_enrichment_2021}. Advanced reactors
-are deployed 38 months earlier than for the no growth scenarios.
+transition as reported in \cite{bachmann_enrichment_2021}. Advanced 
+reactors in these scenarios are deployed 38 months (more than 3 years) 
+earlier than for the no growth scenarios. Despite this earlier deployment, 
+there is still the gap between the energy supplied and the demand 
+(Figure \ref{fig:1percent_energy}). This suggests that to meet a 1\% 
+growth in demand advanced reactors would need to be deployed even earlier, 
+possibly even before 2025. 
+
+The number of reactors deployed in these scenarios is similar to the 
+trends observed for the no growth scenarios. Transitioning to only the 
+\gls{MMR} (Scenario 8) requires the largest number of reactors, and 
+transitioning to only the Xe-100 (Scenario 9) requires the fewest 
+number of advanced reactors. 
+
 
 
 \begin{figure}
@@ -403,8 +424,7 @@ are deployed 38 months earlier than for the no growth scenarios.
 
 \begin{table}
     \centering 
-    \caption{Maximum number of each type of advanced reactor and maximum total 
-    number of reactors deployed in Scenarios 8-13}
+    \caption{Maximum number of ereactors deployed in Scenarios 8-13.}
     \label{tab:reactors_1percent}
     \begin{tabular}{c c c c c}
         \hline
@@ -421,8 +441,8 @@ are deployed 38 months earlier than for the no growth scenarios.
 
 \begin{table}
     \centering 
-    \caption{Maximum number of each type of advanced reactor and maximum total 
-    number of reactors deployed in a single time step for Scenarios 8-13}
+    \caption{Maximum number of reactors deployed in a single time step for 
+    Scenarios 8-13.}
     \label{tab:reactors_added_1percent}
     \begin{tabular}{c c c c c}
         \hline
