@@ -394,7 +394,16 @@ The number of reactors deployed in these scenarios is similar to the
 trends observed for the no growth scenarios. Transitioning to only the 
 \gls{MMR} (Scenario 8) requires the largest number of reactors, and 
 transitioning to only the Xe-100 (Scenario 9) requires the fewest 
-number of advanced reactors. 
+number of advanced reactors. Scenarios 10 and 13 have similar numbers of 
+reactors deployed, as do Scenarios 9 and 12. 
+
+Regarding the rate of reacotr deployemnt, Scenario 2 requires the most 
+reactors to be deployed in a single time step (Table 
+\ref{tab:reactors_added_1percent}), with 412 \glspl{MMR} deployed at once. 
+Scenario 11 requires the next largest number of reactors deployed in 
+a single time step, 77 VOYGRs in one step and 79 total advanced reactors. 
+The other scenarios all have comparable numbers, around 50 reactors 
+deployed at once. 
 
 
 
@@ -460,7 +469,17 @@ number of advanced reactors.
 \section{Uranium resources}
 For the purposes of the transition scenarios, uranium resources refers to 
 both the mass of enriched uranium and the mass of natural uranium feed 
-required at each time step in the simulation. 
+required at each time step in the simulation. The feed uranium masses 
+considered are the masses that would be needed at an enrichment facility,
+and does not account for any processes losses between mining and 
+enrichment. Therefore, the values reported are not the same as what would 
+need to be mined. The masses of uranium resources are divided into three 
+different metrics: the average monthly mass of uranium to supply all 
+advanced reactors, the average monthly mass of \gls{HALEU} to supply 
+advanced reactors, and the maximum mass of uranium required by all advanced 
+reactors in a single time step. Each of these metrics provide information 
+on how facilities can be designed to meet average and peak demands for 
+uranium. 
 
 \subsection{No growth scenarios}
 The mass of enriched uranium sent to reactors (Fig. \ref{fig:nogrowth_uranium})
@@ -475,18 +494,37 @@ to advanced reactors at one time.
 
 The largest average mass of \gls{HALEU} is required in Scenario 2, because 
 of the large number of \glspl{MMR} deployed in this scenario. Scenario 
-5 requires the least average mass of \gls{HALEU}, because most of the 
-reactors deployed in this scenario are VOYGRs, which do not require 
-\gls{HALEU}. The other scenarios require a similar monthly average of 
-\gls{HALEU} of 29-36 MT. 
+5 requires the least average mass of \gls{HALEU}, despite requiring the 
+larges average mass of enriched uranium. This result is because most of the 
+reactors in Scenario 5 are VOYGRs, which do not require \gls{HALEU}. 
+Therefore only a small percent of the advanced reactors in Scenario 
+5 require \gls{HALEU}, which reduced the demand for it. The deployment 
+of VOYGRs in tandum with Xe-100's also results in a decrease in the mass 
+of \gls{HALEU} required, but not to the same magnitude. The smaller 
+magnitude decrease is because in Scenario 6 the Xe-100s are 
+preferentially deployed over the VOYGRs, because the Xe-100s have a 
+larger power output. Therefore, most of the reactors deployed in 
+Scenario 6 are Xe-100s, which require \gls{HALEU}. 
+
+Scenarios 2 and 5 require the largest mass of enriched uranium at a single 
+time step. For Scenario 2, the large difference between the average and 
+maximum amount of uranium is because of the refuleing scheme for the 
+\gls{MMR}. The \gls{MMR} only requires fuel when it is first being 
+commissioned, therefore there are periods in which no uranium is 
+required by the reactors. In Scenario 5, 958.5 MTU (99.6\%) of the maximum 
+enriched uranium 
+mass is non-\gls{HALEU} for the VOYGRs. Because of the large difference in 
+magnitude for the average and the maximum suggests that facilities will 
+need to be built for capacities larger than the average to meet the peak 
+needs. 
 
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{nogrowth_uranium.pdf}
-        \caption{Mass of enriched uranium sent to all reactors at 
-        each time step.}
+        \caption{Mass of enriched uranium sent to all reactors 
+        between 1965-2090.}
         \label{fig:nogrowth_all_uranium}
     \end{subfigure}
     \hfill
@@ -494,7 +532,7 @@ reactors deployed in this scenario are VOYGRs, which do not require
         \centering
         \includegraphics[width=\textwidth]{nogrowth_AR_uranium.pdf}
         \caption{Mass of enriched uranium sent to advanced reactors 
-        at each time step starting in 2025.}
+        between 2025-2090.}
         \label{fig:nogrowth_AR_uranium}
     \end{subfigure}
        \caption{Total mass of enriched uranium required by reactors
