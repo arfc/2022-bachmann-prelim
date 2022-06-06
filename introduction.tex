@@ -24,14 +24,14 @@ new reactor designs, often called advanced reactors, are being developed
 replace or expand the current fleet of reactors. These advanced reactors 
 cover a large swath of the design space, from their energy output, to their 
 fuel form, to their cycle length. The deployment of some advanced reactors
-is being developed for the US, mostly through the 
-\gls{DOE} \gls{ARDP}
-\hl{citation}, which aims to support research and the building of 
+is being investigated for the US, mostly through the 
+\gls{DOE} \gls{ARDP} \cite{noauthor_advanced_nodate},
+which aims to support research and the building of 
 demostrations for a select set of the new designs. \gls{ARDP} is a cost-sharing 
 program between the US federal government and private companies to build 
 demonstration reactors by the late 2020's. 
 
-One importnat question that has arisen from the \gls{ARDP} is the development 
+One important question that has arisen from the \gls{ARDP} is the development 
 of supply chains to support the nuclear fuel cycle of the advanced reactors. 
 One key difference in the fuel for these advanced 
 reactor designs and the fuel for the current \glspl{LWR} is the enrichment 
@@ -52,17 +52,19 @@ Currently, there is only one facility in the US commercially licensed to
 downblend \gls{HEU}, the BWXT Nuclear Fuel Services Inc. facility in 
 Erwin, TN, which is expected to have the capacity to downblend 1-2 
 MT of \gls{HEU} to produce up to 10 MT of \gls{HALEU} each year \cite{nagley_ha-leu_2020}.
-The \gls{HEU} being considered for downblending mostly comes from the spent 
-fuel of the \gls{EBR} reactor at \gls{INL} \cite{patterson_haleu_2019}. From 
-this stockpile, there is about three metric tonnes of \gls{HEU} that 
-could be downblended \cite{patterson_haleu_2019}. Other potential stockpiles 
-of \gls{HEU} to downblend include material from \gls{SRS} \cite{regalbuto_addressing_2020} 
-or Y-12 National Security Complex. 
+The \gls{HEU} being considered for downblending comes from three different 
+\gls{DOE} stockpiles: spent \gls{EBR} fuel at \gls{INL} 
+\cite{patterson_haleu_2019}, \gls{SRS} \cite{regalbuto_addressing_2020}, 
+and Y-12 National Security Complex \hl{Find citation}. Each stockpile 
+is limited in how much \gls{HALEU} can be produced, with no more than 
+20 MTU of \gls{HALEU} being produced from a single stockpile. 
 
 Each method to produce \gls{HALEU} has its advantages and 
 disadvantages. Enriching uranium to \gls{HALEU} levels is limited by the 
 amount of natural uranium 
-that can be mined and the capacity of the available facilities.
+that can be mined and the capacity of the available facilities. Facility 
+capacity limits include the facility throughputs and the \gls{SWU} capacity 
+available for enrichment. 
 Downblending \gls{HEU} is limited by the amount of \gls{HEU} avaialable and 
 the downblending capacity of the available facilities. Additionally, 
 potential stockpiles of \gls{HEU} to downblend are known to contain 
@@ -73,41 +75,46 @@ used in a reactor at once.
 
 To understand how 
 each of these \gls{HALEU} production methods can be used to support 
-deploying advanced reactors, the nuclear fuel cycle is modeled. The 
-nuclear fuel cycle describes how fuel for fission energy systems is 
+deploying advanced reactors, the material needs of the \gls{NFC} must be 
+quantified. Material quantification can be accomplished by modeling the 
+\gls{NFC}. The \gls{NFC} describes how fuel for fission energy systems is 
 prepared, processed, and disposed of \cite{tsoulfanidis_nuclear_2013}. 
 The nuclear fuel cycle is often based on the technology 
 deployed, and a transition in the nuclear fuel cycle occurs when new 
-reactor or other fuel cycle technologies are introduced into the 
-nuclear fuel cycle.  
-Modeling the nuclear fuel cycle, typically aided by a \gls{NFC} simulator, 
+reactor types or other fuel cycle technologies are introduced.  
+Modeling the \gls{NFC}, typically aided by a \gls{NFC} simulator, 
 models the facilities in the \gls{NFC}, such as mines or reactors, facility
 deployment and decommissioning, and the materials traded between facilities. 
 \gls{NFC} simulators have been used to model a variety of \gls{NFC} transitions 
 \cite{sunny_transition_2015,bae_fuel_2018,piet_dynamic_2011} and quantify the 
 resources of \glspl{NFC}
-\cite{bachmann_enrichment_2021}. To expand on the information gleaned from 
-modeling \gls{NFC} transitions, sensitivity analysis can be performed on 
-the modeled transition. Sensitivity analysis provides insight into how much
+\cite{bachmann_enrichment_2021}. 
+
+When modling the \gls{NFC}, there are a variety of input parameters, 
+and the selection of these parameters can have significant impacts on the 
+results. To understand how the input parameters affect the model outputs and 
+the amount of impact the input parameters have, sensitivity analysis can be
+performed on the modeled \gls{NFC}. Sensitivity analysis provides insight 
+into how much input 
 parameters of the simulation (e.g.the start time of the transition)
-affect metrics of interest (e.g. the amount of \gls{HALEU} required).
+affect output metrics of interest (e.g. the amount of \gls{HALEU} required).
 Sensitivity anlysis has been used in multiple \gls{NFC} analysis 
 \cite{chee_sensitivity_2019,feng_sensitivity_2020,thiolliere_methodology_2018}.
 to identify the model parameter or parameters that have the greatest 
 impact on specific model outputs or material requirements. Understanding the 
-material requirements of a \gls{NFC} and coupled with sensitivity analysis 
+material requirements of a \gls{NFC} coupled with sensitivity analysis 
 allows for the \gls{NFC} to be optimized based on given criteria. Various 
 optimization schemes have been applied to \glspl{NFC} to optimize the fuel 
 cycle based on criteria such as fuel requirements \cite{kim_selection_1999},
-waste production \cite{shwageraus_optimization_2003}, and multi-objective 
+waste production \cite{shwageraus_optimization_2003}, and in multi-objective 
 problems \cite{passerini_systematic_2014}.
 
 The purpose of this dissertation is to investigate the impacts  
 of deploying reactor deisgns that require \gls{HALEU} for 
 fuel. This investigation is performed through three primary steps. The 
 first is modeling the transition from 
-the current fleet of US \glspl{LWR} to \gls{HALEU}-fueled advanced reactors. This 
-steps will provide 
+the current fleet of US \glspl{LWR} to \gls{HALEU}-fueled advanced reactors. 
+This step will provide quantify the material requirements
 The second is performing sensitivity analysis and optimization of the 
 transitions. 
 Finally, the investigation concludes by modeling the neutonics of select 
