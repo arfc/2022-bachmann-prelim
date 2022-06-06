@@ -473,11 +473,12 @@ required at each time step in the simulation. The feed uranium masses
 considered are the masses that would be needed at an enrichment facility,
 and does not account for any processes losses between mining and 
 enrichment. Therefore, the values reported are not the same as what would 
-need to be mined. The masses of uranium resources are divided into three 
+need to be mined. The masses of uranium resources are divided into four 
 different metrics: the average monthly mass of uranium to supply all 
 advanced reactors, the average monthly mass of \gls{HALEU} to supply 
-advanced reactors, and the maximum mass of uranium required by all advanced 
-reactors in a single time step. Each of these metrics provide information 
+advanced reactors, the maximum mass of uranium required by all advanced 
+reactors in a single time step, and the cumulative mass required by the 
+scenario. Each of these metrics provide information 
 on how facilities can be designed to meet average and peak demands for 
 uranium. 
 
@@ -535,6 +536,13 @@ needs.
         between 2025-2090.}
         \label{fig:nogrowth_AR_uranium}
     \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_uranium_cumulative.pdf}
+        \caption{Cumulative mass of enriched 
+        uranium sent to advanced reactors between 2025-2090.}
+        \label{fig:nogrowth_uranium_cumulative}
+    \end{subfigure}
        \caption{Total mass of enriched uranium required by reactors
        at each time step in Scenarios 2-7.}
        \label{fig:nogrowth_uranium}
@@ -561,10 +569,40 @@ needs.
 \end{table}
 
 
-For the mass of natural uranium required as feed material to produce the 
-enriched uranium, Scenario 2 requires the largest average mass to 
-supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table 
-\ref{tab:nogrowth_feed}). 
+For the mass of feed urnaium, Scenario 2 requires the largest average mass 
+to supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table 
+\ref{tab:nogrowth_feed}). Scenario 5 requires the next largest average 
+mass of feed uranium, and requires less feed uranium than Scenario 2 because 
+most of the product uranium for this scenario is for the VOYGRs, which 
+require a lower enrichment assay than the \glspl{MMR}. Based on Eq. 
+\ref{eq:enrichment_assasys}, a lower assay of the product stream results in 
+a lower mass of feed material required. Scenario 5 still requires more feed 
+material than the other scenarios because the average product mass required 
+is much larger than the other scenarios, which offsets some of the decrease 
+in feed material from the decrease in the product assay. The other scenarios
+(Scenarios 3, 4, 6, and 7) require similar average masses of feed material, 
+at about 1000-1100 MT/month. 
+
+When comparing the feed material to create \gls{HALEU} in each scenario, 
+Scenarios 2-4 require the most feed material. This matches expectations 
+because these scenarios deploy only reactors that require \gls{HALEU}, 
+therefore all feed material is used to produce \gls{HALEU}. Scenario 5 
+requires the least feed material to produce \gls{HALEU} because the vast 
+majority of 
+the reactors in this scenario are VOYGRs and do not require \gls{HALEU}.
+Scenarios 6 and 7 require similar feed uranium masses (about 900 MTU/month)
+despite Scenario 6 deploying a few hundred reactors fewer than Scenario 7. 
+Scenario 7 deploys \glspl{MMR} in addition to the Xe-100s and VOYGRs,
+which leads to the additional reactors in Scenario 7 and the decrease in 
+the average feed material required because of the periods of no fuel being 
+sent to the \glspl{MMR}. 
+
+Finally, the maximum feed uranium required by each scenario poses some 
+challenge in facility design. The maximum feed uranium required varies 
+between 2.7-11.4 times larger than the average feed material, which means that 
+facilities to produce feed uranium will likely need to be designed with a 
+larger capacity than the average feed uranium required to meet the peaks. 
+
 
 \begin{figure}
     \centering
@@ -572,7 +610,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{nogrowth_feed.pdf}
         \caption{Mass of feed uranium to produce enriched uranium sent to 
-        all reactors at each time step.}
+        all reactors between 1965-2090.}
         \label{fig:nogrowth_all_feed}
     \end{subfigure}
     \hfill
@@ -580,11 +618,18 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{nogrowth_AR_feed.pdf}
         \caption{Mass of feed uranium to produce enriched uranium sent to 
-        advanced reactors at each time step.}
+        advanced reactors between 2025-2090.}
         \label{fig:nogrowth_AR_feed}
     \end{subfigure}
-       \caption{Total mass of feed uranium required to produce enriched uranium
-       at each time step in Scenarios 2-7.}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_feed_cumulative.pdf}
+        \caption{Cumulative mass of feed uranium to produce enriched 
+        uranium for advanced reactors between 2025-2090.}
+        \label{fig:nogrowth_feed_cumulative}
+    \end{subfigure}
+       \caption{Mass of feed uranium required to produce enriched uranium
+        in Scenarios 2-7.}
        \label{fig:nogrowth_feed}
 \end{figure}
 
@@ -595,16 +640,16 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
     advanced reactors in Scenarios 2-7. The average feed is reported starting 
     in 2025. The average feed to produce \gls{HALEU} is also reported for each scenario.}
     \label{tab:nogrowth_feed}
-    \begin{tabular}{c c c c}
+    \begin{tabular}{c c c c c}
         \hline
-        Scenario & Average feed mass (t/month) & Average feed mass 
-        for \gls{HALEU} (t/month) & Maximum (t)\\\hline
-        2 & 1,592 & 1,592 & 18,112 \\
-        3 & 1,052 & 1,052 & 2,910\\
-        4 & 1,083 & 1,083 & 3,487\\
-        5 & 1,218 & 24.42 & 7,392 \\
-        6 & 1,070 & 934.8 & 3,190\\
-        7 & 1,105 & 877.5 & 3,869\\
+        Scenario & Average (t/month) & Average 
+        for \gls{HALEU} (t/month) & Maximum (t) & Cumulative (t)\\\hline
+        2 & 1,592 & 1,592 & 18,112 & 79,367\\
+        3 & 1,052 & 1,052 & 2,910 & 57,216\\
+        4 & 1,083 & 1,083 & 3,487 & 58,524\\
+        5 & 1,218 & 24.42 & 7,392 & 152,738 \\
+        6 & 1,070 & 934.8 & 3,190 & 67,972\\
+        7 & 1,105 & 877.5 & 3,869 & 76,345\\
         \hline
     \end{tabular}
 \end{table}
@@ -616,15 +661,23 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{1percent_uranium.pdf}
-        \caption{Mass of uranium sent to all reactors at each time step.}
+        \caption{Mass of uranium sent to all reactors between 1965-2090.}
         \label{fig:1percent_all_urnaium}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{1percent_AR_uranium.pdf}
-        \caption{Mass of enriched uranium sent to advanced reactors at each time step.}
+        \caption{Mass of enriched uranium sent to advanced reactors 
+        between 2025-2090.}
         \label{fig:1percent_AR_uranium}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_uranium_cumulative.pdf}
+        \caption{Cumulative mass of enriched uranium sent to advanced reactors 
+        between 2025-2090.}
+        \label{fig:1percent_uranium_cumulative}
     \end{subfigure}
        \caption{Total mass enriched uranium required by reactors
        at each time step in Scenarios 8-13.}
@@ -637,16 +690,16 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
     advanced reactors in Scenarios 8-13. The average mass is reported starting 
     in 2025. The average mass of \gls{HALEU} is also reported for each scenario.}
     \label{tab:1percent_uranium}
-    \begin{tabular}{c c c c}
+    \begin{tabular}{c c c c c}
         \hline
-        Scenario & Average mass (t/month) & Average mass of 
-        \gls{HALEU} (t/month) & Maximum (t)\\\hline
-        8 & 105.9 & 105.9 & 788.1 \\
-        9 & 56.99 & 56.99 & 118.4\\
-        10 & 62.44 & 62.44 & 159.0\\
-        11 & 254.4 & 4.142 & 1,018 \\
-        12 & 106.6 & 43.26 & 228.9\\
-        13 & 95.69 & 52.05 & 357.8\\
+        Scenario & Average (t/month) & Average  
+        \gls{HALEU} (t/month) & Maximum (t) & Cumulative (t)\\\hline
+        8 & 105.9 & 105.9 & 788.1 & \\
+        9 & 56.99 & 56.99 & 118.4 & \\
+        10 & 62.44 & 62.44 & 159.0 & \\
+        11 & 254.4 & 4.142 & 1,018 & \\
+        12 & 106.6 & 43.26 & 228.9 & \\
+        13 & 95.69 & 52.05 & 357.8 & \\
         \hline
     \end{tabular}
 \end{table}
@@ -657,7 +710,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{1percent_feed.pdf}
         \caption{Mass of feed uranium to produce enriched uranium sent to 
-        all reactors at each time step.}
+        all reactors between 1965-2090.}
         \label{fig:1percent_all_feed}
     \end{subfigure}
     \hfill
@@ -665,8 +718,15 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{1percent_AR_feed.pdf}
         \caption{Mass of feed uranium to produce enriched uranium sent to 
-        advanced reactors at each time step.}
+        advanced reactors between 2025-2090.}
         \label{fig:1percent_AR_feed}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_feed_cumulative.pdf}
+        \caption{Cumulative mass of feed uranium to produce enriched uranium sent to 
+        advanced reactors between 2025-2090.}
+        \label{fig:1percent_feed_cumulative}
     \end{subfigure}
        \caption{Total mass of feed uranium required to produce enriched uranium
        at each time step in Scenarios 8-13.}
@@ -680,16 +740,16 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
     advanced reactors in Scenarios 8-13. The average feed is reported starting 
     in 2025. The average feed to produce \gls{HALEU} is also reported for each scenario.}
     \label{tab:1percent_feed}
-    \begin{tabular}{c c c c}
+    \begin{tabular}{c c c c c}
         \hline
-        Scenario & Average feed mass (t/month) & Average feed mass 
-        for \gls{HALEU} (t/month) & Maximum (t)\\\hline
-        8 & 2,653 & 2,653 & 19,741 \\
-        9 & 1,706 & 1,706 & 3,547\\
-        10 & 1,809 & 1,809 & 4,500\\
-        11 & 2,008 & 103.8 & 7,751 \\
-        12 & 1,777 & 1,295 & 3,626\\
-        13 & 1,840 & 1,508 & 4,379\\
+        Scenario & Average (t/month) & Average  
+        for \gls{HALEU} (t/month) & Maximum (t) & Cumulative (t)\\\hline
+        8 & 2,653 & 2,653 & 19,741 & \\
+        9 & 1,706 & 1,706 & 3,547 & \\
+        10 & 1,809 & 1,809 & 4,500 & \\
+        11 & 2,008 & 103.8 & 7,751 & \\
+        12 & 1,777 & 1,295 & 3,626 & \\
+        13 & 1,840 & 1,508 & 4,379 & \\
         \hline
     \end{tabular}
 \end{table}
@@ -703,7 +763,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{nogrowth_SWU.pdf}
         \caption{\gls{SWU} capacity required to enrich the mass of 
-        uranium sent to reactors at each time step.}
+        uranium sent to all reactors between 1965-2090.}
         \label{fig:nogrowth_all_SWU}
     \end{subfigure}
     \hfill
@@ -711,7 +771,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{nogrowth_AR_SWU.pdf}
         \caption{\gls{SWU} capacity required to enrich the mass of 
-        uranium sent to advanced reactors at each time step.}
+        uranium sent to advanced reactors between 2025-2090.}
         \label{fig:nogrowth_AR_SWU}
     \end{subfigure}
        \caption{Total mass of fuel and enriched uranium required by all reactors 
@@ -728,7 +788,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
     \label{tab:nogrowth_swu}
     \begin{tabular}{c c c c}
         \hline
-        Scenario & Average capacity (t-SWU/month) & Average capacity 
+        Scenario & Average  (t-SWU/month) & Average
         for \gls{HALEU} (t-SWU/month) & Maximum (t-SWU)\\\hline
         2 & 1,796 & 1,796 & 20,431 \\
         3 & 1,211 & 1,211 & 3,351\\
@@ -747,7 +807,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{1percent_SWU.pdf}
         \caption{\gls{SWU} capacity required to enrich the mass of 
-        uranium sent to reactors at each time step.}
+        uranium sent to all reactors between 1965-2090.}
         \label{fig:1percent_all_SWU}
     \end{subfigure}
     \hfill
@@ -755,7 +815,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
         \centering
         \includegraphics[width=\textwidth]{1percent_AR_SWU.pdf}
         \caption{\gls{SWU} capacity required to enrich the mass of 
-        uranium sent to advanced reactors at each time step.}
+        uranium sent to advanced reactorsbetween 2025-2090.}
         \label{fig:1percent_AR_SWU}
     \end{subfigure}
        \caption{Total mass of fuel and enriched uranium required by all reactors 
@@ -772,7 +832,7 @@ supply the advanced reactors (Figure \ref{fig:nogrowth_feed}, Table
     \label{tab:1percent_swu}
     \begin{tabular}{c c c c}
         \hline
-        Scenario & Average capacity (t-SWU/month) & Average capacity 
+        Scenario & Average (t-SWU/month) & Average  
         for \gls{HALEU} (t-SWU/month) & Maximum (t-SWU)\\\hline
         8 & 2,993 & 2,993 & 22,268 \\
         9 & 1,964 & 1,964 & 4,083 \\
@@ -794,17 +854,24 @@ VOYGRs.
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{nogrowth_waste.pdf}
-        \caption{Mass of fuel discharged from all reactors as 
-        a function of time.}
+        \caption{Mass of fuel discharged from all reactors 
+        between 1965-2090.}
         \label{fig:nogrowth_all_waste}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{nogrowth_AR_waste.pdf}
-        \caption{Mass of fuel discharged from advanced reactors as 
-        a function of time..}
+        \caption{Mass of fuel discharged from advanced reactors 
+        between 2025-2090.}
         \label{fig:nogrowth_AR_waste}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{nogrowth_waste_cumulative.pdf}
+        \caption{Cumulative mass of fuel discharged from advanced reactors 
+        between 2025-2090.}
+        \label{fig:nogrowth_waste_cumulative}
     \end{subfigure}
        \caption{Mass of fuel discharged from reactors 
        as a function of time for Scenarios 2-7. }
@@ -818,16 +885,16 @@ VOYGRs.
     in 2025. The average discharge of \gls{HALEU} fuel is also 
     reported for each scenario.}
     \label{tab:nogrowth_waste}
-    \begin{tabular}{c c c c}
+    \begin{tabular}{c c c c c}
         \hline
-        Scenario & Average mass (t/month) & Average mass of \gls{HALEU} 
-        (t/month) & Maximum (t)\\\hline
-        2 & 47.28 & 47.28 & 816.4 \\
-        3 & 36.56 & 36.56 & 61.78\\
-        4 & 37.28 & 37.28 & 114.4\\
-        5 & 157.7 & 0.7347 & 492.3 \\
-        6 & 50.24 & 32.49 & 115.9\\
-        7 & 60.27 & 30.50 & 214.5\\
+        Scenario & Average (t/month) & Average of \gls{HALEU} 
+        (t/month) & Maximum (t) & Cumulative (t)\\\hline
+        2 & 47.28 & 47.28 & 816.4 & \\
+        3 & 36.56 & 36.56 & 61.78 & \\
+        4 & 37.28 & 37.28 & 114.4 & \\
+        5 & 157.7 & 0.7347 & 492.3 & \\
+        6 & 50.24 & 32.49 & 115.9 & \\
+        7 & 60.27 & 30.50 & 214.5 & \\
         \hline
     \end{tabular}
 \end{table}
@@ -838,17 +905,24 @@ VOYGRs.
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{1percent_waste.pdf}
-        \caption{Mass of fuel discharged from all reactors as 
-        a function of time.}
+        \caption{Mass of fuel discharged from all reactors between 
+        1965-2090.}
         \label{fig:1percent_all_waste}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=\textwidth]{1percent_AR_waste.pdf}
-        \caption{Mass of fuel discharged from advanced reactors as 
-        a function of time..}
+        \caption{Mass of fuel discharged from advanced reactors 
+        between 2025-2090.}
         \label{fig:1percent_AR_waste}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_waste_cumulative.pdf}
+        \caption{Cumulative mass of fuel discharged from advanced reactors 
+        between 2025-2090.}
+        \label{fig:1percent_waste_cumulative}
     \end{subfigure}
        \caption{Mass of fuel discharged from reactors 
        as a function of time for Scenarios 8-13. }
