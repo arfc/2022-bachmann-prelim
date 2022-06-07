@@ -556,7 +556,7 @@ needs.
     \begin{tabular}{c c c c c}
         \hline
         Scenario & Average (t/month) & \gls{HALEU} Average 
-        (t/month) & Maximum (t)& Cumulative (t)\\hline
+        (t/month) & Maximum (t)& Cumulative (t)\\\hline
         2 & 63.57 & 63.57 & 723.1 & 79,367\\
         3 & 35.13 & 35.13 & 97.19 & 57,216\\
         4 & 36.81 & 36.81 & 121.2 & 58,524\\
@@ -596,11 +596,20 @@ which leads to the additional reactors in Scenario 7 and the decrease in
 the average feed material required because of the periods of no fuel being 
 sent to the \glspl{MMR}. 
 
-Finally, the maximum feed uranium required by each scenario poses some 
+The maximum feed uranium required by each scenario poses some 
 challenge in facility design. The maximum feed uranium required varies 
 between 2.7-11.4 times larger than the average feed material, which means that 
 facilities to produce feed uranium will likely need to be designed with a 
 larger capacity than the average feed uranium required to meet the peaks. 
+The cumulative mass of feed uranium required by each scenario is between 
+800,000-860,000 MTU for every scenario except Scenarios 2 and 5. 
+Scenario 2 requires over 1.2 million MT and 
+Scenario 5 requires almost 950,000 MT of feed uranium. The \gls{EIA} reports 
+about 176,000 MT of U$_3$O$_8$ reserves in the US available at up to 
+\$100/pound at the end of 2019 \cite{us_eia_2020_2021}, which is about 
+149,000 MT of uranium. Therefore, to meet the cumulative demand of feed 
+uranium for each of these scenarios either uranium from international 
+sources or uranium reserves at increased prices must be used. 
 
 
 \begin{figure}
@@ -652,6 +661,28 @@ larger capacity than the average feed uranium required to meet the peaks.
 \end{table}
 
 \subsection{1\% growth scenarios}
+Some of the same trends observed in the no growth scenarios are observed 
+for the 1\% growth scenarios that deploy the same reactor types
+(Figure \ref{fig:1percent_uranium} and Table \ref{tab:1percent_uranium}). 
+Scenario 11 requires the largest average mass of enriched uranium, but Scenario
+12 requires the next largest average. This deviates from the no growth 
+scenarios, in which Scenario 2 (\glspl{MMR} only) required the second largest 
+average mass of enriched uranium. Scenario 8 requires the largest average
+mass of \gls{HALEU}, while Scenario 11 requires the least, and the other 
+scenarios require less than 100 MT/month. When comparing the average 
+\gls{HALEU} mass required, the 1\% growth scenarios require almost twice 
+the monthly average as the no growth scenarios. 
+
+The maximum mass of enriched uranium required in each scenario ranges 
+between 2.1-7.44 times the average montly mass, which is a small increase 
+than what was observed for the no growth scenarios. The increase between 
+the average and the maximum is smaller for the 1\% growth scenarios because
+the averages increases more than the maximums for scenario deploying the 
+same reactors (e.g between Scenarios 2 and 8). For the cumulative mass 
+of enriched uranium required, a similar pattern to the average mass is 
+observed; Scenario 11 requires the most mass, followed by Scenarios 12 
+and 8. 
+
 
 \begin{figure}
     \centering
@@ -659,7 +690,7 @@ larger capacity than the average feed uranium required to meet the peaks.
         \centering
         \includegraphics[width=\textwidth]{1percent_uranium.pdf}
         \caption{Mass of uranium sent to all reactors between 1965-2090.}
-        \label{fig:1percent_all_urnaium}
+        \label{fig:1percent_all_uranium}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
@@ -676,9 +707,9 @@ larger capacity than the average feed uranium required to meet the peaks.
         between 2025-2090.}
         \label{fig:1percent_uranium_cumulative}
     \end{subfigure}
-       \caption{Total mass enriched uranium required by reactors
-       at each time step in Scenarios 8-13.}
-       \label{fig:1percent_urnaium}
+       \caption{Mass of enriched uranium required by reactors
+        in Scenarios 8-13.}
+       \label{fig:1percent_uranium}
 \end{figure}
 
 \begin{table}
