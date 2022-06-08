@@ -135,7 +135,8 @@ from the \glspl{LWR} at one time step. An average of 130.1 MT/month of spent fue
 discharged from the reactors during the time steps with \glspl{LWR} deployed.
 An average of 149.5 MTU/month is discharged between the first \gls{LWR} deployment 
 and 2025, an average of 93.9 MT/month of spent fuel is discharged from reactors 
-between 2025-2055. 
+between 2025-2055. A cumulative mass of 137,581 MT of \gls{SNF} is discharged 
+from reactors in Scenario 1. 
 
 \begin{figure}
     \centering
@@ -928,6 +929,8 @@ growth scenarios.
 \end{table}
 
 \section{Waste}
+The final metric of interest for the once-through transition scenarios is 
+the amount of \gls{SNF} waste that must be disposed of. 
 The amount of waste produced in a \gls{NFC} has implications on the options 
 to treat and store the waste. In a once-through fuel cycle, all of the 
 waste that is discharged from the reactors will be disposed of, although 
@@ -936,7 +939,11 @@ reported here are based on the masses discharged from the reactor, which
 matches the capacity needs for disposal in a dry storage system or a 
 geologic repository, but not necessarily the timing of the disposal. The 
 disposal of \gls{HALEU} and non\gls{HALEU} fuel will likely take similar 
-forms, so there is no separation between the two in this work. 
+forms, so there is no separation between the two in this work. The masses 
+presented here are the masses of all materials in the \gls{SNF}, not just 
+the uranium discharged. This method of reporting was selected because in 
+a once through fuel cycle, all materials in the \gls{SNF} must be disposed 
+of, not just the uranium. 
 
 For reference, Yucca Mountain has a capacity of about 63,000 MTIHM 
 \cite{stahala_investigation_2008}, with a legal limit of 70,000 MTHM 
@@ -945,8 +952,52 @@ capacity to 260,000 MTHU \cite{noauthor_yucca_nodate}. Capacity
 depends mostly on thermal limits of the facility, not space. 
 
 \subsection{No growth scenarios}
-Most of the waste being discharged in Scenario 5 comes from the 
-VOYGRs. 
+The magnitude of discharged from the advanced reactors 
+(Figure \ref{fig:nogrowth_waste}) follows the same pattern as the enriched 
+uranium masses, but with different timing. This pattern matches expectations, 
+because all of the material that enters the reactors are discharged in this 
+\gls{NFC}. Scenario 5 experiences the largest average mass of \gls{SNF} 
+discharged, but the smallest average mass of \gls{HALEU} discharged because 
+most of the reactors in the scenario are VOYGRs which do not require 
+\gls{HALEU} and require the largest material mass per core. 
+The average mass of \gls{SNF} discharged by advanced reactors is less than 
+the average discharged in Scenario 1, except Scenario 5. This result 
+suggests how \gls{HALEU}-fueled reactors decrease the amount of \gls{SNF}
+to be disposed of in a once-through fuel cycle. 
+
+The first \gls{SNF} discharged from advanced reactors is in August 
+2030 for Scenarios 3, 4, 6, and 7, in February 2032 in Scenario 5, and 
+February 2050 in Scenario 2. The differences in timing of first \gls{SNF} 
+discharge from advanced reactors is a result of the refueling scheme of 
+each type of reactor. The Xe-100, which is deployed in Scenarios 3, 4, 6, 
+and 7 utilizes online refueling, and is modeled as discharging \gls{SNF} 
+every 6 months, which results in the first discharge soon after they 
+are deployed. The VOYGR, deployed in Scenarios 4, 5, 6, and 7 has an 
+18-month refueling cycle, so the first \gls{SNF} discharge for these 
+reactors occurs 18 months after deployement. The \gls{MMR}, deployed in 
+Scenarios 2, 4, 5, and 7, does not undergo refueling, so the first \gls{SNF} 
+discharge occurs 20 years after first deployment. The first \gls{SNF} 
+discharge for a scenario is governed by the shortest refueling time of 
+the reactors deployed. Thus, the Xe-100 is the governing reactor for 
+Scenarios 3, 4, 6, and 7, the VOYGR is the governing reactor for Scenario 
+5, and the \gls{MMR} is the governing reactor for Scenario 2 with regards 
+to \gls{SNF} dishcarge times. 
+
+The cumulative waste masses for these scenarios are all of similar magnitude, 
+except Scenario 5. The advanced reactors in all of the scenarios discharge 
+less \gls{SNF} than the \glspl{LWR}. The cumulative mass of discharged 
+\gls{SNF} for all of the no growth scenarios except Scenario 5 could be 
+disposed of in a geologic repository cited in the US, which is required 
+to have a capacity of at lest 70,000 MTHM \cite{noauthor_nuclear_1983}.
+Most of the scenraios experience a consistent increase in the 
+cumulative mass disharged (Figure \ref{fig:nogrowth_waste_cumulative}), 
+except Scenraio 2. The waste discharged from Scenario 2, similar 
+to the enriched urnaium mass, experiences peaks and valleys in the mass 
+discharged, which results in variations in the increase in the 
+cumulative mass discharged. Scenario 2 surpasses Scenarios 3 and 4 in 
+the cumulative mass of discharged \gls{SNF} is because the \gls{MMR} 
+core requires a greater mass of material than the Xe-100, which is the 
+primary reactor deployed in Scenarios 3 and 4. 
 
 \begin{figure}
     \centering
