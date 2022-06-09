@@ -186,18 +186,20 @@ would be needed to fully meet the energy demand of the scenario.
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{nogrowth_energy.pdf}
+        \includegraphics[width=\textwidth]{nogrowth_energy_after_2025.pdf}
         \caption{Annual energy produced compared to demand for Scenarios 2-7
-        between 1965-2090.}
-        \label{fig:nogrowth_energy_all}
+        between 2025-2090.}
+        \label{fig:nogrowth_energy_after_2025}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{nogrowth_energy_after_2025.pdf}
-        \caption{Annual energy produced comapred to demand for Scenarios 2-7
-        between 2025-209.}
-        \label{fig:nogrowth_energy_after_2025}
+        \includegraphics[width=\textwidth]{nogrowth_energy_gap.pdf}
+        \caption{Gap between energy demand and energy produced by reactors 
+        in Scenarios 2-7 between 2025-2090. Positoive values indicate an 
+        undersupply of energy and negative values represent an 
+        oversupply of energy.}
+        \label{fig:nogrowth_energy_gap}
     \end{subfigure}
        \caption{Annual energy produced comapred to demand in Scenarios 2-7.}
        \label{fig:nogrowth_energy}
@@ -229,7 +231,8 @@ scenarios have an energy deficit between 2025 and 2039. After 2039, Scenarios
 8-10 provide an oversupply of energy. Scenario 12 begins to experience 
 an oversupply of energy 2046, and Scenario 13 experiences an oversupply 
 of energy beginning in 2042. Scenario 11 does not ever experience an 
-oversupply of energy, and is at most just able to meet the demand at times. 
+oversupply of energy, and is at most just able to meet the demand at the 
+beginning of the transition. 
 The maximum gap between the energy demand 
 and the energy supplied for any of the scenarios is 3.03 GWe-yr, experienced 
 by Scenario 11 in 2033 (see Table \ref{tab:1percent_energy}). The 
@@ -239,7 +242,7 @@ oversupply of energy for the later time steps for most of the scenarios
 indicates that the material requirements for these time steps will be 
 accurate for the needs of the scenario. Scenarios 5 and 11 experience the 
 largest gap between energy supply and demand, and both of these scenarios 
-deploy the VOYGER and \gls{MMR}, indicating that this combinations of 
+deploy the VOYGR and \gls{MMR}, indicating that this combinations of 
 reactors may not be ideal for using advanced reactors to meet energy 
 demands. 
 
@@ -247,18 +250,19 @@ demands.
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{1percent_energy.pdf}
-        \caption{Annual energy produced compared to demand for Scenarios 8-13
-        between 1965-2090.}
-        \label{fig:1percent_energy_all}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
         \includegraphics[width=\textwidth]{1percent_energy_after_2025.pdf}
         \caption{Annual energy produced compared to demand for Scenarios 8-13
         between 2025-2090.}
         \label{fig:1percent_energy_after_2025}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{1percent_energy_gap.pdf}
+        \caption{Gap between energy demand and energy produced in Scenarios 8-13
+        between 2025-2090. A positive value represents an undersupply of energy 
+        and a negative value represents an oversupply of energy. }
+        \label{fig:1percent_energy_gap}
     \end{subfigure}
        \caption{Annual energy produced compared to demand in Scenarios 8-13.}
        \label{fig:1percent_energy}
@@ -285,7 +289,7 @@ demands.
 
 \section{Reactor deployment}
 The scenarios are compared on the number of advanced reactors that must 
-be built to meet the prescribed energy demand. This metric takes two 
+be built. This metric takes two 
 different forms: the number of reactors that are in the simulation at 
 one time, and the number of reactors that are built (enter the simulation)
 in a single time step. These metrics combined provide insight into the 
@@ -301,8 +305,8 @@ Because of this scheme, the prototypes were listed in decreasing order of power
 output (i.e. Xe-100, VOYGR, then \gls{MMR}, for the necessary prototypes 
 in that scenario) so that the number of reactors deployed is optimized to 
 be the fewest reactors required for that scenario while also minimizing the 
-oversupply of power. This ordering was used because it would most closely 
-match a decision making process that would be implemented. 
+oversupply of power. This ordering was used because it most closely 
+matches a decision making process that would be implemented. 
 
 \subsection{No growth scenarios}
 Advanced reactors are first deployed in February 2030 for all scenarios, about 
@@ -324,7 +328,7 @@ output of the reactors considered in this work. Additionally, 8,946
 \gls{MMR} are deployed 
 at one time in Scenario 2 (Table \ref{tab:reactors_nogrowth}) to meet the 
 power demand. Scenario 3 requires the smallest number of advanced reactors 
-because only the Xe-100 is deployed and this reactor design has the 
+(1193) because only the Xe-100 is deployed and this reactor design has the 
 largest power output. 
 
 Scenario 2 shows variation in the number of reactors that deployed 
@@ -334,14 +338,14 @@ means that the \glspl{MMR} must be decomissioned and comissioned more
 frequently than the other reactors. The variation observed in Scenario 2 
 occurs on 20 year cycles. Similar variations are observed in 
 Scenarios 4 and 7, which also deploy the \gls{MMR}, although the variation 
-in these scenarios is less pronounced than in Scenario 2 because other 
-reactors are deployed as well. 
+in these scenarios is less pronounced than in Scenario 2 because fewer 
+\glspl{MMR} are deployed in these scenarios.
 
 More reactors are initially deployed in Scenario 7 than in Scenario 4, 
 but in March 2064 the number of advanced reactors in Scenario 7 decreases 
 to less than what is deployed in Scenario 4. This occurs because the 
 number of VOYGRs deployed in Scenario 7 increases and the number of 
-\glspl{MMR} deployed decreases. The VOYGR has a larger ower output than 
+\glspl{MMR} deployed decreases. The VOYGR has a larger power output than 
 the \gls{MMR} so fewer VOYGRs are required than \glspl{MMR} to meet the 
 same power demand. 
 
@@ -396,7 +400,10 @@ multiple advanced reactors, the numbers reported do not necessarily occur
 at the same time. Scenario 2 requires 
 the largest number of reactors to be deployed at a single time, which 
 is not surprising based on the larger total number of reactors required in 
-this scenario. 
+this scenario. Scenario 3 requires the fewest reactors to be deployed in 
+a single time step, based on the total column of Table 
+\ref{tab:reactors_added_nogrowth}, because of the larger power output from 
+the Xe-100 compared to the other advanced reactors. 
 
 \begin{table}
     \centering 
@@ -434,15 +441,14 @@ transitioning to only the Xe-100 (Scenario 9) requires the fewest
 number of advanced reactors. Scenarios 10 and 13 have similar numbers of 
 reactors deployed, as do Scenarios 9 and 12. 
 
-Regarding the rate of reacotr deployemnt, Scenario 2 requires the most 
+Regarding the rate of reactor deployemnt, Scenario 8 requires the most 
 reactors to be deployed in a single time step (Table 
 \ref{tab:reactors_added_1percent}), with 412 \glspl{MMR} deployed at once. 
 Scenario 11 requires the next largest number of reactors deployed in 
 a single time step, 77 VOYGRs in one step and 79 total advanced reactors. 
 The other scenarios all have comparable numbers, around 50 reactors 
-deployed at once. 
-
-
+deployed at once. Scenarios 9 and 12 require the same number of 
+advanced reactors deployed in the same time step. 
 
 \begin{figure}
     \centering
