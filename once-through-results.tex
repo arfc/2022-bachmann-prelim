@@ -155,15 +155,28 @@ The energy demand in the no growth scenarios (Scenarios 2-7) is a constant
 in 2025. The energy supplied in Scenarios 2-7 does not fully meet the demand
 throughout the simulations (Figure \ref{fig:nogrowth_energy}). All of the 
 transition scenarios experience the same energy production until 2030,
-reaching a low point of 83.94 GWe-yr. Each of the scenrios exhibit oscillation 
-in the annual energy production. This oscilaltion is a result of refueling 
-time for the \glspl{LWR} and any VOYGRs present as well as the step 
-between reactors being decommissioned and new ones being deployed. 
+reaching a low point of 83.94 GWe-yr. Each of the scenarios exhibit variation 
+in the annual energy production, which is a result of refueling 
+periods for the \glspl{LWR} and any VOYGRs present. The maximum gap between 
+energy production and demand is 5.52 GWe-yr, in Scenarios 2 and 7 
+(Table \ref{tab:nogrowth_energy}). There 
+is very little oversupply of energy in any of these scenarios, with a 
+maximum oversupply of 0.02 GWe-yr in Scenario 3.
 
 Throughout 
 most of the time with advanced reactors, Scenario 5 has the lowest energy 
-production, producing between 83.94-86.88 GWe-yr. Scenario 4 is able 
-to best meet the demand, producing at least 89.35 GWe-yr starting in 2056.
+production, producing between 83.94-86.88 GWe-yr. Scenario 3 is able 
+to best meet the demand, producing a constant 89.48 GWe-yr starting in 2056,
+because the scenario only deploys the Xe-100, which has the longest lifetime 
+and utilizes online refueling. These characteristics mean that the reactors 
+are not being frequently replaced and do not have outages for refueling 
+that decrease the energy produced in the simulation. Scenario 4 meets the 
+energy demand the next best, producing at least 89.35 GWe-yr starting in 
+2056, because this scenario primarily deploys Xe-100s. However, this scenario 
+also deploys VOYGRs, which experiences a month-long refueling period 
+every 18 months. This refueiling period contributes to the slightly lower 
+energy produced in this scenario compared with Scenario 4 and the 
+variation in the energy produced between years.
 Because each scenario experiences times of not fully meeting the energy 
 demand, one can assume that the material requirements reported for each 
 scenario are an underestimate and that additional reactors and materials
@@ -190,14 +203,34 @@ would be needed to fully meet the energy demand of the scenario.
        \label{fig:nogrowth_energy}
 \end{figure}
 
+\begin{table}
+    \centering
+    \caption{Maximum undersupply and oversupply of energy in Scenarios 2-7.}
+    \label{tab:nogrowth_energy}
+    \begin{tabular}{c c c}
+        \hline 
+        Scenario & Max Oversupply (GWe-yr) & Max Undersupply (GWe-yr) \\
+        \hline 
+        2 & 0.003 & 5.51 \\
+        3 & 0.02 & 5.49 \\
+        4 & 0.003 & 5.52 \\
+        5 & 0 & 5.51 \\
+        6 & 0 & 5.51 \\
+        7 & 0 & 5.52\\
+        \hline
+        
+    \end{tabular}
+\end{table}
+
 \subsection{1\% growth scenarios}
 For the 1\% growth scenarios, a similar gap between energy production and 
 demand is observed immediately after the transition start time. All of the 
 scenarios have an energy deficit between 2025 and 2039. After 2039, Scenarios
 8-10 provide an oversupply of energy. Scenario 12 begins to experience 
-and oversupply of energy 2046, and Scenario 13 experiences an oversupply 
-of energy beginning in 2042. Scenario 11 does not ever fully meet the 
-energy demand of the scenario. The maximum gap between the energy demand 
+an oversupply of energy 2046, and Scenario 13 experiences an oversupply 
+of energy beginning in 2042. Scenario 11 does not ever experience an 
+oversupply of energy, and is at most just able to meet the demand at times. 
+The maximum gap between the energy demand 
 and the energy supplied for any of the scenarios is 3.03 GWe-yr, experienced 
 by Scenario 11 in 2033 (see Table \ref{tab:1percent_energy}). The 
 inital gap in energy demand for each of these scenarios indicates that 
