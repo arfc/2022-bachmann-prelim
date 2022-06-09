@@ -1,17 +1,58 @@
 \section{Summary}
 The purpose of this work is to investigate the impacts of 
 deploying \gls{HALEU}-fueled advanced reactors in the US. The lit 
-review discussed the tools used to perform this investigation, 
-and the current understanding of the fuel cycle and neutronics 
+review discussed different \gls{NFC} options, tools used to perform 
+\gls{NFC} analaysis and sensitivity analysis, 
+the current understanding of the need for \gls{HALEU}, and neutronics 
 effects of using \gls{HALEU} in reactors. 
 
-The results presented thus far in the investigation show 
+The work thus far models the transition from the current fleet of 
+\glspl{LWR} in the US to various combinations of advanced reactors, 
+specifically the X-energy Xe-100, \gls{USNC} \gls{MMR}, and the 
+NuScale VOYGR, assuming either a no growth or 1\% annual growth in 
+energy demand. The results from these scenarios include the material 
+requirements of the transitions, specifically the number of reactors, the 
+uranium resources, the \gls{SWU} 
+capacity, and the waste produced. The number of reactors required 
+in each transition scenario scales based on the power output of the 
+reactors and the energy demand of the scenario. The other resources are 
+affect more by the reactors deployed than the energy demand. Deploying the 
+NuScale VOYGR (an advanced reactor that does not require \gls{HALEU}) 
+in tandum with the X-energy Xe-100 or \gls{USNC} \gls{MMR} (reactors 
+that require \gls{HALEU}) reduces the need for resources related to 
+\gls{HALEU}, but not necessarily the total amount of the resource required. 
+The mass of enriched uranium required and the mass of waste discharged 
+increase when deploying the VOYGR alongside the other reactors, but the 
+feed uranium mass and \gls{SWU} capacity sometimes decreased. These results 
+highlight how the mass for a core loading and the 
+uranium assay of the fuel for each reactor type affect the material 
+requirements. The 
+quantification and understanding of these material needs aid in 
+establishing fuel cycle facility and resources to meet the needs of 
+the transition. 
 
 \section{Propsed Work}
+The remaining proposed work exapnds upon the work already performed in 
+evaluating the effects of deploying \gls{HALEU}-fueled reactors in the US. 
+The proposed work considers the transition to these reactors for a 
+closed fuel cycle to invetigate how this using recycling in the fuel 
+cycle affects the material requirements. The proposed work also performs 
+sensitivity analysis on the transition for both types of fuel cycle 
+(open and closed) to determine the amount of impact some of the modeling 
+decisions have on the material requirements. The results of the sensitivity 
+analysis are then used to develop optimized transition scenarios based on 
+some of the material requirements. Finally, the effects of known impurities 
+from downblending \gls{HEU} to create \gls{HALEU} on the performance of 
+the advanced reactors will be investigated. 
+The work performed already and the first two 
+parts of the proposed work focus on how the reactors deployed affect 
+the \gls{NFC}. The final part of the proposed work investigates how the 
+fuel cycle affects the reactors and their performance. 
+
 \subsection{Recycle Fuel Cycles}
 The once-through fuel cycles investigated will be modified to include recycling 
 to investigate how this type of \gls{NFC} affects the material requirements 
-at each time, and how the recycling scheme impacts them as well. 
+and how the recycling scheme impacts them as well. 
 The scenarios investigated for this section of analysis vary by the 
 energy demand of the scenario and the recycling scheme. Energy demands vary 
 between a no growth and a 1\% growth model, the same as how this parameter 
@@ -37,19 +78,30 @@ as in scenarios 7 and 13.
     \end{tabular}
 \end{table}
 
-Flow of material through the fuel cycle scenarios with recycling is shown in 
-Figure \ref{fig:recycle_fuel_cycle}. This fuel cycle assumes that \gls{SNF}
+Figure \ref{fig:limited_recycle_flow} shows the fuel cycle and material flows 
+for the scenarios with limited recycling (Scenarios 14 and 16). This fuel 
+cycle assumes that \gls{SNF}
 from the \glspl{LWR} and advanced reactors can undergo separation and be 
-recycled.
-
-\input{recycling-flow}
-
-A separations facility is defined to be deployed 5 years before the transition 
+recycled. A separations facility is defined to be deployed 5 years before the transition 
 begins (i.e. in 2020), as this strategy is commonly used for modeling 
 transitions with reyccling to ensure that enough fuel can be spearated and 
 processed in time for use in advanced reactors 
 \cite{passerini_systematic_2014,richards_application_2021}.
 Assume processing losses of 1\% \cite{wigeland_nuclear_2014}.
+
+\input{limited-recycling-flow}
+
+Figure \ref{fig:continuous_recycle_flow} shows the facilities and material 
+flow for the continuous recycle fuel cycle. Continuous recycle is only 
+possible with a fast reactor, and all of the reactors considered in this 
+work use a thermal neutron spectrum. Therefore, a fast reactor facility 
+must be added into the transition. The fast reactor will be modeled 
+based on the fast reactor technology used in the \gls{ES} 
+\cite{wigeland_nuclear_2014} to provide a generic representation of 
+a fast reactor and not any specific design of fast reactor technology. 
+\hl{how will they be deployed? Contribute to energy demand?}
+
+\input{continuous-recycling-flow}
 
 \subsection{Sensitivity Analysis and Optimization}
 The sensitivity analysis is designed to identify how the variation of select
@@ -65,33 +117,35 @@ the scripts in the \texttt{dcwrapper} GitHub repository \cite{chee_arfc/dcwrappe
 Three different types 
 of sensitivity analysis will be performed: \gls{OAT}, synergystic, 
 and global. The analysis will be performed on Scenario 7 and Scenario 
-\hl{find a recycle to include}. 
+14 to provide insight into how the input parameters affect the output 
+metrics for both a once-through and recycle fuel cycle. 
 The input parameters to be varied include the transition 
 start time, the market share of each type of advanced reactor, and 
 the \gls{LWR} lifetime. The transition start time will range from January 
 2025 to January 2040 in three month intervals, but the same energy demand 
 will be specified for all perturbations (89.45 GWe-yr). The market share 
 variable will be repeated three times, for varying the market share of each 
-type of advanced reactor) with market share percentages ranging from 10-30\% 
+type of advanced reactor) with market share percentages ranging from 5-30\% 
 in increments of 5\%. Finally, the \gls{LWR} lifetimes will be varied based 
-on the percent of the fleet that operate for 60 and 80 years. Bachmann et al.
-presents work assuming that all remaining \glspl{LWR} operate for 60 years, 
-so this work will vary between 5-50\% of the \gls{LWR} fleet operating for 80 
+on the percent of the fleet that operate for 60 and 80 years. This 
+variable will vary between 0-50\% of the \gls{LWR} fleet operating for 80 
 years. The \glspl{LWR} do not all start operation at the same time, so the 
 selection of the \glspl{LWR} that operate for 80 years will impact the results, 
-even if the number is the same. Therefore, \hl{a scheme will be developed}. 
+even if the number is the same. Therefore, reactors will be selected based 
+on their power output. \glsplw{LWR} with the largest power output will be 
+selected for extension to 80 years first, based on larger plants being more 
+likely to be granted license extensions. 
 
 The output metrics of 
 interest for this analysis include the amount of waste generated that 
-must be sent to a repository, the mass of natural uranium required, and 
+must be sent to a repository, the mass of \gls{HALEU}, and 
 the amount of \gls{SWU} required. Each metric will be evaluated based on the 
 cumulative sum required for \gls{HALEU}-fueled reactors (i.e. the \gls{MMR} 
-and Xe-100) starting at the transition start time. Only these metrics as they 
-apply to the \gls{HALEU}-fueled reactors will be considered because it is
+and Xe-100) starting at the transition start time because it is
 asusmed that the current fuel cycle infrastructure would be able to 
 supply any \gls{LEU} less than 5\% enriched and the focus of this work is the 
 requirements to support \gls{HALEU}-fueled advanced reactors. 
-The first two output [ppremetrics are metrics considered in the \gls{ES} 
+The first two output metrics are metrics considered in the \gls{ES} 
 \cite{wigeland_nuclear_2014}, and all three of these metrics were considered 
 in previous sensitivity analysis when Dakota was coupled to \gls{DYMOND}
 \cite{feng_sensitivity_2020,richards_application_2021}. 
@@ -112,26 +166,26 @@ the fuel is likely to contain an impurities that are present in the
 supplies to create \gls{HALEU} include uranium-232 and uranium-236
 \cite{vaden_isotopic_2018,nelson_foreign_2010},  
 which are parasitic neutron absorbers. This work models the use of 
-impure \gls{HALEU} fuel in a reactor and compares it to \gls{HALEU} fuel 
+impure \gls{HALEU} fuel in a reactor and compares it with \gls{HALEU} fuel 
 without these impurities to understand how the impurities affect 
 the performance of the reactor. 
 
 Full core models of the Xe-100 and \gls{MMR} will be created in Serpent 
 \cite{leppanen_serpent_2014} to model the neutronics of each reactor 
 design. The fuel composition for each core will be varied to provide 
-a comparison of pure (containing only U-235 and U-238) and impure fuel.
+a comparison of pure (containing only U-235 and U-238) and only impure fuel.
 Material compositions of impure fuel will be modeled based on both the 
 known compositions of \gls{HALEU} from the \gls{EBR} stockpile 
 \cite{vaden_isotopic_2018} and the Y-12 stockpile \cite{nelson_foreign_2010}.
 Each core will be modeled three times, for each fuel composition considered.
-By modeling the core composition to be entirely composed of impure fuel, 
+By modeling the core composition to be entirely composed of impure fuel 
 this work reports the most extreme effect that these impurities can 
 have on reactor performance.  
 
-Results of each simulation that will be compared include the neutron flux at 
+Results of each simulation to be compared include the neutron flux at 
 \gls{BOL}, mid-cycle, and \gls{EOL}, $k_{eff}$ as a function of burnup, 
 fuel temperature reactivity coefficient, and 
-$\beta_{eff}$. Each of these parameters has impacts on performance of 
+$\beta_{eff}$. Each parameter impacts the performance of 
 the reactor, such as the materials degredation rate, amount of burnable 
 poisons required, control rod worth, and the cycle time. Investigating 
 each of these results will help to determine if the impurities potentially 
