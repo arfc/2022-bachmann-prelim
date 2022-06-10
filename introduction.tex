@@ -1,24 +1,23 @@
 \section{Motivation}
-Nucelar energy supplied about 19\% of all energy and over 50\%  
+Nuclear energy supplied about 19\% of all energy and over 50\%  
 of all carbon-free energy in the US in 2021 
 \cite{energy_information_administration_electricity_2022}, making nuclear 
 energy the third largest producer of energy and the largest 
 producer of carbon-free energy in the US. Because of its role 
 as a carbon free supply of base-load power, nuclear energy is expected 
 to play a role in meeting carbon emission goals. The current nuclear energy 
-indsutry is comprised of two reactor designs: \glspl{PWR} and \glspl{BWR}, 
+industry is comprised of two reactor designs: \glspl{PWR} and \glspl{BWR}, 
 which both fall under the classification of \glspl{LWR}.
-Both designs use uranium dioxide pellets as fuel, with uranium 
+Both designs use uranium dioxide pellets as fuel, with the uranium 
 enriched to no more than 5\% uranium-235. These types of reactors 
 have commercially operated in the US since 1957. The \glspl{LWR} 
 currently deployed will be retiring over the next 30 years, with the 
 last license expiring in 2055 \cite{nei_us_2021}. Therefore, if 
 nuclear energy is to continue to produce energy in the US 
-and assit in meeting carbon emission goals, new 
-reactors must be deployed. 
+and assist in meeting carbon emission goals, new reactors must be deployed. 
 
 New \glspl{LWR} are being built around the world 
-\cite{world_nuclear_association_plans_2022}, but 
+\cite{world_nuclear_association_plans_2022}, and 
 new reactor designs, often called advanced reactors, are being developed 
 \cite{hussain_advances_2018} to 
 replace or expand the current fleet of reactors. These advanced reactors 
@@ -43,200 +42,111 @@ uranium enriched to this level in the US. Therefore the \gls{DOE}
 is investigating how to develop a nuclear fuel cycle for uranium enriched to this 
 increased level. 
 
-Two methods can be used to produce \gls{HALEU}: enrich natural uranium to the 
-required level or downblend \gls{HEU} to the required level. The current US
+Two methods can be used to produce \gls{HALEU}: enrich natural uranium 
+or downblend \gls{HEU} to achieve the desired enrichment level. The current US
 nuclear commercial fuel cycle relies on enrichment of natural uranium 
 to create fuel for \glspl{LWR}, but does not have the capability to enrich
-natural uranium to produce \gls{HALEU} \cite{hussain_nei_2018}.   
-Currently, there is only one facility in the US commercially licensed to 
-downblend \gls{HEU}, the BWXT Nuclear Fuel Services Inc. facility in 
-Erwin, TN, which is expected to have the capacity to downblend 1-2 
-MT of \gls{HEU} to produce up to 10 MT of \gls{HALEU} each year \cite{nagley_ha-leu_2020}.
-The \gls{HEU} being considered for downblending comes from three different 
-\gls{DOE} stockpiles: spent \gls{EBR} fuel at \gls{INL} 
-\cite{patterson_haleu_2019}, \gls{SRS} \cite{regalbuto_addressing_2020}, 
-and Y-12 National Security Complex \hl{Find citation}. Each stockpile 
-is limited in how much \gls{HALEU} can be produced, with no more than 
-20 MTU of \gls{HALEU} being produced from a single stockpile. 
-
-Each method to produce \gls{HALEU} has its advantages and 
-disadvantages. Enriching uranium to \gls{HALEU} levels is limited by the 
+natural uranium to produce \gls{HALEU} \cite{hussain_nei_2018}.  
+Enriching uranium to \gls{HALEU} levels is limited by the 
 amount of natural uranium 
 that can be mined and the capacity of the available facilities. Facility 
 capacity limits include the facility throughputs and the \gls{SWU} capacity 
 available for enrichment. 
+The \gls{HEU} being considered for downblending comes from three different 
+\gls{DOE} stockpiles: spent \gls{EBR} fuel at \gls{INL} 
+\cite{patterson_haleu_2019}, stockpiles at \gls{SRS} \cite{regalbuto_addressing_2020}, 
+and stockpiles at Y-12 National Security Complex 
+\cite{robinson_establishment_2020}. Each stockpile 
+is limited in how much \gls{HALEU} can be produced, with no more than 
+20 MTU of \gls{HALEU} being produced from a single stockpile. 
 Downblending \gls{HEU} is limited by the amount of \gls{HEU} avaialable and 
-the downblending capacity of the available facilities. Additionally, 
-potential stockpiles of \gls{HEU} to downblend are known to contain 
-impurities that would affect reactor performance 
+the downblending capacity of the available facilities. Additionally, two 
+of the potential stockpiles of \gls{HEU} to downblend are known to 
+contain impurities that would affect reactor performance 
 \cite{vaden_isotopic_2018,nelson_foreign_2010}.
 These impurities may limit the amount of downblended \gls{HEU} that can be 
 used in a reactor at once. 
+Currently, there is only one facility in the US commercially licensed to 
+downblend \gls{HEU}, the BWXT Nuclear Fuel Services Inc. facility in 
+Erwin, TN, which is expected to have the capacity to downblend 1-2 
+MT of \gls{HEU} to produce up to 10 MT of \gls{HALEU} each year \cite{nagley_ha-leu_2020}.
 
-To understand how 
-each of these \gls{HALEU} production methods can be used to support 
-deploying advanced reactors, the material needs of the \gls{NFC} must be 
-quantified. Material quantification can be accomplished by modeling the 
+
+Deploying advanced reactors that require \gls{HALEU} is expected to have 
+large impacts on the \gls{NFC} in the US. Specifically in the development 
+of infrastructure and supply chains to support these reactors. To assist 
+in understanding the impacts 
+from deploying \gls{HALEU}-fueled reactors, the material requirements 
+of potential transition scenarios can be obtained from modeling the 
 \gls{NFC}. The \gls{NFC} describes how fuel for fission energy systems is 
 prepared, processed, and disposed of \cite{tsoulfanidis_nuclear_2013}. 
-The nuclear fuel cycle is often based on the technology 
-deployed, and a transition in the nuclear fuel cycle occurs when new 
-reactor types or other fuel cycle technologies are introduced.  
-Modeling the \gls{NFC}, typically aided by a \gls{NFC} simulator, 
-models the facilities in the \gls{NFC}, such as mines or reactors, facility
-deployment and decommissioning, and the materials traded between facilities. 
-\gls{NFC} simulators have been used to model a variety of \gls{NFC} transitions 
-\cite{sunny_transition_2015,bae_fuel_2018,piet_dynamic_2011} and quantify the 
-resources of \glspl{NFC}
+The nuclear fuel cycle is often defined based on the technology 
+deployed, and a transition in the nuclear fuel cycle occurs when 
+introducing new reactor types or other fuel cycle technologies.  
+Modeling  a \gls{NFC}, typically aided by a \gls{NFC} simulator, 
+includes the deployment and decommissioning of facilities in the \gls{NFC}, 
+such as mines or reactors, and the materials traded between facilities. 
+\gls{NFC} simulators have been used to model a variety of \gls{NFC} 
+transitions \cite{sunny_transition_2015,bae_fuel_2018,piet_dynamic_2011} 
+and quantify the resource requirements of \glspl{NFC}
 \cite{bachmann_enrichment_2021}. 
 
-When modling the \gls{NFC}, there are a variety of input parameters, 
-and the selection of these parameters can have significant impacts on the 
-results. To understand how the input parameters affect the model outputs and 
-the amount of impact the input parameters have, sensitivity analysis can be
-performed on the modeled \gls{NFC}. Sensitivity analysis provides insight 
-into how much input 
-parameters of the simulation (e.g.the start time of the transition)
-affect output metrics of interest (e.g. the amount of \gls{HALEU} required).
+One limitation in modeling the \gls{NFC} is the large array of potential 
+input parameters, such as when to start a transition or the speed of the 
+transition. To understand 
+the impact of input parameters on the output metrics (e.g. material 
+requriements) of a fuel cycle, sensitivity analysis is
+performed on the modeled \gls{NFC}. Sensitivity analysis involves 
+modeling a fuel cycle with small perturbations in various input 
+parameters and analyzing the variance or spread of select output metrics. 
 Sensitivity anlysis has been used in multiple \gls{NFC} analysis 
 \cite{chee_sensitivity_2019,feng_sensitivity_2020,thiolliere_methodology_2018}.
 to identify the model parameter or parameters that have the greatest 
 impact on specific model outputs or material requirements. Understanding the 
 material requirements of a \gls{NFC} coupled with sensitivity analysis 
-allows for the \gls{NFC} to be optimized based on given criteria. Various 
+allows for the \gls{NFC} to be optimized based on given criteria, such as 
+minimizing the amount of \gls{HALEU} required by the \gls{NFC}. Various 
 optimization schemes have been applied to \glspl{NFC} to optimize the fuel 
 cycle based on criteria such as fuel requirements \cite{kim_selection_1999},
 waste production \cite{shwageraus_optimization_2003}, and in multi-objective 
 problems \cite{passerini_systematic_2014}.
 
-The purpose of this dissertation is to investigate the impacts  
-of deploying reactor deisgns that require \gls{HALEU} for 
-fuel. This investigation is performed through three primary steps. The 
-first is modeling the transition from 
-the current fleet of US \glspl{LWR} to \gls{HALEU}-fueled advanced reactors. 
-This step will provide quantify the material requirements
-The second is performing sensitivity analysis and optimization of the 
-transitions. 
-Finally, the investigation concludes by modeling the neutonics of select 
-\gls{HALEU}-fueled reactors with impure fuel from downblending. 
-
-\section{Uranium enrichment}
-In the nuclear fuel cycle, enrichment increases the relative abundance of 
-uranium-235 compared to uranium-238 in the fuel. This process increases
-the relative abunance of fissle material in nuclear fuel, which is needed 
-for most reactor designs. There are a few different technologies that
-can be used to enrich urnaium, with the US currently employing 
-gaseous centrifuges. Gaseous centrifuges are currently used at the Urenco site 
-in New Mexico \cite{us_nrc_louisiana_2022} and planned for use at the Centrus 
-site in Piketon, Ohio 
-\cite{us_nrc_centrus_2021}. Gaseous centrifuges are rotating cannisters, 
-and rely on the speed of the rotation to preferentially move heavier 
-materials to the outside of the cannister, so that a larger concentration 
-of the lighter material accumulates near the middle of the cannister \cite{villani_uranium_1979}. 
-To ensure that only the mass difference in the uranium isotopes causes 
-this preferential separation, the uranium is in a UF$_6$ gas, because 
-fluorine only has one naturally occuring isotope. Therefore, the 
-fluorine present does not contribute to any mass differences between 
-different molecules. 
-
-The separation needed to enrich uranium cannot be performed in a single 
-separation step. Therefore, centrifuges at a facility are designed in 
-cascades, as shown in Figure \ref{fig:cascade}. Each cascade is designed with 
-multiple separation stages in series, with multiple centrifuge units in parallel 
-comprising each stage \cite{villani_uranium_1979}. Each stage is designed to 
-produce a product enriched to a certain 
-amount (less than the final product of the cascade) then the product from one 
-stage becomes the feed material for the next stage in the cascade to produce 
-uranium enriched to a greater level. The tails material from each 
-stage is combined with feed material for the previous stage, to help strip 
-out any uranium-235 that is left in the tails. Using the tails in the 
-previous stage developos the cascasde into a counter-current cascade 
-\cite{villani_uranium_1979}, and helps to improve the efficiency of the entire cascade. 
-A change in the weight fraction of uranium-235 in the product stream (often 
-referred to as assay) requires a change in the cascade configuration of 
-a facility, even if the required \gls{SWU} capacity is the same. Therefore, 
-understanding the product stream assay, \gls{SWU} capacity needed, and the 
-amount of product needed aids in designing facilities to meet potential 
-demand of \gls{HALEU}.
-
-\hl{find citations, how does this relate to faciity design and fuel cycle 
-needs?}
-
-The capacity of an 
-enrichment facility is based on a number of quantities \cite{tsoulfanidis_nuclear_2013}, 
-which are defined in Table \ref{tab:enrichment_variables}. Each of these 
-quantites can be related using the following equations:
-\begin{subequations}
-    \begin{equation}
-        F = P + T
-    \end{equation}
-    \begin{equation}
-        x_fF = x_pP + x_tT
-        \label{eq:enrichment_assasys}
-    \end{equation}
-    \begin{equation}
-        SWU = \left[P*V(x_p) +T*V(x_t) - F*V(x_f)\right]*t
-        \label{eq:swu}
-    \end{equation}
-    \text{in which:}
-    \begin{equation}
-        V(x_i) = (2x_i - 1)*\ln\left(\frac{x_i}{1-x_i}\right)
-        \label{eq:sep_potential}
-    \end{equation}
-    \label{eq:enrichment}
-\end{subequations}
-
-\begin{table}
-    \centering
-    \caption{Definitions for variables used to describe throughput and 
-    capacity for an enrichment facility.}
-    \label{tab:enrichment_variables}
-    \begin{tabular}{c c}
-        \hline
-        Variable & Description \\\hline
-        F & Mass (kg) of feed material per unit time \\
-        P & Mass (kg) of product material per unit time \\
-        T & Mass (kg) of tails material per unit time \\
-        x$_f$ & weight fraction of $^{235}$U in the feed stream\\
-        x$_p$ & weight fraction of $^{235}$U in the product stream\\
-        x$_t$ & weight fraction of $^{235}$U in the tails stream\\
-        \gls{SWU} & the physical work required to separate the isotopes\\
-        t & time step\\
-        \hline
-    \end{tabular}
-\end{table}
-
-The \gls{SWU} capacity required to produce the required product stream 
-is the physical work required to put into the system to provide the 
-separation needed. It is also related to the amount of energy the facility 
-requires \cite{tsoulfanidis_nuclear_2013}. 
-
-The subequations in Eq. \ref{eq:enrichment} show that as the desired enrichment level 
-of the product feed increases, the feed mass must also increase, assuming everything 
-else is held constant. The equations also show that as the desired product 
-enrichemnt level increases, the amount of \gls{SWU} capacity needed also increases. 
-However, if the product mass decreases, then the required \gls{SWU} capacity 
-also decreases. Therefore, changes to the product enrichment level and mass 
-throughput have opposite effects on the amount of feed material and required 
-\gls{SWU} capacity. Changes to both quantities that are in opposite directions 
-(i.e. an increase in one and a decrease in the other) will not lead to a clear 
-expectation to the change in feed material of \gls{SWU} capacity. The effect 
-on these variables will depend on the magnitude of the two changes.
-
-\input{cascade-figure.tex}
-
 \section{Research Goals}
-The goal of this work is to investigate the impacts of deploying reactors fueled 
-by \gls{HALEU} in the United States, including the impacts on the nuclear fuel 
-cycle and on the reactors deployed. The results of this work are designed to
+The goal of this work is to investigate the impacts of deploying reactors 
+fueled 
+by \gls{HALEU} in the United States, including the impacts the reactors 
+have on the \gls{NFC} and the impacts the \gls{NFC} has on the reactors. 
+The results of this work are designed to
 aid and guide policy and decision makers on how to establish a fuel cycle and 
 supply chains to support the deployment of \gls{HALEU}-fueled reactors. 
 This goal is accomplished 
-through multiple steps. The first step is modeling of multiple transition scenarios
-to select advanced reactors requiring \gls{HALEU} fuel. The next is performing 
-sensitivity analysis on the modeled transition scenarios and optimize the scenarios
-based on perscribed metrics. Finally, the impact of the \gls{HALEU} production 
-methods on reactor performance is investigated. 
+through multiple steps: 
+
+\vspace{0.2cm} 
+\noindent
+\begin{enumerate}
+\item \textbf{Model the transition from \glspl{LWR} to advanced reactors}
+Transitions to multiple fuel cycles with \gls{HALEU}-fueled reactors will 
+be modeled using the \gls{NFC} Simulator \Cyclus \cite{huff_fundamental_2016}. 
+Multiple transitions will be modeled, with each one varying based on the 
+advanced reactors, energy demand, and fuel cycle option (open or closed). This 
+step will quantify and comapre the material requriements of each transition 
+scenario to understand how the material requriements compare to what is available 
+through the current US fuel cycle and published estimates. 
+
+\item \textbf{Perform sensitivity analysis and optimize select transition scenarios}
+Sensitivity analysis will be performed on a subset of the transition scenarios
+modeled, then use the results to determine optimized transition scenarios. This 
+step will provide insight into how some of the input parameters for the transitions 
+impact the results, and identify scenarios that are optimized for specific criteria.
+
+\item \textbf{Neutronics analysis of \gls{HALEU} created from impure \gls{HEU}}
+The neutronics of the \gls{HALEU}-fueled reactors in the transition scenarios will
+be modeled to identify potential effects of using \gls{HALEU} downblended from 
+\gls{HEU} with know impurities. This step will investigate the impact of different 
+fuel cycle options to produce \gls{HALEU} affect reactor operation.
+\end{enumerate}
+
 
 The structure of this thesis is as follows. Chapter 2 provides some 
 background information and literature review on the nuclear fuel cycle,
