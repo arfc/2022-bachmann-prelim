@@ -69,7 +69,7 @@
 \usetikzlibrary{shapes.geometric,arrows}
 \tikzstyle{process} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
 
-\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+
 \tikzstyle{objectr} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
 
 \tikzstyle{empty} =  [rectangle, rounded corners, minimum width=2.5cm, minimum height=0.7cm,text centered, draw=black, fill=white!30]
@@ -77,6 +77,7 @@
 \tikzstyle{facility} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=blue!30]
 \tikzstyle{transition} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=red!30]
 \tikzstyle{centrifuge} = [rectangle, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=none]
+\tikzstyle{sfr} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
 
 \graphicspath{{images/}}
 
@@ -107,9 +108,9 @@
 
 \end{abstract}
 
-\chapter*{Acknowledgments}
+%\chapter*{Acknowledgments}
 
-\input{acks}
+%\input{acks}
 
 %% The thesis format requires the Table of Contents to come
 %% before any other major sections, all of these sections after
@@ -139,13 +140,13 @@
 \chapter{Introduction} \label{ch:intro}
 \input{introduction}
 
-\chapter{Lit Review} \label{ch:background}
+\chapter{Background \& Literature Review} \label{ch:background}
 \input{background}
 
 \chapter{Fuel cycle modeling methodology} \label{ch:fc_methods}
 \input{methodology.tex}
 
-\chapter{Once-through fuel cycle results} \label{ch:once_through_results}
+\chapter{Once-through transition results} \label{ch:once_through_results}
 \input{once-through-results.tex}
 
 \chapter{Summary and Proposed Work} \label{ch:summary}
