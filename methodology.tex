@@ -58,10 +58,10 @@ primary result of \cite{dixon_estimated_2022}.
 
 \section{Reactors} \label{sec:reactor_methods}
 This work considers three advanced reactors: the \gls{USNC} \gls{MMR}, 
-\cite{mitchell_usnc_2020}, the X-energy Xe-100 
-\cite{hussain_advances_2018,harlan_x-energy_2018,noauthor_x-energy_2021}, and 
+\cite{noauthor_usnc_2021}, the X-energy Xe-100 
+\cite{mulder_overview_2021}, and 
 the NuScale VOYGR reactor
-\cite{nuscale_chapter_2020,nuscale_chapter_2020-1,noauthor_spent_nodate}. The 
+\cite{nuscale_chapter_2020-1,reyes_nuscale_2021,reyes_correction_2022}. The 
 \gls{USNC} \gls{MMR}
 and X-energy Xe-100 reactors require \gls{HALEU}, but the NuScale VOYGR requires
 a similar enrichment level to current \gls{LWR} fuel (Table \ref{tab:reactor_summary}). 
@@ -80,18 +80,21 @@ to only the VOYGR.
     \centering
     \caption{Advanced reactor design specifications.}
     \label{tab:reactor_summary}
+    \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{p{3.5cm}p{3cm}p{3cm}p{3cm}}
         \hline
-        Design Criteria & \gls{USNC} \gls{MMR} & 
-            X-energy Xe-100 & NuScale VOYGR \\\hline
+        Design Criteria & \gls{USNC} \gls{MMR} \cite{noauthor_usnc_2021} & 
+        X-energy Xe-100 \cite{mulder_overview_2021} & NuScale VOYGR 
+        \cite{nuscale_chapter_2020-1,reyes_nuscale_2021,reyes_correction_2022}\\
+        \hline
         Reactor type & Modular HTGR & Modular HTGR & SMR\\
-        Power Output (MWth) & 30 & 200 & 160\\
-        Enrichment (\% $^{235}U$) & 13 & 15.5 & 4.09\\
+        Power Output (MWth) & 15 & 200  & 250 \\
+        Enrichment (\% $^{235}U$) & 19.75 & 15.5 & <4.95 \\
         Cycle Length (yrs) & 20 & online refuel & 2\\
-        Fuel form & UO$_2$ + UCO pebbles & UCO pebbles & UO$_2$ pellets\\
-        Discharge fuel burnup (GWd/MTU) & 42.7& 160 & 36 \\
+        Fuel form & UO$_2$ \gls{FCM} compacts & UCO \gls{TRISO} pebbles & UO$_2$ pellets\\
+        Discharge fuel burnup (GWd/MTU) & 82 & 
+        168  & 45 \\
         Reactor Lifetime (yrs)& 20 & 60 & 60 \\
-        Cooling Time (yrs) & - & - & 5\\
         \hline
     \end{tabular}
 \end{table}
@@ -103,32 +106,31 @@ the reactor. The refueling scheme includes
 the cycle time, the refueling time, and the mass of fuel put into the reactor 
 at each refueling. The parameters for the reactors (Table \ref{tab:reactor_summary})
 are meant to closely match the design information about each reactor that 
-is available through open-source information. However, when exact 
-information was not available, open-source inforamation of a similar 
-reactor design supplemented the missing pieces.
+is available through open-source information. The fuel mass required by 
+each reactor type was calaculated based on the reactor thermal power, 
+cycle length, and burnup:
+
+\begin{equation}
+    \text{mass [kg] = }\frac{\text{Power [MWth]}* \text{cycle 
+    length [d]}}{\text{burnup [MWd/kg]}}
+    \label{eq:fuel_mass}
+\end{equation}
+
+\noindent Eq.\ref{eq:fuel_mass} calaculates the mass of uranium required 
+in the core. To calculate the total mass of the fuel (including the carbon 
+and/or oxygen in the fuel) this value was divided by the mass fraction of 
+uranium in the fuel form for the reactor. Any non-uranium components 
+of the fuel, such as silicon-carbide in \gls{TRISO} particles, were 
+not considered in the mass. This methodology assumes that the 
+uranium and uranium-containing fuel components would be the limiting 
+factor in the fuel cycle and other fuel components would be available as 
+needed. 
 
 The \gls{MMR} does not undergo refueling, the initial core
 burns for the entire lifetime of the reactor \cite{mitchell_usnc_2020}. 
 Therefore, the \gls{MMR}
 is modeled to not include any refueling and has a cycle length that 
-matches the reactor lifetime. The mass of uranium in the core was
-calculated based on the power level, fuel burnup, and lifetime of the 
-fuel in the core using values reported in \cite{hawari_development_2018}. 
-The total fuel mass was then calculated based on the composition of the fuel
-\cite{hawari_development_2018} and the mass of uranium required, as 
-described in \cite{bachmann_enrichment_2021}. 
-The fresh fuel composition used for this work is slightly different than 
-what has been reported from \gls{USNC} directly (they report using 
-UO$_2$ in the \gls{FCM} particles \cite{mitchell_usnc_2020}), so that the 
-fuel composition matches 
-with materials used for calculating the necessary mass of uranium. 
-Calculating the fuel mass considers only uranium-containing fuel components 
-(the uranium dioxide and uranium carbide), while 
-any silicon-carbide in the \gls{FCM} particles was not 
-considered. This calculation assumes that uranium-containing materials would 
-be the limiting factor in the fuel fabrication process and that other materials 
-would be available as needed. 
-
+matches the reactor lifetime.  
 The Xe-100 reactor undergos online refueling operations, with each 
 \gls{TRISO} pebble passing 
 through the reactor six times before discharge \cite{hussain_advances_2018}. 
@@ -136,26 +138,15 @@ Every six months about 1/7th
 of the pebbles in the core are expected to be discharged. Online refueling 
 cannot be explicitly modeled in \Cyclus, so the Xe-100 refueling is modeled 
 as a replacement of 1/7th of the entire core every 6 months with no down time 
-for refueling. The mass of 
-each \gls{TRISO} particle was calculated by calculating the volume of a single 
-uranium carbide particle \cite{harlan_x-energy_2018} and multiplying by the 
-density of the 
-particle. This mass was then multiplied by the number of particles in each 
-pebble, and by the number of pebbles in the core \cite{harlan_x-energy_2018}.
-This calculation provided the total mass of uranium carbide in the core. The 
-total mass was then divided by 7 to get an average for the fuel mass replaced 
-each modeled refueling.  
-
+for refueling.  
 The VOYGR reactor contains 37 fuel assemblies, with three different enrichment 
 levels \cite{nuscale_chapter_2020}. Each refueling replaces 13 fuel assemblies, 
-with the middle assembly replaced at every refueling. \cite{nuscale_chapter_2020}
-reports the fuel mass in each assembly. The reported enrichment 
-for the VOYGR reactor in Table \ref{tab:reactor_summary} is the average for 
-each refueling. The VOYGR reactor is 
-modeled as a replacement of 13 fuel assemblies every refueling outage. This modeling 
-assumes that each 
-refueling outage takes one month, because that is the refueling outage time 
-modeled for the \glspl{LWR}, and one month is the minimum time step in the 
+with the middle assembly replaced at every refueling. The VOYGR reactor is 
+modeled as a replacement of 13 fuel assemblies every refueling outage. 
+The fuel enrichment used is an average of the assembly enrichments 
+presented in \cite{nuscale_chapter_2020-1}. Refueling is assumed to 
+take one month, because that is the refueling outage time 
+modeled for the \glspl{LWR} and one month is the minimum time step in the 
 simulations. 
 
 Fresh fuel recipes for these reactors are based on the required fuel form for 
@@ -164,11 +155,9 @@ Depletion calculations in Serpent 2.0 \cite{leppanen_serpent_2014} with the
 JEFF 3.1.2 cross section library \cite{koning_status_2011} provided the 
 \gls{SNF} recipes for the \gls{MMR} and VOYGR. 
 The model created for the \gls{MMR} is based on the work reported in 
-\cite{hawari_development_2018}, and Figure \ref{fig:mmr} shows radial and 
+\cite{hawari_development_2018}, and Figure \ref{fig:mmr_serpent} shows radial and 
 axial cross sections of the modeled core. The \gls{SNF} compositions for 
-the Xe-100 were
-found by modeling a similar core design in Serpent 
-\cite{richter_isotopic_2022}. 
+the Xe-100 were found in literature \cite{richter_isotopic_2022}. 
 VOYGR \gls{SNF} compositions were found by running a full core 
 depletion model in Serpent, with the model used in \cite{suk_simulation_2021} 
 provided by the authors of the paper. 
