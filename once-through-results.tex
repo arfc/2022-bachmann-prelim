@@ -646,11 +646,11 @@ of the fuel cycle, even if it decreases the amount of \gls{HALEU} needed.
         \hline
         Scenario & Average (MT/month) & \gls{HALEU} Average 
         (MT/month) & Maximum (MT)& Cumulative (MT)\\\hline
-        2 & 88.51 & 88.51 & 1007 & 68,948\\
+        2 & 88.51 & 88.51 & 1,007 & 68,948\\
         3 & 31.53 & 31.53 & 86.79 & 24,562\\
-        4 & 31.99 & 32.99 & 101.9 & 25,700\\
-        5 & 117.79 & 48.99 & 1015 & 91,760\\
-        6 & 124.38 & 9.233 & 524.2 & 96,894\\
+        4 & 32.99 & 32.99 & 101.9 & 25,700\\
+        5 & 117.8 & 48.99 & 1,015 & 91,760\\
+        6 & 124.4 & 9.233 & 524.2 & 96,894\\
         7 & 73.06 & 31.89 & 652.6 & 56,914\\
         \hline
     \end{tabular}
@@ -667,48 +667,7 @@ require a lower enrichment assay than the \glspl{MMR}. Based on Eq.
 a lower mass of feed material required. Scenario 5 still requires more feed 
 material than the other scenarios because the average product mass required 
 is much larger than the other scenarios, which offsets some of the decrease 
-in feed material from the decrease in the product assay. The other no growth 
-scenarios
-(Scenarios 3, 4, 6, and 7) require similar average masses of feed material, 
-at about 1000-1100 MT/month. 
-
-When comparing the feed material to create \gls{HALEU} in each scenario, 
-Scenarios 2-4 require the most feed material. This matches expectations 
-because these scenarios deploy only reactors that require \gls{HALEU}, 
-therefore all feed material produces \gls{HALEU}. Scenario 5 
-requires the least feed material to produce \gls{HALEU} because the vast 
-majority of 
-the reactors in this scenario are VOYGRs and do not require \gls{HALEU}.
-Scenarios 6 and 7 require similar feed uranium masses (about 900 MTU/month)
-despite Scenario 6 deploying a few hundred reactors fewer than Scenario 7. 
-Scenario 7 deploys \glspl{MMR} in addition to the Xe-100s and VOYGRs,
-which leads to the additional reactors in Scenario 7 and the decrease in 
-the average feed material required because of the periods of no fuel being 
-sent to the \glspl{MMR}. Deploying VOYGRs alongside the other advanced 
-reactors (e.g., between Scenarios 3 and 6) decreases the average mass 
-of feed uranium to create \gls{HALEU}, but can increase or decrease the 
-average and cumulative for all feed uranium based on the magnitude of 
-the number of VOYGRs deployed compared to other reactor types. 
-
-The maximum feed uranium required by each scenario poses some 
-challenge in facility design. The maximum feed uranium required varies 
-between 2.7-11.4 times larger than the average feed material, which means 
-that 
-facilities to produce feed uranium will likely need to be designed with a 
-larger capacity than the average feed uranium required to meet the peaks. 
-The cumulative mass of feed uranium required by each scenario ranges between 
-800,000-860,000 MTU for every scenario except Scenarios 2 and 5. 
-Scenario 2 requires over 1.2 million MT and 
-Scenario 5 requires almost 950,000 MT of feed uranium, with the 
-advanced reactors in Scenario 2 requiring more feed uranium than the 
-\glspl{LWR}. The \gls{EIA} reports 
-about 176,000 MT of U$_3$O$_8$ reserves in the US available at up to 
-\$100/pound at the end of 2019 \cite{us_eia_2020_2021}, which is about 
-149,000 MT of uranium. Therefore, the US must consider either uranium 
-from international sources or uranium reserves at increased 
-prices to meet the cumulative demand of feed 
-uranium for each of these scenarios.
-
+in feed material from the decrease in the product assay. 
 
 \begin{figure}
     \centering
@@ -748,15 +707,57 @@ uranium for each of these scenarios.
         \hline
         Scenario & Average (t/month) & \gls{HALEU} Average 
         (t/month) & Maximum (t) & Cumulative (t)\\\hline
-        2 & 1,592 & 1,592 & 18,112 & 1,240,391\\
-        3 & 1,052 & 1,052 & 2,910 & 819,436\\
-        4 & 1,083 & 1,083 & 3,487 & 843,737\\
-        5 & 1,218 & 24.42 & 7,392 & 948,746\\
-        6 & 1,070 & 934.8 & 3,190 & 833,259\\
-        7 & 1,105 & 877.5 & 3,869 & 860,882\\
+        2 & 3,386 & 3,386 & 38,517 & 2,637,870\\
+        3 & 944.1 & 944.1 & 2,598 & 735,429\\
+        4 & 1,007 & 1,007 & 3,184 & 784,536\\
+        5 & 2,389 & 1,874 & 35,440 & 1,868,074\\
+        6 & 1,153 & 276.4 & 4,909 & 898,210\\
+        7 & 1,381 & 1,068 & 22,583 & 1,076,127\\
         \hline
     \end{tabular}
 \end{table}
+
+When comparing the feed material to create \gls{HALEU} in each scenario, 
+Scenarios 2 and 5 require the most feed material. Scenario 6 
+requires the least feed material to produce \gls{HALEU} because the vast 
+majority of 
+the reactors in this scenario are VOYGRs that do not require \gls{HALEU}.
+Additionally, fueling the Xe-100 requires less feed uranium than fueling 
+the \gls{MMR} because the Xe-100 requires a lower product assay and a 
+smaller product mass per core. 
+Scenarios 3, 4, and 7 require similar feed uranium masses (about 1,000 MTU/month)
+despite Scenario 7 deploying a few hundred reactors more than the 
+other scenarios. 
+Scenario 7 deploys \glspl{MMR} in addition to the Xe-100s and VOYGRs,
+which leads to the additional reactors in Scenario 7 and the decrease in 
+the average feed material required because of the periods of no fuel being 
+sent to the \glspl{MMR}. Deploying VOYGRs alongside the other advanced 
+reactors (e.g., between Scenarios 3 and 6) generally decreases the average 
+mass of feed uranium to create \gls{HALEU}, with the exception of deploying 
+them alongside both \gls{HALEU}-fueled reactors (going from Scenario 4 to 
+Scenario 7). Scenario 7 requiers a larger average mass of \gls{HALEU} than 
+Scenario 4 because more \glspl{MMR} are deployed in Scenario 7. Therefore, 
+Scenario 7 has more reactors that require \gls{HALEU}, increasing the 
+demand for \gls{HALEU}.
+
+The maximum feed uranium required by each scenario poses some 
+challenge in facility design. The maximum feed uranium required varies 
+between 2.7-14.8 times larger than the average feed material, which means 
+that 
+facilities to produce feed uranium will likely need to be designed with a 
+larger capacity than the average feed uranium required to meet the peaks. 
+The cumulative mass of feed uranium required by each scenario ranges between 
+730,000-940,000 MTU for every scenario except Scenarios 2 and 5. 
+Scenario 2 requires over 2.63 million MT and 
+Scenario 5 requires almost 1.87 million MT of feed uranium, with the 
+advanced reactors in both Scenarios 2 and 5 requiring more feed uranium 
+than the \glspl{LWR}. The \gls{EIA} reports 
+about 176,000 MT of U$_3$O$_8$ reserves in the US available at up to 
+\$100/pound at the end of 2019 \cite{us_eia_2020_2021}, which is about 
+149,000 MT of uranium. Therefore, the US must consider either uranium 
+from international sources or uranium reserves at increased 
+prices to meet the cumulative demand of feed 
+uranium for each of these scenarios.
 
 \subsection{1\% growth scenarios}
 Most of the trends observed in the 1\% growth scenarios match the trends 
@@ -923,47 +924,15 @@ the no growth scenarios follows a similar pattern as
 the feed uranium required by each scenario (Figure \ref{fig:nogrowth_swu}, 
 Table \ref{tab:nogrowth_swu}). Scenario 2 requires the largest monthly 
 average capacity, average capacity to produce \gls{HALEU}, and maximum 
-capacity needed. Scenario 5 requires the smallest averages for the total 
-\gls{SWU} capacity and \gls{SWU} capacity to produce \gls{HALEU}. This 
-result is because most of the enriched uranium in Scenario 5 is for the 
-VOYGRs, which require the smallest product assay of the advanced reactors, 
-despite the scenario requiring the highest average mass of enriched 
-uranium for the no growth scenarios. Therefore for this scenario, the 
-smaller product assay is enough to overcome the increase in the product mass
-to result in a decrease in the \gls{SWU} capacity needed (Eq. \ref{eq:swu}).
-The average \gls{SWU} capacity required in each scenario, except 
-Scenario 5, is larger than the average \gls{SWU} required to enrich 
-uranium for the \glspl{LWR} before 2025. The increase in the average 
-\gls{SWU} capacity is because of the increase in the product 
-assay to supply most of the advanced reactors.  
-
-The \gls{SWU} capacity required to produce \gls{HALEU} decreases when 
-deploying the VOYGR along with the other reactors, which is expected 
-given that the VOYGR requires the smallest product assay. With the exception 
-of Scenario 5, Scenario 7 requires the least \gls{SWU} capacity to produce 
-\gls{HALEU}. This result arises because this scenario deploys many 
-VOYGRs, which reduce the need for \gls{SWU} capacity to produce 
-\gls{HALEU} and the scenario deploys more 
-Xe-100s than the other reactor types and although the Xe-100 requires 
-the largest product assay, it also requires the smallest average mass of 
-enriched uranium (see Table \ref{tab:nogrowth_uranium}). Therefore, the 
-decrease in the product mass offsets the increase in the product 
-assay (Eq. \ref{eq:swu}). This effect is also demonstrated by comparing 
-the \gls{SWU} needs of Scenarios 2 and 3. Both scenarios deploy only 
-advanced reactors that require \gls{HALEU}, and the Xe-100 requires a 
-higher enrichment than the \gls{MMR}. But the decrease in the mass of 
-\gls{HALEU} between the two scenarios is enough to offset the 
-increase in the product assays. 
-
-The \gls{SWU} capacity required to meet enriched uranium demand 
-varies between 2.7-11.3 times the monthly average for all \gls{SWU}. 
-The magnitude differences between the average and the maximum pose potential 
-problems for facility design and nonproliferation safeguards. Facilities 
-will likely need to be built at a capacity greater than the average 
-monthly requirement in order to produce enough enriched uranium to meet 
-the peak demands. However, such a design may result in idle enrichment 
-capacity during time periods in which the additional capacity is 
-not needed to meet peaks, which poses a proliferation risk. 
+capacity needed. Scenario 3 requires the smallest average for the total 
+\gls{SWU} capacity and Scenario 6 requires the smallest average 
+\gls{SWU} capacity to produce \gls{HALEU}. Scenario 3 requires the least 
+\gls{SWU} capacity because it deploys only Xe-100s, which require the 
+smallest \gls{SWU} capacity to produce a core-load of fuel. 
+Scenario 6 requires the smallest \gls{SWU} capacity to produce \gls{HALEU}
+because most of the enriched uranium is for the 
+VOYGRs. Scenarios 2, 5, and 7 require a larger average \gls{SWU} capacity 
+than the \glspl{LWR} before 2025. 
 
 \begin{figure}
     \centering
@@ -996,15 +965,36 @@ not needed to meet peaks, which poses a proliferation risk.
         \hline
         Scenario & Average  (t-SWU/month) & Average
         for \gls{HALEU} (t-SWU/month) & Maximum (t-SWU)\\\hline
-        2 & 1,796 & 1,796 & 20,431 \\
-        3 & 1,211 & 1,211 & 3,351\\
-        4 & 1,245 & 1,245 & 3,999\\
-        5 & 1,086 & 27.54 & 6,577 \\
-        6 & 1,196 & 1,076 & 3,553\\
-        7 & 1,210 & 1,009 & 4,312\\
+        2 & 3,993 & 3,993 & 45,424 \\
+        3 & 1,086 & 1,086 & 2,991\\
+        4 & 1,161 & 1,161 & 3,683\\
+        5 & 2,674 & 2,210 & 41,548 \\
+        6 & 1,095 & 318.3 & 4,678\\
+        7 & 1,522 & 1,244 & 26,459\\
         \hline
     \end{tabular}
 \end{table}
+
+The \gls{SWU} capacity required to produce \gls{HALEU} decreases when 
+deploying the VOYGR along with the other reactors, with the exception 
+of deploying the VOYGR with both \gls{HALEU}-fueled reactors, as noted 
+with the feed uranium requirements. 
+Scenario 6 requires the least \gls{SWU} capacity to produce 
+\gls{HALEU}, despite requiring the largest average mass of enriched 
+uranium. This result arises because most of the enriched uranium in this 
+scenario is for VOYGRs, which don't require \gls{HALEU}. This 
+scenario demonstrates how a decrease in the product assay decreases 
+the \gls{SWU} requirements despite an increase in the product mass. 
+
+The maximum \gls{SWU} capacity required to meet enriched uranium demand 
+varies between 2.7-15.5 times the monthly average for all \gls{SWU}. 
+The magnitude differences between the average and the maximum pose potential 
+problems for facility design and nonproliferation safeguards. Facilities 
+will likely need to be built at a capacity greater than the average 
+monthly requirement in order to produce enough enriched uranium to meet 
+the peak demands. However, such a design may result in idle enrichment 
+capacity during time periods in which the additional capacity is 
+not needed to meet peaks, which poses a proliferation risk. 
 
 \subsection{1\% growth scenarios}
 The \gls{SWU} capacity required to meet the enriched uranium demand of 
@@ -1085,50 +1075,20 @@ The magnitude of discharged from the advanced reactors
 (Figure \ref{fig:nogrowth_waste}) follows the same pattern as the enriched 
 uranium masses, but with delayed timing. This pattern matches expectations, 
 because all of the material that enters each reactor is discharged in this 
-\gls{NFC}. Scenario 5 experiences the largest average mass of \gls{SNF} 
-discharged, but the smallest average mass of \gls{HALEU} discharged because 
-most of the reactors in the scenario are VOYGRs which do not require 
-\gls{HALEU} and require the greatest mass per core. 
+\gls{NFC}. The values of the masses discharged are different than those 
+of the enriched uranium masses for two reasons. The first is that the 
+\gls{SNF} masses include any carbon or oxygen in the fuel forms, which 
+are not included in the enriched uranium masses. The second is because the 
+fuel in the reactors at the simulation are not included in these 
+calculations, because they are not traded to the cooling pool facility.
+Scenario 6 experiences the largest average mass of \gls{SNF} 
+discharged but the smallest average mass of \gls{HALEU} discharged,
+which is consistent with the mass of enriched uranium.
 The average mass of \gls{SNF} discharged by advanced reactors is less than 
-the average discharged in Scenario 1, except Scenario 5. This result 
-suggests how \gls{HALEU}-fueled reactors decrease the amount of \gls{SNF}
+the average discharged in Scenario 1. This result 
+suggests \gls{HALEU}-fueled reactors may decrease the amount of \gls{SNF}
 to disposed of in a once-through fuel cycle. 
 
-The first \gls{SNF} discharged from advanced reactors is in August 
-2030 for Scenarios 3, 4, 6, and 7, in February 2032 in Scenario 5, and 
-February 2050 in Scenario 2. The differences in timing of first \gls{SNF} 
-discharge from advanced reactors is a result of the refueling scheme of 
-each type of reactor. The Xe-100s deployed in Scenarios 3, 4, 6, 
-and 7 utilize online refueling and discharge \gls{SNF} 
-every 6 months, results in the first discharge soon after their initial 
-deployment. The VOYGRs deployed in Scenarios 4, 5, 6, and 7 have an 
-18-month refueling cycle, so the first \gls{SNF} discharge for these 
-reactors occurs 18 months after deployment. The \glspl{MMR} deployed in 
-Scenarios 2, 4, 5, and 7, do not undergo refueling, so the first \gls{SNF} 
-discharge occurs 20 years after first deployment. The shortest refuleing 
-time of the reactors deployed in a scenario governs when 
-first \gls{SNF} discharge in that scenario. Thus, the Xe-100 is the 
-governing reactor for 
-Scenarios 3, 4, 6, and 7, the VOYGR is the governing reactor for Scenario 
-5, and the \gls{MMR} is the governing reactor for Scenario 2 with regards 
-to \gls{SNF} discharge times. 
-
-The cumulative waste masses for these scenarios are all of similar magnitude, 
-except Scenario 5, which has a much larger cumulative mass. The 
-advanced reactors in all of the scenarios discharge 
-less \gls{SNF} than the \glspl{LWR}. The cumulative mass of discharged 
-\gls{SNF} for all of the no growth scenarios except Scenario 5 could be 
-disposed of in a geologic repository cited in the US, which is required 
-to have a capacity of at lest 70,000 MTHM \cite{noauthor_nuclear_1983}.
-Most of the scenarios experience a consistent increase in the 
-cumulative mass discharged (Figure \ref{fig:nogrowth_waste_cumulative}), 
-except Scenario 2. The waste discharged from Scenario 2, similar 
-to the enriched uranium mass, experiences peaks and valleys in the mass 
-discharged, which results in variations in the increase in the 
-cumulative mass discharged. Scenario 2 surpasses Scenarios 3 and 4 in 
-the cumulative mass of discharged \gls{SNF} because the \gls{MMR} 
-core requires a greater mass of material than the Xe-100, which is the 
-primary reactor deployed in Scenarios 3 and 4. 
 
 \begin{figure}
     \centering
@@ -1168,15 +1128,54 @@ primary reactor deployed in Scenarios 3 and 4.
         \hline
         Scenario & Average (t/month) & Average of \gls{HALEU} 
         (t/month) & Maximum (t) & Cumulative (t)\\\hline
-        2 & 47.28 & 47.28 & 816.4 & 36,834\\
-        3 & 36.56 & 36.56 & 61.78 & 28,480\\
-        4 & 37.28 & 37.28 & 114.4 & 29,044\\
-        5 & 157.7 & 0.7347 & 492.3 & 122,849\\
-        6 & 50.24 & 32.49 & 115.9 & 39,138\\
-        7 & 60.27 & 30.50 & 214.5 & 46,947\\
+        2 & 66.15 & 66.15 & 1,142 & 51,531\\
+        3 & 32.81 & 32.81 & 55.29 & 25,560\\
+        4 & 33.65 & 33.65 & 76.75 & 26,210\\
+        5 & 107.7 & 43.99 & 1,108 & 83,925\\
+        6 & 124.9 & 9.607 & 331.2 & 97,302\\
+        7 & 73.05 & 31.78 & 748.2 & 56,905\\
         \hline
     \end{tabular}
 \end{table}
+
+The first \gls{SNF} discharged from advanced reactors is in August 
+2030 for Scenarios 3, 4, and 6, April 2031 in Scenario 7, February 2032 
+in Scenario 5, and 
+February 2050 in Scenario 2. The differences in timing of first \gls{SNF} 
+discharge from advanced reactors is a result of the refueling scheme of 
+each type of reactor. Xe-100s, deployed in Scenarios 3, 4, 6, 
+and 7, utilize online refueling and discharge \gls{SNF} 
+every 6 months, results in the first discharge soon after their initial 
+deployment. VOYGRs, deployed in Scenarios 4, 5, 6, and 7, have an 
+18-month refueling cycle, so the first \gls{SNF} discharge for these 
+reactors occurs 18 months after deployment. \glspl{MMR}, deployed in 
+Scenarios 2, 4, 5, and 7, do not undergo refueling, so the first \gls{SNF} 
+discharge occurs 20 years after first deployment. The shortest refuleing 
+time of the reactors deployed in a scenario governs when 
+first \gls{SNF} discharge in that scenario. Thus, the Xe-100 is the 
+governing reactor for 
+Scenarios 3, 4, 6, and 7 the VOYGR is the governing reactor for Scenarios  
+5, and the \gls{MMR} is the governing reactor for Scenario 2 with regards 
+to \gls{SNF} discharge times. In Scenario 7, \gls{SNF} is first discharged 
+at a different time than in the other scenarios governed by the Xe-100
+because of differences in the deployment scheme. In Scenario 7, VOYGRs and
+\glspl{MMR} are first deployed in February 2030, and Xe-100s are first 
+deployed in October 2030. Despite this difference in when the advanced 
+reactor types are first deployed, the Xe-100 still governs the first \gls{SNF}
+discharge date because they are deployed within 18 months of the first 
+VOYGR deployment and within 19.5 years of the first \gls{MMR} 
+deployment. This scenario demonstrates how even for the deployment of 
+the same reactors, the deployment schedule affects the rate of \gls{SNF} 
+discharge. 
+
+The 
+advanced reactors in all of the scenarios discharge 
+less \gls{SNF} than the \glspl{LWR}. The cumulative mass of discharged 
+\gls{SNF} for all of the no growth scenarios except Scenarios 5 and 6 
+could be 
+disposed of in a geologic repository cited in the US, which is required 
+to have a capacity of at lest 70,000 MTHM \cite{noauthor_nuclear_1983}.
+
 
 \subsection{1\% growth scenarios}
 For the 1\% growth scenarios, similar patterns are observed to the 
