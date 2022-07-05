@@ -116,7 +116,7 @@ cycle length, and burnup:
     \label{eq:fuel_mass}
 \end{equation}
 
-\noindent Eq.\ref{eq:fuel_mass} calaculates the mass of uranium required 
+\noindent Eq.\ref{eq:fuel_mass} calculates the mass of uranium required 
 in the core. To calculate the total mass of the fuel (including the carbon 
 and/or oxygen in the fuel) this value was divided by the mass fraction of 
 uranium in the fuel form for the reactor. Any non-uranium components 
@@ -131,56 +131,26 @@ burns for the entire lifetime of the reactor \cite{mitchell_usnc_2020}.
 Therefore, the \gls{MMR}
 is modeled to not include any refueling and has a cycle length that 
 matches the reactor lifetime.  
-The Xe-100 reactor undergos online refueling operations, with each 
+The Xe-100 reactor undergoes online refueling operations, with each 
 \gls{TRISO} pebble passing 
-through the reactor six times before discharge \cite{hussain_advances_2018}. 
+through the reactor six times before discharge \cite{mulder_overview_2021}. 
 Every six months about 1/7th 
 of the pebbles in the core are expected to be discharged. Online refueling 
 cannot be explicitly modeled in \Cyclus, so the Xe-100 refueling is modeled 
 as a replacement of 1/7th of the entire core every 6 months with no down time 
 for refueling.  
 The VOYGR reactor contains 37 fuel assemblies, with three different enrichment 
-levels \cite{nuscale_chapter_2020}. Each refueling replaces 13 fuel assemblies, 
-with the middle assembly replaced at every refueling. The VOYGR reactor is 
-modeled as a replacement of 13 fuel assemblies every refueling outage. 
+levels \cite{nuscale_chapter_2020-1}. Each refueling replaces 13 fuel assemblies, 
+with the middle assembly replaced at every refueling, therefore this reactor 
+is modeled as a replacement of 13/37th of the total core mass every 
+refueling outage. 
 The fuel enrichment used is an average of the assembly enrichments 
 presented in \cite{nuscale_chapter_2020-1}. Refueling is assumed to 
 take one month, because that is the refueling outage time 
 modeled for the \glspl{LWR} and one month is the minimum time step in the 
-simulations. 
-
-Fresh fuel recipes for these reactors are based on the required fuel form for 
-each reactor using the appropriate uranium isotope ratio for enrichment. 
-Depletion calculations in Serpent 2.0 \cite{leppanen_serpent_2014} with the 
-JEFF 3.1.2 cross section library \cite{koning_status_2011} provided the 
-\gls{SNF} recipes for the \gls{MMR} and VOYGR. 
-The model created for the \gls{MMR} is based on the work reported in 
-\cite{hawari_development_2018}, and Figure \ref{fig:mmr_serpent} shows radial and 
-axial cross sections of the modeled core. The \gls{SNF} compositions for 
-the Xe-100 were found in literature \cite{richter_isotopic_2022}. 
-VOYGR \gls{SNF} compositions were found by running a full core 
-depletion model in Serpent, with the model used in \cite{suk_simulation_2021} 
-provided by the authors of the paper. 
-
-\begin{figure}
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{mmr_radial.png}
-        \caption{Radial view of \gls{MMR} geometry.}
-        \label{fig:mmr_radial}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{mmr_axial.png}
-        \caption{Axial view of \gls{MMR} geometry}
-        \label{fig:mmr_axial}
-    \end{subfigure}
-       \caption{Diagrams of the \gls{MMR} geometry used in Serpent to 
-       perform depletion calculations. }
-       \label{fig:mmr_serpent}
-\end{figure}
+simulations. Fresh fuel recipes for these reactors are based on the 
+required fuel form for each reactor using the appropriate uranium isotope 
+ratio for enrichment. 
 
 \section{Once-through fuel cycle}
 Figure \ref{fig:once-through_fuel_cycle} shows the flow of material through 
