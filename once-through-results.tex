@@ -155,25 +155,27 @@ in Scenario 1.
 The energy demand in the no growth scenarios (Scenarios 2-7) is a constant
 89.456 GWe-yr, based on the energy supplied by the reactors in Scenario 1
 in 2025. The energy supplied in Scenarios 2-7 does not fully meet the demand
-throughout the simulations (Figure \ref{fig:nogrowth_energy}). All of the 
+throughout the duration of the transition (Figure \ref{fig:nogrowth_energy}). 
+All of the 
 transition scenarios experience the same energy production until 2030,
 reaching a low point of 83.94 GWe-yr. Each of the scenarios exhibit variation 
 in the annual energy production, which is a result of refueling 
 periods for the \glspl{LWR} and any VOYGRs present. The maximum gap between 
-energy production and demand is 5.52 GWe-yr, in Scenarios 2 and 7 
+energy production and demand is 5.516 GWe-yr, in Scenarios 4 and 7 
 (Table \ref{tab:nogrowth_energy}). There 
 is very little oversupply of energy in any of these scenarios, with a 
-maximum oversupply of 0.02 GWe-yr in Scenario 3.
+maximum oversupply of 0.018 GWe-yr in Scenario 3.
 
 Throughout 
-most of the time with advanced reactors, Scenario 5 has the lowest energy 
-production, producing between 83.94-86.88 GWe-yr. Scenario 3 is able 
-to best meet the demand, producing a constant 89.48 GWe-yr starting in 2056,
+most of the time with advanced reactors, Scenario 6 generally has the 
+lowest energy 
+production, producing between 83.95-87.38 GWe-yr. Scenario 3 is able 
+to best meet the demand, producing a constant 89.52 GWe-yr starting in 2056,
 because the scenario only deploys the Xe-100, which has the longest lifetime 
 and utilizes online refueling. These characteristics mean that the reactors 
 are not being frequently replaced and do not have outages for refueling 
 that decrease the energy produced in the simulation. Scenario 4 meets the 
-energy demand the next best, producing at least 89.35 GWe-yr starting in 
+energy demand the next best, producing at least 89.43 GWe-yr starting in 
 2056, because this scenario primarily deploys Xe-100s. However, this scenario 
 also deploys VOYGRs, which experiences a month-long refueling period 
 every 18 months. This refueiling period contributes to the slightly lower 
@@ -198,7 +200,7 @@ energy undersupply would need additional reactors and materials.
         \centering
         \includegraphics[width=\textwidth]{nogrowth_energy_gap.pdf}
         \caption{Gap between energy demand and energy produced by reactors 
-        in Scenarios 2-7 between 2025-2090. Positoive values indicate an 
+        in Scenarios 2-7 between 2025-2090. Positive values indicate an 
         undersupply of energy and negative values represent an 
         oversupply of energy.}
         \label{fig:nogrowth_energy_gap}
@@ -215,11 +217,11 @@ energy undersupply would need additional reactors and materials.
         \hline 
         Scenario & Max Oversupply (GWe-yr) & Max Undersupply (GWe-yr) \\
         \hline 
-        2 & 0.003 & 5.512 \\
-        3 & 0.018 & 5.487 \\
+        2 & 0.003 & 5.516 \\
+        3 & 0.063 & 5.468 \\
         4 & 0.003 & 5.516 \\
-        5 & 0.000 & 5.512 \\
-        6 & 0.000 & 5.505 \\
+        5 & 0.000 & 5.516 \\
+        6 & 0.000 & 5.502 \\
         7 & 0.000 & 5.516 \\
         \hline
         
@@ -264,8 +266,8 @@ demands.
         \centering
         \includegraphics[width=\textwidth]{1percent_energy_gap.pdf}
         \caption{Gap between energy demand and energy produced in Scenarios 8-13
-        between 2025-2090. A positive value represents an undersupply of energy 
-        and a negative value represents an oversupply of energy. }
+        between 2025-2090. Positive values represents an undersupply of energy 
+        and negative values represents an oversupply of energy. }
         \label{fig:1percent_energy_gap}
     \end{subfigure}
        \caption{Annual energy produced compared to demand in Scenarios 8-13.}
@@ -331,31 +333,12 @@ The number of reactors deployed varies based on
 the type of reactor used in the scenario and scales with the power output of 
 each type of reactor, as shown in Figure \ref{fig:nogrowth_reactors}. Scenario
 2 requires the most reactors, because the \gls{MMR} has the smallest power 
-output of the reactors considered in this work. Additionally, 8,946 
+output of the reactors considered in this work. Additionally, 17,892
 \gls{MMR} are deployed 
 at one time in Scenario 2 (Table \ref{tab:reactors_nogrowth}) to meet the 
 power demand. Scenario 3 requires the smallest number of advanced reactors 
-(1193) because this scenario only deploys the Xe-100 and this reactor 
-design has the largest power output. 
-
-Scenario 2 shows variation in the number of reactors that deployed 
-after 2050. The variation is a result of the shorter lifetime of the 
-\gls{MMR} compared with the Xe-100 and VOYGR. The shorter lifetime 
-means that the \glspl{MMR} must be decommissioned and commissioned more 
-frequently than the other reactors. The variation observed in Scenario 2 
-occurs on 20 year cycles.  
-Scenarios 4 and 7, which also deploy the \gls{MMR}, exhibit similar 
-variations, with a less pronounced variation 
-than in Scenario 2 because fewer 
-\glspl{MMR} are deployed in these scenarios.
-
-Scenario 7 initially deploys more reactors than than Scenario 4, 
-but in March 2064 the number of advanced reactors in Scenario 7 decreases 
-to less than what is deployed in Scenario 4. This occurs because the 
-number of VOYGRs deployed in Scenario 7 increases and the number of 
-\glspl{MMR} deployed decreases. The larger power output of the VOYGR 
-compared with the \gls{MMR} results in fewer reactors needed to meet 
-the same power demand. 
+(1119) because this scenario only deploys the Xe-100, which
+has the largest power output. 
 
 \begin{figure}
     \centering
@@ -390,26 +373,53 @@ the same power demand.
         \hline
         Scenario & \glspl{MMR} [\#] & Xe-100s [\#] & VOYGRs [\#] 
         & Total [\#]\\\hline
-        2 & 8946 & - & - & 8946\\
-        3 & - & 1193 & - & 1193\\
-        4 & 623 & 1128 & - & 1692\\
-        5 & 136 & - & 1762 & 1898\\
-        6 & - & 1061 & 198 & 1259\\
-        7 & 616 & 924 & 350 & 1768\\
+        2 & 17892 & - & - & 17892\\
+        3 & - & 1119 & - & 1119\\
+        4 & 475 & 1089 & - & 1557\\
+        5 & 13361 & - & 766 & 13617\\
+        6 & - & 328 & 821 & 1149\\
+        7 & 5090 & 759 & 291 & 5832\\
         \hline
     \end{tabular}
 \end{table}
 
+Scenario 2 shows variation in the number of reactors deployed 
+after 2050. The variation is a result of the shorter lifetime of the 
+\gls{MMR} compared with the Xe-100 and VOYGR. The shorter lifetime 
+means that the \glspl{MMR} must be decommissioned and commissioned more 
+frequently than the other reactors. The variation observed in Scenario 2 
+occurs on 20 year cycles.  
+Scenarios 4 and 7, which also deploy the \gls{MMR}, exhibit similar 
+variations, with a less pronounced variation 
+than in Scenario 2 because fewer 
+\glspl{MMR} are deployed in these scenarios.
+
+Scenarios 5 and 7 show a decrease in the number of advanced 
+reactors deployed with time. This decrease occurs because when the 
+\glspl{MMR} retire they are replaced with either Xe-100s or VOYGRs 
+instead of with more \glspl{MMR}. In Scenario 5 the \glspl{MMR} are 
+replaced with VOYGRs and in Scenario 7 the \glspl{MMR} are mostly 
+replaced with Xe-100s. The replacement of the \glspl{MMR} occurs 
+because the gap between the power supplied and the demand becomes 
+large enough to warrant the larger power output of the Xe-100 or VOYGR.
+Scenarios 3 and 4 have a constant number of advanced reactors deployed 
+starting in December 2055. These scenarios have a constant number of 
+advanced reactors because by December 2055 all of the \glspl{LWR} have 
+been decommissioned, so the only gap between energy supply and demand 
+will come from the decommissioning of advanced reactors. The Xe-100 and 
+the VOYGR have a 60 year lifetime, so any built after 2030 (which is all 
+of them) will not be decommissioned on this time scale. 
+
 In addition to the total number of each type of advanced reactor deployed 
-at each time, the maximum number of each advanced reactor that 
-must by deployed in a single time step is reported (Table 
-\ref{tab:reactors_added_nogrowth}). This information provides some insight 
+at each time, the maximum number of each advanced reactor deployed in a 
+single time step is reported (Table 
+\ref{tab:reactors_added_nogrowth}). This information provides insight 
 into the speed at which new reactors must be built. For scenarios with 
 multiple advanced reactors, the numbers reported do not necessarily occur 
 at the same time. Scenario 2 requires 
 the largest number of reactors to be deployed at a single time, which 
-is not surprising based on the larger total number of reactors required in 
-this scenario. Scenario 3 deploys the fewest reactors in 
+is consistent with this scenario requiring a larger total number of 
+reactors. Scenario 3 deploys the fewest reactors in 
 a single time step, based on the total column of Table 
 \ref{tab:reactors_added_nogrowth}, because of the larger power output from 
 the Xe-100 compared with the other advanced reactors. 
@@ -423,12 +433,12 @@ the Xe-100 compared with the other advanced reactors.
         \hline
         Scenario & \glspl{MMR} [\#]& Xe-100s [\#]& VOYGRs [\#]
         & Total[\#]\\\hline
-        2 & 378 & - & - & 378\\
-        3 & - & 50 & - & 50\\
-        4 & 26 & 50 & - & 58\\
-        5 & 4 & - & 75 & 78\\
-        6 & - & 47 & 8 & 52\\
-        7 & 26 & 50 & 50 & 58\\
+        2 & 756 & - & - & 756\\
+        3 & - & 47 & - & 47\\
+        4 & 15 & 47 & - & 54\\
+        5 & 679 & - & 5 & 684\\
+        6 & - & 28 & 33 & 48\\
+        7 & 430 & 41 & 20 & 436\\
         \hline
     \end{tabular}
 \end{table}
@@ -546,15 +556,16 @@ in January 2025.
 
 \subsection{No growth scenarios}
 The mass of enriched uranium sent to reactors (Fig. \ref{fig:nogrowth_uranium})
-varies greatly based on the advanced reactors deployed in the scenario. 
-Scenario 5 has the largest average mass of enriched uranium sent to 
-reactors each month, followed by Scenario 2 (Table 
+varies based on the advanced reactors deployed in the scenario. 
+Scenario 2 has the largest average mass of enriched uranium sent to 
+reactors each month, followed by Scenario 5 (Table 
 \ref{tab:nogrowth_uranium}). The larger averages for these scenarios are 
 because Scenario 2 deploys a large number of reactors deployed and 
 because Sceario 5 deploys mostly VOYGRs, which 
 require the largest mass of uranium in the core.
 Scenarios 2 and 5 also require the largest mass of enriched uranium sent 
-to advanced reactors at one time. Scenario 3 requires the smallest average 
+to advanced reactors at one time, with Scenario 2 requiring the msot. 
+Scenario 3 requires the smallest average 
 mass of enriched uranium, because this scenario deploys the fewest number 
 of reactors and it deploys only the Xe-100 which requires the smallest 
 uranium mass per core loading. All of the scenarios require a smaller 
@@ -562,17 +573,13 @@ average mass of enriched uranium than the \glspl{LWR} before 2025.
 
 Scenarios 2 requires the largest average mass of \gls{HALEU}, because 
 of the large number of \glspl{MMR} deployed in this scenario. Scenario 
-5 requires the smallest average mass of \gls{HALEU}, despite requiring the 
+6 requires the smallest average mass of \gls{HALEU}, despite requiring the 
 largest average mass of enriched uranium because most of the 
-reactors in Scenario 5 are VOYGRs, which do not require \gls{HALEU}. 
-Therefore only a small percent of the advanced reactors in Scenario 
-5 require \gls{HALEU}, reducing the demand for it. The deployment 
-of VOYGRs in tandem with Xe-100's also results in a decrease in the average 
+reactors in Scenario 6 are VOYGRs, which do not require \gls{HALEU}. 
+The deployment 
+of VOYGRs in tandem with \glspl{MMR} (Scenario 5) also results in a 
+decrease in the average 
 mass of \gls{HALEU} required, but the decrease is smaller in magnitude. 
-The smaller magnitude of the decrease in average \gls{HALEU} required is 
-because in Scenario 6 the Xe-100s are 
-preferentially deployed over the VOYGRs so most of the reactors deployed in 
-Scenario 6 are Xe-100s that require \gls{HALEU}. 
 
 Scenarios 2 and 5 require the largest mass of enriched uranium at a single 
 time step. For Scenario 2, the large difference between the average and 
@@ -588,15 +595,14 @@ to meet the demand. Designing such a facility would have to consider the
 material demands while also limiting the amount of stockpiled enriched 
 uranium at the facility, because this is considered a proliferation risk. 
 
-Finally, Scenario 5 requires the largest cumulative mass of enriched uranium 
-for the no growth scenarios, which is consistent with Scenario 5 requiring 
+Finally, Scenario 6 requires the largest cumulative mass of enriched uranium 
+for the no growth scenarios, which is consistent with Scenario 6 requiring 
 the largest average monthly mass of enriched uranium.  Scenario 3 requires the 
 smallest cumulative 
 mass of enriched uranium, which is consistent with this scenario requiring 
 the smallest average mass. The advanced reactors 
-in Scenario 5 require a larger cumulative mass of enriched uranium than 
-all of the \glspl{LWR}, while all of the others require less than the 
-\glspl{LWR}. Additionally, deploying the VOYGR in tandem with the other 
+in all of these scenarios require a smaller cumulative mass of fuel than 
+the \glspl{LWR}. Additionally, deploying the VOYGR in tandem with the other 
 advanced reactors results in an increase in the cumulative mass 
 of enriched uranium needed (e.g., Scenario 3 compared with Scenario 6). This
 trend suggests that deploying VOYGRs increases the enriched uranium needs 
@@ -640,12 +646,12 @@ of the fuel cycle, even if it decreases the amount of \gls{HALEU} needed.
         \hline
         Scenario & Average (MT/month) & \gls{HALEU} Average 
         (MT/month) & Maximum (MT)& Cumulative (MT)\\\hline
-        2 & 63.57 & 63.57 & 723.1 & 79,367\\
-        3 & 35.13 & 35.13 & 97.19 & 57,216\\
-        4 & 36.81 & 36.81 & 121.2 & 58,524\\
-        5 & 157.8 & 0.974 & 962.3 & 152,738\\
-        6 & 47.94 & 31.21 & 151.1 & 67,972\\
-        7 & 59.69 & 29.79 & 430.8 & 76,345\\
+        2 & 88.51 & 88.51 & 1007 & 68,948\\
+        3 & 31.53 & 31.53 & 86.79 & 24,562\\
+        4 & 31.99 & 32.99 & 101.9 & 25,700\\
+        5 & 117.79 & 48.99 & 1015 & 91,760\\
+        6 & 124.38 & 9.233 & 524.2 & 96,894\\
+        7 & 73.06 & 31.89 & 652.6 & 56,914\\
         \hline
     \end{tabular}
 \end{table}
