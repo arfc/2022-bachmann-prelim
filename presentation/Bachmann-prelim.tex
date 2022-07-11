@@ -1,0 +1,147 @@
+\documentclass[9pt]{beamer}
+\setbeamertemplate{caption}[numbered]
+\usetheme[white]{Illinois}
+%\title[short title]{long title}
+\title[HALEU Transitions]{Investigation of Impacts of Deploying 
+Reactors Fueled by High Assay Low Enriched Uranium}
+\subtitle{Preliminary Exam}
+\author[Amanda M. Bachmann]{Amanda M. Bachmann\\ Advanced Reactors and Fuel Cycles Group}
+%\author[Kathryn D. Huff]{Kathryn D. Huff\\Advanced Reactors and Fuel Cycles Group}
+\date[08.26.2022]{August 26, 2022}
+\institute[UIUC]{University of Illinois at Urbana-Champaign}
+
+
+%\usepackage{bbding}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} % nice rules for tables
+\usepackage{microtype} % if using PDF
+\usepackage{bigints}
+%\usepackage{minted}
+\graphicspath{{../images/}}
+
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace} %
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace} %
+\DeclareMathOperator{\erf}{erf}
+%I need some complimentary error funcitons... 
+\DeclareMathOperator{\erfc}{erfc}
+%Those icons in the references are terrible looking
+\setbeamertemplate{bibliography item}[text]
+
+%%%% Acronym support
+
+\usepackage[acronym,toc]{glossaries}
+\input{acros}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, backgrounds}
+\usetikzlibrary{positioning, arrows, decorations, shapes}
+
+\tikzstyle{agent} = [rectangle, rounded corners, minimum width=0.1cm, minimum height=0.2cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{transition} = [rectangle, rounded corners, minimum width=0.1cm, minimum height=0.2cm,text centered, draw=black, fill=red!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\tikzstyle{region} = [rectangle, rounded corners, minimum width=0.1cm, minimum height=0.2cm,text centered, draw=black, fill=green!30]
+\tikzstyle{institution} = [rectangle, rounded corners, minimum width=0.1cm, minimum height=0.2cm,text centered, draw=black, fill=red!30]
+\tikzstyle{facility} = [rectangle, rounded corners, minimum width=0.1cm, minimum height=0.2cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{connect} = [thick,-]
+
+\def\firstcircle{(0,0) circle (2cm)}
+\def\secondcircle{(60:3cm) circle (2cm)}
+\def\thirdcircle{(0:3cm) circle (2cm)}
+\makeglossaries
+
+%try to get rid of header on title page\dots
+\makeatletter
+    \newenvironment{withoutheadline}{
+        \setbeamertemplate{headline}[default]
+        \def\beamer@entrycode{\vspace*{-\headheight}}
+    }{}
+\makeatother
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+    \rightline{\insertframenumber{} / \inserttotalframenumber\hspace*{1ex}}
+  }%
+  \vskip0pt%
+}
+\makeatletter
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% From uw-beamer Here's a handy bit of code to place at 
+%% the beginning of your presentation (after \begin{document}):
+\newcommand*{\alphabet}{ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz}
+\newlength{\highlightheight}
+\newlength{\highlightdepth}
+\newlength{\highlightmargin}
+\setlength{\highlightmargin}{2pt}
+\settoheight{\highlightheight}{\alphabet}
+\settodepth{\highlightdepth}{\alphabet}
+\addtolength{\highlightheight}{\highlightmargin}
+\addtolength{\highlightdepth}{\highlightmargin}
+\addtolength{\highlightheight}{\highlightdepth}
+\newcommand*{\Highlight}{\rlap{\textcolor{HighlightBackground}{\rule[-\highlightdepth]{\linewidth}{\highlightheight}}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%--------------------------------%%
+\begin{withoutheadline}
+    \frame{
+      \titlepage
+    }
+    \end{withoutheadline}
+
+%%--------------------------------%%
+\AtBeginSection[]{
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection]
+\end{frame}
+}
+
+
+\section{Introduction \& Objectives}
+\input{intro}
+\section{Modeling Methodology}
+\input{transition_analysis}
+\section{Results}
+\input{results}
+\section{Conclusions}
+\input{conclusions}
+\input{acknowledgements}
+
+
+\begin{frame}[allowframebreaks]
+    \frametitle{References}
+    \bibliographystyle{plain}
+    {\footnotesize \bibliography{bibliography} }
+  
+  \end{frame}
+\begin{frame}
+    \frametitle{Summary}
+    \begin{columns}
+      \column[t]{5cm}
+      \begin{itemize}
+        \item Investigating the transition to \gls{HALEU}-fueled reactors
+        \item Results show larger uranium mass requirements to transitions 
+              without the Xe-100
+        \item Feed uranium required is similar order of magnitude to \gls{LWR}
+              requirements unless transitioning to only \gls{MMR}
+      \end{itemize}
+
+      \column[t]{5cm}
+        \begin{figure}[t]
+          %\includegraphics[scale=0.35]{figures/feed_1-7.pdf}
+        \end{figure}
+        
+    \end{columns}
+    
+\end{frame}
+
+\end{document}
