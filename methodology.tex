@@ -90,7 +90,7 @@ to only the VOYGR.
         Reactor type & Modular HTGR & Modular HTGR & SMR\\
         Power Output (MWth) & 15 & 200  & 250 \\
         Enrichment (\% $^{235}U$) & 19.75 & 15.5 & <4.95 \\
-        Cycle Length (yrs) & 20 & online refuel & 2\\
+        Cycle Length (yrs) & 20 & online refuel & 1.5\\
         Fuel form & UO$_2$ \gls{FCM} compacts & UCO \gls{TRISO} pebbles & UO$_2$ pellets\\
         Discharge fuel burnup (GWd/MTU) & 82 & 
         168  & 45 \\
@@ -162,15 +162,14 @@ node in Figure
 in the scenario. This is a simplified version of the modeled fuel cycle in 
 \cite{bachmann_enrichment_2021}, removing steps in the fuel cycle that 
 do not affect the reported results. The institutions in the simulations 
-govern the deployment of reactors. The \Cycamore \texttt{DeployInst} institution 
-\cite{huff_fundamental_2016}
-deploys and decommissions the \glspl{LWR} according to their start and end dates. 
-The \Cycamore \texttt{ManagerInst} deploys the advanced reactors as needed to 
-meet the energy demand of the scenario. The \Cycamore \texttt{GrowthRegion} 
-defines the energy demand of the scenario. All of the 
-agents in the simulation are in the same region, modeling that all facilities are
-in the same country. No potential tariffs are modeled on the commodity 
-transactions of the \gls{DRE}. 
+govern the deployment of reactors. A \Cycamore \texttt{DeployInst} 
+institution \cite{huff_fundamental_2016} deploys and decommissions the 
+\glspl{LWR} according to their start and end dates. A second \Cycamore 
+\texttt{DeployInst} deploys and decommissions the advanced reactors, based 
+on calculations of when new reactors must be deployed to meet the power 
+demand. All of the agents in the simulation are in the same region, 
+which represents that all facilities are in the same country. No  
+tariffs are modeled on the commodity transactions of the \gls{DRE}. 
 
 \input{once-through-flow}
 
