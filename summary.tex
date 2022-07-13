@@ -3,7 +3,7 @@ The purpose of this work is to investigate the impacts of
 deploying \gls{HALEU}-fueled advanced reactors in the US. The literature 
 review discussed different \gls{NFC} options, tools used to perform 
 \gls{NFC} analysis and sensitivity analysis, 
-the current understanding of the need for \gls{HALEU}, and neutronics 
+the current understanding of the need for \gls{HALEU}, and known neutronics 
 effects of using \gls{HALEU} in reactors. 
 
 The work thus far models the transition from the current fleet of 
@@ -18,17 +18,18 @@ in each transition scenario scales based on the power output of the
 reactors and the energy demand of the scenario. The other resources are 
 affected more by the reactors deployed than the energy demand. Deploying the 
 NuScale VOYGR (an advanced reactor that does not require \gls{HALEU}) 
-in tandum with the X-energy Xe-100 or \gls{USNC} \gls{MMR} (reactors 
+in tandem with the X-energy Xe-100 or \gls{USNC} \gls{MMR} (reactors 
 that require \gls{HALEU}) reduces the need for resources related to 
 \gls{HALEU}, but not necessarily the total amount of the resource required. 
 The mass of enriched uranium required and the mass of waste discharged 
 increase when deploying the VOYGR alongside the other reactors, but the 
-feed uranium mass and \gls{SWU} capacity sometimes decreased. These results 
+feed uranium mass and \gls{SWU} capacity are comparable to when the VOYGR 
+is not deployed. These results 
 highlight how the mass for a core loading and the 
 uranium assay of the fuel for each reactor type affect the material 
 requirements. The 
 quantification and understanding of these material needs aid in 
-establishing fuel cycle facility and resources to meet the needs of 
+establishing fuel cycle facilities and resources to meet the needs of 
 the transition. 
 
 \section{Proposed Work}
@@ -54,7 +55,8 @@ The once-through fuel cycles investigated will be modified to include recycling
 to investigate how this type of \gls{NFC} affects the material requirements 
 and how the recycling scheme impacts them as well. 
 The scenarios investigated for this section of analysis vary by the 
-energy demand of the scenario and the recycling scheme. Energy demands vary 
+energy demand of the scenario and the recycling scheme (Table 
+\ref{tab:scenarios_recycle}). Energy demands vary 
 between a no growth and a 1\% growth model, the same as the variation in this 
 parameter in the once-through fuel cycle models. Variations in the recycling 
 scheme include either a limited or a continuous recycle, similar to the 
@@ -100,9 +102,11 @@ must be added into the transition. To accomplish this, two different
 transitions are included in these scenarios: the transition from 
 \glspl{LWR} to the advanced reactors and the transition from the 
 advanced reactors to the fast reactor. The first transition will begin 
-in 2025, and the second transition will begin in 2060, and the deployment 
+in 2025, and the second transition will begin in 2090, and the deployment 
 rate of each reactor type will be based on the energy demand of the 
-scenario. 
+scenario. Because of the lifetime of the advanced reactors, these scenarios 
+will be expanded out to 2150 to assume that advanced reactors would not 
+be prematurely decommissioned to facilitate this transition.
 The fast reactor will be modeled 
 based on the fast reactor technology used in the \gls{ES} 
 \cite{wigeland_nuclear_2014} to provide a generic representation of 
@@ -123,16 +127,16 @@ transition optimization \Cyclus will be coupled to Dakota \cite{adams_dakota_201
 and Dakota will be the driver for the analysis. This coupling will be based on 
 the scripts in the \texttt{dcwrapper} GitHub repository \cite{chee_arfc/dcwrapper_2019}.
 Three different types 
-of sensitivity analysis will be performed: \gls{OAT}, synergystic, 
+of sensitivity analysis will be performed: \gls{OAT}, synergistic, 
 and global. The analysis will be performed on Scenario 7 and Scenario 
 14 to provide insight into how the input parameters affect the output 
 metrics for both a once-through and recycle fuel cycle. 
-The input parameters to be varied include the transition 
+The input parameters varied include the transition 
 start time, the market share of each type of advanced reactor, and 
 the \gls{LWR} lifetime. The transition start time will range from January 
 2025 to January 2040 in three-month intervals, but the same energy demand 
 will be specified for all perturbations (89.45 GWe-yr). The market share 
-variable will be repeated three times, for varying the market share of each 
+variable will be repeated three times (for varying the market share of each 
 type of advanced reactor) with market share percentages ranging from 0-50\% 
 in increments of 5\%. Finally, the \gls{LWR} lifetimes will be varied based 
 on the percent of the fleet that operate for 60 and 80 years. This 
@@ -159,19 +163,21 @@ capacity required, and natural uranium requirements
 \cite{richards_application_2021,feng_sensitivity_2020} 
 
 The results of the one-at-a-time analysis will be reported as figures 
-to describe general trends and statistics (maximum, minimu, average, 
+to describe general trends and statistics (maximum, minimum, average, 
 standard deviation) to quantify the effects of the input parameter. 
 The results 
-of the synergystic analysis will be reported using surface plots show 
+of the synergistic analysis will be reported using surface plots show 
 the relationship 
 between the inputs and the output metric, similar to the plots shown in 
 \cite{chee_sensitivity_2019} and \cite{passerini_systematic_2014}.
 The results of the global analysis will be reported using Sobol' 
 indices, which have been used in \cite{richards_application_2021}. 
+The scenarios will then be optimized based on specific goals, to be 
+identified after completion of the sensitivity analysis. 
 
 \subsection{Neutronics Analysis}
-Recovery and downblending of \gls{HALEU} to produce \gls{HALEU} means that 
-the fuel is likely to contain impurities present in the 
+Recovery and downblending of \gls{HEU} to produce \gls{HALEU} means that 
+the fuel is likely to contain any impurities present in the 
 \gls{HEU}. Known impurities in potential \gls{HEU}
 supplies to create \gls{HALEU} include $^{232}$U and $^{236}$U
 \cite{vaden_isotopic_2018,nelson_foreign_2010},  
