@@ -9,11 +9,13 @@
         \item Longer cycle times
         \item Higher burnups 
     \end{itemize}
-    \item<1-> To meet the \gls{HALEU} demand, the U.S. \gls{DOE} has proposed two methods \cite{griffith_overview_2020}:
+    \item<2-> The US does not have any commerical supplies of \gls{HALEU}
+    \item<3-> To meet the \gls{HALEU} demand, the U.S. \gls{DOE} has proposed two methods \cite{griffith_overview_2020}:
     \begin{itemize}
         \item Recovery and downblending of \gls{HEU}
         \item Enrichment of natural uranium
     \end{itemize}
+    
     \end{itemize}
 
     \column[t]{5cm}
@@ -37,6 +39,41 @@
 \end{frame}
 
 \subsection{Background}
+\begin{frame}
+    \frametitle{Nuclear Fuel Cycle}
+    \input{fuel-cycle}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Uranium Enrichment}
+    \begin{itemize}
+        \item Process to increase the relative abundance of specific
+              isotopes of an element
+        \item The US relies on gaseous centrifuge technology 
+        \cite{us_nrc_centrus_2021,us_nrc_louisiana_2022}
+        \item<2-> The throughput of a facility is based on the product 
+              mass required and the \gls{SWU} capacity
+            \begin{subequations}
+                \begin{equation}
+                    F = P + T
+                \end{equation}
+                \begin{equation}
+                    x_fF = x_pP + x_tT
+                    \label{eq:enrichment_assasys}
+                \end{equation}
+                \begin{equation}
+                    SWU = \left[P*V(x_p) +T*V(x_t) - F*V(x_f)\right]*t
+                    \label{eq:swu}
+                \end{equation}
+                \text{in which:}
+                \begin{equation}
+                    V(x_i) = (2x_i - 1)*\ln\left(\frac{x_i}{1-x_i}\right)
+                    \label{eq:sep_potential}
+                \end{equation}
+                \label{eq:enrichment}
+            \end{subequations}
+    \end{itemize}
+\end{frame}
 
 \subsection{Objectives}
 \begin{frame}
