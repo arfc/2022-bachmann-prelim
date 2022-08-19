@@ -2,14 +2,21 @@
   \frametitle{Proposed Work (I)}
         \begin{columns}
         \column[t]{3.5cm}
-        \begin{itemize}
-                \item Model the transition to advanced reactors using recycling
+        \begin{block}{Technical Gap}
+             \begin{itemize}
+                \item Lack of understanding of fuel cycle changes with 
+                        a recycling fuel cycle
+             \end{itemize}                   
+        \end{block}
+        \begin{block}{Proposed Work}
                 \begin{itemize}
-                        \item Consider limited and continuous recycle
-                        \item Quantify the same material requirements as the 
-                              once-through scenarios
+                        \item Model the transition to advanced reactors using recycling
+                        \begin{itemize}
+                                \item Consider limited and continuous recycle
+                                \item Quantify the same material requirements 
+                        \end{itemize}
                 \end{itemize}
-        \end{itemize}
+        \end{block}
         \column[t]{6.5cm}
         \input{recycle-flow}
         \end{columns}
@@ -17,25 +24,58 @@
 
 \begin{frame}
         \frametitle{Proposed Work (II)}
-        \begin{itemize}
-                \item Perform sensitivity analysis on the transitions
+        \begin{block}{Technical Gap}
                 \begin{itemize}
-                        \item Transition start time
-                        \item \gls{LWR} lifetimes
-                        \item build share of each advanced reactor
+                        \item Need to understand how scenario parameters other 
+                                than the reactors selected affect the material requirements
+                        \item Need to identify transitions that are optimized to meet 
+                                specific goals
                 \end{itemize}
-                \item Optimize each transition 
+        \end{block}
+        \begin{block}{Proposed Work}
                 \begin{itemize}
-                        \item Minimize \gls{HALEU} mass
-                        \item Minimize waste 
-                        \item Minimize both \gls{HALEU} mass and waste
+                        \item Perform sensitivity analysis on select once through 
+                        and recycle transitions, changing three variables
+                        \begin{itemize}
+                                \item Transition start time
+                                \item \gls{LWR} lifetimes
+                                \item build share of each advanced reactor
+                        \end{itemize}
+                        \item Optimize each the transitions investigated in the 
+                                sensitivity analysis for specifc goals
+                        \begin{itemize}
+                                \item Minimize \gls{HALEU} mass
+                                \item Minimize \gls{SWU} capacity 
+                                \item Minimize both \gls{HALEU} mass and \gls{SWU}
+                                        capacity
+                        \end{itemize}
                 \end{itemize}
-                \item Neutronics analysis of using downblended \gls{HEU}
+        \end{block}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Proposed Work (III)}
+        \begin{block}{Technical Gap}
                 \begin{itemize}
-                        \item Flux
-                        \item $k_{eff}$
-                        \item $\beta_{eff}$
-                        \item Reactivity Coefficients
+                        \item Lack of understanding of the neutronics limitations 
+                                of using \gls{HALEU} produced by downblending 
+                                \gls{HEU}
                 \end{itemize}
-        \end{itemize}
+        \end{block}
+        \begin{block}{Proposed Work}
+                \begin{itemize}
+                
+                \item Perform depletion calculations of the Xe-100 and \gls{MMR} 
+                        designs
+                \item Investigate the changes in reactor performance when fueled 
+                        with downblened \gls{HEU} compared with using enriched natural 
+                        uranium
+                        \begin{itemize}
+                                \item Flux
+                                \item $k_{eff}$
+                                \item $\beta_{eff}$
+                                \item Reactivity Coefficients
+                        \end{itemize}
+                \end{itemize}
+        \end{block}
 \end{frame}

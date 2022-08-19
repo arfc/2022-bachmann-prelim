@@ -25,21 +25,21 @@
 
         \column[t]{4.5cm}
         Model transitions using \Cyclus \cite{huff_fundamental_2016}
-    \begin{itemize}
-        \item Simulations model reactor deployment from 1965-2090
-        \item<2-> \gls{LWR} commission dates are obtained from the IAEA PRIS
-              database \cite{noauthor_power_1989}
-        \item<2-> \glspl{LWR} are assumed to operate until their current license 
-              expires \cite{noauthor_licensing_nodate}
-        \item<3-> Transitions begin in 2025
-        \item<3-> \Cyclus determines the number of reactors that need to be deployed
-    \end{itemize}
+        \begin{itemize}
+            \item Simulations model reactor deployment from 1965-2090
+            \item<2-> \gls{LWR} commission dates are obtained from the IAEA PRIS
+                database \cite{noauthor_power_1989}
+            \item<2-> \glspl{LWR} are assumed to operate until their current license 
+                expires \cite{noauthor_licensing_nodate}
+            \item<3-> Transitions begin in 2025
+            \item<3-> Manually calculate advanced reactor deployment
+        \end{itemize}
 
 \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Reactors considered}
+    \frametitle{Advanced Reactors}
     \begingroup
         \renewcommand{\arraystretch}{1.5}
         \begin{table}
@@ -51,10 +51,11 @@
                 Design Criteria & USNC MMR 
                     \cite{noauthor_usnc_2021} & 
                     X-energy Xe-100 \cite{mulder_overview_2021} & 
-                    VOYGR \cite{nuscale_chapter_2020-1,reyes_correction_2022,reyes_nuscale_2021}\\\hline
+                    VOYGR \cite{nuscale_chapter_2020-1,reyes_nuscale_2021,reyes_correction_2022}\\\hline
                 Power Output (MWe) & 5 & 80 & 77\\
                 Enrichment (\% $^{235}U$) & 19.75 & 15.5 & 4.09 \\
                 Cycle Length (yr) & 20 & Online & 1.5 \\
+                Number of cycles & 1 & 6 & 3\\
                 Reactor Lifetime (yr) & 20 & 60 & 60\\
                 Burnup ($\frac{MWd}{kg U}$) & 82 & 168 & 45\\
                 \hline
@@ -88,4 +89,25 @@
                     \hline
             \end{tabular}
         \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Advanced reactor deployment scheme}
+    \begin{columns}
+        \column[t]{5cm}
+            Manually calculate the deployment scheme for advanced reactors
+            \begin{itemize}
+                \item Preferentially deploy reactors with larger power output first
+                \item Deployment is based on the difference between the energy produced 
+                      by reactors in the simulation and the demand at each time step
+            \end{itemize}
+        \column[t]{5cm}
+            \begin{figure}
+                \includegraphics[scale=0.25, trim=50 50 50 50,clip]{Deployment_Scheme.pdf}
+                \caption{Example of how advanced reactors in Scenario 7 are deployed to 
+                meet a demand of 530 MWe.}
+                \label{fig:deployment}
+            \end{figure}
+                    
+    \end{columns}
 \end{frame}
