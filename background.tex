@@ -16,7 +16,7 @@ design of the reactor(s) deployed, such as if enrichment is required.
 Two possible variations on the nuclear fuel cycle 
 include the once-through and recycling (or twice-through) fuel cycles 
 \cite{tsoulfanidis_nuclear_2013}. Figure \ref{fig:fuel_cycle} shows 
-an example of the primary steps in a nuclear fuel cycle. 
+an example of the major steps in a nuclear fuel cycle. 
 
 \begin{figure}
     \centering
@@ -30,7 +30,7 @@ an example of the primary steps in a nuclear fuel cycle.
 The \gls{NFC} has two primary sections: the front-end and 
 the back-end. 
 The front end encompasses the steps before the fuel arrives at a reactor 
-and the back-end encompasses the steps after the \gls{SNF} is discharged 
+and the back-end encompasses the steps after the fuel is discharged 
 from the reactor \cite{rodriguez-penalonga_review_2017}. The front-end of 
 the \gls{NFC} is often independent of the back-end, but the back-end 
 of the \gls{NFC} is highly dependent on the front-end and the reactor 
@@ -52,11 +52,12 @@ Once-through \glspl{NFC} use interim and final reposiory disposal schemes
 \cite{rodriguez-penalonga_review_2017}. One form of interim 
 storage, used regardless of 
 the fuel cycle option, is cooling in an \textit{in situ} pool. 
-This interim storage step can last between 3-10 years \cite{rodriguez-penalonga_review_2017}
+This interim storage step can last between 3-10 years after reactor 
+discharge \cite{rodriguez-penalonga_review_2017}
 and provides active cooling to the \gls{SNF}.
 Another form of interim storage is dry cask storage, located 
-on-site or at a centralized location, provides passive 
-cooling to the \gls{SNF}. The second disposal 
+on-site or at a centralized location, which provides passive 
+cooling to the \gls{SNF} after active cooling in a pool. The second disposal 
 option is a final repository, which typically takes the form of a 
 deep geologic repository. 
 A geologic repository is required for final disposal of \gls{SNF} and 
@@ -372,7 +373,8 @@ the decay and irradiation of the tracked nuclides
 
 Another \gls{NFC} simulator is \Cyclus, an open-source, agent-based 
 \gls{NFC} simulator \cite{huff_fundamental_2016}. The next section 
-describes \Cyclus more in-depth because it is used in this work.  
+describes \Cyclus more in-depth as it is the simulator chosen for this 
+work. 
 
 \subsection{\Cyclus}
 \Cyclus is a dynamic, open source agent-based fuel cycle simulator. Built 
@@ -476,7 +478,7 @@ based on modeling implementation or resolved through changes to the
 necessary code.
 
 The results of the verification efforts showed agreement between each 
-of the codes and the spreadsheet results, as well as identify some modeling 
+of the codes and the spreadsheet results, as well as identified modeling 
 differences. For example, \gls{VISION} and \gls{DYMOND} model continuous 
 reprocessing at each time step, as opposed to the instantaneous 
 reprocessing modeled by the spreadsheet \cite{feng_standardized_2016}. 
@@ -489,8 +491,10 @@ archetype models each fuel assembly and batch as discrete material
 \cite{bae_standardized_2019}, as 
 opposed to the other codes assuming continuous fuel discharge. 
 This difference leads to oscillations in the \gls{SNF} discharged 
-when using \Cyclus, while the other codes result in a straight line.
-However, this modeling decision in \Cyclus is closer to reality. 
+when using \Cyclus, while the other codes results do not have these 
+oscillations.
+However, this modeling decision in \Cyclus produced results that 
+are clsoer to reality. 
 Additionally, the \Cycamore reactor archetype depletes half of the 
 core of fuel upon decommissioning, while the other \gls{NFC} simulators 
 deplete the entire core of fuel upon decommissioning. This 
@@ -830,11 +834,13 @@ Dakota has been coupled with fuel cycle simulators such as \gls{DYMOND} and
 analysis. Chee \cite{chee_sensitivity_2019} used Dakota to perform 
 \gls{OAT}, synergistic, and global sensitivity analysis on the transition 
 from \gls{EG} 01 to \gls{EG} 30 with both \Cyclus and \gls{DYMOND}. Chee used even 
-multidimensional grid search sampling in Dakota to perform the analysis. 
+multidimensional grid search sampling in Dakota to perform the \gls{OAT} 
+and synergistic analysis. 
 Richards and Feng \cite{richards_application_2021} coupled Dakota with 
 \gls{DYMOND} to perform global sensitivity analysis for a sample \gls{NFC} 
 to demonstrate this capability. This work utilized the Latin Hypercube 
-Sampling method in Dakota to select input parameter values. 
+Sampling method in Dakota to select input parameter values, to provide 
+random sampling across the input space. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1061,10 +1067,12 @@ Complex also has $^{232}$U, $^{234}$U, and $^{236}$U impurities
 isotope and is expected to affect the neutron population inside a reactor.
 $^{232}$U, $^{234}$U, and $^{236}$U are parasitic neutron absorbers, so 
 their 
-presence is also expected to affect the neutron population. The neutronics 
-performance of using \gls{HALEU} containing $^{235}$U and $^{238}$U 
-was compared 
+presence is also expected to affect the neutron population. The reactor 
+neutronics performance of using \gls{HALEU} containing $^{235}$U and 
+$^{238}$U was compared 
 with the performance using \gls{HALEU} from Y-12 with the known impurities 
-\cite{celikten_effects_2021}. Using the \gls{HALEU} with the \gls{HEU} 
+\cite{celikten_effects_2021}. By performing burnup dependent \gls{MCNP} 
+simulations of the potential Replacement Reactor Concept at \gls{NIST}, 
+the authors showed that using the \gls{HALEU} with the \gls{HEU} 
 impurities showed a 0.43\% decrease in reactivity, leading to an 8\% reduction 
 in the cycle length. 
