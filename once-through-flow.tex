@@ -5,21 +5,21 @@
         \node (enrichment) [facility, below of=mine]{Enrichment};
         \node (reactor) [facility, below of=enrichment]{Reactor};
         \node (adv_reactor) [transition, right of=reactor, xshift=3cm]{Advanced Reactor};
-        \node (wetstorage) [facility, below of=reactor]{Wet Storage};
-        \node (drystorage) [facility, below of=wetstorage]{Dry Storage};
+        \node (wetstorage) [facility, below of=reactor]{Cooling Pool};
+        %\node (drystorage) [facility, below of=wetstorage]{Dry Storage};
         \node (cooling) [transition, below of=adv_reactor]{Cooling Pool};
-        \node (sinkhlw) [facility, below of=drystorage, xshift=2.5cm]{HLW Sink};
+        \node (sinkhlw) [facility, below of=wetstorage, xshift=2.5cm]{HLW Sink};
         \node (sinkllw) [facility, left of=enrichment, xshift=-3cm]{LLW Sink};
 
         \draw [arrow] (mine) -- node[anchor=east]{Natural U} (enrichment);  
         \draw [arrow] (enrichment) -- node[anchor=south]{Tails}(sinkllw);
         \draw [arrow] (enrichment) -- node[anchor=east]{Fresh UOX}(reactor);
-        \draw [arrow] (enrichment) -| node[anchor=west]{Fresh Fuel}(adv_reactor);
+        \draw [arrow] (enrichment) -| node[anchor=west]{Fresh HALEU and LEU}(adv_reactor);
         \draw [arrow] (reactor) -- node[anchor=east]{Spent UOX}(wetstorage);
-        \draw [arrow] (wetstorage) -- node[anchor=east]{Cool Spent UOX}(drystorage);
-        \draw [arrow] (drystorage) |- node[anchor=east]{Casked Spent UOX}(sinkhlw);
+        \draw [arrow] (wetstorage) |- node[anchor=east]{Cool Spent UOX}(sinkhlw);
+        %\draw [arrow] (drystorage) |- node[anchor=east]{Casked Spent UOX}(sinkhlw);
         \draw [arrow] (adv_reactor) -- node[anchor=west]{Spent Fuel}(cooling);
-        \draw [arrow] (cooling) |- node[anchor=west]{Cooled Spent Fuel}(sinkhlw);`'
+        \draw [arrow] (cooling) |- node[anchor=west]{Cooled Spent HALEU and LEU}(sinkhlw);`'
 
         \end{tikzpicture}
     \caption{Fuel cycle facilities and material flow between facilities in the 

@@ -1,10 +1,10 @@
 Modeling the transition between different nuclear fuel cycles provides 
-information on the quantity and timing of different materials to meet 
+information on the quantity and timing of various materials to meet 
 specific objectives, such as providing fuel for reactors to meet a 
 prescribed energy demand. 
-The fuel cycle scenarios created show the resources required for the transition from the 
-current fleet of \glspl{LWR} in the US to advanced reactors, with a focus on 
-advanced reactors requiring \gls{HALEU}.
+This work models potential transitions from the 
+current fleet of \glspl{LWR} in the US to advanced reactors to quantify the 
+resources required to support the transition.
 \Cyclus \cite{huff_fundamental_2016} simulated all of the transitions in this 
 work, with each of the fuel cycle facilities (including reactors) defined 
 through the \Cycamore archetype library \cite{carlsen_cycamore_2014}. Each 
@@ -22,13 +22,6 @@ to avoid including prototype and research reactors present in the database.
 Approximate masses for fuel used in the cores of the \glspl{LWR} were obtained 
 from \cite{todreas_nuclear_2012} and \cite{cacuci_handbook_2010}. 
 
-Recipes define the composition of each material in the simulation. 
-Recipes for \gls{LWR} fresh and spent fuel were found in \cite{jacobson_verifiable_2010}.
-Section \ref{sec:reactor_methods} describes how we obtained recipes for fresh 
-fuel of the advanced reactors. Other recipes in the simulations include 
-natural uranium (0.711\% weight fraction $^{235}$U) and enrichment tails 
-(0.2\% weight fraction $^{235}$U)
-
 This work models the transition to advanced reactors assuming a 
 once-through fuel cycle. The scenarios are defined based 
 on the energy demand 
@@ -41,19 +34,30 @@ current plans for \gls{HALEU}-fueled reactors do not have these reactors
 deployed until the late 2020s \cite{nichol_current_2021} through \gls{ARDP} 
 and other programs. We selected 2025 as the transition 
 start time for this work because it will provide an upper bounding case for 
-if the US is to deploy these reactors in mass on a more aggressive timeline. 
+an aggressive deployment of these reactors. 
 
 This work compares the fuel cycle scenarios on various metrics: 
 the energy produced, the number of reactors deployed, the 
 uranium usage (both enriched uranium required for fuel and feed uranium 
 to produce enriched uranium), 
 the \gls{SWU} capacity required to produce the enriched uranium, and the 
-amount of waste produced. The natural 
+amount of waste produced. Comparisons of the energy generated will ensure 
+that demand is fully met and identify any disadvantages in deploying each 
+reactor type or flaws in the methodology. We expect that the number of 
+reactors built to meet the energy demand will be a major factor in deciding 
+which reactors to deploy. The uranium usage will provide insight into 
+the facility throughput and raw materials required to support the 
+transition. The \gls{SWU} capacity informs on the enrichment facility 
+capacity required to support the transition. Comparisions of the transition 
+\gls{SWU} capacity to current capacities will inform on if new facilities 
+are required. Finally, the waste produced, specifically the \gls{SNF} 
+discharged from the reactors, informs on potential repository capacities 
+required to dispose of the waste. The natural 
 uranium usage and waste production are two of the metrics used in the \gls{ES} 
 \cite{wigeland_nuclear_2014}, and the mass of enriched uranium was the 
-primary result of \cite{dixon_estimated_2022}.
+primary result of the work by Dixon et al. \cite{dixon_estimated_2022}.
 
-\section{Reactors} \label{sec:reactor_methods}
+\section{Advanced reactor modeling} \label{sec:reactor_methods}
 This work considers three advanced reactors: the \gls{USNC} \gls{MMR}, 
 \cite{noauthor_usnc_2021}, the X-energy Xe-100 
 \cite{mulder_overview_2021}, and 
@@ -61,7 +65,7 @@ the NuScale VOYGR reactor
 \cite{nuscale_chapter_2020-1,reyes_nuscale_2021,reyes_correction_2022}. The 
 \gls{USNC} \gls{MMR}
 and X-energy Xe-100 reactors require \gls{HALEU}, but the NuScale VOYGR 
-requires a similar enrichment level to current \gls{LWR} fuel 
+requires \gls{LEU} with a similar enrichment level to current \gls{LWR} fuel 
 (Table \ref{tab:reactor_summary}). This work incldues the NuScale VOGYR, 
 despite not requiring \gls{HALEU} fuel, 
 because the \gls{NRC} granted it design approval \cite{world_nuclear_news_nuscale_2021} 
@@ -90,9 +94,9 @@ to only the VOYGR.
         Power Output (MWth) & 15 & 200  & 250 \\
         Enrichment (\% $^{235}U$) & 19.75 & 15.5 & <4.95 \\
         Cycle Length (yrs) & 20 & online refuel & 1.5\\
+        Number of cycles & 1 & 6 & 3\\
         Fuel form & UO$_2$ \gls{FCM} compacts & UCO \gls{TRISO} pebbles & UO$_2$ pellets\\
-        Discharge fuel burnup (GWd/MTU) & 82 & 
-        168  & 45 \\
+        Discharge fuel burnup (GWd/MTU) & 82 & 168  & 45 \\
         Reactor Lifetime (yrs)& 20 & 60 & 60 \\
         \hline
     \end{tabular}
@@ -129,6 +133,7 @@ burns for the entire lifetime of the reactor \cite{mitchell_usnc_2020}.
 Therefore, the \gls{MMR}
 does not include any down time for refueling and has a cycle length that 
 matches the reactor lifetime. 
+
 The Xe-100 undergoes online refueling operations, with each 
 \gls{TRISO} pebble passing 
 through the reactor six times before discharge \cite{mulder_overview_2021}. 
@@ -136,23 +141,28 @@ Every six months about 1/7th
 of the pebbles in the core are expected to be discharged. The Xe-100 
 refueling is modeled as a replacement of 1/7th of the entire core every 
 6 months with no down time for refueling.  
+
 The VOYGR contains 37 fuel assemblies, with three different enrichment 
 levels \cite{nuscale_chapter_2020-1}. Each refueling replaces 13 fuel 
 assemblies, with the middle assembly replaced at every refueling. 
 The fuel enrichment used is an average of the assembly enrichments 
 presented in \cite{nuscale_chapter_2020-1}. NuScale reports that a refueling 
 outage for the VOYGR will take ten days \cite{noauthor_nuscale_2022}. However 
-the smallest timestep for this work is one month, this work models a VOYGR 
-refueling outage is modeled as one month. Fresh fuel 
+the smallest timestep modeled in this work is one month, therefore this 
+work models a VOYGR 
+refueling outage is modeled as one month. 
+
+Fresh fuel 
 recipes for the advanced reactors are based on the 
-required fuel form for each reactor using the appropriate uranium isotope 
-ratio for enrichment. The \gls{MMR} and VOYGR are intended to be built in 
-sets (2 \gls{MMR} per site \cite{noauthor_usnc_2021} and up to 12 VOYGR 
-units per site \cite{reyes_nuscale_2021}), every reactor design is treated 
+defined fuel form for each reactor using the appropriate uranium isotope 
+ratio for enrichment. Both the \gls{MMR} and VOYGR are intended to be built 
+in sets (2 \gls{MMR} per site \cite{noauthor_usnc_2021} and up to 12 VOYGR 
+units per site \cite{reyes_nuscale_2021}), but in this study every reactor 
+design is treated 
 on a single unit basis. Therefore, the number of reactors built in each 
 of the transitions does not represent the number of unique sites required 
 to build the reactors. All cores modeled are assumed to be equilibrium cores, 
-this work does not consider start-up cores. 
+this work does not consider start-up cores or the transition to equillibrium. 
 
 \section{Once-through fuel cycle}
 Figure \ref{fig:once-through_fuel_cycle} shows the flow of material through 
@@ -160,28 +170,33 @@ the modeled once-through fuel cycles. The once-through fuel cycle models
 material from the mine to final disposal in a repository (the 
 ``HLW Sink'' in Figure \ref{fig:once-through_fuel_cycle}). The 
 ``advanced reactor'' node in Figure 
-\ref{fig:once-through_fuel_cycle} represents any subset of the advanced reactors included 
-in the scenario. This is a simplified version of the modeled fuel cycle in 
+\ref{fig:once-through_fuel_cycle} represents any subset of the advanced 
+reactors (Xe-100s, \glspl{MMR}, and VOYGRs) included 
+in the scenario. This model assumes that all enriched uranium is produced 
+by enriching natural uranium, downblending \gls{HEU} is not considered. 
+This fuel cycle is a simplified version of the modeled fuel cycle in 
 \cite{bachmann_enrichment_2021}, removing steps in the fuel cycle that 
-do not affect the reported results. The institutions in the simulations 
-govern the deployment of reactors. A \Cycamore \texttt{DeployInst} 
-institution \cite{huff_fundamental_2016} deploys and decommissions the 
-\glspl{LWR} according to their start and end dates. A second \Cycamore 
-\texttt{DeployInst} deploys and decommissions the advanced reactors, based 
-on calculations of when new reactors must be deployed to meet the energy 
-demand. All of the agents in the simulation are in the same region, 
-which represents that all facilities are in the same country. No  
-tariffs are modeled on the commodity transactions of the \gls{DRE}. 
+do not affect the reported results. Removing some of the steps simplified 
+the models from a users standpoint and reduced the size of the \Cyclus 
+output file, making data analysis easier. The transition from the \glspl{LWR} 
+to the advanced reactors begins in 2025. 
 
 \input{once-through-flow}
 
 The once-through scenarios model the current fleet of \glspl{LWR} in the 
 US and the transition to multiple 
 combinations of the advanced reactors and different energy demand scenarios, 
-summarized in Table \ref{tab:scenarios_once-through}. Scenario 1 models
+summarized in Table \ref{tab:scenarios_once-through}. This work includes 
+transitions to \gls{HALEU}-fueled and non-\gls{HALEU}-fueled advanced 
+reactors. Scenario 1 models
 the \gls{LWR} fleet without the transition to any advanced reactor to provide 
 a comparison with what has historically been needed to for a fuel cycle 
-based on enrichments to less than 5\% $^{235}$U. A 1\% annual growth in 
+based on enrichments to less than 5\% $^{235}$U. The energy demands are 
+based on the energy supplied by the \glspl{LWR} in 2025 (the start of 
+the transition). A no growth energy demand apples a constant demand for 
+the energy produced by \glspl{LWR} in 2025, and a 1\% growth demand applies 
+an exponential growth demand starting at the energy produced by \glspl{LWR}
+in 2025. A 1\% annual growth in 
 demand (Scenarios 8-13) is less than what Dixon et al. \cite{dixon_estimated_2022} 
 modeled
 (1.2\%-2\%) but more than the average growth between 2020-2050 in the 
@@ -190,7 +205,27 @@ reference case of the 2022 \gls{EIA} Annual Energy Outlook
 provides a middle-ground estimate on material requirements for a growing 
 energy demand. 
 
-The deployment scheme calculated for the \Cycamore \texttt{DeployInst}
+Recipes define the composition of each material in the simulation. 
+Recipes for \gls{LWR} fresh and spent fuel were found in work 
+by Jacobson et al. \cite{jacobson_verifiable_2010}.
+Section \ref{sec:reactor_methods} describes how we obtained recipes for fresh 
+fuel of the advanced reactors. Other recipes in the simulations include 
+natural uranium (0.711\% weight fraction $^{235}$U) and enrichment tails 
+(0.2\% weight fraction $^{235}$U).
+
+The institutions in the simulations 
+govern the deployment of reactors. A \Cycamore \texttt{DeployInst} 
+institution \cite{huff_fundamental_2016} deploys and decommissions the 
+\glspl{LWR} according to their start and end dates. A second \Cycamore 
+\texttt{DeployInst} deploys and decommissions the advanced reactors, based 
+on calculations of when new reactors must be deployed to meet the energy 
+demand. All of the facilities and institutions in the simulation are in 
+the same region, which represents that all facilities are in the same 
+country. No  
+tariffs are modeled on the commodity transactions.
+
+The advanced reactor deployment scheme calculated for the \Cycamore 
+\texttt{DeployInst}
 preferentially deploys the advanced reactor with the largest power 
 output in the scenario (e.g., Xe-100s in Scenario 7) until their 
 deployment would create an oversupply of power. Then the next reactor 
@@ -198,11 +233,24 @@ is deployed until an oversupply of power would be created. Finally, the
 reactor 
 with the smallest power output in the scenario (e.g., \glspl{MMR} in 
 Scenario 7) are deployed until their deployment creates a small oversupply 
-of power (i.e., the number of reactors needed is rounded up). 
-For example, to meet a demand of 498 MWe in Scenario, 4 six Xe-100s and 
-four \glspl{MMR} would be deployed. This deployment 
+of power (i.e., the number of reactors needed is rounded up). The demand 
+to be met by deploying new reactors is the difference between the energy 
+produced and the energy demand at each time step. 
+Figure \ref{fig:AR_deployment} illustrates how the advanced reactors would 
+be deployed in Scenario 7 to meet a demand of 480 MWe. For this example, 
+5 Xe-100s, 1 VOYGR, and 1 \gls{MMR} are deployed, producing a total of
+482 MWe. This deployment 
 strategy aims to minimize the number of reactors deployed,  
-minimize power oversupply, and mimic a realistic deployment strategy. 
+minimize power oversupply, and mimic a realistic deployment strategy.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.6, trim=50 180 60 0,clip]{Deployment_noCF.pdf}
+    \caption{Example of how advanced reactors are deployed in Scenario 7 
+    to meet a demand of 480 MWe.}
+    \label{fig:AR_deployment}
+\end{figure}
+ 
 
 \begin{table}[ht]
     \centering
@@ -228,19 +276,46 @@ minimize power oversupply, and mimic a realistic deployment strategy.
     \end{tabular}
 \end{table}
 
-\section{Calculation of results}
-The results presented for the transition scenarios are from the
-output of each \Cyclus simulation. Because the non-reactor facilities 
-in the simulations (e.g., enrichment facility) do not have a specific cap on the 
-amount of material they can hold, the material being traded by these facilities 
-does not accurately capture the material requirements of the reactors. 
-Therefore, 
-the material requirements and waste of each scenario are calculated based on 
-the material sent to and discharged from the reactors in each scenario. 
+\section{Calculation of results} \label{sec:results_calc}
+The results of each transition scenario modeled include the energy generated, 
+the number of advanced reactors deployed, the mass of enriched uranium, 
+mass of feed uranium, \gls{SWU} capacity reuired to produce the enriched 
+uranium, and the \gls{SNF} discharged from the reactors. Each of these results 
+are obtained from the \Cyclus output file of the simulation. 
 
-The mass of enriched uranium reported is the mass sent to the reactors 
-at each time step. The \gls{SWU} required in each scenario is calculated based on the 
-mass sent to the reactors, and does not reflect the capacity of an actual 
-facility. The mass of feed uranium required to produce the enriched uranium 
-is calculated based on the mass of product sent to the reactors and Eq. 
-\ref{eq:enrichment}.
+The energy generated in each scenario is calaculated by and directly 
+reported by \Cyclus. Each reactor facility is assumed to produce a 
+commodity called ``power'', and the total output of each reactor facility 
+is reported at each timestep that they produce this commodity. 
+
+\Cyclus reports the timestep that each facility in the simulation enters 
+(commissions) and exits (decommissions) the simulation. Based on 
+this information the total number of reactors, advanced reactors, and each 
+type of reactor can be determined. 
+
+The other results in this work are calculated based on commodity 
+transactions to and from the reactor facilities. The mass of enriched 
+uranium is the mass of fuel traded between the enrichement facility and 
+the reactors, multiplied by the mass fraction of uranium in the fuel 
+form. Multiplying by the mass fraction of uranium means that the other 
+fuel components are not included in this mass. The reported mass is the 
+product required of an enrichment facility, $P$ in Eq. \ref{eq:enrichment}.
+
+The feed uranium masses and \gls{SWU} capacity are calculated 
+based on the mass of enriched uranium traded to the reactors, using 
+Eq. \ref{eq:enrichment}. The natural uranium traded to the enrichment 
+facility and the \gls{SWU} capacity of the enrichment facility reported by 
+\Cyclus are not used because the enrichment facility does not have a 
+specified limit on the amount of feed material it can store. Therefore, 
+the enrichment facility continuously requests and receives feed 
+uranium from the uranium mine without consideration for how much it needs 
+to produce the enriched uranium for the reactors. I decided to not place 
+a limit on the enrichment facility capacity to ensure that the reactors 
+would be fully fueled and not allow other faiclity limits to influence the 
+reported material demands. 
+
+Finally, the mass of \gls{SNF} generated is the mass of spent fuel that is 
+traded from the reactor facilities to the cooling pools. This mass is the 
+entire fuel form, not just the uranium mass in the spent fuel, because 
+the enitre fuel form must be considered when determining disposal needs 
+and options. 
