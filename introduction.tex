@@ -33,7 +33,7 @@ development of supply chains can support the nuclear fuel cycle of
 advanced reactors. 
 One key difference in the fuel for these advanced 
 reactor designs is the enrichment 
-level of the fuel. Many advanced reactor designs require fuel enriched to 
+level of the fuel. Many advanced reactor designs require  
 \acrfull{HALEU}, which is uranium enriched between 5\% and 20\% $^{235}$U.
 There is no commercial supply of 
 uranium enriched to this level in the US, therefore the \gls{DOE} 
@@ -89,7 +89,8 @@ One limitation in modeling the \gls{NFC} is the large array of potential
 input parameters, such as when to start a transition or the speed of the 
 transition. To understand 
 the impact of input parameters on the output metrics (e.g., material 
-requirements) of a fuel cycle, I will perform sensitivity analysis on the 
+requirements) of a fuel cycle, fuel cycle modelers perform sensitivity 
+analysis on the 
 modeled \gls{NFC}. Sensitivity analysis involves 
 modeling a fuel cycle with small perturbations in various input 
 parameters and analyzing the variance or spread of select output metrics. 
@@ -98,10 +99,11 @@ Sensitivity analysis has been used in multiple \gls{NFC} analysis
 to identify the model parameter or parameters that have the greatest 
 impact on specific model outputs or material requirements. Sensitivity 
 analysis can also reveal underlying information about a system that is not 
-necessarily intuitive. Understanding the 
+necessarily intuitive, such as how much the modeling methodology 
+affects the results. Understanding the 
 material requirements of a \gls{NFC} coupled with sensitivity analysis 
-allows for optimization of the \gls{NFC} based on given criteria, such as 
-minimizing the amount of \gls{HALEU} required by the \gls{NFC}. Various 
+aids in optimizing the \gls{NFC} based on given criteria, such as 
+minimizing the amount of \gls{HALEU} required. Various 
 optimization schemes have been applied to \glspl{NFC} to optimize the fuel 
 cycle based on criteria such as fuel requirements \cite{kim_selection_1999},
 waste production \cite{shwageraus_optimization_2003}, and combinations 
@@ -138,7 +140,7 @@ The goals of this work will be completed through the following steps:
 \item \textbf{Model the transition from \glspl{LWR} to advanced reactors.} 
 Transition scenarios to multiple fuel cycles with \gls{HALEU}-fueled 
 reactors will 
-be modeled using the \gls{NFC} Simulator \Cyclus \cite{huff_fundamental_2016}. 
+be modeled using the \gls{NFC} simulator \Cyclus \cite{huff_fundamental_2016}. 
 Multiple transitions will be modeled, with each one varying based on the type
 of  
 advanced reactors, energy demand, and fuel cycle option (open or closed). This 
@@ -171,12 +173,12 @@ each of these steps and complete the objectives of this work. Chapter 2
 provides some 
 background information and literature review on the nuclear fuel cycle,
 nuclear fuel cycle 
-modeling efforts, and the use of \gls{HALEU}-fuel in reactors.
+modeling efforts, and the use of \gls{HALEU} in reactors.
 Chapter 3 discusses the methodology for modeling the transition to advanced 
 reactors in a once-through fuel cycle. This chapter includes the scenarios
 modeled, information on the reactors included in the transitions, and the 
 flow of 
 material in each scenario. Chapter 4 discusses the results of the 
 once-through fuel cycle transition scenarios. Chapter 5 summarizes key 
-takeaways from the previous chapters and how they intersect with the 
-proposed future work for this project. 
+takeaways from the previous chapters and the proposed future work for 
+this project. 
