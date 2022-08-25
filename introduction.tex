@@ -34,7 +34,7 @@ advanced reactors.
 One key difference in the fuel for these advanced 
 reactor designs is the enrichment 
 level of the fuel. Many advanced reactor designs require fuel enriched to 
-\gls{HALEU}, which is uranium enriched between 5\% and 20\% $^{235}$U.
+\acrfull{HALEU}, which is uranium enriched between 5\% and 20\% $^{235}$U.
 There is no commercial supply of 
 uranium enriched to this level in the US, therefore the \gls{DOE} 
 is investigating how to develop a nuclear fuel cycle for uranium enriched to this 
@@ -61,10 +61,10 @@ and quantify the resource requirements of \glspl{NFC} transitions
 \cite{bachmann_enrichment_2021}. 
 
 There are two methods to produce \gls{HALEU}: enrich natural uranium 
-or downblend \gls{HEU} to achieve the desired enrichment level. The current US
+or downblend \acrfull{HEU} to achieve the desired enrichment level. The current US
 nuclear commercial fuel cycle relies on enrichment of natural uranium 
 to create fuel for \glspl{LWR}, but does not have the capability to enrich
-natural uranium to produce \gls{HALEU} \cite{hussain_nei_2018}.  
+natural uranium to produce \gls{HALEU} \cite{nuclear_energy_institute_addressing_2018}.  
 The amount of available natural uranium and facility capacities, such 
 as the facility throughputs and \gls{SWU} capacity, limit 
 \gls{HALEU} production through enrichment. 
@@ -116,19 +116,19 @@ have on the \gls{NFC} and the impacts the \gls{NFC} has on the reactors.
 The results of this work are intended to
 aid and guide policy makers and key stake holders on how to best establish a 
 fuel cycle to support the deployment of \gls{HALEU}-fueled reactors. 
-Within this prmary goal, there are three specifc objectives:
+Within this primary goal, there are three specific objectives:
 \vspace{0.2cm} 
 \noindent
 \begin{enumerate}
-\item \textbf{Quantify potential material requriements for the transition 
+\item Quantify potential material requirements for the transition 
 from \glspl{LWR} to advanced reactors in open and closed 
-fuel cycles.} 
+fuel cycles.
 
-\item \textbf{Understand the impacts of fuel cycle parameters on the material 
-requirements and design optimized transition scenarios.}
+\item Understand the impacts of fuel cycle parameters on the material 
+requirements and design optimized transition scenarios.
 
-\item \textbf{Identify potential limitations in using downblended \gls{HEU} 
-to produce \gls{HALEU}.}
+\item Identify potential limitations in using downblended \gls{HEU} 
+to produce \gls{HALEU} based on reactor performance.
 
 \end{enumerate}
 The goals of this work will be completed through the following steps:
@@ -136,7 +136,8 @@ The goals of this work will be completed through the following steps:
 \noindent
 \begin{enumerate}
 \item \textbf{Model the transition from \glspl{LWR} to advanced reactors.} 
-Transitions to multiple fuel cycles with \gls{HALEU}-fueled reactors will 
+Transition scenarios to multiple fuel cycles with \gls{HALEU}-fueled 
+reactors will 
 be modeled using the \gls{NFC} Simulator \Cyclus \cite{huff_fundamental_2016}. 
 Multiple transitions will be modeled, with each one varying based on the type
 of  
@@ -148,21 +149,24 @@ through the current US fuel cycle and published estimates of potential
 
 \item \textbf{Perform sensitivity analysis and optimize select transition scenarios.}
 Sensitivity analysis will be performed on a subset of the transition scenarios
-modeled. This step will identify the most impactful model parameters on 
-the material requriements of the fuel cycle. These results will then be 
-used to determine optimized transition scenarios. 
+modeled by coupling \Cyclus with Dakota \cite{adams_dakota_2019}. This step 
+will identify the most impactful model parameters on 
+the material requirements of the fuel cycle. These results will then be 
+used to determine optimized transition scenarios to minimize specific 
+material requirements. 
 
 \item \textbf{Neutronics analysis of \gls{HALEU} created from impure \gls{HEU}.}
-The neutronics of the \gls{HALEU}-fueled reactors in the transition scenarios will
-be modeled to identify potential effects of using \gls{HALEU} downblended from 
-\gls{HEU} with known impurities. This step will investigate how different 
-\gls{HALEU} production methods affect reactor operation and key saftey 
-parameters, such as neturon multiplicity, delayed neutron fractions, and 
-reactivity coefficients.
+The neutronics of the \gls{HALEU}-fueled reactors in the transition scenarios 
+will be modeled to identify potential effects of using \gls{HALEU} produced 
+from downblended \gls{HEU} with known impurities. This step will investigate 
+potential limitations in using this \gls{HALEU} production method and 
+how different \gls{HALEU} production methods affect reactor operation and 
+key safety parameters, such as neutron multiplicity, delayed neutron 
+fractions, and reactivity coefficients.
 \end{enumerate}
 
 
-The following chapters present prelimiary and future work to complete 
+The following chapters present preliminary and future work to complete 
 each of these steps and complete the objectives of this work. Chapter 2 
 provides some 
 background information and literature review on the nuclear fuel cycle,

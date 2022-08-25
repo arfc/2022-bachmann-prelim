@@ -23,7 +23,7 @@ an example of the major steps in a nuclear fuel cycle.
     \includegraphics[scale=0.8]{nuclear_fuel_cycle.pdf}
     \caption{A complete view of options available for a once-through and 
     a recycling nuclear 
-    fuel cycle. Graphic from \protect\cite{noauthor_stages_2020}.}
+    fuel cycle. Graphic from \protect\cite{us_nuclear_regulatory_commission_stages_2020}.}
     \label{fig:fuel_cycle}
 \end{figure}
 
@@ -48,7 +48,7 @@ Figure \ref{fig:fuel_cycle}.
 This is the fuel cycle option currently employed in the 
 United States. 
 
-Once-through \glspl{NFC} use interim and final reposiory disposal schemes
+Once-through \glspl{NFC} use interim and final repository disposal schemes
 \cite{rodriguez-penalonga_review_2017}. One form of interim 
 storage, used regardless of 
 the fuel cycle option, is cooling in an \textit{in situ} pool. 
@@ -197,11 +197,11 @@ gaseous centrifuges to enrich uranium, although there are multiple
 technologies that can enrich uranium. Gaseous centrifuges are currently 
 used at the Urenco site in New Mexico \cite{us_nrc_louisiana_2022} and 
 planned for the Centrus facility in Piketon, Ohio 
-\cite{us_nrc_centrus_2021}. Gaseous centrifuges are rotating cannisters, 
+\cite{us_nrc_centrus_2021}. Gaseous centrifuges are rotating canisters, 
 relying on the speed of the rotation to move heavier 
-materials to the outside of the cannister. Because of this preferential 
+materials to the outside of the canister. Because of this preferential 
 movement, a greater concentration of the lighter material ($^{235}$U) 
-accumulates near the middle of the cannister \cite{villani_uranium_1979}. 
+accumulates near the middle of the canister \cite{villani_uranium_1979}. 
 To ensure that only the mass difference in the uranium isotopes causes 
 this preferential separation, the uranium is sequestered in UF$_6$ gas, because 
 fluorine only has one naturally occurring isotope. Therefore, the 
@@ -251,15 +251,15 @@ Each of these quantities can be related using the following equations:
     \end{tabular}
 \end{table}
 
-\noindent The \gls{SWU} capacity 
+\noindent The \acrfull{SWU} capacity 
 is the physical work required to put into the system to provide the 
 separation needed to meet the product stream demand. It is also related 
 to the amount of energy the facility 
 requires \cite{tsoulfanidis_nuclear_2013}. 
 
-The subequations in Eq. \ref{eq:enrichment} show that as the desired enrichment level 
+The equations in Eq. \ref{eq:enrichment} show that as the desired enrichment level 
 of the product feed increases, the feed mass must also increase, assuming everything 
-else is held constant. The subequations also show that as the desired 
+else is held constant. The equations also show that as the desired 
 product 
 enrichment level increases, the amount of \gls{SWU} capacity needed also increases. 
 However, if the product mass decreases, then the required \gls{SWU} capacity 
@@ -285,7 +285,7 @@ stage becomes the feed material for the next stage in the cascade to produce
 a greater enrichment level. The tails material from each 
 stage is combined with feed material for the previous stage, to help strip 
 out any $^{235}$U that is left in the tails. Using the tails in the 
-previous stage develops the cascasde into a counter-current cascade 
+previous stage develops the cascade into a counter-current cascade 
 \cite{villani_uranium_1979} and helps to improve the efficiency of the entire cascade. 
 Changing the product stream assay (the $^{235}$U weight fraction)
 requires a change in the cascade configuration of 
@@ -494,19 +494,19 @@ This difference leads to oscillations in the \gls{SNF} discharged
 when using \Cyclus, while the other codes results do not have these 
 oscillations.
 However, this modeling decision in \Cyclus produced results that 
-are clsoer to reality. 
+are closer to reality. 
 Additionally, the \Cycamore reactor archetype depletes half of the 
 core of fuel upon decommissioning, while the other \gls{NFC} simulators 
 deplete the entire core of fuel upon decommissioning. This 
 difference affects the \gls{TRU} material inventory, and was 
 temporarily removed to demonstrate that the difference 
-methdologies led to the difference in results \cite{bae_standardized_2019}.
+methodologies led to the difference in results \cite{bae_standardized_2019}.
 
 A common use of \gls{NFC} simulators is to evaluate the performance 
 of fuel cycles based on specific criteria. 
 For example, work with \gls{DYMOND}, \gls{DANESS}, 
 and \gls{NFCSim} evaluated how different fuel cycle options 
-could reduce \gls{SNF} volume in a repository \cite{yacout_dynamic_2000}. 
+could reduce \gls{SNF} volume in a repository \cite{yacout_dynamic_2004}. 
 \gls{NFC} simulators have also evaluated the transition between fuel cycle 
 options. Dynamic simulations of fuel cycle options for the \gls{AFCI}
 Campaign in 2005 demonstrate the importance of the magnitude, timing, 
@@ -531,10 +531,10 @@ The \glspl{EG} were compared on their performance at equilibrium on nine evaluat
 criterion, including nuclear waste management and resource utilization. The 
 results of this project showed that the most benefit comes from fuel cycles 
 that use continuous recycling of U/Pu with new or natural uranium in fast critical 
-reactors (\gls{EG} 23), continuous recycling of U/TRU with new or natural 
+reactors (\gls{EG} 23), continuous recycling of U/\gls{TRU} with new or natural 
 uranium in fast critical reactors (\gls{EG} 24), continuous recycling of U/Pu 
 with new or natural uranium in both fast and thermal critical reactors 
-(\gls{EG} 29), or contiuous recycling of U/TRU with new or natural uranium in 
+(\gls{EG} 29), or continuous recycling of U/\gls{TRU} with new or natural uranium in 
 both fast and critical reactors (\gls{EG} 30) \cite{wigeland_nuclear_2014}. 
 
 Based on the results of the \gls{ES}, many efforts have modeled 
@@ -680,7 +680,7 @@ Chee \cite{chee_sensitivity_2019} also performed synergistic analysis for
 the \gls{EG} 01 to \gls{EG} 30 transition. 
 Their analysis showed how the reactor fleet share and the transition start 
 year affect the maximum plutonium inventory at different facilities, such as 
-how minimizing the \gls{MOX}-fueled \gls{PWR} fllet share minimizes the 
+how minimizing the \gls{MOX}-fueled \gls{PWR} fleet share minimizes the 
 plutonium inventory in the cooling pools. 
 Other work on synergistic sensitivity analysis for \glspl{NFC} examined the 
 effects of the introduction of both thermal reprocessing and fast reactor 
@@ -688,7 +688,7 @@ technology for a given \gls{NFC} on the number of reactors constructed,
 the \gls{LCOE}, the mass of enrichment tails, and the \gls{SWU} 
 capacity \cite{passerini_systematic_2014}. By combining all four output 
 metrics into a single output metric, this analysis showed how the 
-later introduction dates  for both thermal reporcessing 
+later introduction dates  for both thermal reprocessing 
 and fast reactor technology minimizes the combined metric. The work by 
 Passerini 
 et al. \cite{passerini_systematic_2014} and Chee \cite{chee_sensitivity_2019}
@@ -840,7 +840,9 @@ Richards and Feng \cite{richards_application_2021} coupled Dakota with
 \gls{DYMOND} to perform global sensitivity analysis for a sample \gls{NFC} 
 to demonstrate this capability. This work utilized the Latin Hypercube 
 Sampling method in Dakota to select input parameter values, to provide 
-random sampling across the input space. 
+random sampling across the input space. Random sampling is necessary for 
+calculating Sobol' indices because they are based on the variance in 
+the output space. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -852,7 +854,7 @@ random sampling across the input space.
 \gls{HALEU} is uranium that is enriched between 5-20\% by mass in 
 $^{235}$U, and is considered a subset of \gls{LEU}. Fuel for \glspl{LWR} 
 is enriched to no more than 5\% $^{235}$U, per \gls{NRC} regulations 
-\cite{noauthor_10_2021}. Table \ref{tab:enrichemnt} provides definitions 
+\cite{noauthor_criticality_2006}. Table \ref{tab:enrichemnt} provides definitions 
 of some of the 
 main classifications of uranium enrichment. 
 
@@ -878,26 +880,27 @@ There are two primary methods for producing \gls{HALEU}. The first
 option is to enrich uranium to the required level. There is only one 
 facility in the US currently 
 licensed to enrich uranium, the Urenco LES facility in Eunice, 
-New Mexico \cite{noauthor_establishing_2022}. This facility is only 
-licensed to enrich uranium up to 5.5\% $^{235}$U \cite{noauthor_establishing_2022},
+New Mexico \cite{nuclear_energy_institute_establishing_2022}. This facility is only 
+licensed to enrich uranium up to 5.5\% $^{235}$U 
+\cite{nuclear_energy_institute_establishing_2022},
 which is less than many of the \gls{HALEU}-fueled reactor designs 
 require. Another enrichment facility is currently under development in 
 Piketon, Ohio which is licensed to enrich uranium up to 20\% 
-$^{235}$U \cite{noauthor_establishing_2022}. However, this is only 
+$^{235}$U \cite{nuclear_energy_institute_establishing_2022}. However, this is only 
 designed to be a demonstration facility producing up to 600 kg of 
 \gls{HALEU} \cite{us_nrc_centrus_2021} with the possibility of 
 developing more facilities to produce up to 12 MTU/year of \gls{HALEU}
-\cite{noauthor_establishing_2022}.
+\cite{nuclear_energy_institute_establishing_2022}.
 
 The other option is to downblend \gls{HEU} to the required \gls{HALEU}
 level. The \gls{DOE} is considering multiple sources of \gls{HEU} 
-to create \gls{HALEU} \cite{noauthor_establishing_2022}. The 
+to create \gls{HALEU} \cite{nuclear_energy_institute_establishing_2022}. The 
 first is spent fuel from \gls{EBR}, which can produce a total of 10 MTU 
-of \gls{HALEU} at 19.75\% enrichment \cite{noauthor_establishing_2022}. 
+of \gls{HALEU} at 19.75\% enrichment \cite{nuclear_energy_institute_establishing_2022}. 
 The next source is the stored \gls{HEU} solution at \gls{SRS} from 
 spent research reactor fuel. Estimates of the amount of \gls{HALEU}
 that can be produced from this stockpile vary from 4 MTU 
-\cite{noauthor_establishing_2022} to 20 MTU \cite{regalbuto_addressing_2020}.
+\cite{nuclear_energy_institute_establishing_2022} to 20 MTU \cite{regalbuto_addressing_2020}.
 These sources of 
 \gls{HALEU} would certainly be beneficial to fueling reactors, but they 
 are a very limited supply of \gls{HALEU} that cannot be counted on 
@@ -950,13 +953,13 @@ reactors.
         Reactor Name & Company & Fuel form \\\hline 
         EM$^2$ & General Atomics & UC pellet \\
         eVinci & Westinghouse & UO$_2$ or UN \\
-        Mk 1 PB-FHR & UC Berkeley & TRISO pebbles\\
+        Mk 1 PB-FHR & UC Berkeley & UCO TRISO pebbles\\
         \gls{MMR} \cite{mitchell_usnc_2020} & \gls{USNC} & UCO FCM compact\\
         Natrium & Terrapower & Metallic \\
         SC-HTGR & Framatome & UCO TRISO compacts \\
         Superstar  & \gls{ANL} & U/Pu metallic fuel \\
-        Westinghouse Lead Fast Reactor  & Westinghouse & Oxide \\
-        Xe-100 \cite{harlan_x-energy_2018} & X-energy & TRISO pebbles \\
+        Westinghouse Lead Fast Reactor  & Westinghouse & UO$_2$, potentially UN \\
+        Xe-100 \cite{harlan_x-energy_2018} & X-energy & UCO TRISO pebbles \\
         \hline        
         
     \end{tabular}
@@ -992,17 +995,17 @@ Multiple efforts have been made and are in progress to understand the
 demand of \gls{HALEU}. \gls{NEI} surveyed 10 advanced reactor 
 companies on multiple occasions to help understand the anticipated needs
 for \gls{HALEU} from the reactor designers 
-\cite{korsnick_need_2018,korsnik_updated_2020,korsnick_updated_2021}. 
+\cite{korsnick_need_2018,korsnick_updated_2020,korsnick_updated_2021}. 
 The most recent of these surveys \cite{korsnick_updated_2021} reports 
 a need of up to 613 MTU/year by 2035 and a cumulative need of 2924.3 MTU 
 by 2035. This expected demand is only for uranium enriched between 10-20\%
 $^{235}$U, so the full demand for \gls{HALEU} may be larger when uranium 
 enriched between 5-10\% are considered. Projects with a site selected 
 will need an estimated 20 MTU of \gls{HALEU} between 2024-2027 
-\cite{noauthor_establishing_2022}, with a potential cumulative 
+\cite{nuclear_energy_institute_establishing_2022}, with a potential cumulative 
 need for 78.7 MTU of \gls{HALEU} by 2027 \cite{korsnick_updated_2021}. 
 Refueling these projects will need an estimated 6 MTU/year of 
-\gls{HALEU} \cite{noauthor_establishing_2022}. Based 
+\gls{HALEU} \cite{nuclear_energy_institute_establishing_2022}. Based 
 on the estimates of how much \gls{HALEU} can be produced from available 
 \gls{HEU} stockpiles, the stockpiles would be spent by 2024. Therefore, 
 an enrichment facility will need to be built or additional \gls{HEU} 
@@ -1025,7 +1028,8 @@ is about 78,000 MTU \cite{dixon_estimated_2022}.
 
 Demand for \gls{HALEU} for the \gls{ARDP} projects is expected to begin in 
 2024 and other reactor projects anticipate coming online in the 
-mid-2020's \cite{noauthor_establishing_2022}. \gls{HALEU} creation will 
+mid-2020's \cite{nuclear_energy_institute_establishing_2022}. 
+\gls{HALEU} creation will 
 need to begin before then to provide enough time for the 
 fuel fabrication process. First core loadings of \gls{HALEU} are needed by 
 2027 for the \gls{ARDP} demonstration reactors \cite{dixon_estimated_2022}. 
@@ -1056,7 +1060,7 @@ enrichment and cycle length \cite{carlson_economic_2020,carlson_implications_202
 
 If \gls{HALEU} fuel is produced by downblending \gls{HEU}, is it possible 
 the \gls{HALEU} will contain impurities of minor uranium 
-isotopes \cite{noauthor_establishing_2022}. Bounding studies on the 
+isotopes \cite{nuclear_energy_institute_establishing_2022}. Bounding studies on the 
 uranium 
 isotopic composition of \gls{HALEU} produced from spent fuel from \gls{EBR} 
 shows the presence of $^{232}$U, $^{233}$U, $^{234}$U, and $^{236}$U

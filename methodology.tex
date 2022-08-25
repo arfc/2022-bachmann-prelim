@@ -15,8 +15,8 @@ provided the start and select end dates for \glspl{LWR}. The \gls{PRIS} database
 only contains end dates for reactors shut down before the publication of the 
 database each year. Reactors still operating in December 2020, and thus 
 lacking an end date in the \gls{PRIS} database, are assumed to operate until 
-their current operating license expiration date
-\cite{noauthor_us_nodate}. This work considers only 
+their current operating license expiration date, obtained from 
+\cite{nei_us_2021}. This work considers only 
 reactors in the \gls{PRIS} database with a power level above 400 MWe 
 to avoid including prototype and research reactors present in the database. 
 Approximate masses for fuel used in the cores of the \glspl{LWR} were obtained 
@@ -48,7 +48,7 @@ reactors built to meet the energy demand will be a major factor in deciding
 which reactors to deploy. The uranium usage will provide insight into 
 the facility throughput and raw materials required to support the 
 transition. The \gls{SWU} capacity informs on the enrichment facility 
-capacity required to support the transition. Comparisions of the transition 
+capacity required to support the transition. Comparisons of the transition 
 \gls{SWU} capacity to current capacities will inform on if new facilities 
 are required. Finally, the waste produced, specifically the \gls{SNF} 
 discharged from the reactors, informs on potential repository capacities 
@@ -66,7 +66,7 @@ the NuScale VOYGR reactor
 \gls{USNC} \gls{MMR}
 and X-energy Xe-100 reactors require \gls{HALEU}, but the NuScale VOYGR 
 requires \gls{LEU} with a similar enrichment level to current \gls{LWR} fuel 
-(Table \ref{tab:reactor_summary}). This work incldues the NuScale VOGYR, 
+(Table \ref{tab:reactor_summary}). This work includes the NuScale VOYGR, 
 despite not requiring \gls{HALEU} fuel, 
 because the \gls{NRC} granted it design approval \cite{world_nuclear_news_nuscale_2021} 
 and it is very likely to be 
@@ -147,7 +147,7 @@ levels \cite{nuscale_chapter_2020-1}. Each refueling replaces 13 fuel
 assemblies, with the middle assembly replaced at every refueling. 
 The fuel enrichment used is an average of the assembly enrichments 
 presented in \cite{nuscale_chapter_2020-1}. NuScale reports that a refueling 
-outage for the VOYGR will take ten days \cite{noauthor_nuscale_2022}. However 
+outage for the VOYGR will take ten days \cite{nuscale_nuscale_2022}. However 
 the smallest timestep modeled in this work is one month, therefore this 
 work models a VOYGR 
 refueling outage is modeled as one month. 
@@ -162,7 +162,7 @@ design is treated
 on a single unit basis. Therefore, the number of reactors built in each 
 of the transitions does not represent the number of unique sites required 
 to build the reactors. All cores modeled are assumed to be equilibrium cores, 
-this work does not consider start-up cores or the transition to equillibrium. 
+this work does not consider start-up cores or the transition to equilibrium. 
 
 \section{Once-through fuel cycle}
 Figure \ref{fig:once-through_fuel_cycle} shows the flow of material through 
@@ -279,11 +279,11 @@ minimize power oversupply, and mimic a realistic deployment strategy.
 \section{Calculation of results} \label{sec:results_calc}
 The results of each transition scenario modeled include the energy generated, 
 the number of advanced reactors deployed, the mass of enriched uranium, 
-mass of feed uranium, \gls{SWU} capacity reuired to produce the enriched 
+mass of feed uranium, \gls{SWU} capacity required to produce the enriched 
 uranium, and the \gls{SNF} discharged from the reactors. Each of these results 
 are obtained from the \Cyclus output file of the simulation. 
 
-The energy generated in each scenario is calaculated by and directly 
+The energy generated in each scenario is calculated by and directly 
 reported by \Cyclus. Each reactor facility is assumed to produce a 
 commodity called ``power'', and the total output of each reactor facility 
 is reported at each timestep that they produce this commodity. 
@@ -295,7 +295,7 @@ type of reactor can be determined.
 
 The other results in this work are calculated based on commodity 
 transactions to and from the reactor facilities. The mass of enriched 
-uranium is the mass of fuel traded between the enrichement facility and 
+uranium is the mass of fuel traded between the enrichment facility and 
 the reactors, multiplied by the mass fraction of uranium in the fuel 
 form. Multiplying by the mass fraction of uranium means that the other 
 fuel components are not included in this mass. The reported mass is the 
@@ -311,11 +311,11 @@ the enrichment facility continuously requests and receives feed
 uranium from the uranium mine without consideration for how much it needs 
 to produce the enriched uranium for the reactors. I decided to not place 
 a limit on the enrichment facility capacity to ensure that the reactors 
-would be fully fueled and not allow other faiclity limits to influence the 
+would be fully fueled and not allow other facility limits to influence the 
 reported material demands. 
 
 Finally, the mass of \gls{SNF} generated is the mass of spent fuel that is 
 traded from the reactor facilities to the cooling pools. This mass is the 
 entire fuel form, not just the uranium mass in the spent fuel, because 
-the enitre fuel form must be considered when determining disposal needs 
+the entire fuel form must be considered when determining disposal needs 
 and options. 
