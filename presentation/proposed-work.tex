@@ -1,4 +1,29 @@
 \begin{frame}
+        \frametitle{Summary}
+        Preliminary work investigates the material requirements 
+        of transitioning from \glspl{LWR} to different 
+        subsets of advanced reactors.
+        \begin{itemize}
+                \item Primarily deploying VOYGRs increases the amount of 
+                      fuel required but decreases the mass of \gls{HALEU}
+                \item Deploying primarily Xe-100s or VOYGRs results in 
+                      similar feed uranium and \gls{SWU} requirements
+                \item Deploying \glspl{MMR} greatly increases the number of 
+                      reactors, feed uranium, and \gls{SWU} capacity required.
+                \item For a 1\% growth in energy demand, similar trends are 
+                      observed
+        \end{itemize}
+        However, the preliminary work has some limitations:
+        \begin{itemize}
+                \item Only considers once-through fuel cycle
+                \item Only considers changes in the energy demand and
+                      reactors deployed
+                \item Only considers enriching natural uranium to produce 
+                      \gls{HALEU}
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
   \frametitle{Proposed Work (I)}
         \begin{columns}
         \column[t]{3.5cm}
@@ -27,9 +52,10 @@
         \begin{block}{Technical Gap}
                 \begin{itemize}
                         \item Need to understand how scenario parameters other 
-                                than the reactors selected affect the material requirements
-                        \item Need to identify transitions that are optimized to meet 
-                                specific goals
+                                than the reactors deployed and energy demand 
+                                affect the material requirements
+                        \item Need to identify transitions that are optimized 
+                              to minimize material requirements
                 \end{itemize}
         \end{block}
         \begin{block}{Proposed Work}
@@ -42,12 +68,10 @@
                                 \item build share of each advanced reactor
                         \end{itemize}
                         \item Optimize each the transitions investigated in the 
-                                sensitivity analysis for specifc goals
+                                sensitivity analysis for specific goals
                         \begin{itemize}
-                                \item Minimize \gls{HALEU} mass
-                                \item Minimize \gls{SWU} capacity 
-                                \item Minimize both \gls{HALEU} mass and \gls{SWU}
-                                        capacity
+                                \item Two single objective optimizations
+                                \item One multi-objective optimizations
                         \end{itemize}
                 \end{itemize}
         \end{block}
@@ -57,19 +81,21 @@
         \frametitle{Proposed Work (III)}
         \begin{block}{Technical Gap}
                 \begin{itemize}
-                        \item Lack of understanding of the neutronics limitations 
+                        \item Lack of understanding of the limitations 
                                 of using \gls{HALEU} produced by downblending 
                                 \gls{HEU}
                 \end{itemize}
         \end{block}
         \begin{block}{Proposed Work}
                 \begin{itemize}
-                
                 \item Perform depletion calculations of the Xe-100 and \gls{MMR} 
-                        designs
-                \item Investigate the changes in reactor performance when fueled 
-                        with downblened \gls{HEU} compared with using enriched natural 
-                        uranium
+                        designs using different \gls{HALEU} compositions:
+                        \begin{itemize}
+                                \item Pure \gls{HALEU} (only $^{235}$U and $^{238}$U)
+                                \item downblended \gls{EBR} spent fuel
+                                \item downblended Y-12 stockpiles
+                        \end{itemize}
+                \item Investigate the reactor performance of each composition
                         \begin{itemize}
                                 \item Flux
                                 \item $k_{eff}$

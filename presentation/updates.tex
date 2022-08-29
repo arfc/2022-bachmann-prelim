@@ -1,15 +1,21 @@
-\subsection{Updated Results}
+\subsection{Updated Methodology}
 \begin{frame}
     \frametitle{Introduce capacity factors to simualtions}
+    The current methodology matches installed capacity to a demand 
+    in the energy generated. Need to introduce capacity factors to 
+    match energy generated to a demand in energy generated.
     \begin{itemize}
         \item Assume \glspl{LWR} operate at a 92.66\% 
               \gls{CF} \cite{us_eia_monthly_2022}
         \item Assume Xe-100 and VOYGR operate at 95\% \gls{CF}
+              \cite{xenergy_reactor_nodate,nuscale_technology_nodate}
         \item Assume the \gls{MMR} operates at 100\% \gls{CF}
-        \item Do not explicitly model outages for any reactor
-        \item This methodology changes the energy supplied, 
+        \item Do not explicitly model outages for any reactor, extend 
+              operating cycle by 1 month for \glspl{LWR} and VOYGRs
+        \item This methodology changes the energy supplied by \glspl{LWR}, 
               slightly changes the number of reactors deployed,
-              but does not significantly affect the material requirements. 
+              but does not affect the amount of fuel or when the reactors 
+              receive fuel. 
 
     \end{itemize}
 \end{frame}

@@ -6,17 +6,15 @@
         \node (conversion) [agent, right of=mill, xshift=0.5cm] {Conversion};
         \node (enrichment) [agent, right of=conversion, xshift=1cm]{Enrichment};
         \node (fabrication) [agent, right of=enrichment, xshift=1.5cm]{Fuel Fabrication};
-        \node (reactor) [agent, below of=fabrication, yshift=-1.5cm]{LWR};
+        \node (reactor) [agent, below of=fabrication, yshift=-1.5cm]{Reactor};
         \node (storage) [agent,  left of=reactor, xshift=-1cm]{Storage};
         \node (sinkhlw) [agent, left of=storage, xshift=-1cm]{Repository};
-        \node (sinkllw) [agent, above of=enrichment]{LLW Sink};
 
 
         \draw [arrow] (mine) --  (mill); 
         \draw [arrow] (mill) -- (conversion); 
         \draw [arrow] (conversion) -- (enrichment);
         \draw [arrow] (enrichment) -- (fabrication);
-        \draw [arrow] (enrichment) -- (sinkllw);
         \draw [arrow] (fabrication) -- (reactor);
         \draw [arrow] (reactor) -- (storage);
         \draw [arrow] (storage) -- (sinkhlw);
