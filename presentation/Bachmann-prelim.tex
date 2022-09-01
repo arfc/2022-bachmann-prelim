@@ -40,7 +40,7 @@ Reactors Fueled by High Assay Low Enriched Uranium}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows, backgrounds}
-\usetikzlibrary{positioning, arrows, decorations, shapes}
+\usetikzlibrary{positioning, arrows, decorations, shapes, matrix, fit, tikzmark}
 
 \tikzstyle{agent} = [rectangle, rounded corners, minimum width=0.1cm, minimum height=0.2cm,text centered, draw=black, fill=blue!30]
 \tikzstyle{transition} = [rectangle, rounded corners, minimum width=0.1cm, minimum height=0.2cm,text centered, draw=black, fill=red!30]
@@ -89,6 +89,25 @@ Reactors Fueled by High Assay Low Enriched Uranium}
 \addtolength{\highlightdepth}{\highlightmargin}
 \addtolength{\highlightheight}{\highlightdepth}
 \newcommand*{\Highlight}{\rlap{\textcolor{HighlightBackground}{\rule[-\highlightdepth]{\linewidth}{\highlightheight}}}}
+% tikzmark command, for shading over items
+
+\tikzset{   
+        every picture/.style={remember picture,baseline},
+        every node/.style={anchor=base,align=center,outer sep=1.5pt},
+        every path/.style={thick},
+        }
+
+\newcommand\marktopleft[1]{%
+    \tikz[overlay,remember picture] 
+        \node (marker-#1-a) at (.1em,.3em) {};%
+}
+\newcommand\markbottomright[1]{%
+    \tikz[overlay,remember picture] 
+        \node (marker-#1-b) at (.1em,.3em) {};%
+    \tikz[overlay,remember picture,inner sep=3pt]
+        \node[draw=red,rounded corners,fit=(marker-#1-a.north west) (marker-#1-b.south east)] {};%
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%--------------------------------%%
 \begin{withoutheadline}

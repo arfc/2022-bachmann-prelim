@@ -25,7 +25,7 @@
 
 \begin{frame}
     \frametitle{Advanced Reactors}
-    \vspace{-0.8cm}
+    \vspace{-0.5cm}
     \begingroup
         \renewcommand{\arraystretch}{1.5}
         \begin{table}
@@ -81,6 +81,37 @@
                     \hline
             \end{tabular}
         \end{table}
+        %<2-> \tikz[overlay, remember picture]{\draw{draw=red,thick, double, fillopacity=0.2] ($(infrastructure)+(-0.5,0.4)$) rectangle ($(infrastructure)+(6,-0.2)$);}} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Once-through scenario definitions}
+        \begin{table}[ht]
+            \centering
+            \caption{Summary of the once-through fuel cycle transition scenarios.}
+            \label{tab:scenarios_once-through}
+            \begin{tabular}{c l l}
+                    \hline
+                    Scenario number & Reactors present & Energy growth\\\hline
+                    1 & \glspl{LWR} & N/A \\
+                    \marktopleft{a3}
+                    2 & \glspl{LWR} and \gls{MMR} & No growth \\
+                    3 & \glspl{LWR} and Xe-100 & No growth \\
+                    4 & \glspl{LWR}, Xe-100, and \gls{MMR}& No growth\\
+                    5 & \glspl{LWR}, \gls{MMR}, and VOYGR & No growth\\
+                    6 & \glspl{LWR}, Xe-100, and VOYGR & No growth\\
+                    7 & \glspl{LWR}, Xe-100, \gls{MMR}, and VOYGR & No growth
+                    \markbottomright{a3}\\
+                    8 & \glspl{LWR} and \gls{MMR}& 1\% growth \\
+                    9 & \glspl{LWR} and Xe-100 & 1\% growth\\
+                    10 & \glspl{LWR}, Xe-100, and \gls{MMR}& 1\% growth\\
+                    11 & \glspl{LWR}, \gls{MMR}, and VOYGR & 1\% growth\\
+                    12 & \glspl{LWR}, Xe-100, and VOYGR & 1\% growth\\
+                    13 & \glspl{LWR}, Xe-100, \gls{MMR}, and VOYGR & 1\% growth\\
+                    \hline
+            \end{tabular}
+        \end{table}
+        %<2-> \tikz[overlay, remember picture]{\draw{draw=red,thick, double, fillopacity=0.2] ($(infrastructure)+(-0.5,0.4)$) rectangle ($(infrastructure)+(6,-0.2)$);}} 
 \end{frame}
 
 \begin{frame}
