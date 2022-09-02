@@ -1,4 +1,4 @@
-\documentclass[9pt]{beamer}
+\documentclass[9pt,xcolor={table}]{beamer}
 \setbeamertemplate{caption}[numbered]
 \usetheme[white]{Illinois}
 %\title[short title]{long title}
@@ -11,7 +11,7 @@ Reactors Fueled by High Assay Low Enriched Uranium}
 \institute[UIUC]{University of Illinois at Urbana-Champaign}
 
 
-%\usepackage{bbding}
+%\usepackage[table]{xcolor}
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{xspace}
@@ -20,7 +20,7 @@ Reactors Fueled by High Assay Low Enriched Uranium}
 \usepackage{booktabs} % nice rules for tables
 \usepackage{microtype} % if using PDF
 \usepackage{bigints}
-%\usepackage{minted}
+
 \graphicspath{{../images/}}
 
 \newcommand{\units}[1] {\:\text{#1}}%
@@ -89,7 +89,9 @@ Reactors Fueled by High Assay Low Enriched Uranium}
 \addtolength{\highlightdepth}{\highlightmargin}
 \addtolength{\highlightheight}{\highlightdepth}
 \newcommand*{\Highlight}{\rlap{\textcolor{HighlightBackground}{\rule[-\highlightdepth]{\linewidth}{\highlightheight}}}}
-% tikzmark command, for shading over items
+\colorlet{lightblue}{blue!40!}
+\definecolor{lightorange}{HTML}{FAA21A}
+\colorlet{lightpink}{red!20!}
 
 \tikzset{   
         every picture/.style={remember picture,baseline},
@@ -127,7 +129,7 @@ Reactors Fueled by High Assay Low Enriched Uranium}
 
 \section{Introduction}
 \input{intro}
-\section{Modeling Methodology}
+\section{Transition Analysis}
 \input{transition_analysis}
 \section{Results}
 \input{results}
@@ -165,5 +167,7 @@ Reactors Fueled by High Assay Low Enriched Uranium}
     \end{columns}
     
 \end{frame}
+
+\input{extra-slides}
 
 \end{document}

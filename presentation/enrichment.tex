@@ -1,0 +1,14 @@
+\begin{figure}[t]
+    \centering
+    \begin{tikzpicture}[node distance=1cm]
+        \node (conversion) [agent] {\small Conversion};
+        \node (enrichment) [agent, right of=conversion, xshift=1.25cm]{\small Enrichment};
+        \node (fabrication) [agent, right of=enrichment, xshift=1.25cm]{\small Fuel Fabrication};
+        \node (sink) [agent, below of=enrichment]{\small Tails Sink};
+        
+        \draw [arrow] (conversion) -- node[anchor=south]{F} (enrichment);
+        \draw [arrow] (enrichment) -- node[anchor=south]{P}(fabrication);
+        \draw [arrow] (enrichment) -- node[anchor=east]{T}(sink);
+
+        \end{tikzpicture}
+\end{figure}

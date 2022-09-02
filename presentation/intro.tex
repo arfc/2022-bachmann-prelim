@@ -1,13 +1,14 @@
 \subsection{Motivation}
 \begin{frame}
-    \frametitle{Introduction}
+    \frametitle{The US is looking to develop supplies of HALEU}
     \begin{columns}
         \column[t]{5cm}
     \begin{itemize}
     \item Multiple new reactor designs require \gls{HALEU} fuel, which allows for: 
     \begin{itemize}
-        \item Longer cycle times
-        \item Higher burnups 
+        \item Longer cycle time
+        \item Increased capacity factor
+        \item Higher burnup 
     \end{itemize}
     \item<2-> The US does not have any commercial supplies of \gls{HALEU}
     \item<3-> To meet the \gls{HALEU} demand, the U.S. \gls{DOE} has proposed two methods \cite{griffith_overview_2020}:
@@ -49,38 +50,54 @@
     \begin{itemize}
         \item Process to increase the relative abundance of specific
               isotopes of an element
-        \item<2-> The throughput of a facility is based on the product 
+        \pause
+        \item The throughput of a facility is based on the product 
               mass, product assay, and the \gls{SWU} capacity
-            \begin{subequations}
-                \begin{equation}
-                    F = P + T
-                \end{equation}
-                \begin{equation}
-                    x_fF = x_pP + x_tT
-                    \label{eq:enrichment_assasys}
-                \end{equation}
-                \begin{equation}
-                    SWU = \left[P*V(x_p) +T*V(x_t) - F*V(x_f)\right]*t
-                    \label{eq:swu}
-                \end{equation}
-                \text{in which:}
-                \begin{equation}
-                    V(x_i) = (2x_i - 1)*\ln\left(\frac{x_i}{1-x_i}\right)
-                    \label{eq:sep_potential}
-                \end{equation}
-                \label{eq:enrichment}
-            \end{subequations}
     \end{itemize}
+    \pause
+    \vspace{-0.5cm}
+    \begin{columns}
+        \column{6.5cm}
+            \begin{align*}
+                    & F = P + T \\
+                    & x_fF = x_pP + x_tT\\
+                    & SWU = \left[P\times V(x_p) +T*V(x_t) - F*V(x_f)\right]*t\\
+                    & \text{in which:}\\
+                    & V(x_i) = (2x_i - 1)*\ln\left(\frac{x_i}{1-x_i}\right)
+            \end{align*}
+            \vspace{-0.5cm}
+            \input{enrichment}
+    \column{3.5cm}
+    \begin{table}
+        \centering
+        \caption{Enrichment variable definitions}
+        \label{tab:enrichment}
+        \vspace{-0.3cm}
+        \begin{tabular}{c m{2cm}}
+            \hline
+            Variable & Definition \\
+            \hline
+            F & feed mass \\
+            P & product mass \\
+            T & tails mass\\
+            x$_i$ & assay of material stream \\
+            SWU & Separative Work Units\\
+            V(x$_i$) & separation potential function\\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Multiple efforts to estimate HALEU needs}
-    Efforts are underway to estimate potential \gls{HALEU} needs
+    \frametitle{Efforts to estimate HALEU needs}
+    Efforts are underway to estimate potential \gls{HALEU} needs:
     \begin{itemize}
-        \item \gls{NEI} has surveyed multiple reactor design companies
+        \item \gls{NEI} surveyed multiple reactor design companies
               to estimate \gls{HALEU} needs between now and 2035 
               \cite{korsnick_updated_2021,nuclear_energy_institute_establishing_2022}
-        \item \gls{DOE} labs have modeled the transition to some 
+        \item \gls{DOE} labs modeled the transition to some 
               \gls{HALEU}-fueled reactors to estimate \gls{HALEU} needs 
               to meet current net-zero carbon goals in 2050 \cite{dixon_estimated_2022}
     \end{itemize}
@@ -103,12 +120,12 @@
         \begin{itemize}
         \item<2-> This work explores how the deployment of \gls{HALEU}-fueled reactors 
         affects the US nuclear fuel cycle. 
-        \item<3-> Quantify potential material requirements for the transition from 
+        \item<2-> Quantify potential material requirements for the transition from 
               \glspl{LWR} to advanced reactors in a once-through and recycling 
               fuel cycle
-        \item<4-> Understand the impacts of fuel cycle parameters on the 
+        \item<2-> Understand the impacts of fuel cycle parameters on the 
               material requirements and design optimized transition scenarios
-        \item<5-> Identify potential limitations in using downblended \gls{HEU} 
+        \item<2-> Identify potential limitations in using downblended \gls{HEU} 
               in reactors
         \end{itemize}
     \end{block}

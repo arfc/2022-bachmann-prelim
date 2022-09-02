@@ -1,13 +1,7 @@
 \begin{frame}
-  \frametitle{Proposed Work (I)}
+  \frametitle{Proposed Work -- Closed fuel cycle}
         \begin{columns}
         \column[t]{3.5cm}
-        \begin{block}{Technical Gap}
-             \begin{itemize}
-                \item Need to understand fuel cycle changes with 
-                        a recycling fuel cycle
-             \end{itemize}                   
-        \end{block}
         \begin{block}{Proposed Work}
                 \begin{itemize}
                         \item Model the transition to advanced reactors using recycling
@@ -17,22 +11,20 @@
                         \end{itemize}
                 \end{itemize}
         \end{block}
+        \begin{block}{Technical Gap}
+             \begin{itemize}
+                \item Need to understand fuel cycle changes with 
+                        a recycling fuel cycle
+             \end{itemize}                   
+        \end{block}
+        
         \column[t]{6.5cm}
         \input{recycle-flow}
         \end{columns}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Proposed Work (II)}
-        \begin{block}{Technical Gap}
-                \begin{itemize}
-                        \item Need to understand how scenario parameters other 
-                                than the reactors deployed and energy demand 
-                                affect the material requirements
-                        \item Need to identify transitions that are optimized 
-                              to minimize material requirements
-                \end{itemize}
-        \end{block}
+        \frametitle{Proposed Work -- Sensitivity analysis}
         \begin{block}{Proposed Work}
                 \begin{itemize}
                         \item Perform sensitivity analysis on select once through 
@@ -50,17 +42,19 @@
                         \end{itemize}
                 \end{itemize}
         \end{block}
+        \begin{block}{Technical Gap}
+                \begin{itemize}
+                        \item Need to understand how scenario parameters other 
+                                than the reactors deployed and energy demand 
+                                affect the material requirements
+                        \item Need to identify transitions that are optimized 
+                              to minimize material requirements
+                \end{itemize}
+        \end{block}
 \end{frame}
 
 \begin{frame}
-        \frametitle{Proposed Work (III)}
-        \begin{block}{Technical Gap}
-                \begin{itemize}
-                        \item Need to understand the limitations 
-                                of using \gls{HALEU} produced by downblending 
-                                \gls{HEU}
-                \end{itemize}
-        \end{block}
+        \frametitle{Proposed Work -- Neutronics analysis}
         \begin{block}{Proposed Work}
                 \begin{itemize}
                 \item Perform depletion calculations of the Xe-100 and \gls{MMR} 
@@ -70,13 +64,20 @@
                                 \item Downblended \gls{EBR} spent fuel
                                 \item Downblended Y-12 stockpiles
                         \end{itemize}
-                \item Investigate the reactor performance of each composition
+                \item Investigate the reactor performance of each composition:
                         \begin{itemize}
                                 \item Flux
                                 \item $k_{eff}$
                                 \item $\beta_{eff}$
                                 \item Reactivity Coefficients
                         \end{itemize}
+                \end{itemize}
+        \end{block}
+        \begin{block}{Technical Gap}
+                \begin{itemize}
+                        \item Need to understand the limitations 
+                                of using \gls{HALEU} produced by downblending 
+                                \gls{HEU}
                 \end{itemize}
         \end{block}
 \end{frame}
