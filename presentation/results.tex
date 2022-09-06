@@ -30,8 +30,8 @@
 
 \begin{frame}
     \frametitle{Number of Reactors}
-    \begin{columns}
-        \column[t]{4.3cm}
+    %\begin{columns}
+        %\column[t]{4.3cm}
             \begin{itemize}
                 \item Number of reactors deployed scales with the power 
                       output of each reactor type
@@ -40,24 +40,28 @@
                 \item Similar number of Xe-100s and VOYGRs are deployed
                 \item Scenarios 4, 6, and 7 mostly deploy Xe-100s 
             \end{itemize}
-        \column[t]{5.7cm}
-        \vspace{-0.5cm}
-            \begin{figure}
-                \centering
-                \includegraphics[scale=0.33]{nogrowth_reactors.pdf}
-        \end{figure}
-        \vspace{-0.5cm}
+        %\column[t]{5.7cm}
+        %\vspace{-0.5cm}
         \begin{figure}
+        \begin{subfigure}{0.48\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{nogrowth_reactors.pdf}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}{0.48\textwidth}
             \centering
-            \includegraphics[scale=0.33]{nogrowth_reactors_3-7.pdf}
-            \caption{Number of advanced reactors deployed.}
-            \label{fig:reactors_3-7}
-    \end{figure}
-    \end{columns}
+            \includegraphics[width=\textwidth]{nogrowth_reactors_3-7.pdf}
+            %\caption{Number of advanced reactors deployed.}
+            %\label{fig:reactors_3-7}
+        \end{subfigure}
+        \caption{Number of advanced reactors deployed in Scenarios 2-7 (left)
+        and Scenarios 3-7 (right).}
+        \end{figure}
+    %\end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Enriched Uranium Mass}
+    \frametitle{Fuel utilization governs enriched uranium mass}
     \begin{columns}
         \column[t]{4.5cm}
             \begin{itemize}
@@ -107,10 +111,10 @@
             \end{tabular}
         \end{table}   
     \endgroup
-    \begin{equation}
+    \begin{equation*}
         \text{mass (kg)} = \frac{\text{Power (MWth) * cycle length (d)*number of cycles}}{\text{Burnup (MWd/kg)}}
         \label{eq:fuel_mass}
-    \end{equation}
+    \end{equation*}
 \end{frame}
 
 \begin{frame}
