@@ -3,10 +3,11 @@
 
 
 \usepackage[acronym,toc]{glossaries}
-\include{acros}
+\input{acros}
 
 \usepackage{xspace}
-\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{subcaption}
 \newcommand{\Cycamore}{\textsc{Cycamore}\xspace}
 \newcommand{\Cyclus}{\textsc{Cyclus}\xspace}
 
@@ -16,8 +17,7 @@
 \usepackage{microtype} % improves typography for PDF
 
 \usepackage[hyphens]{url}
-\usepackage{hyperref}
-\usepackage{subfig}
+\usepackage[hidelinks]{hyperref}
 \usepackage{hhline}
 \usepackage{amsmath}
 \usepackage{color}
@@ -28,8 +28,10 @@
     group-separator={,}, group-four-digits = true
 }
 \usepackage{fourier}
+\usepackage{soul}
 \usepackage{booktabs}
 \newcommand\tab[1][1cm]{\hspace*{#1}}
+
 
 \usepackage{threeparttable, tablefootnote}
 
@@ -62,26 +64,36 @@
 
 
 \usepackage{tikz}
-\usetikzlibrary{positioning, arrows, decorations, shapes}
+\usetikzlibrary{positioning, arrows, decorations, shapes, calc}
 
 \usetikzlibrary{shapes.geometric,arrows}
 \tikzstyle{process} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
 
-\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+
 \tikzstyle{objectr} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
 
 \tikzstyle{empty} =  [rectangle, rounded corners, minimum width=2.5cm, minimum height=0.7cm,text centered, draw=black, fill=white!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{facility} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{transition} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=red!30]
+\tikzstyle{centrifuge} = [rectangle, minimum width=2cm, minimum height=0.75cm,text centered, draw=black, fill=none]
+\tikzstyle{sfr} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
 
+\graphicspath{{images/}}
 
-\title{Example Template}
-\author{Charles Bae}
+\title{Investigation of the impacts of deploying reactors fueled by high-assay low enriched uranium}
+\author{Amanda M. Bachmann}
 \department{Nuclear, Plasma, Radiological Engineering}
-\schools{B.S., University of Illinois - Urbana Champaign, 2017}
-\msthesis
-\advisor{Kathryn D. Huff}
-\degreeyear{2018}
-\committee{Assistant Professor Kathryn D. Huff, Adviser \\ Professor Segundo Lector }
+\schools{B.S., University of Tennessee, Knoxville, 2019 \\ M.S., University of Tennessee, Knoxville, 2020}
+\phdthesis
+\advisor{Madicken Munk}
+\degreeyear{2022}
+\committee{Research Scientist Dr. Madicken Munk, Advisor \\
+           Associate Professor Tomasz Kozlowski \\
+           Professor James F. Stubbins \\
+           Professor John R. Abelson \\
+           Dr. Bo Feng, Argonne National Lab\\
+           }
 
 
 \begin{document}
@@ -92,13 +104,13 @@
 %% Note that ProQuest truncates their abstracts at 350 words.
 \begin{abstract}
 
-Abstract.
+\input{abstract}
 
 \end{abstract}
 
-\chapter*{Acknowledgments}
+%\chapter*{Acknowledgments}
 
-Acks.
+%\input{acks}
 
 %% The thesis format requires the Table of Contents to come
 %% before any other major sections, all of these sections after
@@ -125,15 +137,27 @@ Acks.
 \pagebreak
 \mainmatter
 
-\chapter{Introduction}
+\chapter{Introduction} \label{ch:intro}
 \input{introduction}
 
-\chapter*{Appendix}
-\input{appendix}
+\chapter{Background \& Literature Review} \label{ch:background}
+\input{background}
+
+\chapter{Fuel cycle modeling methodology} \label{ch:fc_methods}
+\input{methodology.tex}
+
+\chapter{Once-through transition results} \label{ch:once_through_results}
+\input{once-through-results.tex}
+
+\chapter{Summary and Proposed Work} \label{ch:summary}
+\input{summary.tex}
+
+%\chapter*{Appendix}
+%\input{appendix}
 
 \backmatter
 
-\bibliographystyle{apalike}
+\bibliographystyle{ieeetr}
 \bibliography{bibliography}
 
 \end{document}

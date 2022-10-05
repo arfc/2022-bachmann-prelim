@@ -1,0 +1,39 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[node distance=1.5cm]
+        \node (mine) [facility] {Uranium Mine};
+        \node (enrichment) [facility, below of=mine]{Enrichment};
+        \node (reactor) [facility, below of=enrichment]{Reactor};
+        \node (adv_reactor) [transition, right of=reactor, xshift=3cm]{Advanced Reactor};
+        \node (wetstorage) [facility, below of=reactor]{Wet Storage};
+        \node (drystorage) [facility, below of=wetstorage]{Dry Storage};
+        \node (cooling) [transition, below of=adv_reactor]{West Storage};
+        \node (sinkhlw) [facility, below of=drystorage, xshift=2.5cm]{HLW Sink};
+        \node (sinkllw) [facility, left of=enrichment, xshift=-3cm]{LLW Sink};
+        \node (separation) [transition, below of=cooling]{Separations};
+        \node (fuelfab) [transition, below of=adv_reactor,xshift=3cm]{Fuel Fab};
+        \node (sfr) [transition, right of=adv_reactor, xshift=3.5cm]{Fast Reactor};
+
+        \draw [arrow] (mine) -- node[anchor=east]{Natural U} (enrichment);
+        \draw [arrow] (enrichment) -- node[anchor=east]{Enriched U}(reactor);
+        \draw [arrow] (enrichment) -- node[anchor=south]{Tails}(sinkllw);
+        \draw [arrow] (enrichment) -| node[anchor=west]{Fresh Fuel}(adv_reactor);
+        \draw [arrow] (reactor) -- node[anchor=east]{Spent UOX}(wetstorage);
+        \draw [arrow] (wetstorage) -- node[anchor=east]{Cool Spent UOX}(drystorage);
+        \draw [arrow] (drystorage) |- node[anchor=east]{Casked Spent UOX}(sinkhlw);
+        \draw [arrow] (adv_reactor) -- node[anchor=west]{Spent Fuel}(cooling);
+        \draw [arrow] (cooling) -- node[anchor=west]{Cooled Spent Fuel}(separation);
+        \draw [arrow] (separation) -| node[anchor=north, text width=1.5cm]{Separated fissile material}(fuelfab);
+        \draw [arrow] (fuelfab) |- node[anchor=south, text width=1.5cm]{Reprocessed fuel}(sfr);
+        \draw [arrow] (fuelfab) |- (adv_reactor);
+        \draw [arrow] (separation) |- node[pos= 0.3, anchor=west, text width = 1.5cm]{Fission products}(sinkhlw);
+        \draw [arrow] (wetstorage) -- node[sloped, anchor=south]{Cool Spent UOX}(separation);
+        \draw [arrow] (sfr) |- node[anchor=west]{Waste}(sinkhlw);
+
+        \end{tikzpicture}
+    \caption{Fuel cycle facilities and material flow between facilities for modeling the transition 
+    to advanced reactors with a continuous recycle fuel cycle. The separations facility
+    is deployed in 2020, five years before the transition. Before 2020 a once-through 
+    fuel cycle is used with the facilities in blue.}
+    \label{fig:continuous_recycle_flow}
+\end{figure}

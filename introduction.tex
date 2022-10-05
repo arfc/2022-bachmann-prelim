@@ -1,1 +1,184 @@
-Introduction \cite{huff_extensions_2014}.
+\section{Motivation}
+Nuclear energy supplied about 19\% of all energy and over 50\%  
+of all carbon-free energy in the US in 2021 
+\cite{energy_information_administration_electricity_2022}, making nuclear 
+energy the third largest producer of energy and the largest 
+producer of carbon-free energy in the United States. Because of its role 
+as a carbon free supply of base-load power, nuclear energy is expected 
+to play a role in meeting carbon emission goals. Two reactor designs 
+comprise the current nuclear reactor fleet: \glspl{PWR} and \glspl{BWR}, 
+which both fall under the classification of \glspl{LWR}.
+Both designs use uranium dioxide pellets as fuel, with the uranium 
+enriched to no more than 5\% $^{235}$U. These types of reactors 
+have commercially operated in the US since 1957. The \glspl{LWR} 
+currently deployed will be retiring over the next 30 years, with the 
+last license expiring in 2055 \cite{nei_us_2021}. Therefore, if 
+nuclear energy is to continue to produce energy in the US 
+and assist in meeting carbon emission goals, we must deploy new reactors. 
+
+Multiple countries around the world are building new \glspl{LWR}
+\cite{world_nuclear_association_plans_2022}, and developing
+new reactor designs, often called advanced reactors 
+\cite{hussain_advances_2018}, to 
+replace or expand the current fleet of reactors. These advanced reactors 
+cover a large swath of design space, with wider ranges in: energy output, 
+fuel form, and cycle length. The 
+\gls{DOE} \gls{ARDP} \cite{noauthor_advanced_nodate}
+supports research and building demonstration reactors for a select set of 
+the new designs to advance the deployment studies in the US. These 
+demonstration reactors are planned to be complete by the late 2020's.
+
+One important question that has arisen from the \gls{ARDP} is how the 
+development of supply chains can support the nuclear fuel cycle of 
+advanced reactors. 
+One key difference in the fuel for these advanced 
+reactor designs is the enrichment 
+level of the fuel. Many advanced reactor designs require  
+\acrfull{HALEU}, which is uranium enriched between 5\% and 20\% $^{235}$U.
+There is no commercial supply of 
+uranium enriched to this level in the US, therefore the \gls{DOE} 
+is investigating how to develop a nuclear fuel cycle for uranium enriched to this 
+increased level. 
+
+Deploying advanced reactors that require \gls{HALEU} is expected to have 
+large impacts on the \gls{NFC} in the US; specifically in the development 
+of infrastructure and supply chains to support these reactors. To assist 
+in understanding the impacts 
+from deploying \gls{HALEU}-fueled reactors, modeling the \gls{NFC} 
+can provide the material requirements of potential transition scenarios. 
+The \gls{NFC} describes how fuel for fission energy systems is 
+prepared, processed, and disposed \cite{tsoulfanidis_nuclear_2013}. 
+The technology employed in the \gls{NFC} often defines the fuel 
+cycle type, 
+and a transition in the nuclear fuel cycle occurs when 
+introducing new fuel types or other fuel cycle technologies.  
+Modeling  a \gls{NFC}, typically aided by a fuel cycle simulator, 
+includes the deployment and decommissioning of facilities in the \gls{NFC}, 
+such as mines or reactors, and the materials traded between facilities. 
+\gls{NFC} simulators have been used to model a variety of \gls{NFC} 
+transitions \cite{sunny_transition_2015,bae_fuel_2018,piet_dynamic_2011} 
+and quantify the resource requirements of \glspl{NFC} transitions
+\cite{bachmann_enrichment_2021}. 
+
+There are two methods to produce \gls{HALEU}: enrich natural uranium 
+or downblend \acrfull{HEU} to achieve the desired enrichment level. The current US
+nuclear commercial fuel cycle relies on enrichment of natural uranium 
+to create fuel for \glspl{LWR}, but does not have the capability to enrich
+natural uranium to produce \gls{HALEU} \cite{nuclear_energy_institute_addressing_2018}.  
+The amount of available natural uranium and facility capacities, such 
+as the facility throughputs and \gls{SWU} capacity, limit 
+\gls{HALEU} production through enrichment. 
+The \gls{HEU} being considered for downblending comes from three different 
+\gls{DOE} sources: the spent \gls{EBR} fuel stockpiles at \gls{INL} 
+\cite{patterson_haleu_2019}, stockpiles at \gls{SRS} \cite{regalbuto_addressing_2020}, 
+and stockpiles at Y-12 National Security Complex 
+\cite{robinson_establishment_2020}. The size of each stockpile limits the amount 
+of \gls{HALEU} produced through downblending, and each stockpile is capable 
+of producing no more than 20 MTU of \gls{HALEU}. Additionally, two 
+of the potential stockpiles of \gls{HEU} to downblend  
+contain impurities that would affect reactor performance 
+\cite{vaden_isotopic_2018,nelson_foreign_2010}.
+These impurities may limit the amount of downblended \gls{HEU} that a reactor 
+a reactor can use at once. 
+Currently, there is only one facility in the US commercially licensed to 
+downblend \gls{HEU}, the BWXT Nuclear Fuel Services Inc. facility in 
+Erwin, TN, which is expected to have the capacity to downblend 1-2 
+MT of \gls{HEU}, producing up to 10 MT of \gls{HALEU} each year \cite{nagley_ha-leu_2020}.
+
+One limitation in modeling the \gls{NFC} is the large array of potential 
+input parameters, such as when to start a transition or the speed of the 
+transition. To understand 
+the impact of input parameters on the output metrics (e.g., material 
+requirements) of a fuel cycle, fuel cycle modelers perform sensitivity 
+analysis on the 
+modeled \gls{NFC}. Sensitivity analysis involves 
+modeling a fuel cycle with small perturbations in various input 
+parameters and analyzing the variance or spread of select output metrics. 
+Sensitivity analysis has been used in multiple \gls{NFC} analysis 
+\cite{chee_sensitivity_2019,feng_sensitivity_2020,thiolliere_methodology_2018}
+to identify the model parameter or parameters that have the greatest 
+impact on specific model outputs or material requirements. Sensitivity 
+analysis can also reveal underlying information about a system that is not 
+necessarily intuitive, such as how much the modeling methodology 
+affects the results. Understanding the 
+material requirements of a \gls{NFC} coupled with sensitivity analysis 
+aids in optimizing the \gls{NFC} based on given criteria, such as 
+minimizing the amount of \gls{HALEU} required. Various 
+optimization schemes have been applied to \glspl{NFC} to optimize the fuel 
+cycle based on criteria such as fuel requirements \cite{kim_selection_1999},
+waste production \cite{shwageraus_optimization_2003}, and combinations 
+of these metrics in multi-objective 
+problems \cite{passerini_systematic_2014}.
+
+\section{Research Goals}
+The goal of this work is to investigate the impacts of deploying reactors 
+fueled 
+by \gls{HALEU} in the United States, including the impacts that the reactors 
+have on the \gls{NFC} and the impacts the \gls{NFC} has on the reactors. 
+The results of this work are intended to
+aid and guide policy makers and key stake holders on how to best establish a 
+fuel cycle to support the deployment of \gls{HALEU}-fueled reactors. 
+Within this primary goal, there are three specific objectives:
+\vspace{0.2cm} 
+\noindent
+\begin{enumerate}
+\item Quantify potential material requirements for the transition 
+from \glspl{LWR} to advanced reactors in open and closed 
+fuel cycles.
+
+\item Understand the impacts of fuel cycle parameters on the material 
+requirements and design optimized transition scenarios.
+
+\item Identify potential limitations in using downblended \gls{HEU} 
+to produce \gls{HALEU} based on reactor performance.
+
+\end{enumerate}
+The goals of this work will be completed through the following steps:
+\vspace{0.2cm} 
+\noindent
+\begin{enumerate}
+\item \textbf{Model the transition from \glspl{LWR} to advanced reactors.} 
+Transition scenarios to multiple fuel cycles with \gls{HALEU}-fueled 
+reactors will 
+be modeled using the \gls{NFC} simulator \Cyclus \cite{huff_fundamental_2016}. 
+Multiple transitions will be modeled, with each one varying based on the type
+of  
+advanced reactors, energy demand, and fuel cycle option (open or closed). This 
+step will quantify and compare the material requirements of each transition 
+scenario to understand how the material requirements compare to what is available 
+through the current US fuel cycle and published estimates of potential 
+\gls{HALEU} needs. 
+
+\item \textbf{Perform sensitivity analysis and optimize select transition scenarios.}
+Sensitivity analysis will be performed on a subset of the transition scenarios
+modeled by coupling \Cyclus with Dakota \cite{adams_dakota_2019}. This step 
+will identify the most impactful model parameters on 
+the material requirements of the fuel cycle. These results will then be 
+used to determine optimized transition scenarios to minimize specific 
+material requirements. 
+
+\item \textbf{Neutronics analysis of \gls{HALEU} created from impure \gls{HEU}.}
+The neutronics of the \gls{HALEU}-fueled reactors in the transition scenarios 
+will be modeled to identify potential effects of using \gls{HALEU} produced 
+from downblended \gls{HEU} with known impurities. This step will investigate 
+potential limitations in using this \gls{HALEU} production method and 
+how different \gls{HALEU} production methods affect reactor operation and 
+key safety parameters, such as neutron multiplicity, delayed neutron 
+fractions, and reactivity coefficients.
+\end{enumerate}
+
+
+The following chapters present preliminary and future work to complete 
+each of these steps and complete the objectives of this work. Chapter 2 
+provides some 
+background information and literature review on the nuclear fuel cycle,
+nuclear fuel cycle 
+modeling efforts, and the use of \gls{HALEU} in reactors.
+Chapter 3 discusses the methodology for modeling the transition to advanced 
+reactors in a once-through fuel cycle. This chapter includes the scenarios
+modeled, information on the reactors included in the transitions, and the 
+flow of 
+material in each scenario. Chapter 4 discusses the results of the 
+once-through fuel cycle transition scenarios. Chapter 5 summarizes key 
+takeaways from the previous chapters and the proposed future work for 
+this project. 

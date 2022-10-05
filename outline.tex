@@ -1,0 +1,224 @@
+\documentclass{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{multirow}
+\usepackage{lineno}
+\usepackage{xspace}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{outline}
+\usepackage{placeins}
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{microtype} % improves typography for PDF
+\usepackage{hhline}
+\usepackage{amsmath}
+\usepackage{tabularx}
+
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
+\usepackage[acronym,shortcuts]{glossaries}
+\include{acros}
+
+
+\begin{document}
+\noindent Working title: Fuel cycle impacts of deploying \gls{HALEU}-fueled reactors
+\begin{outline}
+\item Introduction
+\begin{outline}
+    \item Purpose of the work: investigate the effect of deploying HALEU-fueled 
+          advanced reactors on the nuclear fuel cycle in the US 
+    \item Scope:
+    \begin{outline}
+        \item US facilities
+        \item select advanced reactors: USNC MMR, X-energy Xe-100, NuScale VOYGR
+        \item Front-end and back-end of the fuel cycle
+    \end{outline}
+    \item Motivations
+    \begin{outline}
+        \item U.S. wants to develop a supply chain of HALEU
+        \item HALEU has broad uses outside of reactors \cite{nagley_ha-leu_2020}
+        \item Benefits of using HALEU in reactors 
+        \begin{outline}
+            \item higher burnups
+            \item reduced LCOE
+        \end{outline}
+        \item Changing the fuel form affects fuel cycle dynamics
+    \end{outline}
+    \item Goals
+    \begin{outline}
+        \item understand how deploying HALEU reactors affects resource demand
+        \item understand which components of the fuel cycle are most sensitive to HALEU deployments
+        \item understand how implementing recycling with HALEU reactors affects the fuel cycle
+        \item understand how possible avenues to obtain fuel for HAELU reactors can affect neutronics
+        \begin{outline}
+            \item neutron flux
+            \item k-eff 
+            \item $\beta$-eff
+            \item feedback coefficients, 
+            \item lifetimes 
+            \item uranium utilization in general
+            \item breeding ratio
+        \end{outline}
+    \end{outline}
+\end{outline}
+
+\item Lit Review
+\begin{outline}
+    \item The nuclear fuel cycle
+    \begin{outline}
+          \item Once-through vs recycle \cite{tsoulfanidis_nuclear_2013}
+          \item Enrichment facility/SWU calculations \cite{tsoulfanidis_nuclear_2013}
+          \item Recycling processes \cite{tsoulfanidis_nuclear_2013}
+          \begin{outline}
+              \item overview of aqueous reprocessing 
+              \item Known changes to LWR fuel cycle by recycling 
+          \end{outline}
+    \end{outline}
+    
+    \item Fuel Cycle simulators
+    \begin{outline}
+        \item Why we use them, their benefits
+        \item why multiples have been created
+        \item ideal functionalities and capcbilities \cite{huff_next_2010,brown_identification_2016}
+        \item uses of fuel cycle simulators
+        \begin{outline}
+            \item \gls{DOE} Evaluation \& screening \cite{wigeland_nuclear_2014}
+                \begin{outline}
+                      \item Differences in EG 01 and EG 02 
+                \end{outline}
+            \item EG29 analysis \cite{sunny_transition_2015}
+            \item verification \cite{feng_standardized_2016}
+        \end{outline}
+        \item \Cyclus \cite{huff_fundamental_2016}
+        \begin{outline}
+              \item basic fundamentals 
+              \item \Cycamore \cite{scopatz_cyclus_2015}
+              \item addresses many of the things brought up by \cite{huff_next_2010}
+              \item comparison to other codes \cite{djokic_application_2015}
+              \item verification \cite{bae_standardized_2019}
+        \end{outline}
+    \end{outline} 
+    \item sensitivity analysis and optimization
+    \begin{outline}
+        \item Dakota \cite{adams_dakota_2019}
+    \end{outline}
+   
+    \item HALEU
+    \begin{outline}
+        \item production methods
+        \item fuel forms (ceramic vs metallic vs TRISO)
+        \item expected demand \cite{korsnick_need_2018}
+        \item Reactors with HALEU
+        \begin{outline}
+            \item Effects of changing from 5\% to 7\% for PWR \cite{burns_reactor_2020}
+            \item Effects on NuScale SMR \cite{carlson_implications_2022}
+            \item Effects of impurities \cite{celikten_effects_2021}
+        \end{outline}
+    \end{outline}
+\end{outline}
+
+\item Transition modeling methodology
+\begin{outline}
+    \item Reactors, inculuding serpent models
+    \begin{outline}
+        \item USNC MMR \cite{hussain_advances_2018}
+        \item X-energy Xe-100 \cite{harlan_x-energy_2018}
+        \item NuScale VOYGR \cite{nuscale_chapter_2020,suk_simulation_2021}
+    \end{outline}
+    \item material flow in fuel cycles
+    \begin{outline}
+        \item Once-through
+        \begin{outline}
+            \item once-through flow figure
+            \item scenario definitions
+        \end{outline}
+        \item recycle 
+        \begin{outline}
+            \item recycle-flow figure          
+            \item scenario definitions
+        \end{outline}
+
+    \end{outline}
+\end{outline}
+
+\item Material requirements -- Once through fuel cycles
+\begin{outline}
+    \item Results
+    \begin{outline}
+        \item Scenario 1 -- current fleet
+        \begin{outline}
+            \item reactor deployment -- compare to actual data??
+            \item uranium resources
+            \item SWU capacity
+            \item Waste
+        \end{outline}
+        \item Reactor deployment
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+        \item Uranium resources
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+        \item SWU capacity
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+        \item Waste
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+    \end{outline}
+\end{outline}
+
+\item Model fuel cycle with recycle 
+\begin{outline}
+    \item Results
+    \begin{outline}
+        \item Reactor deployment
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+        \item Uranium resources
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+        \item SWU capacity
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+        \item Waste
+        \begin{outline}
+            \item No growth scenarios
+            \item 1\% growth scenarios
+        \end{outline}
+    \end{outline}
+\end{outline}
+
+\item Sensitivity analysis and optimization
+\begin{outline}
+    \item Methdology
+    \item Results
+\end{outline}
+
+\item Effects on neutronics
+\begin{outline}
+    \item Methodology
+    \item Models
+    \item Results
+\end{outline}
+
+\item Conclusions
+\end{outline}
+
+
+\bibliography{bibliography}
+\bibliographystyle{ieeetr}
+\end{document}
