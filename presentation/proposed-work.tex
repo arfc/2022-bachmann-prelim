@@ -1,0 +1,82 @@
+\begin{frame}
+  \frametitle{Closed fuel cycle}
+        \begin{columns}
+        \column[t]{3.5cm}
+        \begin{block}{Proposed Work}
+                \begin{itemize}
+                        \item Model the transition to advanced reactors using recycling
+                        \begin{itemize}
+                                \item Consider limited and continuous recycle
+                                \item Quantify the same material requirements 
+                        \end{itemize}
+                \end{itemize}
+        \end{block}
+        \begin{block}{Technical Gap}
+             \begin{itemize}
+                \item Understand the effect of closing the nuclear fuel 
+                      cycle on material requirements
+             \end{itemize}                   
+        \end{block}
+        
+        \column[t]{6.5cm}
+        \input{recycle-flow}
+        \end{columns}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Sensitivity analysis}
+        \begin{block}{Proposed Work}
+                \begin{itemize}
+                        \item Perform sensitivity analysis on select once through 
+                        and recycle transitions, changing three variables
+                        \begin{itemize}
+                                \item Transition start time
+                                \item \gls{LWR} lifetimes
+                                \item Build share of each advanced reactor
+                        \end{itemize}
+                        \item Optimize each the transitions investigated in the 
+                                sensitivity analysis to minimize material requirements
+                        \begin{itemize}
+                                \item Two single-objective problems
+                                \item One multi-objective problem
+                        \end{itemize}
+                \end{itemize}
+        \end{block}
+        \begin{block}{Technical Gap}
+                \begin{itemize}
+                        \item Understand how the transition start time, \gls{LWR} 
+                                lifetime, and advanced reactor build share
+                                affect the material requirements
+                        \item Optimize transitions to minimize material requirements
+                \end{itemize}
+        \end{block}
+\end{frame}
+
+\begin{frame}
+        \frametitle{Neutronics analysis}
+        \begin{block}{Proposed Work}
+                \begin{itemize}
+                \item Perform depletion calculations of the Xe-100 and \gls{MMR} 
+                        designs using different \gls{HALEU} compositions:
+                        \begin{itemize}
+                                \item Pure \gls{HALEU} (only $^{235}$U and $^{238}$U)
+                                \item Downblended \gls{EBR} spent fuel
+                                \item Downblended Y-12 stockpiles
+                        \end{itemize}
+                \item Investigate the reactor performance of each composition:
+                        \begin{itemize}
+                                \item Flux
+                                \item Neutron multiplication ($k_{eff}$)
+                                \item Delayed neutron fraction ($\beta_{eff}$)
+                                \item Reactivity Coefficients
+                        \end{itemize}
+                \end{itemize}
+        \end{block}
+        \begin{block}{Technical Gap}
+                \begin{itemize}
+                        \item Understand the limitations 
+                                of using \gls{HALEU} produced by downblending 
+                                \gls{HEU} in the Xe-100 and MMR
+                \end{itemize}
+        \end{block}
+\end{frame}

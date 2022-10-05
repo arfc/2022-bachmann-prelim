@@ -1,0 +1,34 @@
+\begin{figure}[t]
+    \centering
+    \begin{tikzpicture}[node distance=1cm]
+        \node (mine) [agent] {Mine};
+        \node (mill) [agent, right of=mine] {Mill};
+        \node (conversion) [agent, right of=mill, xshift=0.5cm] {Conversion};
+        \node (enrichment) [agent, right of=conversion, xshift=1cm]{Enrichment};
+        \node (fabrication) [agent, right of=enrichment, xshift=1.5cm]{Fuel Fabrication};
+        \node (reactor) [agent, below of=fabrication, yshift=-1.5cm]{Reactor};
+        \node (storage) [agent,  left of=reactor, xshift=-1cm]{Storage};
+        \node (sinkhlw) [agent, left of=storage, xshift=-1cm]{Repository};
+
+
+        \draw [arrow] (mine) --  (mill); 
+        \draw [arrow] (mill) -- (conversion); 
+        \draw [arrow] (conversion) -- (enrichment);
+        \draw [arrow] (enrichment) -- (fabrication);
+        \draw [arrow] (fabrication) -- (reactor);
+        \draw [arrow] (reactor) -- (storage);
+        \draw [arrow] (storage) -- (sinkhlw);
+        \pause
+        \node (reprocessing) [transition, above of=storage]{Reprocessing};
+        
+        \draw [arrow] (storage) -- (reprocessing);
+        \draw [arrow] (reprocessing) -- (fabrication);
+        \draw [arrow] (reprocessing) -- (sinkhlw);
+        \pause
+        \node (downblending) [region, above of=fabrication]{Downblending};
+        \draw [arrow] (downblending) -- (fabrication);
+
+        \end{tikzpicture}
+    \caption{Overview of the Nuclear Fuel Cycle.}
+    \label{fig:fuel_cycle}
+\end{figure}

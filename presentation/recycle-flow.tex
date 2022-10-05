@@ -1,0 +1,38 @@
+\begin{figure}
+    \centering
+    \begin{tikzpicture}[node distance=0.6cm]
+        \node (mine) [facility] {\tiny Uranium Mine};
+        \node (enrichment) [facility, below of=mine]{\tiny Enrichment};
+        \node (reactor) [facility, below of=enrichment]{\tiny Reactor};
+        \node (adv_reactor) [transition, right of=reactor, xshift=1.3cm]{\tiny Advanced Reactor};
+        \node (wetstorage) [facility, below of=reactor]{\tiny Wet Storage};
+        \node (drystorage) [facility, below of=wetstorage]{\tiny Dry Storage};
+        \node (cooling) [transition, below of=adv_reactor]{\tiny Cooling Pool};
+        \node (sinkhlw) [facility, below of=drystorage, xshift=1cm]{\tiny HLW Sink};
+        \node (sinkllw) [facility, left of=enrichment, xshift=-1cm]{\tiny LLW Sink};
+        \node (separation) [transition, below of=cooling]{\tiny Separations};
+        \node (fuelfab) [transition, below of=adv_reactor,xshift=1.3cm]{\tiny Fuel Fab};
+        \node (sfr) [region, right of=adv_reactor,xshift=1.8cm]{\tiny Fast Reactor};
+
+        \draw [arrow] (mine) --(enrichment);
+        \draw [arrow] (enrichment) -- (reactor);
+        \draw [arrow] (enrichment) -- (sinkllw);
+        \draw [arrow] (enrichment) -| (adv_reactor);
+        \draw [arrow] (reactor) -- (wetstorage);
+        \draw [arrow] (wetstorage) -- (drystorage);
+        \draw [arrow] (drystorage) |- (sinkhlw);
+        \draw [arrow] (adv_reactor) -- (cooling);
+        \draw [arrow] (cooling) -- (separation);
+        \draw [arrow] (separation) -| (fuelfab);
+        \draw [arrow] (fuelfab) |- (adv_reactor);
+        \draw [arrow] (separation) |- (sinkhlw);
+        \draw [dashed, ->] (fuelfab) |- (sfr);
+        \draw [arrow] (wetstorage) -- (separation);
+        \draw [dashed, ->] (cooling) -| (sinkhlw);
+        \draw [dashed, ->] (sfr) |- (separation);
+
+        \end{tikzpicture}
+    \caption{Fuel cycle facilities and material flow between facilities for the recycling 
+    scenarios.}
+    \label{fig:recycle_fuel_cycle}
+\end{figure}
